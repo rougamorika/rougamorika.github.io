@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Rougamo的撒野区">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一阶差分方程与动力系统初步基本概念序列的第项与项之差,称为这个序列的第一阶差分  \Delta a_{n}&#x3D;a_{n+1}-a_{n}差分方程的基本结构:  \Delta a_{n}&#x3D;f(n)差分方程序列之间的关系称为动力系统满足动力系统的一张对照表称为动力系统的数值解.$a{2}&#x3D;a{1}\times 1.01+1000$  \Delta a_{n}&#x3D;a_{n}\times 0.01+1000现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Logi">
+<meta property="og:url" content="http://example.com/2024/10/03/Logi/index.html">
 <meta property="og:site_name" content="Rougamo的撒野区">
+<meta property="og:description" content="一阶差分方程与动力系统初步基本概念序列的第项与项之差,称为这个序列的第一阶差分  \Delta a_{n}&#x3D;a_{n+1}-a_{n}差分方程的基本结构:  \Delta a_{n}&#x3D;f(n)差分方程序列之间的关系称为动力系统满足动力系统的一张对照表称为动力系统的数值解.$a{2}&#x3D;a{1}\times 1.01+1000$  \Delta a_{n}&#x3D;a_{n}\times 0.01+1000现">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-03T06:43:21.000Z">
+<meta property="article:modified_time" content="2024-10-03T06:57:10.852Z">
 <meta property="article:author" content="Rougamo">
+<meta property="article:tag" content="Logistics方程">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/10/03/Logi/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Rougamo的撒野区</title>
+  <title>Logi | Rougamo的撒野区</title>
   
 
 
@@ -252,9 +257,10 @@ mjx-container[display="true"] + br {
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -270,10 +276,9 @@ mjx-container[display="true"] + br {
       <meta itemprop="name" content="Rougamo的撒野区">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/03/Logi/" class="post-title-link" itemprop="url">Logi</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Logi
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -297,7 +302,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一阶差分方程与动力系统初步"><a href="#一阶差分方程与动力系统初步" class="headerlink" title="一阶差分方程与动力系统初步"></a>一阶差分方程与动力系统初步</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>序列<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container>的第<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="5.254ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 2322.4 748"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(822.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1822.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>项与<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>项之差,称为这个序列的第<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container><strong>一阶差分</strong></p>
+        <h1 id="一阶差分方程与动力系统初步"><a href="#一阶差分方程与动力系统初步" class="headerlink" title="一阶差分方程与动力系统初步"></a>一阶差分方程与动力系统初步</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>序列<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container>的第<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="5.254ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 2322.4 748"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(822.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1822.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>项与<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>项之差,称为这个序列的第<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container><strong>一阶差分</strong></p>
 <script type="math/tex; mode=display">
 \Delta a_{n}=a_{n+1}-a_{n}</script><p>差分方程的基本结构:</p>
 <script type="math/tex; mode=display">
@@ -425,383 +430,33 @@ K=0,r\leq 0
 \frac{dN}{Ndt}=r\left( \frac{T-F+D \frac{dN}{dt}}{T} \right)=r\left( \frac{c_{1}N_{m}-c_{1}N-(D-c_{2})\frac{dN}{dt}}{c_{1}N_{m}} \right)</script>不难发现:<br>$D-c<em>{2}&lt;0<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="20.55ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 9083 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">是</text></g><g data-mml-node="mi" transform="translate(2000,0)"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="mi" transform="translate(2645,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(3523,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(3868,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mi" transform="translate(4229,0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mi" transform="translate(4805,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">修</text></g><g data-mml-node="mi" transform="translate(5805,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">正</text></g><g data-mml-node="mi" transform="translate(6805,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">方</text></g><g data-mml-node="mi" transform="translate(7805,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">程</text></g><g data-mml-node="mo" transform="translate(8805,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g></g></g></svg></mjx-container>D-c</em>{2}=0$时是Logistic方程.</li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Logistics%E6%96%B9%E7%A8%8B/" rel="tag"># Logistics方程</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/Logistic%E6%96%B9%E7%A8%8B%E7%90%86%E8%AE%BA(%E9%80%82%E5%90%88%E5%A4%A7%E4%B8%80,%E5%A4%A7%E4%BA%8C)/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Rougamo">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rougamo的撒野区">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/03/Logistic%E6%96%B9%E7%A8%8B%E7%90%86%E8%AE%BA(%E9%80%82%E5%90%88%E5%A4%A7%E4%B8%80,%E5%A4%A7%E4%BA%8C)/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-10-03 14:29:27 / 修改时间：14:44:36" itemprop="dateCreated datePublished" datetime="2024-10-03T14:29:27+08:00">2024-10-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一阶差分方程与动力系统初步"><a href="#一阶差分方程与动力系统初步" class="headerlink" title="一阶差分方程与动力系统初步"></a>一阶差分方程与动力系统初步</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>序列$A$的第$n+1$项与$n$项之差,称为这个序列的第$n$<strong>一阶差分</strong><br>$$<br>\Delta a_{n}&#x3D;a_{n+1}-a_{n}<br>$$<br>差分方程的基本结构:<br>$$<br>\Delta a_{n}&#x3D;f(n)<br>$$<br>差分方程序列之间的关系称为<strong>动力系统</strong><br>满足动力系统的一张$n-b(n)$对照表称为动力系统的<strong>数值解</strong>.<br>$a_{2}&#x3D;a_{1}\times 1.01+1000$<br>$$<br>\Delta a_{n}&#x3D;a_{n}\times 0.01+1000<br>$$<br>现在的重点是来求解这个差分方程系统,为此,我们需要补充一些概念</p>
-<h2 id="高阶差分"><a href="#高阶差分" class="headerlink" title="高阶差分"></a>高阶差分</h2><p>我们原先定义的$\Delta a_{n}&#x3D;a_{n+1}-a_{n}$称为<strong>一阶差分</strong>,同样的,$\Delta a_{n}$也可以视作关于非负整数$n$的序列,那么我们也就可以定义$\Delta a_{n}$的差分<br>$$<br>\Delta^{2}a_{n}&#x3D;\Delta a_{n+1}-\Delta a_{n}<br>$$<br>这称为$a_{n}$差分的差分,称为<strong>二阶差分</strong>,$\Delta$称之为<strong>差分算子</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title:差分的一些性质</span><br><span class="line">1. $$\Delta(au_&#123;t&#125;+bv_&#123;t&#125;)=a\Delta u_&#123;t&#125;+b\Delta v_&#123;t&#125;$$(差分的线性性)</span><br><span class="line">2. $$\Delta(u_&#123;t&#125;\cdot v_&#123;t&#125;)=u_&#123;t&#125;\Delta v_&#123;t&#125;+v_&#123;t+1&#125;\cdot\Delta u_&#123;t&#125;$$(乘法)</span><br></pre></td></tr></table></figure>
-<h2 id="差分方程的一般形式"><a href="#差分方程的一般形式" class="headerlink" title="差分方程的一般形式"></a>差分方程的一般形式</h2><p>$$<br>\begin{flalign*}<br>&amp;F(t,y_{t},\Delta y_{t},\dots,\Delta^{n}y_{t})\<br>&amp;F(t,y_{t},y_{t+1},\dots y_{t+n})<br>\end{flalign*}<br>$$<br>(1)形式的差分方程的差分方程阶数是<strong>最高阶差分的阶数</strong><br>(2)形式的差分方程的差分方程阶数是<strong>下标的极差</strong></p>
-<h2 id="差分方程解的结构"><a href="#差分方程解的结构" class="headerlink" title="差分方程解的结构"></a>差分方程解的结构</h2><h3 id="差分方程的解"><a href="#差分方程的解" class="headerlink" title="差分方程的解"></a>差分方程的解</h3><p>如果把$y$代入差分方程使得两边恒等,那么这个函数是差分方程的<strong>解</strong><br>含有与差分方程阶数相同的任意常数的解,称为差分方程的<strong>通解</strong>,这些常数都被确定的解叫<strong>特解</strong>.<br>用于确定任意常数的条件就是<strong>初值条件</strong>.<br>假设我们有$n$阶差分方程:<br>$$<br>p_{n(t)}y_{t+n}+\dots+p_{0(t)}y_{t}&#x3D;f(t)<br>$$<br>其中$p_{i}(t),i\in n$是关于$t$的已知函数,且$P_{n}(t)\neq 0$(因为一旦为$0$就不是$n$阶了. )<br>现在我们对它分类别</p>
-<ul>
-<li>按是否齐次<ul>
-<li>所谓齐次,就是右侧$f(t)\doteq0$<ul>
-<li>$f(t)&#x3D;0\Rightarrow$齐次</li>
-<li>$f(t)\neq0\Rightarrow$非齐次</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>按系数是否为常值<ul>
-<li>常系数</li>
-<li>变系数</li>
-</ul>
-</li>
-<li>按是否线性<ul>
-<li>右边是线性函数</li>
-<li>右边不是线性函数</li>
-</ul>
-</li>
-</ul>
-<h2 id="差分方程解结构定理"><a href="#差分方程解结构定理" class="headerlink" title="差分方程解结构定理"></a>差分方程解结构定理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title:复习:微(差)分方程解的线性无关</span><br><span class="line">指这组解中的任何一个都不能由剩余的解的线性组合来表示,则这组解是**线性无关的**.</span><br></pre></td></tr></table></figure>
-<ol>
-<li>若$y_{1}(t),\dots,y_{n}(t)$是齐次方程的$n$个<strong>线性无关</strong>的特解,那么对于这个$n$阶齐次差分方程而言,它的<strong>通解</strong>就是$C_{1}y_{1}(t)+\dots+C_{n}y_{n}(t)$</li>
-<li>对于非齐次的情形,假设对应齐次方程的通解是$Y(t)$,且我们知道非齐次情形的特解$Y^{<em>}(t)$,那么非齐次方程的通解就是$Y(t)+Y^{</em>}(t)$</li>
-</ol>
-<h3 id="一阶常系数线性差分方程解的结构"><a href="#一阶常系数线性差分方程解的结构" class="headerlink" title="一阶常系数线性差分方程解的结构"></a>一阶常系数线性差分方程解的结构</h3><p>$y_{n+1}&#x3D;ay_{n}$</p>
-<h4 id="特征方程"><a href="#特征方程" class="headerlink" title="特征方程"></a>特征方程</h4><p>对于齐次的情况而言,我们很容易地注意到通解的形式应当是:$C\lambda^{n}$(鉴于指数函数对倍乘的良好性质)<br>那么我们代入原来的差分方程<br>$$C\lambda^{n+1}-a\cdot C\lambda^{n}&#x3D;0$$<br>约去项目后得到方程<br>$$<br>\lambda-a&#x3D;0<br>$$<br>$$<br>\lambda&#x3D;a<br>$$<br>这就是一阶常系数齐次线性差分方程的<strong>特征方程</strong><br>所以得到$y_{n}&#x3D;Ca^{n}$是原差分方程的通解.</p>
-<h4 id="非齐次"><a href="#非齐次" class="headerlink" title="非齐次"></a>非齐次</h4><h5 id="右边是-m-阶多项式的类型"><a href="#右边是-m-阶多项式的类型" class="headerlink" title="右边是$m$阶多项式的类型"></a>右边是$m$阶多项式的类型</h5><p>原方程变为$\Delta y_{n}+(1-a)y_{n}&#x3D;f(n)$的形式.<br>此时$Y^{<em>}<em>{n}$也是多项式,则这样设:<br>$y</em>{n}^{</em>}&#x3D;\theta_{0}n^m+\theta_{1}n^{m-1}+\dots+\theta_{m}(a\neq 1)$<br>$y_{n}^{*}&#x3D;n(\theta_{0}n^m+\theta_{1}n^{m-1}+\dots+\theta_{m})(a &#x3D; 1)$</p>
-<h5 id="右边是-m-阶多项式乘指数的类型"><a href="#右边是-m-阶多项式乘指数的类型" class="headerlink" title="右边是$m$阶多项式乘指数的类型"></a>右边是$m$阶多项式乘指数的类型</h5><p>$$<br>y_{n+1}-ay_{n}&#x3D;\mu^{n}P_{m}(n)<br>$$<br>假如$\mu&#x3D;0,\mu&#x3D;1$,相当于没这个指数函数.<br>其他情况设通解是$y_{n}&#x3D;\mu^{n}z_{n}$<br>代入后消去$\mu^{n}$<br>能有<br>$$<br>\mu z_{n+1}-az_{n}&#x3D;P_{m}(n)<br>$$<br>此时就可以转化成上面$\mu$不在起作用的情况<br>那么是不是就能求出特解.</p>
-<h5 id="右边是三角函数乘指数的情况"><a href="#右边是三角函数乘指数的情况" class="headerlink" title="右边是三角函数乘指数的情况"></a>右边是三角函数乘指数的情况</h5><p>此时设特解为:</p>
-<ul>
-<li>$m(\cos \beta+\sin \beta i)$不是特征方程的根时<ul>
-<li>$m^{t}(C_{1}\cos \beta t+C_{2}\sin \beta t)$</li>
-</ul>
-</li>
-<li>$m(\cos \beta+\sin \beta i)$是特征方程的根时<ul>
-<li>$tm^{t}(C_{1}\cos \beta t+C_{2}\sin \beta t)$<br>$C_{1},C_{2}$是待定系数.<br>很容易注意到当$\beta&#x3D;0$时退化成指数的情形.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="Logistic方程和多项式的插值概述"><a href="#Logistic方程和多项式的插值概述" class="headerlink" title="Logistic方程和多项式的插值概述"></a>Logistic方程和多项式的插值概述</h1><h2 id="Logistic方程和Sigmoid函数"><a href="#Logistic方程和Sigmoid函数" class="headerlink" title="Logistic方程和Sigmoid函数"></a><strong>Logistic方程</strong>和<strong>Sigmoid函数</strong></h2><h3 id="Logistic方程的提出-Malthus-模型"><a href="#Logistic方程的提出-Malthus-模型" class="headerlink" title="Logistic方程的提出:Malthus 模型"></a>Logistic方程的提出:<strong>Malthus 模型</strong></h3><p>英国统计学家Malthus(1766-1834)在《人口原理》一书中提出自己认识,即<strong>每年人口出生率是一个常数</strong>.<br>于是他提出了<strong>Malthus人口模型</strong>:<br>$$<br>\frac{dN(t)}{dt}&#x3D;rN(t)<br>$$<br>$$<br>N(t)|<em>{t&#x3D;t</em>{0}}&#x3D;N_{0}<br>$$<br>想必大家注意力惊人,一下就能看出这个方程的解是<br>$$<br>N(t)&#x3D;N_{0}e^{ r(t-t_{0}) }<br>$$<br>很显然大家都比Malthus聪明的多,一下就能看出这个方程粗糙而不切实际.因为随着人口数量的不断增加,环境和种内竞争的影响会越来越重.只能这样说:<strong>Malthus人口模型在人口基数不太大的时候,可以被认为是正确的.</strong></p>
-<h3 id="Logistic-模型"><a href="#Logistic-模型" class="headerlink" title="Logistic 模型"></a>Logistic 模型</h3><p>为此数学家<strong>Verhust</strong>改进了这个模型,在Malthus的基础上加上了$-KN^2$的<strong>竞争项</strong>.<br>此时我们对它求解,得到:<br>$$<br>N&#x3D;\frac{1}{\frac{K}{R}+\left( \frac{1}{N_{0}}-\frac{K}{R} \right)e^{ -rt }}<br>$$<br>其中$r,K$是生命系数,一般来说$K\ll R$.<br>那么在初始阶段,$-KN^2$的竞争项影响小,而之后伴随$N$的增大,$-KN^2$起的作用也随之增大<br>对于上面的<strong>Logistic模型</strong><br>我们有如下的认识:</p>
-<ol>
-<li>$t\to \infty$,$N(t)\to \frac{R}{K}$</li>
-<li>对它求导,可得一阶导数$\frac{d}{dt}N&#x3D;RN-KN^2&#x3D;KN\left( \frac{R}{K}-N \right)&gt;0$,所以是<strong>增函数</strong>.求二阶导数得到$\frac{d^2{N}}{dt^2}&#x3D;(r-2KN)N(r-KN)$,所以在$N\in\left[ 0, \frac{R}{2K} \right)$,曲线上凹,$N\in( \frac{R}{2K} ,+\infty)$曲线下凹</li>
-<li>图像:![[Pasted image 20240914122458.png|250]]</li>
-<li><strong>Logistic人口模型</strong>的假设条件是:<ol>
-<li>个体不分大小,分布均匀,不发生迁入和迁出</li>
-<li>资源供给为一常数,且均匀分配</li>
-<li>种群的每个个体有相同增长率</li>
-<li>种群密度决定的用季度对所有成员影响相同且灵敏地影响种群的增殖</li>
-<li>自然环境提供的资源是有限的.<br>我们称由Logistic模型确立的方程为<strong>Logistic方程</strong><br>方程有如下两种形式：<br>$$<br>\frac{dN}{dt}&#x3D;rN\left( 1-\frac{N}{K} \right)<br>$$<br>或者<br>$$<br>\frac{dN}{Ndt}&#x3D;r\left( 1-\frac{N}{K} \right)<br>$$<br>当$N&#x3D;K$时候,很容易注意到:此时人口不再增长，是<strong>平衡态</strong>.<br>对于Logistic方程而言,$N&#x3D;0$和$N&#x3D;K$是它的两个平衡态,$N&#x3D;0$时不稳定,只有$N&#x3D;K$时是全局稳定的.<br>实际上我们也可以通过特征根$f’(0)&#x3D;r$和$f’(K)&#x3D;-r$可以看出平衡点的稳定性.</li>
-</ol>
-</li>
-</ol>
-<h3 id="Sigmoid函数与深度学习概论"><a href="#Sigmoid函数与深度学习概论" class="headerlink" title="Sigmoid函数与深度学习概论"></a>Sigmoid函数与深度学习概论</h3><p>刚才学的Logistic方程,它是S型的,一般而言又叫<strong>Sigmoid函数</strong>,或者<strong>S型生长曲线</strong>.狭义地说,Sigmoid函数是如下的函数<br>$$<br>S(x)&#x3D;\frac{1}{1+e^{ -x }}<br>$$<br>它的特殊之处在于$S(x)$和$S^{-1}(x)$都是单增的,且$S’(x)$可用$S(x)$表达:<br>$$<br>S’(x)&#x3D;\frac{e^{ -x }}{(1+e^{ -x })^{2}}&#x3D;S(x)(1-S(x))<br>$$<br>如下是Sigmoid函数和它导数的图像<br>![[Pasted image 20240915174709.png|350]]<br>它的一些性质:</p>
-<ol>
-<li>$S(x)\in \left[ 0,1 \right]$,能够对所有的输入作<strong>归一化操作</strong></li>
-<li>因为$S(x)\in \left[ 0,1 \right]$,所以Sigmoid函数很适合用于概率</li>
-<li>输出值是平滑的</li>
-<li><em>指数运算</em>,<em>权重更新效率低下</em>,$S(0)\neq 0$,有梯度消失和幂运算复杂的问题<br>若要使得$S(0)&#x3D;0$,则可以取<br>$$<br>S(x)&#x3D;\tanh(x)<br>$$<br>它也是Sigmoid函数,并且解决了传统Sigmoid函数中$S(0)\neq 0$的问题,但是梯度消失和幂运算复杂的问题依然存在.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title:名词解释：梯度消失</span><br><span class="line">**梯度消失**是指在神经网络训练过程中，梯度在反向传播过程中变得越来越小，甚至接近于零，导致网络中的某些权重无法有效更新的问题。这个现象通常出现在非常深的神经网络中。</span><br><span class="line"></span><br><span class="line">具体来说，梯度消失的原因主要有以下几点：</span><br><span class="line"></span><br><span class="line">1. **激活函数的选择**：早期神经网络常使用的Sigmoid或Tanh激活函数，在输入值非常大或非常小的情况下，其导数接近于零。在深度网络中，每一层的梯度乘以上一层的梯度，如果这些梯度都很小，那么连乘之后的结果可能会非常小，导致梯度消失.</span><br><span class="line">2. **深度网络的反向传播**：在深度网络中，如果每一层只能传递一个很小的梯度到下一层，随着层数的增加，梯度信号会不断衰减，最终导致接近输入层的网络层几乎接收不到有效的梯度来更新权重.</span><br><span class="line">3. **权重初始化**：如果权重初始化不当，例如权重过小，那么在反向传播时，梯度乘以权重后的值会更小，也可能导致梯度消失.</span><br><span class="line">4. **学习率的选择**：如果学习率设置得太低，可能会导致梯度更新缓慢，从而在深度网络中引起梯度消失的问题.</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="Logistic模型的一些拓展"><a href="#Logistic模型的一些拓展" class="headerlink" title="Logistic模型的一些拓展"></a>Logistic模型的一些拓展</h2><h3 id="Logistic-离散模型"><a href="#Logistic-离散模型" class="headerlink" title="Logistic 离散模型"></a>Logistic 离散模型</h3><p>$$<br>N_{n+1}&#x3D;rN_{n}\left( 1-\frac{N_{n}}{K} \right),n&#x3D;0,1,2\dots<br>$$<br>这种离散方程也称为<strong>虫口方程</strong>.</p>
-<h3 id="带有时滞的Logistic模型"><a href="#带有时滞的Logistic模型" class="headerlink" title="带有时滞的Logistic模型"></a>带有时滞的Logistic模型</h3><h4 id="什么是时滞"><a href="#什么是时滞" class="headerlink" title="什么是时滞?"></a>什么是时滞?</h4><p>在临港,我们的洗澡水总是<strong>烫的时候很烫，凉 的时候很凉</strong>,于是我们都炼成了自适应水龙头调节的本领(自己适应一下这个水龙头,然后自己调节).<br>对于这件事情,差点被烫死的肉夹馍发现:水龙头的温度调节并不会立刻反映到水的温度上,而是会滞后一段时间$t$,这称为<strong>时滞</strong>.<br>肉夹馍又发现:对于家里的水龙头,其反应灵敏,时滞短,所需要来回调节的次数就少.对于学校的水龙头,其反应迟钝,时滞长,所需要来回调节的次数就多.<br>肉夹馍沉思了一下,觉得这不仅是和洗澡有关的内容,它能用在工程的分析上,也可以用来解释股票和基金的投资,延迟无处不在,迟滞模型也就无处不在.<br>对于迟滞模型而言,迟滞越严重,就越是容易造成大幅度的不规则振荡,可以用信号来理解.<br>肉夹馍发现Logistic方程并没有考虑时滞的问题,他着手准备科研,一查资料,我擦,有人干过了!</p>
-<h4 id="具有时滞的Logistic模型"><a href="#具有时滞的Logistic模型" class="headerlink" title="具有时滞的Logistic模型"></a>具有时滞的Logistic模型</h4><p>最早将时滞引入种群生态学,抢了肉夹馍饭碗的人是生态学家<strong>E.M.Wright</strong>(1945).他直接求出了这个方程,称为E.M.Wright方程:<br>$$<br>\frac{dN}{dt}&#x3D;rN(t)\left( 1- \frac{N(t-\tau)}{k} \right)<br>$$<br>其中$\tau$就是时滞.<br>所以上面的方程其实是一个具有确定时滞的<strong>微分差分方程</strong>.<br>由于方程中包含 $N(t-\tau)$ 这样的延迟项，这个方程无法用常规的解析方法求解.我们通常使用数值方法来求解这类方程。以下是使用数值方法求解的一般步骤:</p>
-<ol>
-<li><p><strong>初始化</strong>：</p>
-<ul>
-<li>选择一个合适的时间步长 $\Delta t$</li>
-<li>确定时间范围$t \in [0, T]$</li>
-<li>设置初始条件$N(0)$</li>
-</ul>
-</li>
-<li><p><strong>处理时间延迟</strong>：<br> 由于 $N(t-\tau)$的存在,我们需要知道 $N(t)$ 在 $t-\tau$时刻的值.这意味着在此时,我们需要另外的方法来确定 $N(t)$的值，比如假设 $N(t) &#x3D; N(0)$,对于$t \in [0, \tau)$.对于 $t \geq \tau$,我们可以使用历史数据来计算$N(t-\tau)$.</p>
-</li>
-<li><p><strong>迭代计算</strong>：</p>
-<ul>
-<li><p>对于每个时间步$t_n &#x3D; n \Delta t$,使用前向差分法或其他数值积分方法来更新 $N(t)$<br> $$N(t_{n+1}) &#x3D; N(t_n) + \Delta t \cdot r N(t_n) \left( 1 - \frac{N(t_n - \tau)}{k} \right)$$</p>
-</li>
-<li><p>这里 $N(t_n - \tau)$是在 $t_n - \tau$ 时刻的种群数量，可以从之前计算的结果中获得。</p>
-</li>
-</ul>
-</li>
-<li><p><strong>重复迭代</strong>：</p>
-<ul>
-<li>重复上述迭代步骤，直到达到预定的结束时间$T$</li>
-</ul>
-</li>
-</ol>
-<h3 id="Hallam-改进模型"><a href="#Hallam-改进模型" class="headerlink" title="Hallam 改进模型"></a>Hallam 改进模型</h3><p>经典Logistic方程有如下的<strong>问题</strong>：</p>
-<ul>
-<li>$r&gt;0$,我们在$N&gt;K$时会有$\frac{dN}{dt}&gt;0$,此时种群个体生的少,死的多时,种群规模超过环境容纳量反而会使得个体数量上升,这是不现实的.</li>
-<li><strong>随时间变化的Logistic方程</strong>:$$\frac{dN}{dt}&#x3D;r(t)N(t)\left[ 1-\frac{N(t)}{K(t)} \right]$$当$t\to +\infty$有$r(t),k(t)\to0$,且$$\int_{0}^{+\infty}r(t)  , dt&lt;+\infty,\int_{0}^{+\infty} \frac{r(t)}{k(t)} , dt&lt;+\infty $$那么很显然这个时变方程的解:$$N&#x3D;\frac{N_{0}\exp\left[ \int _{t_{0}}^{t}r(s), ds  \right]}{1+N_{0}\int _{t_{0}}^{t}\exp\left[ \int _{t_{0}}^{s}r(s_{1}), ds_{1} \right] \frac{r(s)}{k(s)} , ds}$$<br>便又可知$\lim_{t\to +\infty }N(t)\neq 0$,也就是种群不会灭绝的情况.<br>为了克服Logistic方程的缺点,<strong>Hallam和Clark**提出了改进后的模型,即<br>$$<br>\frac{dN}{dt}&#x3D;N(t)\left[ r-\frac{C}{B}N(t) \right]<br>$$<br>在这个模型中,内禀增长率$r$的地位被削弱,模型的平衡态变为:<br>$$<br>\begin{aligned}<br>K&#x3D;r\frac{B}{C},r&gt;0\<br>K&#x3D;0,r\leq 0<br>\end{aligned}<br>$$<br><strong>经典的模型要求所有的资源被利用,才会进入生长停滞的平衡态.</strong><br>但是在</strong>H&amp;C模型**中,种群稳定态$N&#x3D;K$在环境尚未完全利用的时候达到的.<br>此时它解决了上面提到的两个问题</li>
-<li>当内禀增长率$r$为负时,此时根据上面的微分方程,它是单调减函数</li>
-<li>$r(t)$和$B(t)$分别有极限$r_{\infty},B_{\infty}$则每一个具初值的解有$N_{\infty}&#x3D;B_{\infty}$</li>
-</ul>
-<h3 id="Smith-修正模型"><a href="#Smith-修正模型" class="headerlink" title="Smith 修正模型"></a>Smith 修正模型</h3><p>Logistic方程假定种群规模增长率时种群规模的线性函数,这对大部分的种群动力学的议题都是可以接受的.但是科学家<strong>Smith</strong>在研究一种水蚤的过程中发现有关数据不符合线性的规律.此时他假定相对增长率与时刻的剩余食物量<br>成正比.<br>$$<br>\frac{dN}{Ndt}&#x3D;r\left( 1-\frac{F(t)}{T} \right)<br>$$<br>其中$F$是食物消耗率,$T$是规模达到平衡态的食物需要率<br>那么我们有如下的假定:</p>
-<ul>
-<li>维持自身生存的食物:$c_{1}N(t)$</li>
-<li>用于繁殖后代的食物:$c_{2} \frac{dN}{dt}$<br>所以我们有$F(t)&#x3D;c_{1}N(t)+c_{2} \frac{dN}{dt}$<br>则带入上式得到:<br>$$<br>\frac{dN}{dt}&#x3D;rN\left( \frac{T-c_{1}N}{T+rc_{2}N} \right)<br>$$<br>在饱和时,$\frac{dN}{dt}&#x3D;0,T&#x3D;c_{1}N_{m}$<br>$$<br>\frac{dN}{Ndt}&#x3D;r\left( \frac{c_{1}N_{m}-c_{1}N-c_{2} \frac{dN}{dt}}{c_{1}N_{m}} \right)<br>$$<br>其实从上面的方程中我们看出,<strong>Smith模型</strong>就是对$\left( 1-\frac{N}{K} \right)$动了刀,修改成了$\frac{T-c_{1}N}{T+rc_{2}N}$,假如$c_{2}&#x3D;0$,即不考虑食物的需要,那么<strong>Smith模型就退化为Logistic模型</strong>.Smith还发现,密度制约效应所描述的应当是一个下凹的曲线<br>韩明哲(1988)得出了下面的模型:<br>$$<br>\frac{dN}{Ndt}&#x3D;r\left( \frac{T-F+D \frac{dN}{dt}}{T} \right)&#x3D;r\left( \frac{c_{1}N_{m}-c_{1}N-(D-c_{2})\frac{dN}{dt}}{c_{1}N_{m}} \right)<br>$$<br>不难发现:<br>$D-c_{2}&lt;0$时是Smith修正方程.<br>$D-c_{2}&#x3D;0$时是Logistic方程.</li>
-</ul>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/10/03/Logistic%E6%96%B9%E7%A8%8B%E7%90%86%E8%AE%BA(%E9%80%82%E5%90%88%E5%A4%A7%E4%B8%80,%E5%A4%A7%E4%BA%8C)/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Rougamo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rougamo的撒野区">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/03/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90-1/" class="post-title-link" itemprop="url">数学分析(1)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-10-03 14:27:53" itemprop="dateCreated datePublished" datetime="2024-10-03T14:27:53+08:00">2024-10-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/Introduction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Rougamo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rougamo的撒野区">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/03/Introduction/" class="post-title-link" itemprop="url">Introduction</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-10-03 14:23:19 / 修改时间：14:24:26" itemprop="dateCreated datePublished" datetime="2024-10-03T14:23:19+08:00">2024-10-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="我是Bourbaki学派的粉丝-代序"><a href="#我是Bourbaki学派的粉丝-代序" class="headerlink" title="我是Bourbaki学派的粉丝(代序)"></a>我是<em>Bourbaki学派</em>的粉丝(代序)</h1><h2 id="介绍Bourbaki学派"><a href="#介绍Bourbaki学派" class="headerlink" title="介绍Bourbaki学派"></a><em>介绍Bourbaki学派</em></h2><p><strong>尼古拉·布尔巴基</strong>（法语：Nicolas Bourbaki，法语发音：是20世纪一群法国数学家的笔名。他们由1935年开始撰写一系列述说对现代高等数学探研所得的书籍。以把整个数学建基于集合论为目的，在过程中，布尔巴基致力于做到最极端的严谨和泛化，建立了些新术语和概念。<br>布尔巴基是个虚构的人物，布尔巴基团体的正式称呼是“尼古拉·布尔巴基合作者协会”，在巴黎的高等师范学校设有办公室。<br>布尔巴基对<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%9A%B4%E8%AC%B9%E6%80%A7&action=edit&redlink=1" title="严谨性（页面不存在）">严谨性</a>的强调在当时产生了很大的影响。这与当时<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%84%92%E5%8B%92%C2%B7%E6%98%82%E5%88%A9%C2%B7%E5%BA%9E%E5%8A%A0%E8%8E%B1" title="儒勒·昂利·庞加莱">儒勒·昂利·庞加莱</a>所强调的数学要依靠自由想像的数学直观的说法分庭抗礼。布尔巴基的影响力随时间而减弱，一个原因是由于布尔巴基的抽象并不显得比发明者原初的想法更为有用，另一个原因是因为没有包含像<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8C%83%E7%95%B4%E8%AE%BA" title="范畴论">范畴论</a>等重要的现代数学理论。尽管范畴论是由布尔巴基的成员艾伦堡所创立，格罗滕迪克所推广的，但是如果要容纳范畴论，就不得不对已经出版的著作进行根本性的改写。<br>尽管布尔巴基的一部分著作在相应的领域成了标准的参考书，但是那种近于严峻的表达方式使其难以成为教科书。布尔巴基书籍的鼎盛时期是在1950和1960年之间，那时很少有适合能用于研究生水平的关于纯数学的教科书。<br>布尔巴基讲座在战后立即于巴黎开设，这个讲座接连不断地公开发表了各种综述性论文，这些论文采用一种固定格式，用谨慎的风格写成。<br>十分明显，布尔巴基的观点虽然是“百科全书”式的，但却从来没有想要保持中立。恰好相反，他们把热情倾注于整体一致性的展示，例如对<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%8D%AB%C2%B7%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9" title="大卫·希尔伯特">希尔伯特</a>的形式主义和公理主义的遗产的处理上。但对现存理论总要施行一种“接纳变换”，例如把<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%A0%E9%87%8F" title="张量">张量</a>微积分改名成<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0" title="多线性代数">多线性代数</a>，创建独立于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E6%B6%88%E5%85%83%E7%90%86%E8%AE%BA&action=edit&redlink=1" title="消元理论（页面不存在）">消元理论</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%A4%E6%8F%9B%E4%BB%A3%E6%95%B8" title="交换代数">交换代数</a>，这在其前身<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%90%86%E6%83%B3%E7%90%86%E8%AE%BA&action=edit&redlink=1" title="理想理论（页面不存在）">理想理论</a>时已成为主要倾向。希尔伯特在1890年代时已经显示对非构造性方法的钟爱，布尔巴基的行动使非构造性方法变得更加具体。<br>在下面例举的领域里布尔巴基有显著的偏向：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97" title="计算">计算</a>性内容不上议题，几乎完全被省略</li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98" title="解决问题">解决问题</a>被认为次于公理</li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90" title="数学分析">数学分析</a>被“软”处理，没有“硬”计算</li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B5%8B%E5%BA%A6%E8%AE%BA" title="测度论">测度论</a>掩盖了<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8B%89%E6%9D%B1%E6%B8%AC%E5%BA%A6" title="拉东测度">拉东测度</a></li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BB%84%E5%90%88%E8%AE%BA" title="组合论">组合学</a>结构被视为非结构性的</li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91" title="数理逻辑">逻辑</a>只需最低限度（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%90%E6%81%A9%E5%BC%95%E7%90%86" title="佐恩引理">佐恩引理</a>就已足够）</li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E6%95%B0%E5%AD%A6" title="应用数学">应用</a>全无提起<br>并且（“这是很自然的” - _cela va sans dire_）没有图示。</li>
-</ul>
-<h2 id="我为什么重提Bourbaki"><a href="#我为什么重提Bourbaki" class="headerlink" title="我为什么重提Bourbaki"></a>我为什么重提Bourbaki</h2><p>其实我们并不是说要完全要模仿,或者是<em><strong>复辟</strong></em>(这个词最合适的一回)Bourbaki的观念.或许对于我们的电子设备而言,定义-定理-证明的表述很适合用来学习.但是很显然对于我们人类自己而言,实际上还是Arnold式的,例子繁多的教科书方便我们学习.<br>实际上这就是为何我们的参考教科书还有Zorich和Rudin,许多人认为Zorich是在用很新潮的方式来讲数学分析.实际上,这只能说,这个读者看的数学分析实在是太古老了,比如他还在用同济版高等数学当作教材(笑)<br>我在此愿意援引Arnold在Zorich的教科书中的一句话:<br>    它(指卓里奇的数学分析)与传统教材的主要区别在于,一方面更贴近自然科学(首先是物理学和力学)的应用,另一方面比通行做法更多地运用了现代数学(代数学,几何学,拓扑学)的思想方法.<br>    现在应当认为,这样编写教材是一种创新,这在Goursat时代曾经是通行的做法,教材专业化的趋势阉割了数学分析教材,几乎只留给它一个又一个证明.<br>所以其实我们虽然将Bourbaki放在表皮上,其实行的却是Arnold和Goursat的实呢.</p>
-<h2 id="你想学出怎么样的数学"><a href="#你想学出怎么样的数学" class="headerlink" title="你想学出怎么样的数学"></a>你想学出怎么样的数学</h2><p>实际上,Rudin也是一本争议性很强的书,有的人觉得它简明扼要,有的觉得它过于简明扼要.历来也拿来和Apostol来对比.<br>问题是,他们都没有写错.毕竟不像Spivak写出来的流形上微积分通篇错误累累还需要Munkres去纠错(笑).<br>我想起宫崎骏的一部最新的电影:《你想活出怎么样的人生》.<br>同样的问题摆在你面前,你想学出什么样的数学?<br>选择书本是应该跟着自身的实力和学习方式来的.下面的一切内容只是一些参考,所有的笔记都是<br>我的写作风格并不像布尔巴基,说像任何一位大家都是对这位大家一定程度上的贬低,若要是说这个絮絮叨叨的风格,或许有点像R.Godement.阅读我的笔记可以有机地略过,甚至大段大段地跳过,但是有些东西是我学习这门课程的心得,或者说,是我觉得应该去学什么样数学的非纯理性的,观点化的表述.大家看一看,提一些意见,写一些自己的心得,跳过即可.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Rougamo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rougamo的撒野区">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-10-03 13:52:05" itemprop="dateCreated datePublished" datetime="2024-10-03T13:52:05+08:00">2024-10-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -854,6 +509,7 @@ K=0,r\leq 0
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%8A%A8%E5%8A%9B%E7%B3%BB%E7%BB%9F%E5%88%9D%E6%AD%A5"><span class="nav-number">1.</span> <span class="nav-text">一阶差分方程与动力系统初步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%B7%AE%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">高阶差分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">差分方程的一般形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.4.</span> <span class="nav-text">差分方程解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="nav-number">1.4.1.</span> <span class="nav-text">差分方程的解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%BB%93%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">1.5.</span> <span class="nav-text">差分方程解结构定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.1.</span> <span class="nav-text">一阶常系数线性差分方程解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">特征方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">非齐次</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%B3%E8%BE%B9%E6%98%AF-m-%E9%98%B6%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.1.2.1.</span> <span class="nav-text">右边是阶多项式的类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%B3%E8%BE%B9%E6%98%AF-m-%E9%98%B6%E5%A4%9A%E9%A1%B9%E5%BC%8F%E4%B9%98%E6%8C%87%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.1.2.2.</span> <span class="nav-text">右边是阶多项式乘指数的类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%B3%E8%BE%B9%E6%98%AF%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E4%B9%98%E6%8C%87%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.5.1.2.3.</span> <span class="nav-text">右边是三角函数乘指数的情况</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic%E6%96%B9%E7%A8%8B%E5%92%8C%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E6%8F%92%E5%80%BC%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">Logistic方程和多项式的插值概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Logistic%E6%96%B9%E7%A8%8B%E5%92%8CSigmoid%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">Logistic方程和Sigmoid函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic%E6%96%B9%E7%A8%8B%E7%9A%84%E6%8F%90%E5%87%BA-Malthus-%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">Logistic方程的提出:Malthus 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.2.</span> <span class="nav-text">Logistic 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sigmoid%E5%87%BD%E6%95%B0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA"><span class="nav-number">2.1.3.</span> <span class="nav-text">Sigmoid函数与深度学习概论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logistic%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%93%E5%B1%95"><span class="nav-number">2.2.</span> <span class="nav-text">Logistic模型的一些拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-%E7%A6%BB%E6%95%A3%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">Logistic 离散模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E6%97%B6%E6%BB%9E%E7%9A%84Logistic%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.2.</span> <span class="nav-text">带有时滞的Logistic模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E6%BB%9E"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">什么是时滞?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E6%9C%89%E6%97%B6%E6%BB%9E%E7%9A%84Logistic%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">具有时滞的Logistic模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hallam-%E6%94%B9%E8%BF%9B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">Hallam 改进模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Smith-%E4%BF%AE%E6%AD%A3%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.4.</span> <span class="nav-text">Smith 修正模型</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
