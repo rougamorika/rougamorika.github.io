@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="#工程热力学工程热力学的主要研究能量(Energy) 的存储(Storage) 和能量的转化(Conversion),以及能量作用于不同的工质(Substance) (就是指用来传热的介质)的各种现象.具体而言,我们研究工质在温度变化(加热(Heating) &#x2F; 制冷(Cooling))和容积变化(压缩(Compression) &#x2F; 膨胀(Expansion))下的情况,本质是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thermodynamics-1">
+<meta property="og:url" content="http://example.com/2024/10/03/pic/Thermodynamics-1/index.html">
+<meta property="og:site_name" content="Rougamo的撒野区">
+<meta property="og:description" content="#工程热力学工程热力学的主要研究能量(Energy) 的存储(Storage) 和能量的转化(Conversion),以及能量作用于不同的工质(Substance) (就是指用来传热的介质)的各种现象.具体而言,我们研究工质在温度变化(加热(Heating) &#x2F; 制冷(Cooling))和容积变化(压缩(Compression) &#x2F; 膨胀(Expansion))下的情况,本质是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/.com//ranqilunji.png">
+<meta property="og:image" content="http://example.com/.com//dianbingxiang.png">
+<meta property="og:image" content="http://example.com/.com//cylinder%201.png">
+<meta property="og:image" content="http://example.com/.com//example1.png">
+<meta property="og:image" content="http://example.com/.com//StableExp1.png">
+<meta property="article:published_time" content="2024-10-03T11:15:25.000Z">
+<meta property="article:modified_time" content="2024-10-03T12:09:12.076Z">
+<meta property="article:author" content="Rougamo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//ranqilunji.png">
+
+<link rel="canonical" href="http://example.com/2024/10/03/pic/Thermodynamics-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Thermodynamics-1 | Rougamo的撒野区</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Rougamo的撒野区</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录自己的数学边界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/pic/Thermodynamics-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Rougamo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rougamo的撒野区">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Thermodynamics-1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-10-03 19:15:25 / 修改时间：20:09:12" itemprop="dateCreated datePublished" datetime="2024-10-03T19:15:25+08:00">2024-10-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>#工程热力学<br>工程热力学的主要研究能量(Energy) 的存储(Storage) 和能量的转化(Conversion),以及能量作用于不同的工质(Substance) (就是指用来传热的介质)的各种现象.具体而言,我们研究工质在温度变化(加热(Heating) &#x2F; 制冷(Cooling))和容积变化(压缩(Compression) &#x2F; 膨胀(Expansion))下的情况,本质是研究能量对工质的作用</p>
+<h1 id="常见的工程热力学应用"><a href="#常见的工程热力学应用" class="headerlink" title="常见的工程热力学应用"></a>常见的工程热力学应用</h1><h2 id="模块1-燃气轮机的原理"><a href="#模块1-燃气轮机的原理" class="headerlink" title="模块1 : 燃气轮机的原理"></a>模块1 : 燃气轮机的原理</h2><p><img src="/.com//ranqilunji.png"><br>如图所示是关于火电厂(燃气轮机(Combustion turbine engine))的描述.主要的燃料(Fuel), 煤矿(Coal) 通过海运的方式进入火电厂(或者陆运),输送进煤仓(Coal silo) 当中,然后通过管道输入磨煤机(Coal Grinder),磨煤机将煤块磨成煤粉(接触面积大,化学反应剧烈),与油(Oil) 气(Air) 混合送入燃烧室燃烧,产生高温高压的气体通过汽包(Steam drum) (气液分离),通过汽包的气体在叶轮(Turbine) 中膨胀做功,带动叶轮旋转,从而将热能化为机械能,在发电过程中,叶轮与传动轴(Camshaft) 相连,从而将机械能传动给发电机(Generator) 的转子,从而生电(利用法拉第电磁感应定律(Faraday’s Law)).而通过叶轮后的阀气并不能直接排放,而要通过换热器(Heat Exchanger) 散热后,再通过泵输回汽包,经处理成烟道气(Flue Gas) 再输进烟道(Flue),从而排出烟囱(Chimney)</p>
+<h2 id="模块2-电冰箱-制冷-的原理"><a href="#模块2-电冰箱-制冷-的原理" class="headerlink" title="模块2:电冰箱(制冷)的原理"></a>模块2:电冰箱(制冷)的原理</h2><p>家中的电冰箱是什么原理呢?其实也和我们所学的内容息息相关.<br><img src="/.com//dianbingxiang.png"><br>家中的空调也好,电冰箱也好,本质上都是<strong>制冷设备</strong>,当电冰箱制冷环境的热源以蒸汽(工质(Substance))的形式传导进来时,它被送入一个压缩机(compressor),此时原本较冷的工质在做功的情况下不断升温升压,形成较热的蒸汽进入冷凝器, 冷凝器(Condenser) 内一般有较长的铜质(或其他热良导体)蛇形管,它将工质的热量传导到室内,使得高温工质的温度降低到其凝点(Condense Point) 以下变为液态,之后通过膨胀阀(Expansion Valve) 来输出冷气，从而实现制冷</p>
+<h1 id="模块3-热力学系统与其分类"><a href="#模块3-热力学系统与其分类" class="headerlink" title="模块3: 热力学系统与其分类"></a>模块3: 热力学系统与其分类</h1><p>热力学系统(Thermodynamic System) 是一个&#x2F;一组装置, 在装置内存有着我们的研究对象, 称为工质(Substance), 对于任何一个我们研究的热力学系统, 我们都要进行分类, 首先我们考察如下的系统:</p>
+<h2 id="闭口系-Controlled-Mass-的典型案例-气缸-Cylinder"><a href="#闭口系-Controlled-Mass-的典型案例-气缸-Cylinder" class="headerlink" title="闭口系 (Controlled Mass) 的典型案例: 气缸 (Cylinder)"></a>闭口系 (Controlled Mass) 的典型案例: 气缸 (Cylinder)</h2><p><img src="/.com//cylinder%201.png"><br>如图所示在装有理想气体的气缸的活塞 (Piston) 上放置一些重物, 并且我们假定活塞气密性(Tightness) 良好 (即不漏气), 那么在活塞下压的过程当中, 气体并没有溢出, 质量没有发生改变. 或者我们说, 在这个系统边界(Boundary) 内的气体与外界(Outer) 没有质量交换.<br>当我们研究热力学系统时, 需要先确定热力学系统的范围, 我们研究对象所处的区域叫做热力学系统的 内部(Inner), 会与内部发生质量能量交换的系统叫做外界(Outer), 两者的交线&#x2F;交面叫做边界(Boundary).<br>边界可以固定(stationary),可以变化(Changing), 变化的例子例如移动的活塞, 气球,…..</p>
+<h2 id="热力系统分类概论"><a href="#热力系统分类概论" class="headerlink" title="热力系统分类概论"></a>热力系统分类概论</h2><p>如果某个热力学像上述系统这样, 内部和外界均没有质量通过边界, 那么就叫这样的热力学系统为 闭口系 (Controlled Mass), 否则叫做开口系(Controlled Volume)<br>那么我们对热力系的研究不会停止于质量的交换, 事实上, 刚才的系统照理来说应该会越来越热 (为了满足理想气体状态方程), 但是假定我们观测到气体热力学能不发生改变, 那么有一种可能, 那就是气体通过缸壁或者活塞来散热来保持气体的热力学能不变.我们改造上面的气缸, 使得我们的气缸各个保温性能和保冷性能都很好, 此时热能不发生交换,这个时候的系统就被叫做绝热系(Adiabatic System).<br>我们不仅期待热能得以不与外界交换, 事实上, 我们也期待一切能量都可以不与外界发生交换,不与外界发生任何能量交换的系统称为孤立系(Isolated System)<br>孤立系在自然界中并不存在,但是我们可以在理想化我们的模型之后”炮制”出孤立系,我们将会在下面的例子中讲孤立系的一种示例.<br>现在先让我们跳出质量和能量的角度,讲讲工质本身的性质对我们热力系分类的影响,我们很容易地可以想到工质是纯净物还是混合物对热力系的影响,实际上我们应当说,这个热力系的组元(Component) 的数量是怎样的.<br>我们以<strong>组元</strong>作为分类标准,将热力学系分为单元系(Unary System) 和复元系(Polynary Syetem).与此同时,同一物质的三态可能物理性质迥异(实际上热力学不仅要研究固、液、气三态),那么应当怎么处理呢?我们把空间中各处<strong>强度性质</strong>(<em>什么是强度性质?应当保留这个疑问</em>)完全相同的部分称作一个相(Phase).如果工质在系统内有且只有一个相,就称这个系统为单相系(Monophase System).有多个相,则为复相系(Polyphase System).</p>
+<h2 id="分析典例-一个带电阻丝加热的气缸"><a href="#分析典例-一个带电阻丝加热的气缸" class="headerlink" title="分析典例: 一个带电阻丝加热的气缸."></a>分析典例: 一个带电阻丝加热的气缸.</h2><p><img src="/.com//example1.png"><br>如上图所示:<br>假设我们取从左侧到气体的其中一个部分为研究对象,并且在它的右边界加上不传热不漏气的活塞,并且我们认为缸体是绝热的.那么通电之后,此时这个系统是什么系统呢?<br><strong>很显然,通电之后电阻丝要发热,推动活塞移动,因为热量不从缸体和活塞传热,所以这是一个闭口绝热系.</strong><br>如果我们保持活塞不动,将边界设在电阻丝的左侧(假定活塞在边界左侧),此时他又是什么系呢?<br><strong>很显然,电阻丝源源不断地向活塞右侧地气体传热,但是气体质量没有发生变化,只是一个闭口系.</strong><br>假如我们包含电阻丝但不包含电源呢?<br><strong>很显然,此时虽然电阻丝在源源不断地向气体传热,但是我们很”作弊”地将电阻丝算在了系统里面,此时电阻丝和空气之间地热交换就是系统之内的热交换了,所以他是闭口绝热系.</strong></p>
+<p><em><strong>也就是说,绝热不代表系统内部没有热交换.</strong></em></p>
+<p>虽然上面的例子是绝热系,但并不是孤立系,因为它和外界发生了能量交换,电源的电能被转化成了电阻丝的热能进入系统(这并不是热交换,而是能量转化.因为在上面的系统的视角来看,这些热能像是<em>凭空造出来的</em>)<br>如果我们再把电源考虑进去,那么一切的能量交换都发生在系统内了,这就是孤立系,我们就这样制造出了孤立系的示例.</p>
+<h1 id="状态参量"><a href="#状态参量" class="headerlink" title="状态参量"></a>状态参量</h1><h2 id="什么是状态参量"><a href="#什么是状态参量" class="headerlink" title="什么是状态参量"></a>什么是状态参量</h2><p>工质在某一时刻的宏观物理状况,叫做工质的热力学状态,<br>简称状态(State).我们可以把这些状态用不同的热力学量(和他们的函数)来进行描述,这些热力学物理量就是状态参量, 简称参量(Properties)<br>在前文我们提及相的概念时,我们说到了强度性质,留下了一个疑问.现在我们可以做答:<br>所有描述热力系的量都可以分成两类, 广度性质(Extensive Properties) 和强度性质(Intensive Properties) 它<strong>们的区分标准在于是否与质量相关(是质量的函数)</strong>.是则为广延量,否则为强度量.<br>常见的广延量有质量$M$(Mass),体积$V$(Volume),这些东西都是质量的函数,而且很常见.<br>常见的强度量有密度 $\rho$ (Density). 热力学温度 $t&#x2F;T$ (Temperature),压强 $P$ (Pressure),其中我们得讲讲一个特殊的强度量:比体积$\nu$ (Specific Volume)<br>比体积被定义为单位质量的体积,其定义式如下<br>$$<br>\nu&#x3D;\frac{V}{M}<br>$$<br>其 SI 单位是: $m^{3}&#x2F;kg$<br>通过比体积我们不难发现,广延量和质量的比值是强度量,相同的例子还有比热 $c$<br>$$<br>Q&#x3D;cM \Delta T<br>$$<br>其中 $\frac{Q}{\Delta T}$ 是平均热容(Average Heat Capacity)<br>实际上, 热容(Heat Capacity) $C$ 是一个状态量，<br>$$<br>C&#x3D;\frac{dQ}{dT}<br>$$<br> 而此时我们的比热$c$<br>$$<br>c&#x3D;\frac{C}{M}<br>$$<br>对于所有描述状态参量的函数,实际上,他们满足一个良好的数学性质,那就是所有状态参量的函数无一例外,都有全微分,并且他们绕场(数量&#x2F;向量场)内一闭合回路的的线积分必为0.</p>
+<h1 id="过程和循环"><a href="#过程和循环" class="headerlink" title="过程和循环"></a>过程和循环</h1><p>每一个系统都有状态参量来描述他们的状态,只要系统的一个状态参量发生了变化,我们就称系统的状态发生了改变,而系统所经历的一系列状态的改变被叫做热力学过程(Thermodynamic Process)<br>这下带来的问题可就大了,比如我们考虑活塞的移动.在活塞的移动过程中,状态参量无时无刻不在变化,<br>有些工质先变化,有些工质后变化.而我们只能描述一个平衡均匀静态过程的状态参量,倘若我们的活塞后方接了一个飞轮(Flywheel),将它变成一个四冲程发动机的一个冲程,那么这个冲程就不可能回到静态过程,我们应该怎么研究呢?<br>事实上,我们采取了建立理想模型的思想,我们把活塞移动很缓慢的的状态看作是一种”静态过程”,在这样的过程中它与静态过程的各个参量的偏移量是一个无穷小,那么我们叫这样的过程准静态过程(Quasi-equilibrium Process).<br>或者换句话说, 所有的工质在平衡被破坏后总是会自发地回到平衡, 这个过程需要经历一段时间, 称为弛豫时间, 准静态过程就是<strong>弛豫时间相对过程发生用时可以忽略不计的过程</strong>.<br>除了准静态过程,我们还关心某些状态参量在整个过程中没有发生任何改变的情况.也就是等量过程(Iso-processes),主要指代等温(Isothermal),等压(Isobaric),等容(Isochoric)这样的过程.<br>值得区分的一点在于机械循环(Mechanic Cycle) 和热力循环(Thermodynamic Cycle). 对于上面的四冲程发动机的,虽然每两个冲程都经历一次循环.但是这指代的是活塞复位的机械循环,其中的并不存在热力循环.</p>
+<h1 id="工质综述"><a href="#工质综述" class="headerlink" title="工质综述"></a>工质综述</h1><h2 id="质量-M-长度-L-时间-t-和所受的力-F"><a href="#质量-M-长度-L-时间-t-和所受的力-F" class="headerlink" title="质量 $M$,长度 $L$,时间 $t$ 和所受的力 $F$"></a>质量 $M$,长度 $L$,时间 $t$ 和所受的力 $F$</h2><p>我们要研究上面的四个物理量,实际上就是研究我们高中所学过的牛顿第二定律(Newton’s 2nd Law)<br>$$<br>F \propto ma<br>$$<br>当然我们在高中也学过力的动量形式,这里就不说了<br>我们首先从加速度说起,由高中物理和简单的微积分知识我们可以知道加速度是<em>位移对时间的二阶导数</em>.也就是说,我们要想定义力,就得先定义长度和时间,我们先来看时间.<br>时间(Time)的国际基本单位是秒(second,s),根据 CGPM 在1967年的会议,1秒被定义成 Cs-133原子共振9192631770次所需要的总时间.我们可以对秒这个单位添加不同的词头以便于描述更小或者更大的时间范围.常见的词头有毫,微,纳,皮,飞等等…具体详见任意一本物理学参考书<br>长度(Length),单位为米(meter,m).定义原先依赖铂-铱合金的米棒,但是现在我们采用CGPM更加精确的定义,它是光在$1&#x2F;299792458$秒内通过的距离.依据光速不变原理,我们可知这样的定义不受其他条件的影响(比如合金的锈蚀&#x2F;断裂…).<br>在工程热力学的语境中,常见物质的量(Amount of substance)这个物理量.它的单位是摩尔(mole),它的定义是0.012千克的C-12的分子数的物质的量.<br>上面的单位都为国际单位制,我们在之后可能会碰到不属于国际单位制的单位.</p>
+<h2 id="比体积和密度"><a href="#比体积和密度" class="headerlink" title="比体积和密度"></a>比体积和密度</h2><p>在前面我们已经讲过比体积的简单定义,而我们在初中的时候就已经接触到了密度<br>$$\rho&#x3D;\frac{M}{V}$$ 那么再由比体积的定义,我们可以得到比体积和密度的关系:<br>$$<br>\nu&#x3D;\frac{1}{\rho}<br>$$<br>比体积不是恒定的,一个实例就是把地球大气作为我们的研究对象的时候,随着海拔的攀升,气体受地球引力场的影响而分布不均,海拔高的气体比体积大,海拔低的气体比体积小,所以我们尝试去求得不均匀气体的比体积的过程很容易启发我们类比非匀变速运动的微元法思想,利用极限来定义比体积.	<br>$$<br>\nu \equiv \lim_{\delta V-&gt; \delta V’} \frac{\delta V}{\delta M}<br>$$<br>其中 $\delta V’$ 表示体积微元,它是极小的,这就意味着,对于比体积的函数而言,它是连续变化的,与分布有关的单值函数.但是在一般的热力学研究环境中,大气对比体积和密度的影响微乎其微,于是我们便可以暂且忽略这两个因素的变化,而把我们的研究对象视作<strong>密度和比体积均匀的工质</strong>.<br>我们在高中化学的必修部分还学过类似的定义方法,不过不是用在质量上,而是用在物质的量上.<br>我们学过的摩尔体积(Molar Volume)和摩尔密度(Molar Density)就是这样定义的.在书中我们采用 Sonntag 书上的标记,将摩尔体积记作$\bar{\nu}$,将摩尔密度记作$\bar{\rho}$(他们不是平均的意思)<br>在有些书本上,我们也会介绍如下两个物理量单位体积的质量,这个物理量被称为容重 $\gamma$<br>$$<br>\gamma_{s}&#x3D;\rho g<br>$$<br>它和比重是不同的,后者一般选定4$^\circ C$的水作为基准,求得某物质和基准的密度比成为该物质的比重.</p>
+<h2 id="压强"><a href="#压强" class="headerlink" title="压强"></a>压强</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>对于流体(液体,气体),我们时常要讨论他们的压强,它是单位面积所受压力的大小(有时也称压力)<br>事实上,通过上面学习比体积的处理过程,我们很快地采用微元的方式,得到:<br>$$<br> P&#x3D;\lim_{\delta A-&gt; \delta A’} \frac{\delta F_{n}}{\delta A}<br>$$ (注意,我们所讨论的流体目前不包含粘性流体,其内容超越本课程的范围,但是有兴趣的朋友可以参阅《流体力学》)<br>压强的国际单位是帕斯卡(Pascal,Pa),帕斯卡定义如下<br>$$<br>1 Pa&#x3D;1 N&#x2F;m^2       <br>$$  <br>帕斯卡这个单位太小,我们描述热力学系统还有另外两个常用的单位: 巴(bar)和单位大气压(atm).<br> $$\begin{array}{l}  1 ,\mathbf{bar}&#x3D; 10^{5}, \mathbf{Pa}&#x3D;0.1,\mathbf{MPa} \1,\mathbf{atm}&#x3D;101325 , \mathbf{Pa}\end{array} $$<br>若一压力计测量气压时,其液柱稳定在高750mm 处,已知液体的密度 $\rho&#x3D;13.59 g&#x2F;cm^{3}$,重力加速度 $g&#x3D;9.81m&#x2F;s^{2}$,问现在的大气压是多少帕斯卡?</p>
+<h3 id="表压力和真空度"><a href="#表压力和真空度" class="headerlink" title="表压力和真空度"></a>表压力和真空度</h3><p>在实际的压强问题当中,我们时常关系环境&#x2F;工质的实际压力,又叫做绝对压强(Absolute Pressure).但是我们<br>平时在使用的压力表(比如U型压力计),所测得得都是环境和腔体内气体的压力差,称为表压力(Pressure Gauge)<br>$P_{G}$,当我们的实际压小于我们的环境气压时候,这时候我们的压力计量实际起到真空计的作用,测得的是真空度(Vacuum Gauge) $P_{V}$.假如我们已知表上的示数和环境大气,我们就可以得到绝对气压.</p>
+<h3 id="压强随深度的变化"><a href="#压强随深度的变化" class="headerlink" title="压强随深度的变化"></a>压强随深度的变化</h3><p>在初中我们学过,流体的压强满足公式<br>$$P&#x3D;\rho g h$$<br>事实上,我们还要再进一步地探究这个问题,进而学习如何导出上面的公式.<br>我们取出流体的一个微元$\Delta x$作为研究对象,设它的高度为另一个微元$\Delta z$,它满足力的平衡,所以对它受力分析,它受到:<br>流体的重力$W$,下方流体加于其的压力$P_2\Delta x$,上方加于其的$P_1\Delta x$,以及左右两侧平衡的压力(同一高度的两个力相互抵消)<br>于是我们有<br>$$<br>P_1\Delta x+W&#x3D;P_2\Delta x<br>$$<br>而若假定在这个流体微元的流体密度均匀为$\rho$,则可知$W&#x3D;\rho \Delta V g&#x3D;\rho g \Delta x \Delta z$.<br>代回原式并约去相同的因子$\Delta x$,便可得到<br>$$<br>P_1+\rho g \Delta z&#x3D;P_2<br>$$<br>如果用上我们学过的容重的概念,则更简洁<br>$$<br>P_1+\gamma_s \Delta z&#x3D;P_2<br>$$</p>
+<h2 id="温度-Temperature"><a href="#温度-Temperature" class="headerlink" title="温度(Temperature)"></a>温度(Temperature)</h2><p>当我们在定义温度的时候,我们时常引用中学教科书对温度的描述：描述物体冷热程度的物理量被称为温度(Temperature),但我们时常会忽略”冷热程度”是一个主观的概念,并且我们时常也忽略,不同的物体的材质给人的温度的感觉是否是不一样的?其实我们的定义是主观的.<br>于是我们如何客观地定义温度的相等成为了我们最大的问题,假如我们每个热力学系的温度都是独立的,那么我们的热力学研究将会是无从下手的.对于温度相同的客观认识,我们借助了热敏电阻的帮助.<br>热敏电阻是一种阻值对温度变化十分敏感的电阻,它可以帮助我们观察到温度的变化,并且同材质的热敏电阻测量温度不受到材质质感(感觉)的影响.<br>科学家通过实验发现,两个温度不同的物体放在一起时,低温物体的温度不断上升(通过观测热敏电阻的阻值),高温物体温度不断下降.我们结合中学阶段所学和常识也可知:<em>高温物体会自发的向低温物体传热</em>,这件事我们之后会详细地来说.现在我们来定义温度相等,其实就是来源于所读得的热敏电阻的阻值.于是我们这样定义:假如两个热力系统之间建立了热交换,但是他们两者之间没有净能量的交换,那么我们就说他们两个处于热平衡的状态.<br>现在我们说有一物理量,当两热力系的该物理量相同时处于热平衡态,不同时要发生热交换,且交换方向与热向冷的方向相同.我们把这样的物理量叫做温度(Temperature).</p>
+<h2 id="热力学第零定律"><a href="#热力学第零定律" class="headerlink" title="热力学第零定律"></a>热力学第零定律</h2><p>现在我们要来谈谈热力学第零定律.实际上,热力学第零定律的提出要晚于热力学三个定律的提出,但是出于它的基本性和重要性,我们称之为热力学第零定律：<br><strong>如果两个热力学系统与第三个热力学系统都具有相同的温度,那么这两热力学系统之间的温度也相同。</strong><br>实际上,热力学第零定律定义了一种”等量传递性”,同时它也证明了,制作温度计来测温是可行的,我们可以直接借助热力学工具来解决温度的测量,而无需再借助热敏电阻了.</p>
+<h2 id="温标"><a href="#温标" class="headerlink" title="温标"></a>温标</h2><p>根据热力学第零定律,我们可知可以用函数来测得某热力学系统的温度,但是这样的温度函数<br>却不是唯一的.事实上我们描述30 $^\circ C$ 的水,和描述 $303.15,\mathbf{K}$ 指代的是同一个温度,但是因为我们的函数起点&#x2F;斜率&#x2F;原点的不同,我们得到了不同的温度值.我们把这些测温的标准(函数)叫做温标<br>一般而言,大写的 $T$ 不加下标,用来描述开氏温标(Kelvin Scale). 定义如下：<br><strong>水的三相点温度的1&#x2F;273.16被称为1开尔文(Kelvin)</strong></p>
+<p>与华氏度相关的绝对温标是朗肯温标 (Rankine Scale)<br>$$<br>R&#x3D;F+459.67<br>$$<br>事实上,这正是我们书本后面的1-2的答案.<br>我们也就可以给出Rankine温标和Kelvin温标的转化了:<br>$$<br>R&#x3D;\frac{9}{5}(K-273.15)+32<br>$$</p>
+<h1 id="热平衡-状态方程-坐标图"><a href="#热平衡-状态方程-坐标图" class="headerlink" title="热平衡, 状态方程, 坐标图"></a>热平衡, 状态方程, 坐标图</h1><p>热力系统在不受外界状态影响的条件下能够始终保持不变的状态称之为平衡状态(Equilibrium State)<br>细化到热量的传递上,系统的各部分之间没有热量的传递,那么我们就称系统处于热平衡(Heat Equilibrium) (其实就是上一讲热平衡的衍生).系统没有位移,那么我们就称系统处于力平衡(Mechanic Equilibrium) (因为力会造成加速度,进而造成系统的位移).如果某个系统是两相的(或多相的),且每个相都保持在一个均衡的水平且不发生改变,那么则系统是相平衡(Phase Equilibrium)的.最后,如果系统不发生化学反应(变化),则称系统是化学平衡(Chemical Equilibrium)的.<br>由于各部分之间的传热和位移,<strong>不平衡状态总是自发地趋向平衡状态</strong>,然而若受到了外界的影响,那么系统的状态就不能保持平衡的状态比如温度不平衡造成的热量交换,压力不平衡的功的交换,都会破坏原来的平衡态.<br>对于气体而言,如果忽略重力,那么它应该是均匀的,且每处的状态参量都一样<br><strong>稳定状态和平衡状态是有很大的区别的.</strong> 根据上面对平衡状态的定义,平衡状态要求[参量不随时间改变]+[无外界作用],但是对于稳定状态而言,只要满足加号前面的要求就可以了.<br><img src="/.com//StableExp1.png"><br>这是一个处在稳定状态的直杆, 但是我想读者可以很快的注意到, 这根直杆是不平衡的.<br>在我们的热力学研究种, 我们一般都是在研究平衡状态的系统.<br>一种形式,那么我们叫这样的热力系统简单可压缩系(Simple Compressible System,SCS).对于简单可压缩系而言,平衡态下的各部分具有相同的压力,温度,比体积这些状态参量.<br>他们满足一系列的关系式,叫做状态方程(State Eq.)<br>比如我们学过的理想气体状态方程(之后我们还会再来一遍,并且这只是其中一种表述):<br>    $$<br>    pV&#x3D;\nu \bar{R}T<br>    $$<br>简单可压缩系是一个很重要的系统,值得我们研究的重要因素就在于它满足状态公理(State Postulate),表述如下:<br><strong>简单可压缩系状态确定的要且仅需要确定两个状态参量即可.</strong></p>
+<p>所以对于任何的简单可压缩系,我们只需要求得它的任意两个变元就可以得到其状态,就可以以这两个参量为变元构建二维坐标平面,将它绘制成图,就得到状态参量坐标图(State Parameter Graph).例如 $P-v$ 图和 $T-s$ 图</p>
+<h1 id="可逆过程和循环"><a href="#可逆过程和循环" class="headerlink" title="可逆过程和循环"></a>可逆过程和循环</h1><h2 id="可逆过程"><a href="#可逆过程" class="headerlink" title="可逆过程"></a>可逆过程</h2><p>事实上我们再次观测准平衡过程,我们会发现,因为我们的准平衡过程中,工质始终和外界保持热平衡和力平衡,热源和工质时时刻刻地温度相等或相差无穷小,工质对外界地作用力与外界作用于其地力也只差一个无穷小,如果没有摩擦的话,过程进行地方向可以立刻倒过来,使得工质向热源排热.<br>我们把某一个过程完成后,有可能使用某种方式使得工质沿相同地路径回到开始的状态,那么这个过程就是可逆过程.<br>不平衡过程一定是不可逆的,因为我们的不平衡过程总是会造成的效果总是需要一定需要其他的代价来回复所以不平衡的过程一定是不可逆的.比如低温物体向高温物体传热,如果没有压缩机的做功,那么也是不可能实现的.并且,由于摩擦生热,有摩擦的系统和有热量耗散的系统也一定是不可逆的.<br>实际上可逆过程就是:[准平衡过程]+[无耗散无摩擦]+[无条件的逆复],现实生活中并不存在真正的可逆过程.可逆过程是一切实际过程的理想极限.</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>假设工质经过一个过程之后仍然可以回到过程开始时的状态. 那么这个过程称为一个<strong>循环</strong>.</p>
+<h3 id="有向循环"><a href="#有向循环" class="headerlink" title="有向循环"></a>有向循环</h3><p>根据正向循环的$P-V$ 图, 我们可以知道<br>$W_{net}&#x3D;\oint \delta W$<br>那么很显然这个环路是正向的, 所以它<strong>对外</strong>输出正功, 它是<strong>热机</strong><br>作为示功图的 $P-V$ 图起到了作用.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/10/03/Introduction/" rel="prev" title="Introduction">
+      <i class="fa fa-chevron-left"></i> Introduction
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/10/03/Thermodynamics-1/" rel="next" title="Thermodynamics-1">
+      Thermodynamics-1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%BA%94%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">常见的工程热力学应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%971-%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">模块1 : 燃气轮机的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%972-%E7%94%B5%E5%86%B0%E7%AE%B1-%E5%88%B6%E5%86%B7-%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">模块2:电冰箱(制冷)的原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9D%973-%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%85%B6%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">模块3: 热力学系统与其分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8F%A3%E7%B3%BB-Controlled-Mass-%E7%9A%84%E5%85%B8%E5%9E%8B%E6%A1%88%E4%BE%8B-%E6%B0%94%E7%BC%B8-Cylinder"><span class="nav-number">2.1.</span> <span class="nav-text">闭口系 (Controlled Mass) 的典型案例: 气缸 (Cylinder)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%AD%E5%8A%9B%E7%B3%BB%E7%BB%9F%E5%88%86%E7%B1%BB%E6%A6%82%E8%AE%BA"><span class="nav-number">2.2.</span> <span class="nav-text">热力系统分类概论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%85%B8%E4%BE%8B-%E4%B8%80%E4%B8%AA%E5%B8%A6%E7%94%B5%E9%98%BB%E4%B8%9D%E5%8A%A0%E7%83%AD%E7%9A%84%E6%B0%94%E7%BC%B8"><span class="nav-number">2.3.</span> <span class="nav-text">分析典例: 一个带电阻丝加热的气缸.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%8F%82%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">状态参量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%8F%82%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">什么是状态参量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E5%92%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">4.</span> <span class="nav-text">过程和循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E8%B4%A8%E7%BB%BC%E8%BF%B0"><span class="nav-number">5.</span> <span class="nav-text">工质综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F-M-%E9%95%BF%E5%BA%A6-L-%E6%97%B6%E9%97%B4-t-%E5%92%8C%E6%89%80%E5%8F%97%E7%9A%84%E5%8A%9B-F"><span class="nav-number">5.1.</span> <span class="nav-text">质量 $M$,长度 $L$,时间 $t$ 和所受的力 $F$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E4%BD%93%E7%A7%AF%E5%92%8C%E5%AF%86%E5%BA%A6"><span class="nav-number">5.2.</span> <span class="nav-text">比体积和密度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E5%BC%BA"><span class="nav-number">5.3.</span> <span class="nav-text">压强</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">5.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%8E%8B%E5%8A%9B%E5%92%8C%E7%9C%9F%E7%A9%BA%E5%BA%A6"><span class="nav-number">5.3.2.</span> <span class="nav-text">表压力和真空度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%8B%E5%BC%BA%E9%9A%8F%E6%B7%B1%E5%BA%A6%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">5.3.3.</span> <span class="nav-text">压强随深度的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%A9%E5%BA%A6-Temperature"><span class="nav-number">5.4.</span> <span class="nav-text">温度(Temperature)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B"><span class="nav-number">5.5.</span> <span class="nav-text">热力学第零定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%A9%E6%A0%87"><span class="nav-number">5.6.</span> <span class="nav-text">温标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%83%AD%E5%B9%B3%E8%A1%A1-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B-%E5%9D%90%E6%A0%87%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">热平衡, 状态方程, 坐标图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E8%BF%87%E7%A8%8B%E5%92%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.</span> <span class="nav-text">可逆过程和循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E8%BF%87%E7%A8%8B"><span class="nav-number">7.1.</span> <span class="nav-text">可逆过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.2.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.2.1.</span> <span class="nav-text">有向循环</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Rougamo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rougamo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
