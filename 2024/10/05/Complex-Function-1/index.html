@@ -18,15 +18,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="复数代数代数运算四则运算首先,我们先定义虚数单位:  i=\sqrt{-1}在别的教材,例如电工学,由于被电流占了,用也是可行的.我们认为复数是这样的一类数:  c=a+bi;a\in \mathbb{R},b\in \mathbb{R}复数对于加法和乘法运算显然是封闭的且我们的运算规则完全相同.只要扣住即可.  (a+ib)+(c+id)=(a+c)+(b+d)i (a+ib)(c+id)=(a">
+  <meta name="description" content="主要内容首先,我们先定义虚数单位:  i=\sqrt{-1}在别的教材,例如电工学,由于被电流占了,用也是可行的.我们认为复数是这样的一类数:  c=a+bi;a\in \mathbb{R},b\in \mathbb{R}复数对于加法和乘法运算显然是封闭的且我们的运算规则完全相同.只要扣住即可.  (a+ib)+(c+id)=(a+c)+(b+d)i (a+ib)(c+id)=(ac-bd)+(b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="复变函数论-1">
+<meta property="og:title" content="复变函数论-复数的四则运算">
 <meta property="og:url" content="http://example.com/2024/10/05/Complex-Function-1/index.html">
 <meta property="og:site_name" content="Rougamo的撒野区">
-<meta property="og:description" content="复数代数代数运算四则运算首先,我们先定义虚数单位:  i=\sqrt{-1}在别的教材,例如电工学,由于被电流占了,用也是可行的.我们认为复数是这样的一类数:  c=a+bi;a\in \mathbb{R},b\in \mathbb{R}复数对于加法和乘法运算显然是封闭的且我们的运算规则完全相同.只要扣住即可.  (a+ib)+(c+id)=(a+c)+(b+d)i (a+ib)(c+id)=(a">
+<meta property="og:description" content="主要内容首先,我们先定义虚数单位:  i=\sqrt{-1}在别的教材,例如电工学,由于被电流占了,用也是可行的.我们认为复数是这样的一类数:  c=a+bi;a\in \mathbb{R},b\in \mathbb{R}复数对于加法和乘法运算显然是封闭的且我们的运算规则完全相同.只要扣住即可.  (a+ib)+(c+id)=(a+c)+(b+d)i (a+ib)(c+id)=(ac-bd)+(b">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-05T07:41:01.000Z">
-<meta property="article:modified_time" content="2024-10-06T08:52:57.053Z">
+<meta property="article:modified_time" content="2024-10-06T09:17:58.021Z">
 <meta property="article:author" content="Rougamo">
 <meta property="article:tag" content="复变函数">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
   };
 </script>
 
-  <title>复变函数论-1 | Rougamo的撒野区</title>
+  <title>复变函数论-复数的四则运算 | Rougamo的撒野区</title>
   
 
 
@@ -1222,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #22fffb;
+  background: #3eb4d9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2844,7 +2844,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          复变函数论-1
+          复变函数论-复数的四则运算
         </h1>
 
         <div class="post-meta">
@@ -2861,7 +2861,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-06 16:52:57" itemprop="dateModified" datetime="2024-10-06T16:52:57+08:00">2024-10-06</time>
+                <time title="修改时间：2024-10-06 17:17:58" itemprop="dateModified" datetime="2024-10-06T17:17:58+08:00">2024-10-06</time>
               </span>
 
           
@@ -2875,7 +2875,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="复数代数"><a href="#复数代数" class="headerlink" title="复数代数"></a>复数代数</h2><h3 id="代数运算"><a href="#代数运算" class="headerlink" title="代数运算"></a>代数运算</h3><h4 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h4><p>首先,我们先定义<strong>虚数单位</strong>:</p>
+        <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p>首先,我们先定义<strong>虚数单位</strong>:</p>
 <script type="math/tex; mode=display">
 i=\sqrt{-1}</script><p>在别的教材,例如电工学,由于<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>被电流占了,用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.462ex;" xmlns="http://www.w3.org/2000/svg" width="0.932ex" height="1.957ex" role="img" focusable="false" viewBox="0 -661 412 865"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g></g></g></svg></mjx-container>也是可行的.<br>我们认为复数是这样的一类数:</p>
 <script type="math/tex; mode=display">
@@ -2971,7 +2971,7 @@ c=a+bi;a\in \mathbb{R},b\in \mathbb{R}</script><p>复数对于加法和乘法运
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%95%B0%E4%BB%A3%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">复数代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-number">1.1.</span> <span class="nav-text">代数运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97"><span class="nav-number">1.1.1.</span> <span class="nav-text">四则运算</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
