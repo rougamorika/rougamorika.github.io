@@ -606,118 +606,91 @@ NexT.motion.middleWares = {
   }
 };
 ;
-/* global NexT, CONFIG, Velocity */
+/* global NexT, CONFIG */
+
+var Affix = {
+  init: function(element, options) {
+    this.element = element;
+    this.offset = options || 0;
+    this.affixed = null;
+    this.unpin = null;
+    this.pinnedOffset = null;
+    this.checkPosition();
+    window.addEventListener('scroll', this.checkPosition.bind(this));
+    window.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
+    window.matchMedia('(min-width: 992px)').addListener(event => {
+      if (event.matches) {
+        this.offset = NexT.utils.getAffixParam();
+        this.checkPosition();
+      }
+    });
+  },
+  getState: function(scrollHeight, height, offsetTop, offsetBottom) {
+    let scrollTop = window.scrollY;
+    let targetHeight = window.innerHeight;
+    if (offsetTop != null && this.affixed === 'top') {
+      if (document.querySelector('.content-wrap').offsetHeight < offsetTop) return 'top';
+      return scrollTop < offsetTop ? 'top' : false;
+    }
+    if (this.affixed === 'bottom') {
+      if (offsetTop != null) return this.unpin <= this.element.getBoundingClientRect().top ? false : 'bottom';
+      return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
+    }
+    let initializing = this.affixed === null;
+    let colliderTop = initializing ? scrollTop : this.element.getBoundingClientRect().top + scrollTop;
+    let colliderHeight = initializing ? targetHeight : height;
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top';
+    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom';
+    return false;
+  },
+  getPinnedOffset: function() {
+    if (this.pinnedOffset) return this.pinnedOffset;
+    this.element.classList.remove('affix-top', 'affix-bottom');
+    this.element.classList.add('affix');
+    return (this.pinnedOffset = this.element.getBoundingClientRect().top);
+  },
+  checkPositionWithEventLoop() {
+    setTimeout(this.checkPosition.bind(this), 1);
+  },
+  checkPosition: function() {
+    if (window.getComputedStyle(this.element).display === 'none') return;
+    let height = this.element.offsetHeight;
+    let { offset } = this;
+    let offsetTop = offset.top;
+    let offsetBottom = offset.bottom;
+    let { scrollHeight } = document.body;
+    let affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
+    if (this.affixed !== affix) {
+      if (this.unpin != null) this.element.style.top = '';
+      let affixType = 'affix' + (affix ? '-' + affix : '');
+      this.affixed = affix;
+      this.unpin = affix === 'bottom' ? this.getPinnedOffset() : null;
+      this.element.classList.remove('affix', 'affix-top', 'affix-bottom');
+      this.element.classList.add(affixType);
+    }
+    if (affix === 'bottom') {
+      this.element.style.top = scrollHeight - height - offsetBottom + 'px';
+    }
+  }
+};
+
+NexT.utils.getAffixParam = function() {
+  const sidebarOffset = CONFIG.sidebar.offset || 12;
+
+  let headerOffset = document.querySelector('.header-inner').offsetHeight;
+  let footerOffset = document.querySelector('.footer').offsetHeight;
+
+  document.querySelector('.sidebar').style.marginTop = headerOffset + sidebarOffset + 'px';
+
+  return {
+    top   : headerOffset,
+    bottom: footerOffset
+  };
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  var isRight = CONFIG.sidebar.position === 'right';
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  var SIDEBAR_DISPLAY_DURATION = 200;
-  var mousePos = {};
-
-  var sidebarToggleLines = {
-    lines: document.querySelector('.sidebar-toggle'),
-    init : function() {
-      this.lines.classList.remove('toggle-arrow', 'toggle-close');
-    },
-    arrow: function() {
-      this.lines.classList.remove('toggle-close');
-      this.lines.classList.add('toggle-arrow');
-    },
-    close: function() {
-      this.lines.classList.remove('toggle-arrow');
-      this.lines.classList.add('toggle-close');
-    }
-  };
-
-  var sidebarToggleMotion = {
-    sidebarEl       : document.querySelector('.sidebar'),
-    isSidebarVisible: false,
-    init            : function() {
-      sidebarToggleLines.init();
-
-      window.addEventListener('mousedown', this.mousedownHandler.bind(this));
-      window.addEventListener('mouseup', this.mouseupHandler.bind(this));
-      document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
-      document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
-      document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
-      document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
-      window.addEventListener('sidebar:show', this.showSidebar.bind(this));
-      window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
-    },
-    mousedownHandler: function(event) {
-      mousePos.X = event.pageX;
-      mousePos.Y = event.pageY;
-    },
-    mouseupHandler: function(event) {
-      var deltaX = event.pageX - mousePos.X;
-      var deltaY = event.pageY - mousePos.Y;
-      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
-        this.hideSidebar();
-      }
-    },
-    clickHandler: function() {
-      this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
-    },
-    mouseEnterHandler: function() {
-      if (!this.isSidebarVisible) {
-        sidebarToggleLines.arrow();
-      }
-    },
-    mouseLeaveHandler: function() {
-      if (!this.isSidebarVisible) {
-        sidebarToggleLines.init();
-      }
-    },
-    showSidebar: function() {
-      this.isSidebarVisible = true;
-      this.sidebarEl.classList.add('sidebar-active');
-      if (typeof Velocity === 'function') {
-        Velocity(document.querySelectorAll('.sidebar .motion-element'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-          stagger: 50,
-          drag   : true
-        });
-      }
-
-      sidebarToggleLines.close();
-      NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
-        duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
-      }, isRight ? {
-        'padding-right': SIDEBAR_WIDTH
-      } : {
-        'padding-left': SIDEBAR_WIDTH
-      }));
-    },
-    hideSidebar: function() {
-      this.isSidebarVisible = false;
-      this.sidebarEl.classList.remove('sidebar-active');
-
-      sidebarToggleLines.init();
-      NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
-        duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
-      }, isRight ? {
-        'padding-right': 0
-      } : {
-        'padding-left': 0
-      }));
-    }
-  };
-  sidebarToggleMotion.init();
-
-  function updateFooterPosition() {
-    var footer = document.querySelector('.footer');
-    var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight + footer.offsetHeight;
-    footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
-  }
-
-  updateFooterPosition();
-  window.addEventListener('resize', updateFooterPosition);
-  window.addEventListener('scroll', updateFooterPosition);
+  Affix.init(document.querySelector('.sidebar-inner'), NexT.utils.getAffixParam());
 });
 ;
 /* global NexT, CONFIG, Velocity */
@@ -833,4 +806,340 @@ document.addEventListener('DOMContentLoaded', () => {
   NexT.boot.registerEvents();
   NexT.boot.refresh();
   NexT.boot.motion();
+});
+;
+/* global CONFIG */
+
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  var doSaveScroll = () => {
+    localStorage.setItem('bookmark' + location.pathname, window.scrollY);
+  };
+
+  var scrollToMark = () => {
+    var top = localStorage.getItem('bookmark' + location.pathname);
+    top = parseInt(top, 10);
+    // If the page opens with a specific hash, just jump out
+    if (!isNaN(top) && location.hash === '') {
+      // Auto scroll to the position
+      window.anime({
+        targets  : document.scrollingElement,
+        duration : 200,
+        easing   : 'linear',
+        scrollTop: top
+      });
+    }
+  };
+  // Register everything
+  var init = function(trigger) {
+    // Create a link element
+    var link = document.querySelector('.book-mark-link');
+    // Scroll event
+    window.addEventListener('scroll', () => link.classList.toggle('book-mark-link-fixed', window.scrollY === 0));
+    // Register beforeunload event when the trigger is auto
+    if (trigger === 'auto') {
+      // Register beforeunload event
+      window.addEventListener('beforeunload', doSaveScroll);
+      window.addEventListener('pjax:send', doSaveScroll);
+    }
+    // Save the position by clicking the icon
+    link.addEventListener('click', () => {
+      doSaveScroll();
+      window.anime({
+        targets : link,
+        duration: 200,
+        easing  : 'linear',
+        top     : -30,
+        complete: () => {
+          setTimeout(() => {
+            link.style.top = '';
+          }, 400);
+        }
+      });
+    });
+    scrollToMark();
+    window.addEventListener('pjax:success', scrollToMark);
+  };
+
+  init(CONFIG.bookmark.save);
+});
+;
+/* global CONFIG */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Popup Window
+  let isfetched = false;
+  let datas;
+  let isXml = true;
+  // Search DB path
+  let searchPath = CONFIG.path;
+  if (searchPath.length === 0) {
+    searchPath = 'search.xml';
+  } else if (searchPath.endsWith('json')) {
+    isXml = false;
+  }
+  const input = document.querySelector('.search-input');
+  const resultContent = document.getElementById('search-result');
+
+  const getIndexByWord = (word, text, caseSensitive) => {
+    if (CONFIG.localsearch.unescape) {
+      let div = document.createElement('div');
+      div.innerText = word;
+      word = div.innerHTML;
+    }
+    let wordLen = word.length;
+    if (wordLen === 0) return [];
+    let startPosition = 0;
+    let position = [];
+    let index = [];
+    if (!caseSensitive) {
+      text = text.toLowerCase();
+      word = word.toLowerCase();
+    }
+    while ((position = text.indexOf(word, startPosition)) > -1) {
+      index.push({ position, word });
+      startPosition = position + wordLen;
+    }
+    return index;
+  };
+
+  // Merge hits into slices
+  const mergeIntoSlice = (start, end, index, searchText) => {
+    let item = index[index.length - 1];
+    let { position, word } = item;
+    let hits = [];
+    let searchTextCountInSlice = 0;
+    while (position + word.length <= end && index.length !== 0) {
+      if (word === searchText) {
+        searchTextCountInSlice++;
+      }
+      hits.push({
+        position,
+        length: word.length
+      });
+      let wordEnd = position + word.length;
+
+      // Move to next position of hit
+      index.pop();
+      while (index.length !== 0) {
+        item = index[index.length - 1];
+        position = item.position;
+        word = item.word;
+        if (wordEnd > position) {
+          index.pop();
+        } else {
+          break;
+        }
+      }
+    }
+    return {
+      hits,
+      start,
+      end,
+      searchTextCount: searchTextCountInSlice
+    };
+  };
+
+  // Highlight title and content
+  const highlightKeyword = (text, slice) => {
+    let result = '';
+    let prevEnd = slice.start;
+    slice.hits.forEach(hit => {
+      result += text.substring(prevEnd, hit.position);
+      let end = hit.position + hit.length;
+      result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
+      prevEnd = end;
+    });
+    result += text.substring(prevEnd, slice.end);
+    return result;
+  };
+
+  const inputEventFunction = () => {
+    if (!isfetched) return;
+    let searchText = input.value.trim().toLowerCase();
+    let keywords = searchText.split(/[-\s]+/);
+    if (keywords.length > 1) {
+      keywords.push(searchText);
+    }
+    let resultItems = [];
+    if (searchText.length > 0) {
+      // Perform local searching
+      datas.forEach(({ title, content, url }) => {
+        let titleInLowerCase = title.toLowerCase();
+        let contentInLowerCase = content.toLowerCase();
+        let indexOfTitle = [];
+        let indexOfContent = [];
+        let searchTextCount = 0;
+        keywords.forEach(keyword => {
+          indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+          indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+        });
+
+        // Show search results
+        if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+          let hitCount = indexOfTitle.length + indexOfContent.length;
+          // Sort index by position of keyword
+          [indexOfTitle, indexOfContent].forEach(index => {
+            index.sort((itemLeft, itemRight) => {
+              if (itemRight.position !== itemLeft.position) {
+                return itemRight.position - itemLeft.position;
+              }
+              return itemLeft.word.length - itemRight.word.length;
+            });
+          });
+
+          let slicesOfTitle = [];
+          if (indexOfTitle.length !== 0) {
+            let tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
+            searchTextCount += tmp.searchTextCountInSlice;
+            slicesOfTitle.push(tmp);
+          }
+
+          let slicesOfContent = [];
+          while (indexOfContent.length !== 0) {
+            let item = indexOfContent[indexOfContent.length - 1];
+            let { position, word } = item;
+            // Cut out 100 characters
+            let start = position - 20;
+            let end = position + 80;
+            if (start < 0) {
+              start = 0;
+            }
+            if (end < position + word.length) {
+              end = position + word.length;
+            }
+            if (end > content.length) {
+              end = content.length;
+            }
+            let tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
+            searchTextCount += tmp.searchTextCountInSlice;
+            slicesOfContent.push(tmp);
+          }
+
+          // Sort slices in content by search text's count and hits' count
+          slicesOfContent.sort((sliceLeft, sliceRight) => {
+            if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+              return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+            } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+              return sliceRight.hits.length - sliceLeft.hits.length;
+            }
+            return sliceLeft.start - sliceRight.start;
+          });
+
+          // Select top N slices in content
+          let upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
+          if (upperBound >= 0) {
+            slicesOfContent = slicesOfContent.slice(0, upperBound);
+          }
+
+          let resultItem = '';
+
+          if (slicesOfTitle.length !== 0) {
+            resultItem += `<li><a href="${url}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+          } else {
+            resultItem += `<li><a href="${url}" class="search-result-title">${title}</a>`;
+          }
+
+          slicesOfContent.forEach(slice => {
+            resultItem += `<a href="${url}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+          });
+
+          resultItem += '</li>';
+          resultItems.push({
+            item: resultItem,
+            id  : resultItems.length,
+            hitCount,
+            searchTextCount
+          });
+        }
+      });
+    }
+    if (keywords.length === 1 && keywords[0] === '') {
+      resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
+    } else if (resultItems.length === 0) {
+      resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x"></i></div>';
+    } else {
+      resultItems.sort((resultLeft, resultRight) => {
+        if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+          return resultRight.searchTextCount - resultLeft.searchTextCount;
+        } else if (resultLeft.hitCount !== resultRight.hitCount) {
+          return resultRight.hitCount - resultLeft.hitCount;
+        }
+        return resultRight.id - resultLeft.id;
+      });
+      resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+      window.pjax && window.pjax.refresh(resultContent);
+    }
+  };
+
+  const fetchData = () => {
+    fetch(CONFIG.root + searchPath)
+      .then(response => response.text())
+      .then(res => {
+        // Get the contents from search data
+        isfetched = true;
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+          return {
+            title  : element.querySelector('title').textContent,
+            content: element.querySelector('content').textContent,
+            url    : element.querySelector('url').textContent
+          };
+        }) : JSON.parse(res);
+        // Only match articles with not empty titles
+        datas = datas.filter(data => data.title).map(data => {
+          data.title = data.title.trim();
+          data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+          data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+          return data;
+        });
+        // Remove loading animation
+        document.getElementById('no-result').innerHTML = '<i class="fa fa-search fa-5x"></i>';
+        inputEventFunction();
+      });
+  };
+
+  if (CONFIG.localsearch.preload) {
+    fetchData();
+  }
+
+  if (CONFIG.localsearch.trigger === 'auto') {
+    input.addEventListener('input', inputEventFunction);
+  } else {
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        inputEventFunction();
+      }
+    });
+  }
+
+  // Handle and trigger popup window
+  document.querySelectorAll('.popup-trigger').forEach(element => {
+    element.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.search-pop-overlay').classList.add('search-active');
+      input.focus();
+      if (!isfetched) fetchData();
+    });
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.body.style.overflow = '';
+    document.querySelector('.search-pop-overlay').classList.remove('search-active');
+  };
+
+  document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+    if (event.target === document.querySelector('.search-pop-overlay')) {
+      onPopupClose();
+    }
+  });
+  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  window.addEventListener('pjax:success', onPopupClose);
+  window.addEventListener('keyup', event => {
+    if (event.key === 'Escape') {
+      onPopupClose();
+    }
+  });
 });
