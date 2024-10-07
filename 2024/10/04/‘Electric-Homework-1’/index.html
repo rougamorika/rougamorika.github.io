@@ -1335,7 +1335,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4288ee;
+  background: #5bbb24;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2831,17 +2831,17 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+    <a href="/about" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">12</span></a>
+    <a href="/tags" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">9</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -3094,14 +3094,14 @@ mjx-container[display="true"] + br {
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/archives">
         
           <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/tags">
           
         <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
@@ -3223,6 +3223,7 @@ mjx-container[display="true"] + br {
 
 
 
+
   
 
   
@@ -3265,4 +3266,17 @@ mjx-container[display="true"] + br {
         document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒.";
     }
 setInterval("createtime()",250);
+;
+
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
 </script></body></html>
