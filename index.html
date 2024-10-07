@@ -1246,7 +1246,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffbd77;
+  background: #fff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2856,6 +2856,40 @@ mjx-container[display="true"] + br {
 
           <div class="content index posts-expand">
             
+    <div class="tag-cloud">
+      <div class="tag-cloud-tags" id="tags">
+      <a href="/tags/Cramer%E6%B3%95%E5%88%99/" style="font-size: 16px; color: #fff">Cramer法则</a> <a href="/tags/Logistics%E6%96%B9%E7%A8%8B/" style="font-size: 16px; color: #fff">Logistics方程</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 16px; color: #fff">作业</a> <a href="/tags/%E5%88%86%E6%9E%90%E5%AD%A6/" style="font-size: 16px; color: #fff">分析学</a> <a href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" style="font-size: 16px; color: #fff">复变函数</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" style="font-size: 16px; color: #fff">数学分析</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" style="font-size: 16px; color: #fff">数学竞赛</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 16px; color: #fff">数论</a> <a href="/tags/%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #fff">电工电子技术</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 16px; color: #fff">矩阵</a> <a href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" style="font-size: 16px; color: #fff">行列式</a> <a href="/tags/%E8%B0%A2%E6%B0%8F%E6%96%B9%E4%BE%BF%E9%9D%A2/" style="font-size: 16px; color: #fff">谢氏方便面</a>
+      </div>
+    </div>
+    <br>
+
+    
+
+<style>
+  .tag-cloud-tags{
+    /*font-family: Helvetica, Tahoma, Arial;*/
+    /*font-weight: 100;*/
+    text-align: center;
+    counter-reset: tags;
+  }
+  .tag-cloud-tags a{
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 8px 5px 0px 0px;
+  }
+  .tag-cloud-tags a:before{
+    content: "?";
+  }
+
+  .tag-cloud-tags a:hover{
+     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+     transform: scale(1.1);
+     /*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/
+     transition-duration: 0.15s;
+  }
+</style>
+
       
   
   
@@ -4124,6 +4158,16 @@ Logistic方程假定种群规模增长率时种群规模的线性函数,这对�
 
 
 <script src="/bundle.js"></script><script>
+     var alltags = document.getElementsByClassName('tag-cloud-tags');
+     var tags = alltags[0].getElementsByTagName('a');
+     for (var i = tags.length - 1; i >= 0; i--) {
+       var r=Math.floor(Math.random()*75+130);
+       var g=Math.floor(Math.random()*75+100);
+       var b=Math.floor(Math.random()*75+80);
+       tags[i].style.background = "rgb("+r+","+g+","+b+")";
+     }
+;
+
   window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
