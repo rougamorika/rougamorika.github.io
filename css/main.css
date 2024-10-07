@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #1accff;
+  background: #78fac3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1603,6 +1603,16 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+.post-eof {
+  background: #ccc;
+  height: 4px;
+  margin: 80px auto 60px;
+  text-align: center;
+  width: 100%;
+}
+.post-block:last-of-type .post-eof {
+  display: none;
 }
 .posts-collapse {
   margin-left: 35px;
