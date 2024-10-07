@@ -1253,6 +1253,13 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
+}
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
 }
 .site-author-name {
   color: var(--text-color);
@@ -1280,7 +1287,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #da6aa4;
+  background: #859504;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2898,7 +2905,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/05/Complex-Function-1/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Rougamo">
       <meta itemprop="description" content="杜鹃不啼,信长杀之,秀吉诱之,家康待之,是故忍者方成大事.">
     </span>
@@ -3032,6 +3039,7 @@ Moivre</strong>公式化乘方为幅角的加减,但是我们先假装我们不�
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rougamo" src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Rougamo</p>
   <div class="site-description" itemprop="description">杜鹃不啼,信长杀之,秀吉诱之,家康待之,是故忍者方成大事.</div>
 </div>
