@@ -1278,7 +1278,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2fffc2;
+  background: #e82e50;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2811,7 +2811,7 @@ ul.breadcrumb li + li:last-child {
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2024-10-08T11:06:07+08:00" content="2024-10-08">
+        <time class="post-time" itemprop="dateCreated" datetime="2024-10-08T11:11:25+08:00" content="2024-10-08">
           10-08
         </time>
       </div>
@@ -3004,6 +3004,8 @@ ul.breadcrumb li + li:last-child {
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  
 
 
 
@@ -3056,4 +3058,13 @@ if (document.querySelectorAll('pre.mermaid').length) {
     });
   }, window.mermaid);
 }
-</script></body></html>
+;
+
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://example.com/archives/2024/10/',]
+      });
+      });
+  </script></body></html>
