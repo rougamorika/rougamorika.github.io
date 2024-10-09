@@ -723,6 +723,9 @@ pre .javascript .function {
   flex-grow: 1;
   list-style-type: none;
   border-radius: 0 0 0 0;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab,
@@ -1346,7 +1349,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #964f2b;
+  background: #3687c3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3182,10 +3185,8 @@ mjx-container[display="true"] + br {
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -3381,7 +3382,7 @@ setInterval("createtime()",250);
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
-      theme    : 'forest',
+      theme    : 'default',
       logLevel : 3,
       flowchart: { curve     : 'linear' },
       gantt    : { axisFormat: '%m/%d/%Y' },
