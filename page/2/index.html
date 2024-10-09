@@ -806,7 +806,7 @@ pre .javascript .function {
 .post-body .note h4,
 .post-body .note h5,
 .post-body .note h6 {
-  margin-top: 0;
+  margin-top: 3px;
   border-bottom: initial;
   margin-bottom: 0;
   padding-top: 0;
@@ -829,6 +829,17 @@ pre .javascript .function {
 .post-body .note img:last-child {
   margin-bottom: 0;
 }
+.post-body .note:not(.no-icon) {
+  padding-left: 2.5em;
+}
+.post-body .note:not(.no-icon)::before {
+  font-size: 1.5em;
+  left: 0.4em;
+  position: absolute;
+  top: calc(50% - 1em);
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
 .post-body .note.default {
   background: #f3f3f3;
   border-color: #e1e1e1;
@@ -843,6 +854,9 @@ pre .javascript .function {
 .post-body .note.default span.exturl:not(.btn):hover {
   border-bottom: 1px solid #454545;
   color: #454545;
+}
+.post-body .note.default:not(.no-icon)::before {
+  content: "\f0a9";
 }
 .post-body .note.primary {
   background: #f3daff;
@@ -859,6 +873,9 @@ pre .javascript .function {
   border-bottom: 1px solid #453298;
   color: #453298;
 }
+.post-body .note.primary:not(.no-icon)::before {
+  content: "\f055";
+}
 .post-body .note.info {
   background: #d9edf7;
   border-color: #b3e5ef;
@@ -873,6 +890,9 @@ pre .javascript .function {
 .post-body .note.info span.exturl:not(.btn):hover {
   border-bottom: 1px solid #215761;
   color: #215761;
+}
+.post-body .note.info:not(.no-icon)::before {
+  content: "\f05a";
 }
 .post-body .note.success {
   background: #dff0d8;
@@ -889,6 +909,9 @@ pre .javascript .function {
   border-bottom: 1px solid #32562c;
   color: #32562c;
 }
+.post-body .note.success:not(.no-icon)::before {
+  content: "\f058";
+}
 .post-body .note.warning {
   background: #fcf4e3;
   border-color: #fae4cd;
@@ -904,6 +927,9 @@ pre .javascript .function {
   border-bottom: 1px solid #714f30;
   color: #714f30;
 }
+.post-body .note.warning:not(.no-icon)::before {
+  content: "\f06a";
+}
 .post-body .note.danger {
   background: #f2dfdf;
   border-color: #ebcdd2;
@@ -918,6 +944,9 @@ pre .javascript .function {
 .post-body .note.danger span.exturl:not(.btn):hover {
   border-bottom: 1px solid #84333f;
   color: #84333f;
+}
+.post-body .note.danger:not(.no-icon)::before {
+  content: "\f056";
 }
 .pagination .prev,
 .pagination .next,
@@ -1309,7 +1338,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffe8ff;
+  background: #90ff8e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1554,6 +1583,7 @@ pre .javascript .function {
   color: #ff0000;
   display: inline-block;
   margin: 0 5px;
+  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .powered-by,
 .theme-info {
@@ -2831,7 +2861,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style><script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('fonts.useso.com/css?family=Helvetica:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="fonts.useso.com/css?family=Helvetica:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT mono:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"></noscript></head>
+</style><script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('fonts.useso.com/css?family=Helvetica:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="fonts.useso.com/css?family=Helvetica:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT mono:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"></noscript></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -2871,26 +2901,26 @@ mjx-container[display="true"] + br {
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section">首页</a>
+    <a href="/" rel="section"><i class="fab fa-envelope fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section">关于</a>
+    <a href="/about/" rel="section"><i class="fab fa-users fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section">标签</a>
+    <a href="/tags/" rel="section"><i class="fab fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section">归档</a>
+    <a href="/archives/" rel="section"><i class="fa-archives fa-fw"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger">搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -2937,7 +2967,7 @@ mjx-container[display="true"] + br {
             
     <div class="tag-cloud">
       <div class="tag-cloud-tags" id="tags">
-      <a href="/tags/Cramer%E6%B3%95%E5%88%99/" style="font-size: 16px; color: #fff">Cramer法则</a> <a href="/tags/Logistics%E6%96%B9%E7%A8%8B/" style="font-size: 16px; color: #fff">Logistics方程</a> <a href="/tags/%E4%BB%A3%E6%95%B0/" style="font-size: 16px; color: #fff">代数</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 16px; color: #fff">作业</a> <a href="/tags/%E5%88%86%E6%9E%90%E5%AD%A6/" style="font-size: 16px; color: #fff">分析学</a> <a href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" style="font-size: 16px; color: #fff">复变函数</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6/" style="font-size: 16px; color: #fff">工程热力学</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" style="font-size: 16px; color: #fff">数学分析</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" style="font-size: 16px; color: #fff">数学竞赛</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 16px; color: #fff">数论</a> <a href="/tags/%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #fff">电工电子技术</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 16px; color: #fff">矩阵</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 16px; color: #fff">线性代数</a> <a href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" style="font-size: 16px; color: #fff">行列式</a> <a href="/tags/%E8%B0%A2%E6%B0%8F%E6%96%B9%E4%BE%BF%E9%9D%A2/" style="font-size: 16px; color: #fff">谢氏方便面</a>
+      <a href="/tags/Cramer%E6%B3%95%E5%88%99/" style="font-size: 16px; color: #fff">Cramer法则</a> <a href="/tags/Logistics%E6%96%B9%E7%A8%8B/" style="font-size: 16px; color: #fff">Logistics方程</a> <a href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 16px; color: #fff">不等式</a> <a href="/tags/%E4%BB%A3%E6%95%B0/" style="font-size: 16px; color: #fff">代数</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 16px; color: #fff">作业</a> <a href="/tags/%E5%88%86%E6%9E%90%E5%AD%A6/" style="font-size: 16px; color: #fff">分析学</a> <a href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" style="font-size: 16px; color: #fff">复变函数</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6/" style="font-size: 16px; color: #fff">工程热力学</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" style="font-size: 16px; color: #fff">数学分析</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" style="font-size: 16px; color: #fff">数学竞赛</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 16px; color: #fff">数论</a> <a href="/tags/%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #fff">电工电子技术</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 16px; color: #fff">矩阵</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 16px; color: #fff">线性代数</a> <a href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" style="font-size: 16px; color: #fff">行列式</a> <a href="/tags/%E8%B0%A2%E6%B0%8F%E6%96%B9%E4%BE%BF%E9%9D%A2/" style="font-size: 16px; color: #fff">谢氏方便面</a>
       </div>
     </div>
     <br>
@@ -2971,6 +3001,102 @@ mjx-container[display="true"] + br {
      transition-duration: 0.15s;
   }
 </style>
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/03/Introduction/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rougamo">
+      <meta itemprop="description" content="杜鹃不啼,信长杀之,秀吉诱之,家康待之,是故忍者方成大事.">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rougamo的小水管">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/10/03/Introduction/" class="post-title-link" itemprop="url">Introduction</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-10-03 14:23:19 / 修改时间：14:24:26" itemprop="dateCreated datePublished" datetime="2024-10-03T14:23:19+08:00">2024-10-03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="我是bourbaki学派的粉丝代序">我是<em>Bourbaki学派</em>的粉丝(代序)</h1>
+<h2 id="介绍bourbaki学派"><em>介绍Bourbaki学派</em></h2>
+<p><strong>尼古拉·布尔巴基</strong>（法语：Nicolas
+Bourbaki，法语发音：是20世纪一群法国数学家的笔名。他们由1935年开始撰写一系列述说对现代高等数学探研所得的书籍。以把整个数学建基于集合论为目的，在过程中，布尔巴基致力于做到最极端的严谨和泛化，建立了些新术语和概念。
+布尔巴基是个虚构的人物，布尔巴基团体的正式称呼是“尼古拉·布尔巴基合作者协会”，在巴黎的高等师范学校设有办公室。
+布尔巴基对<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%9A%B4%E8%AC%B9%E6%80%A7&amp;action=edit&amp;redlink=1" title="严谨性（页面不存在）">严谨性</a>的强调在当时产生了很大的影响。这与当时<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%84%92%E5%8B%92%C2%B7%E6%98%82%E5%88%A9%C2%B7%E5%BA%9E%E5%8A%A0%E8%8E%B1" title="儒勒·昂利·庞加莱">儒勒·昂利·庞加莱</a>所强调的数学要依靠自由想像的数学直观的说法分庭抗礼。布尔巴基的影响力随时间而减弱，一个原因是由于布尔巴基的抽象并不显得比发明者原初的想法更为有用，另一个原因是因为没有包含像<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8C%83%E7%95%B4%E8%AE%BA" title="范畴论">范畴论</a>等重要的现代数学理论。尽管范畴论是由布尔巴基的成员艾伦堡所创立，格罗滕迪克所推广的，但是如果要容纳范畴论，就不得不对已经出版的著作进行根本性的改写。
+尽管布尔巴基的一部分著作在相应的领域成了标准的参考书，但是那种近于严峻的表达方式使其难以成为教科书。布尔巴基书籍的鼎盛时期是在1950和1960年之间，那时很少有适合能用于研究生水平的关于纯数学的教科书。
+布尔巴基讲座在战后立即于巴黎开设，这个讲座接连不断地公开发表了各种综述性论文，这些论文采用一种固定格式，用谨慎的风格写成。
+十分明显，布尔巴基的观点虽然是“百科全书”式的，但却从来没有想要保持中立。恰好相反，他们把热情倾注于整体一致性的展示，例如对<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%8D%AB%C2%B7%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9" title="大卫·希尔伯特">希尔伯特</a>的形式主义和公理主义的遗产的处理上。但对现存理论总要施行一种“接纳变换”，例如把<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%A0%E9%87%8F" title="张量">张量</a>微积分改名成<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0" title="多线性代数">多线性代数</a>，创建独立于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E6%B6%88%E5%85%83%E7%90%86%E8%AE%BA&amp;action=edit&amp;redlink=1" title="消元理论（页面不存在）">消元理论</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%A4%E6%8F%9B%E4%BB%A3%E6%95%B8" title="交换代数">交换代数</a>，这在其前身<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%90%86%E6%83%B3%E7%90%86%E8%AE%BA&amp;action=edit&amp;redlink=1" title="理想理论（页面不存在）">理想理论</a>时已成为主要倾向。希尔伯特在1890年代时已经显示对非构造性方法的钟爱，布尔巴基的行动使非构造性方法变得更加具体。
+在下面例举的领域里布尔巴基有显著的偏向： - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97" title="计算">计算</a>性内容不上议题，几乎完全被省略 - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98" title="解决问题">解决问题</a>被认为次于公理 - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90" title="数学分析">数学分析</a>被“软”处理，没有“硬”计算 - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B5%8B%E5%BA%A6%E8%AE%BA" title="测度论">测度论</a>掩盖了<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8B%89%E6%9D%B1%E6%B8%AC%E5%BA%A6" title="拉东测度">拉东测度</a> - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BB%84%E5%90%88%E8%AE%BA" title="组合论">组合学</a>结构被视为非结构性的 - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91" title="数理逻辑">逻辑</a>只需最低限度（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%90%E6%81%A9%E5%BC%95%E7%90%86" title="佐恩引理">佐恩引理</a>就已足够） - <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E6%95%B0%E5%AD%A6" title="应用数学">应用</a>全无提起 并且（“这是很自然的” -&nbsp;<em>cela va
+sans dire</em>）没有图示。 ## 我为什么重提Bourbaki
+其实我们并不是说要完全要模仿,或者是<strong><em>复辟</em></strong>(这个词最合适的一回)Bourbaki的观念.或许对于我们的电子设备而言,定义-定理-证明的表述很适合用来学习.但是很显然对于我们人类自己而言,实际上还是Arnold式的,例子繁多的教科书方便我们学习.
+实际上这就是为何我们的参考教科书还有Zorich和Rudin,许多人认为Zorich是在用很新潮的方式来讲数学分析.实际上,这只能说,这个读者看的数学分析实在是太古老了,比如他还在用同济版高等数学当作教材(笑)
+我在此愿意援引Arnold在Zorich的教科书中的一句话:
+它(指卓里奇的数学分析)与传统教材的主要区别在于,一方面更贴近自然科学(首先是物理学和力学)的应用,另一方面比通行做法更多地运用了现代数学(代数学,几何学,拓扑学)的思想方法.
+现在应当认为,这样编写教材是一种创新,这在Goursat时代曾经是通行的做法,教材专业化的趋势阉割了数学分析教材,几乎只留给它一个又一个证明.
+所以其实我们虽然将Bourbaki放在表皮上,其实行的却是Arnold和Goursat的实呢.
+## 你想学出怎么样的数学
+实际上,Rudin也是一本争议性很强的书,有的人觉得它简明扼要,有的觉得它过于简明扼要.历来也拿来和Apostol来对比.
+问题是,他们都没有写错.毕竟不像Spivak写出来的流形上微积分通篇错误累累还需要Munkres去纠错(笑).
+我想起宫崎骏的一部最新的电影:《你想活出怎么样的人生》.
+同样的问题摆在你面前,你想学出什么样的数学?
+选择书本是应该跟着自身的实力和学习方式来的.下面的一切内容只是一些参考,所有的笔记都是
+我的写作风格并不像布尔巴基,说像任何一位大家都是对这位大家一定程度上的贬低,若要是说这个絮絮叨叨的风格,或许有点像R.Godement.阅读我的笔记可以有机地略过,甚至大段大段地跳过,但是有些东西是我学习这门课程的心得,或者说,是我觉得应该去学什么样数学的非纯理性的,观点化的表述.大家看一看,提一些意见,写一些自己的心得,跳过即可.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
       
   
@@ -3288,16 +3414,16 @@ mjx-container[display="true"] + br {
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives">
+          <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -3317,7 +3443,7 @@ mjx-container[display="true"] + br {
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cramer%E6%B3%95%E5%88%99/" rel="tag">Cramer法则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logistics%E6%96%B9%E7%A8%8B/" rel="tag">Logistics方程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0/" rel="tag">代数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%9E%90%E5%AD%A6/" rel="tag">分析学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" rel="tag">复变函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6/" rel="tag">工程热力学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" rel="tag">数学竞赛</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="tag">电工电子技术</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" rel="tag">行列式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%A2%E6%B0%8F%E6%96%B9%E4%BE%BF%E9%9D%A2/" rel="tag">谢氏方便面</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cramer%E6%B3%95%E5%88%99/" rel="tag">Cramer法则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logistics%E6%96%B9%E7%A8%8B/" rel="tag">Logistics方程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">不等式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0/" rel="tag">代数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%9E%90%E5%AD%A6/" rel="tag">分析学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" rel="tag">复变函数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6/" rel="tag">工程热力学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" rel="tag">数学竞赛</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="tag">电工电子技术</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" rel="tag">行列式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%A2%E6%B0%8F%E6%96%B9%E4%BE%BF%E9%9D%A2/" rel="tag">谢氏方便面</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -3341,7 +3467,7 @@ mjx-container[display="true"] + br {
   © 
   <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fab fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Rougamo</span>
     <span class="post-meta-divider">|</span>
@@ -3367,7 +3493,7 @@ mjx-container[display="true"] + br {
   <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
+        <i class="fab fa-user"></i>
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>
@@ -3376,7 +3502,7 @@ mjx-container[display="true"] + br {
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
+        <i class="fab fa-eye"></i>
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>
