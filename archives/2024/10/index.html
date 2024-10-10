@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="杜鹃不啼,信长杀之,秀吉诱之,家康待之,是故忍者方成大事.">
@@ -801,8 +801,8 @@ pre .javascript .function {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
-  background: #f5f5f5;
-  border: 1px solid transparent;
+  border: 1px solid #eee;
+  border-left-width: 5px;
 }
 .post-body .note h2,
 .post-body .note h3,
@@ -844,112 +844,88 @@ pre .javascript .function {
   font-weight: 900;
 }
 .post-body .note.default {
-  background: #f3f3f3;
-  border-color: #e1e1e1;
-  color: #666;
+  border-left-color: #777;
 }
-.post-body .note.default a:not(.btn),
-.post-body .note.default span.exturl:not(.btn) {
-  border-bottom: 1px solid #666;
-  color: #666;
-}
-.post-body .note.default a:not(.btn):hover,
-.post-body .note.default span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #454545;
-  color: #454545;
+.post-body .note.default h2,
+.post-body .note.default h3,
+.post-body .note.default h4,
+.post-body .note.default h5,
+.post-body .note.default h6 {
+  color: #777;
 }
 .post-body .note.default:not(.no-icon)::before {
   content: "\f0a9";
+  color: #777;
 }
 .post-body .note.primary {
-  background: #f3daff;
-  border-color: #e1c2ff;
-  color: #6f42c1;
+  border-left-color: #6f42c1;
 }
-.post-body .note.primary a:not(.btn),
-.post-body .note.primary span.exturl:not(.btn) {
-  border-bottom: 1px solid #6f42c1;
+.post-body .note.primary h2,
+.post-body .note.primary h3,
+.post-body .note.primary h4,
+.post-body .note.primary h5,
+.post-body .note.primary h6 {
   color: #6f42c1;
-}
-.post-body .note.primary a:not(.btn):hover,
-.post-body .note.primary span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #453298;
-  color: #453298;
 }
 .post-body .note.primary:not(.no-icon)::before {
   content: "\f055";
+  color: #6f42c1;
 }
 .post-body .note.info {
-  background: #d9edf7;
-  border-color: #b3e5ef;
-  color: #31708f;
+  border-left-color: #428bca;
 }
-.post-body .note.info a:not(.btn),
-.post-body .note.info span.exturl:not(.btn) {
-  border-bottom: 1px solid #31708f;
-  color: #31708f;
-}
-.post-body .note.info a:not(.btn):hover,
-.post-body .note.info span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #215761;
-  color: #215761;
+.post-body .note.info h2,
+.post-body .note.info h3,
+.post-body .note.info h4,
+.post-body .note.info h5,
+.post-body .note.info h6 {
+  color: #428bca;
 }
 .post-body .note.info:not(.no-icon)::before {
   content: "\f05a";
+  color: #428bca;
 }
 .post-body .note.success {
-  background: #dff0d8;
-  border-color: #d0e6be;
-  color: #3c763d;
+  border-left-color: #5cb85c;
 }
-.post-body .note.success a:not(.btn),
-.post-body .note.success span.exturl:not(.btn) {
-  border-bottom: 1px solid #3c763d;
-  color: #3c763d;
-}
-.post-body .note.success a:not(.btn):hover,
-.post-body .note.success span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #32562c;
-  color: #32562c;
+.post-body .note.success h2,
+.post-body .note.success h3,
+.post-body .note.success h4,
+.post-body .note.success h5,
+.post-body .note.success h6 {
+  color: #5cb85c;
 }
 .post-body .note.success:not(.no-icon)::before {
   content: "\f058";
+  color: #5cb85c;
 }
 .post-body .note.warning {
-  background: #fcf4e3;
-  border-color: #fae4cd;
-  color: #8a6d3b;
+  border-left-color: #f0ad4e;
 }
-.post-body .note.warning a:not(.btn),
-.post-body .note.warning span.exturl:not(.btn) {
-  border-bottom: 1px solid #8a6d3b;
-  color: #8a6d3b;
-}
-.post-body .note.warning a:not(.btn):hover,
-.post-body .note.warning span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #714f30;
-  color: #714f30;
+.post-body .note.warning h2,
+.post-body .note.warning h3,
+.post-body .note.warning h4,
+.post-body .note.warning h5,
+.post-body .note.warning h6 {
+  color: #f0ad4e;
 }
 .post-body .note.warning:not(.no-icon)::before {
   content: "\f06a";
+  color: #f0ad4e;
 }
 .post-body .note.danger {
-  background: #f2dfdf;
-  border-color: #ebcdd2;
-  color: #a94442;
+  border-left-color: #d9534f;
 }
-.post-body .note.danger a:not(.btn),
-.post-body .note.danger span.exturl:not(.btn) {
-  border-bottom: 1px solid #a94442;
-  color: #a94442;
-}
-.post-body .note.danger a:not(.btn):hover,
-.post-body .note.danger span.exturl:not(.btn):hover {
-  border-bottom: 1px solid #84333f;
-  color: #84333f;
+.post-body .note.danger h2,
+.post-body .note.danger h3,
+.post-body .note.danger h4,
+.post-body .note.danger h5,
+.post-body .note.danger h6 {
+  color: #d9534f;
 }
 .post-body .note.danger:not(.no-icon)::before {
   content: "\f056";
+  color: #d9534f;
 }
 .pagination .prev,
 .pagination .next,
@@ -1341,7 +1317,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d5ffc6;
+  background: #edff61;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2417,6 +2393,25 @@ ul.breadcrumb li + li:last-child {
   color: #ccc;
   margin: auto;
 }
+.popular-posts-header {
+  border-bottom: 1px solid #eee;
+  display: block;
+  font-size: 1.125em;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+.popular-posts {
+  padding: 0;
+}
+.popular-posts .popular-posts-item {
+  margin-left: 2em;
+}
+.popular-posts .popular-posts-item .popular-posts-title {
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 2.4;
+  margin: 0;
+}
 mjx-container[jax="CHTML"][display="true"],
 .has-jax {
   overflow: auto hidden;
@@ -2581,17 +2576,6 @@ mjx-container + br {
   padding: 2px 5px;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
   vertical-align: middle;
-}
-.main-menu .menu-item-active a::after {
-  background: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
 }
 .sub-menu {
   background: var(--content-bg-color);
@@ -2926,12 +2910,12 @@ mjx-container + br {
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-gamepad fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-gamepad fa-fw"></i>归档<span class="badge">12</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -3006,7 +2990,7 @@ mjx-container + br {
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2024-10-10T10:29:26+08:00" content="2024-10-10">
+        <time class="post-time" itemprop="dateCreated" datetime="2024-10-10T10:40:33+08:00" content="2024-10-10">
           10-10
         </time>
       </div>
@@ -3130,13 +3114,13 @@ mjx-container + br {
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">14k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 ≈</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
 <!-- 网站运行时间的设置 -->
@@ -3226,8 +3210,6 @@ mjx-container + br {
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  
 
 
 
@@ -3280,13 +3262,4 @@ if (document.querySelectorAll('pre.mermaid').length) {
     });
   }, window.mermaid);
 }
-;
-
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'http://example.com/archives/2024/10/',]
-      });
-      });
-  </script></body></html>
+</script></body></html>
