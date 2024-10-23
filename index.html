@@ -1317,7 +1317,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f569a6;
+  background: #a3d61d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3036,7 +3036,12 @@ mjx-container[display="true"] + br {
 <h2 id="如何摆脱名词的追击5岁理论和遗忘曲线">如何摆脱名词的追击??:5岁理论和遗忘曲线</h2>
 <p>这句话就是变相地在问:怎么深入理解一个/多个知识点.<strong>答案是把它教给一个5岁的孩子</strong>.你如果能把你现在所学的内容教会一个完全不懂这个理论的,5~8岁的刚刚建成逻辑能力的孩子,那么你可以称得上理解通透了这个知识点.实际上,这个五岁的孩子并不需要是一个实际的人,它可以是你的另一个学习”人格”.这个”人格”不接受一切空泛的论述,一切都是例子,本质,便于理解嚼碎了的知识.这种咀嚼的过程能够让你深入理解知识.<br>
 为了让一个5岁的懂得很多抽象的东西,有的时候仅仅通过文字是不够的,而且当我们接受了很多文本之后,有时候还不如一个五岁孩子,这时候用图.孩子们看图都很方便,爱看插图.为什么我们不能这么做呢.</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">    A[我不想当名词党] --&gt;|问题| B(我把握不住知识重点)</span><br><span class="line">    B --&gt; C{解决方法}</span><br><span class="line">    C --&gt;|我的认识空虚| D[简化知识,活用类比/图像]</span><br><span class="line">    C --&gt;|我虚荣| E[转换心态,主动深入]</span><br><span class="line">    C --&gt;|我只能记住名词| F[认识遗忘曲线,合理计划]</span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">flowchart TD
+    A[我不想当名词党] --&gt;|问题| B(我把握不住知识重点)
+    B --&gt; C{解决方法}
+    C --&gt;|我的认识空虚| D[简化知识,活用类比/图像]
+    C --&gt;|我虚荣| E[转换心态,主动深入]
+    C --&gt;|我只能记住名词| F[认识遗忘曲线,合理计划]</pre>
 <p>当我们这样写内容时,我们就更能抓住这段文本的主线,便于理解.而且我们通过相邻的部分还可以帮助我们梳理/推测遗忘的部分.比如我们根据这个流程图,我们的第三个部分就是讲遗忘.现在我们来看一张图,它一定程度反映了大部分人的记忆情况:
 <img src="/2024/10/23/methods-1/ebbinghaus-forgetting-curve.png" alt="Ebbinghaus 遗忘曲线">
 我们活用图像,不止是学会作图,更重要是图上捕捉内容,比如我们根据<strong>Ebbinghaus遗忘曲线</strong>:</p>
@@ -3054,7 +3059,11 @@ mjx-container[display="true"] + br {
 </ul>
 <p>实际上,由于我们学习的是理科,我<em>个人的经验</em>是<em>85%的记忆+15%的泛化</em>,所谓的泛化就是指创新地思考,建立许多有趣/看起来没意义的联系,而不是对我们的知识点完全忠实,就事论事.也就是说,锤子不一定只能是锤钉子的,还可以是武器,改装一下还可以用来起钉子.我们要保留这种泛化,“空想”的能力.<br>
 所以我们现在合在一起想,那么我们就得出了我们的结论:那就是每隔一段时间<strong>自己教自己</strong>.我称之为自我教学.因为我们不可能把每一个知识点都立刻变成5岁孩子能理解的状态,而且我们无法保证自己的理解一定是正确的/完善的.所以我们要不断地复习,纠错,修改我们的知识体系,就像建造一幢大楼,我们可以画一张图</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">A[新的知识点] --&gt;|简化/类比| B(第一阶段知识)</span><br><span class="line">B --&gt;|慢慢遗忘/出错|A</span><br><span class="line">B --&gt;|修正/理解/多次复习|C{不容易被遗忘的知识}</span><br><span class="line">C --&gt;|动脑子/结合其他知识|A </span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">flowchart LR
+A[新的知识点] --&gt;|简化/类比| B(第一阶段知识)
+B --&gt;|慢慢遗忘/出错|A
+B --&gt;|修正/理解/多次复习|C{不容易被遗忘的知识}
+C --&gt;|动脑子/结合其他知识|A</pre>
 <p>其中第一阶段知识就是指经过一天忘超过25%的知识,不容易忘的知识就经过3天忘记不超过10%的知识.</p>
 <h2 id="总结我只是想学更多的知识">总结:我只是想学更多的知识</h2>
 <p>知识是学不完的.庄子有云:“吾生也有涯，而知也无涯。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑，缘督以为经，可以保身，可以全生，可以养亲，可以尽年”(《庄子·内篇·养生主第三》)<br>
@@ -3950,7 +3959,7 @@ mjx-container[display="true"] + br {
   © 
   <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
-    <i class="fab fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Rougamo</span>
     <span class="post-meta-divider">|</span>
@@ -4098,7 +4107,7 @@ setInterval("createtime()",250);
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
-      theme    : 'default',
+      theme    : 'neutral',
       logLevel : 3,
       flowchart: { curve     : 'linear' },
       gantt    : { axisFormat: '%m/%d/%Y' },
