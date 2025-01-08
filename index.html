@@ -1312,7 +1312,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a4e042;
+  background: #e229b0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2929,7 +2929,7 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-01-08 15:00:04 / 修改时间：17:56:04" itemprop="dateCreated datePublished" datetime="2025-01-08T15:00:04+08:00">2025-01-08</time>
+              <time title="创建时间：2025-01-08 15:00:04 / 修改时间：21:11:48" itemprop="dateCreated datePublished" datetime="2025-01-08T15:00:04+08:00">2025-01-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2947,14 +2947,14 @@ mjx-container[display="true"] + br {
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 ≈</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -2996,27 +2996,36 @@ mjx-container[display="true"] + br {
 <img src="/2025/01/08/control-theory-1/WCLC.png" alt="闭环控制洗碗机框图"></p>
 <h3 id="复合控制系统">复合控制系统</h3>
 <p>现在我们来看到闭环控制系统最一般的情况,在受控对象的上面有扰动,就比如我们刚才说的在洗碗时泼了点污水在上面,这就可以算作一种扰动.那么你要怎么解决扰动呢?这就是我们的<strong>复合控制系统</strong>出场的地方了.</p>
-<h4 id="附加输入信号的正反馈通路没事我来擦">附加输入信号的正反馈通路:没事我来擦</h4>
+<h4 id="补偿式复合控制系统前馈控制的一个特例没事我来擦">补偿式复合控制系统(前馈控制的一个特例):没事我来擦</h4>
 <p>第一种处理方法就是洗碗机多洗两回呗.也就是给输入加一点补偿,因为实际情况并不是像泼水这样的冲激信号,扰动总是不停地存在的,所以我们其实这个补偿是一直加着的.类比一下,就是刚擦干净的地板被踩脏了,你不断地忙着擦地板,对应其实也只要加一个元件(称为<strong>补偿器</strong>)就行了.框图如下所示:
 <img src="/2025/01/08/control-theory-1/complexCLC1.png" alt="补偿式复合控制系统的框图">
 此时不看补偿器的部分是一个正常的闭环控制系统,只看补偿器环路是一个开环控制系统,所以这是一个复合的控制系统.</p>
-<h4 id="抑制扰动信号的正反馈通路你泼我碗是吧">抑制扰动信号的正反馈通路:你泼我碗是吧</h4>
+<h4 id="扰动抑制控制你泼我碗是吧">扰动抑制控制:你泼我碗是吧</h4>
 <p>当然我们也不是只有一种处理方法,假如还是刚才那个泼水的情况,你能不能挡住泼出的水?或者干脆直接阻止水的泼出,比如把泼水的人按在地上.这当然也是可以的(当然四有青年不打架啊).<br>
 这种抑制扰动信号的做法也是可以实现的,我们只要浅浅地改一下上面的路径就可以了,框图如下:
 <img src="/2025/01/08/control-theory-1/complexCLC2.png" alt="抑制式复合控制系统的框图"></p>
 <p>这个控制器的控制精度将是很高的,当然此时这个系统的精度将主要依赖补偿器的稳定性.</p>
+<h4 id="多闭环控制系统">多闭环控制系统</h4>
+<p>有时候,为了能够使系统的控制更加稳定,我们不止用一组”控制器+比较器”的组合来控制我们的输出信号(一层),而是用多组”控制器+比较器”的组合来控制我们输出信号,画成框图也很容易:
+<img src="/2025/01/08/control-theory-1/doubleloop.png" alt="多闭环闭环控制系统框图"></p>
+<h4 id="多信号控制系统">多信号控制系统</h4>
+<p>有的时候我要控制受控对象的输出的多个信号,此时我们也要改进那个框图.
+<img src="/2025/01/08/control-theory-1/multisigCLC.png" alt="多信号闭环控制系统框图"></p>
 <h2 id="习题时分">习题时分</h2>
 <p>如果学了而不会做习题,虽然也不会对后来的工程生活有什么特别大的影响.但是出于防备考试,我们还是做几个题:</p>
-<div class="admonition todo">
-<p class="admonition-title">
-例题
-</p>
-<p>
-<img src="/2025/01/08/control-theory-1/Hu1-1.png" alt="例题图">
-如图所示是一个液面稳定装置,它希望维持液面不变,请绘制出它的框图.
-</p>
-</div>
-<p>这这这给我干哪来了,这还是框图嘛这.</p>
+<h3 id="例题">例题</h3>
+<p><img src="/2025/01/08/control-theory-1/Hu1-1.png" alt="例题图">
+如图所示是一个液面稳定装置,它希望维持液面不变,请绘制出它的框图.</p>
+<h4 id="提示">提示</h4>
+<p><em>我们绘制框图的时候并不需要知道电动机的电压.舍弃掉不必要的东西,只保留需要的重点.</em></p>
+<h4 id="解答">解答</h4>
+<h5 id="分析">分析</h5>
+<p>首先看到浮子联动着电位器的电刷(就是那个箭头),当我们的浮子所在的水位为<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.98ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 433 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g></g></svg></mjx-container></span>时,注意到当我们的水位位于位置<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.98ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 433 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g></g></svg></mjx-container></span>的时候,此时我们的电刷直接接地,所以输出的电压是0,电动机不发生转动,此时我们只要保证原来阀门的出水量<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="2.777ex" height="2.032ex" role="img" focusable="false" viewBox="0 -704 1227.6 898"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="TeXAtom" transform="translate(824,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></g></svg></mjx-container></span>和用水开关的用水量<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="2.777ex" height="2.032ex" role="img" focusable="false" viewBox="0 -704 1227.6 898"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="TeXAtom" transform="translate(824,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g></g></svg></mjx-container></span>完全相同,那么我们就实现了水位的<strong>暂态稳定</strong>,因为当水位低于<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.98ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 433 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g></g></svg></mjx-container></span>时,因杠杆的作用,电刷上偏.输出的电压使电动机正转,从而打开阀门使得<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="2.777ex" height="2.032ex" role="img" focusable="false" viewBox="0 -704 1227.6 898"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="mn" transform="translate(824,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></svg></mjx-container></span>增加,从而抬升水位.同理,当水位高于<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.98ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 433 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g></g></svg></mjx-container></span>时,电刷下偏,电动机反转,减少<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="2.777ex" height="2.032ex" role="img" focusable="false" viewBox="0 -704 1227.6 898"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="mn" transform="translate(824,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></svg></mjx-container></span>从而使得水位下降.</p>
+<h5 id="框图">框图</h5>
+<figure>
+<img src="/2025/01/08/control-theory-1/HU1-1ans.png" alt="答案框图">
+<figcaption aria-hidden="true">答案框图</figcaption>
+</figure>
 
       
     </div>
