@@ -53,7 +53,7 @@
 <meta property="og:image" content="http://example.com/2025/01/09/analog-1-0/PN-Bond.png">
 <meta property="og:image" content="http://example.com/2025/01/09/analog-1-0/PN-E.png">
 <meta property="article:published_time" content="2025-01-09T13:29:11.000Z">
-<meta property="article:modified_time" content="2025-01-09T15:02:30.435Z">
+<meta property="article:modified_time" content="2025-01-10T02:58:30.595Z">
 <meta property="article:author" content="Rougamo">
 <meta property="article:tag" content="模拟电子电路技术">
 <meta name="twitter:card" content="summary">
@@ -1339,7 +1339,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bb5e40;
+  background: #ffff0b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2952,10 +2952,16 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-01-09 21:29:11 / 修改时间：23:02:30" itemprop="dateCreated datePublished" datetime="2025-01-09T21:29:11+08:00">2025-01-09</time>
+              <time title="创建时间：2025-01-09 21:29:11" itemprop="dateCreated datePublished" datetime="2025-01-09T21:29:11+08:00">2025-01-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-10 10:58:30" itemprop="dateModified" datetime="2025-01-10T10:58:30+08:00">2025-01-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -2979,14 +2985,14 @@ mjx-container[display="true"] + br {
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 ≈</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -3039,7 +3045,16 @@ mjx-container[display="true"] + br {
 上面的这个内电场的区域,有多个名字,常用的是<strong>势垒</strong>.</p>
 <h3 id="pn结的单向导通性">PN结的单向导通性</h3>
 <p>PN结单向导通是有条件的,必须<strong>外加电压</strong>,但是电压是有极性的.要分类讨论</p>
-<h4 id="正向电压正偏">正向电压(正偏)</h4>
+<h4 id="正向电压正向偏置">正向电压(正向偏置)</h4>
+<p>使得正极接P极,负极接N极的接法称为接<strong>正向电压</strong>(简称正偏).为了防止电流过大,时常接入一个限流电阻来保护PN结.<br>
+外电压构成外电场,它和内电场相反,当场很小时,无法抵消内电场,外电路几乎没电流.超过某个门槛后,多子(空穴)开始起作用,电流增加地很快(非线性),得到一个较大的电流(取决于电压的大小,并不取决于多子的浓度),正偏时阻值很低,呈现低阻态(几百欧姆).<br>
+理想地思考,正向最极端的情况似乎可以把PN结视作短路.然而PN结正向要有一部分偏置打破势垒,所以不能完全看成导线,一般视为阻值较小的电阻.</p>
+<h4 id="反向电压反向偏置">反向电压(反向偏置)</h4>
+<p>使得正极接N极,负极接P极的接法称为接<strong>反向电压</strong>(简称反偏).此时外加电场与内电场同向,势垒将变得更加地宽.<strong>如果有电流,一定是少子造成的</strong>.电压改变,<strong>电流不变</strong>(从这点我们也可以看出是少子形成的电流,它只和少子浓度/本征激发/温度有关,不和外电场/外电压有关).电流是温度的一个函数.此时PN结呈现高阻态(十千欧以上).
+理想地思考,正向最极端的情况可以把PN结视作断路.由于反偏无需打破势垒,所以直接视为断路是可以的.</p>
+<h4 id="开关">开关</h4>
+<p>这种单向导通性让PN结有称为开关的潜力.</p>
+<h3 id="伏安特性曲线">伏安特性曲线</h3>
 
     </div>
 
@@ -3103,7 +3118,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">半导体的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%9D%90%E6%96%99"><span class="nav-number">2.1.</span> <span class="nav-text">半导体材料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">本征半导体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E6%BF%80%E5%8F%91"><span class="nav-number">2.3.</span> <span class="nav-text">本征激发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%82%E8%B4%A8%E5%8D%8A%E5%AF%BC%E4%BD%93np%E5%9E%8B%E5%8F%B7%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="nav-number">2.4.</span> <span class="nav-text">杂质半导体(N/P型号半导体)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pn%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">PN结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BD%E6%B5%81%E5%AD%90%E7%9A%84%E6%89%A9%E6%95%A3%E5%92%8C%E6%BC%82%E7%A7%BB%E5%8A%BF%E5%9E%92"><span class="nav-number">3.1.</span> <span class="nav-text">载流子的扩散和漂移,势垒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pn%E7%BB%93%E7%9A%84%E5%8D%95%E5%90%91%E5%AF%BC%E9%80%9A%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">PN结的单向导通性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E7%94%B5%E5%8E%8B%E6%AD%A3%E5%81%8F"><span class="nav-number">3.2.1.</span> <span class="nav-text">正向电压(正偏)</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">半导体的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%9D%90%E6%96%99"><span class="nav-number">2.1.</span> <span class="nav-text">半导体材料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">本征半导体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E6%BF%80%E5%8F%91"><span class="nav-number">2.3.</span> <span class="nav-text">本征激发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%82%E8%B4%A8%E5%8D%8A%E5%AF%BC%E4%BD%93np%E5%9E%8B%E5%8F%B7%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="nav-number">2.4.</span> <span class="nav-text">杂质半导体(N/P型号半导体)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pn%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">PN结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BD%E6%B5%81%E5%AD%90%E7%9A%84%E6%89%A9%E6%95%A3%E5%92%8C%E6%BC%82%E7%A7%BB%E5%8A%BF%E5%9E%92"><span class="nav-number">3.1.</span> <span class="nav-text">载流子的扩散和漂移,势垒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pn%E7%BB%93%E7%9A%84%E5%8D%95%E5%90%91%E5%AF%BC%E9%80%9A%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">PN结的单向导通性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E7%94%B5%E5%8E%8B%E6%AD%A3%E5%90%91%E5%81%8F%E7%BD%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">正向电压(正向偏置)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E7%94%B5%E5%8E%8B%E5%8F%8D%E5%90%91%E5%81%8F%E7%BD%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">反向电压(反向偏置)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E5%85%B3"><span class="nav-number">3.2.3.</span> <span class="nav-text">开关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.3.</span> <span class="nav-text">伏安特性曲线</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -3183,13 +3198,13 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">117k</span>
+    <span title="站点总字数">59k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 ≈</span>
-    <span title="站点阅读时长">1:46</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
 <!-- 网站运行时间的设置 -->
