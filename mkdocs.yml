@@ -68,8 +68,13 @@ repo_name: EEBlog # 右上角的名字
 nav:
   - 主页: index.md
   - 机械类:
-    - 流体力学(01): 1.md
-      
+    - 流体力学:
+      - 流体力学(00): FM/Fluid_Mechanics.md
+      - 流体力学(01): FM/1.md
+  - 电信类:
+  - 数学类:
+  - 计算机类:
+
          
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
