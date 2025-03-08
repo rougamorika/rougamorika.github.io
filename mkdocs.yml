@@ -68,7 +68,7 @@ repo_name: EEBlog # 右上角的名字
 nav:
   - 主页: index.md
   - 机械类:
-    - 流体力学(01): Fluid_Mechanics\流体力学\机械类\流体基础性质.md
+    - 流体力学(01): 流体基础性质.md
       
          
 
