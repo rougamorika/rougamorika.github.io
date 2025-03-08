@@ -68,8 +68,8 @@ repo_name: EEBlog # 右上角的名字
 nav:
   - 主页: index.md
   - 流体力学:
-      - 流体力学(00): FM/Fluid_Mechanics.md
-      - 流体力学(01): FM/1.md
+      - 流体力学(00): Fluid_Mechanics.md
+      - 流体力学(01): 1.md
  
 
          
