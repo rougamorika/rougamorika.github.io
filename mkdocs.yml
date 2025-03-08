@@ -1,0 +1,5 @@
+site_name: EEBlog
+site_url: https://EEblog.com
+site_author: Rougamo
+theme:
+  name: material #主题
