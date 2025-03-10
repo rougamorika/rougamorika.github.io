@@ -1,15 +1,15 @@
 #[Info]
-site_name: EEBlogs #your site name 显示在左上角
-site_url: http://EEblog.com/Rougamo
+site_name: EEBlogs by  #your site name 显示在左上角
+site_url: https://rougamorika.github.io/
 site_author: Rougamo # your name
 #[UI]
 theme:
   name: material
   # custom_dir: docs/overrides #覆写路径
-  # font: #谷歌字体，自行搜索
-  #   text: Bitter  #文本字体
-  #   code: Roboto Mono  #代码字体
-  # logo: assets/favicon.png #左上角logo，可插入图片链接
+  font: #谷歌字体，自行搜索
+    text: Bitter  #文本字体
+    code: Roboto Mono  #代码字体
+  logo: assets/favicon.png #左上角logo，可插入图片链接
 
   palette:
     - media: "(prefers-color-scheme)"
