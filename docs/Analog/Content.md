@@ -1,12 +1,16 @@
 ## Pre-Requisite
 
-电路分析/电工技术I的任何一种
+电路分析/电工技术 I 的任何一种
+
 ## 参考
+
 ### 教材
-*ANALYSIS AND DESIGN OF ANALOG INTEGRATED CIRCUITS*;Paul R. Gray,etc.;6th ed.
-*Microelectronic Circuits*;Adel S. Sedra,Kenneth C. Smith;7 ed
+
+_ANALYSIS AND DESIGN OF ANALOG INTEGRATED CIRCUITS_;Paul R. Gray,etc.;6th ed.
+_Microelectronic Circuits_;Adel S. Sedra,Kenneth C. Smith;7 ed
 
 ### 网课(Bilibili)
+
 BV1GB4y1P79U,BV1FD4y1R7Ah,BV1Ef4y167SN
 
 [[模拟电子技术攻略路径]]
