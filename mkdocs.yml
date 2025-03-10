@@ -75,9 +75,11 @@ nav:
 
   - 模拟电子技术: 
     - 目录: "analog/index.md"
-    - 半导体物理性质: "analog/semi.md"
+    
+    - 半导体物理性质: "analog/diode_0.md"
     - 二极管(01): "analog/diode_1.md"
     - 二极管(02): "analog/diode_2.md"
+    
   - 数学题单:
     - IEQ-0001: "IEQ-0001.md"
       
