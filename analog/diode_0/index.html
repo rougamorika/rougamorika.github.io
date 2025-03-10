@@ -1171,27 +1171,23 @@
 
 <h2 id="_1">半导体和本征激发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>首先我们研究半导体本身,什么是半导体?</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>title:半导体的定义
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>导电性能介于绝缘体和导体之间的一类物质.
-</code></pre></div></td></tr></table></div>
+<div class="admonition ad-note">
+<p class="admonition-title">半导体的定义</p>
+<p>导电性能介于绝缘体和导体之间的一类物质.</p>
+</div>
 <p>常见的半导体材料是<span class="arithmatex">\(\ce{Si},\ce{Ge}\)</span>等,它们的特点在于它们的最外层电子都是<span class="arithmatex">\(4\)</span>,换句话说,它们的价电子是<span class="arithmatex">\(+4\)</span>价的.因此,在纯的<span class="arithmatex">\(\ce{Si}\)</span>之间会形成共价键.下面用 Ketcher 展示了<span class="arithmatex">\(\ce{Si}\)</span>半导体的一个单元.</p>
 <p>![[ketcher.png|250]]</p>
 <p>在热力学温度<span class="arithmatex">\(\text{T}=0\text{K}\)</span>的时候,分子之间没有热运动,此时这个结构是稳定的.但是,热力学的温度为<span class="arithmatex">\(0\)</span>有点不可能(诺言诺语),所以这就给了半导体的电子以能量,从而使得它能跳出核的束缚从价带进入导带,形成电子-空穴对,进而在外加电场的情况下产生电流,这种现象是半导体固有的属性.</p>
 <p>![[Pasted image 20250225092439.png]]</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>title:本征激发
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>在热运动的作用下,半导体价带电子变为自由电子的物理现象.
-</code></pre></div></td></tr></table></div>
-<p>高中的时候我们学习过,<span class="arithmatex">\(1\,\text{mol}\)</span>任何物质就意味着<span class="arithmatex">\(6.02\times 10^{23}\)</span>个这样的物质分子/原子.这样数目的硅能激发出多少的自由电子,这里有一个不加证明的计算公式</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>title:本征激发电子数公式
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>$$n_i = BT^{3/2} e^{-E_g/2kT}$$
-</code></pre></div></td></tr></table></div>
+<p>ad-note "本征激发"
+在热运动的作用下,半导体价带电子变为自由电子的物理现象.</p>
+<p>高中的时候我们学习过,<span class="arithmatex">\(1\,\text{mol}\)</span>任何物质就意味着<span class="arithmatex">\(6.02\times 10^{23}\)</span>个这样的物质分子/原子.这样数目的硅能激发出多少的自由电子,这里有一个不加证明的计算公式
+$$
+n_i = BT^{3/2} e^{-E_g/2kT}
+$$</p>
 <p>有一些字母需要解释,首先<span class="arithmatex">\(B\)</span>是一个和材料相关的系数,对于我们现在研究的硅管而言,<span class="arithmatex">\(B=7.3\times10^{15}\text{cm}^{-3}K^{-3/2}\)</span>,<span class="arithmatex">\(T\)</span>是硅管当时所处的热力学温度,<span class="arithmatex">\(k=8.62\times10^{-5}\text{eV/K}\)</span>为玻尔兹曼常量.<span class="arithmatex">\(E_{g}\)</span>为硅元素的禁带宽度(或称势垒高度),对于硅管而言<span class="arithmatex">\(E_{g}=1.12\text{eV}\)</span>.
-通过上述的解释,我们得以计算<span class="arithmatex">\(T=300\text{K}\)</span>时的本征激发自由电子数,我们将它作为习题:
-[[习题0001-300K时本征激发情况]]
-通过上面的计算,实际上我们可以认为在半导体器件的一般工作状态,本征激发很弱.我们就要对半导体的导电性进行一定的提升.我们尝试在半导体中进行一定程度的掺杂来实现.在我们具体研究掺杂之前,我们须不加证明的认识到这样的一个<strong>守恒约束</strong>:</p>
+通过上述的解释,我们得以计算<span class="arithmatex">\(T=300\text{K}\)</span>时的本征激发自由电子数,我们将它作为习题:</p>
+<p>通过上面的计算,实际上我们可以认为在半导体器件的一般工作状态,本征激发很弱.我们就要对半导体的导电性进行一定的提升.我们尝试在半导体中进行一定程度的掺杂来实现.在我们具体研究掺杂之前,我们须不加证明的认识到这样的一个<strong>守恒约束</strong>:</p>
 <div class="arithmatex">\[
 np=n_{i}^{2}
 \]</div>
@@ -1199,7 +1195,7 @@ np=n_{i}^{2}
 <h2 id="_2">掺杂<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="n-p">N 型半导体,P 型半导体<a class="headerlink" href="#n-p" title="Permanent link">&para;</a></h3>
 <p>现在我们尝试为<span class="arithmatex">\(1\text{cm}^{3}\)</span>的<span class="arithmatex">\(\ce{Si(4)}\)</span>中掺入一定量的<span class="arithmatex">\(\ce{P(5)}\)</span>.此时<span class="arithmatex">\(\ce{P}\)</span>将一部分<span class="arithmatex">\(\ce{Si}\)</span>原子取代,并携带多余的自由电子,这些自由电子不参与共价键的形成,它们和导带的距离更近,也就是在外加能量的情况下更加容易跳到导带上形成自由-电子空穴对.</p>
-<p>![[Pasted image 20250225092815.png]]</p>
+<p><img alt="" src="/image/Pasted image 20250225092815.png" /></p>
 <p>此时我们相当于引入了大量的自由电子,定量地分析,每一个掺杂的<span class="arithmatex">\(\ce{P}\)</span>都能供出一个自由电子,所以只要求出掺杂的总量就可以了.通过下面的习题我们大概可以定量地来认识掺杂对自由电子的影响.</p>
 <p>[[习题0002-关于掺杂]]</p>
 <h3 id="_3">多子掺杂,少子本征<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -1219,15 +1215,15 @@ p_{n}\simeq\frac{n_{i}^{2}}{N_D}
 <p>现在我们主要来研究半导体的内部的电流.</p>
 <h3 id="_5">扩散电流<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>实际上,由于电子本身的扩散作用,此时将会形成一个电流,我们现在就来定量分析这个电流的大小.我们先补充一下<strong>Fick 扩散定律</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>title:Fick第一扩散定律
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>$$
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>j=-D\nabla C
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>$$
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>即扩散通量$j$和截面浓度的梯度成正比.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>title:Fick第一扩散定律
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>$$
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>j=-D\nabla C
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>$$
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>即扩散通量$j$和截面浓度的梯度成正比.
 </code></pre></div></td></tr></table></div>
 <p>我们现在来利用上面的内容来研究电流密度<span class="arithmatex">\(J\)</span>.我们由大学物理知识,可以得到下面的公式:</p>
 <div class="arithmatex">\[
@@ -1290,9 +1286,9 @@ V_T=\frac{kT}{q}
 <p>如图所示,我们把贴<span class="arithmatex">\(P\)</span>型半导体的一侧叫 PN 结的<strong>阳极</strong>(Anode),贴<span class="arithmatex">\(N\)</span>型半导体的一侧叫 PN 结的<strong>阴极</strong>(Cathode).</p>
 <h3 id="pn_1">PN 结的开路性质<a class="headerlink" href="#pn_1" title="Permanent link">&para;</a></h3>
 <p>我们现在先不把它接入外加的电压,而研究其开路的特性.在开路的情况下,自然地,两半导体内部的载流子向对向移动,在两者的分界处相互抵消,与此同时形成一个阻碍两边载流子漂移的一个电场,使得半导体进入一个动态平衡的状态,如图所示.</p>
-<p>![[Pasted image 20250226135256.png|550]]</p>
+<p><img alt="" src="/image/Pasted image 20250226135256.png|550" /></p>
 <p>此时中间形成的区域常称为<strong>耗尽区</strong>.耗尽区的电场表明此时 PN 结两边的电势不同,如图所示:</p>
-<p>![[Pasted image 20250226135612.png|550]]</p>
+<p><img alt="" src="Pasted image 20250226135612.png" /></p>
 <p>我们注意到,如果耗尽区是稳定的,不发生改变的,那么必然有:</p>
 <div class="arithmatex">\[
 I_{D}=I_{S}
@@ -1300,7 +1296,7 @@ I_{D}=I_{S}
 <p><span class="arithmatex">\(I_{D}\)</span>和我们势垒电压<span class="arithmatex">\(V_{0}\)</span>是有关的.所谓的动态平衡就是说:当因为某些情况而致使<span class="arithmatex">\(I_{S}&gt;I_{D}\)</span>时,此时会造成<span class="arithmatex">\(V_{0}\ce{^}\)</span>,进而使得耗尽区增大,<span class="arithmatex">\(I_{D}\ce{^},I_{S}\ce{v}\)</span>,进而实现<span class="arithmatex">\(I_{D}=I_{S}\)</span>之新的平衡.同理,<span class="arithmatex">\(I_{S}&lt;I_{D}\)</span>的情况也是易于理解的.</p>
 <h3 id="_7">加偏置的情况<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>下面的三张图很生动地描述了添加偏置的情况,正如我们上文所说的,<span class="arithmatex">\(I_D\)</span>和<span class="arithmatex">\(V_{0}\)</span>是不可分割的一对,所以我们可以看到外加偏置对<span class="arithmatex">\(V_{0}\)</span>的影响,进而影响耗尽区宽度和<span class="arithmatex">\(I_{D}\)</span>.</p>
-<p>![[Pasted image 20250226140652.png]]</p>
+<p><img alt="" src="Pasted image 20250226140652.png" /></p>
 <h4 id="pn_2">PN 结+正偏<a class="headerlink" href="#pn_2" title="Permanent link">&para;</a></h4>
 <p>此时耗尽区缩小,载流子漂移增强,输出的电流为</p>
 <div class="arithmatex">\[
@@ -1317,7 +1313,7 @@ I=I_{s}(e^{ v/v_{T} }-1)
 \]</div>
 <p>其中 <span class="arithmatex">\(I_S = A q n_i^2 \left( \frac{D_p}{L_p N_D} + \frac{D_n}{L_n N_A} \right)\)</span> <span class="arithmatex">\(I_{S}\)</span>称为<strong>反向饱和电流</strong>.
 <span class="arithmatex">\(A\)</span> 表示截面积,<span class="arithmatex">\(q\)</span> 表示电子电荷,<span class="arithmatex">\(L_p\)</span> 和 <span class="arithmatex">\(L_n\)</span> 分别表示空穴和电子的扩散长度,<span class="arithmatex">\(N_D\)</span> 和 <span class="arithmatex">\(N_A\)</span> 分别表示施主和受主浓度.<span class="arithmatex">\(I_{S}\)</span>的取值范围从<span class="arithmatex">\(10^{-18}\sim 10^{-12} \text{A}\)</span>不等,<span class="arithmatex">\(I-V\)</span>曲线如图所示.</p>
-<p>![[Pasted image 20250226143454.png]]</p>
+<p><img alt="" src="Pasted image 20250226143454.png" /></p>
 <h2 id="ast">结电容效应<span class="arithmatex">\(^{\ast}\)</span><a class="headerlink" href="#ast" title="Permanent link">&para;</a></h2>
 <p>我们不在这个章节中多阐释结电容效应的问题,有兴趣的同志可以阅读[[扩展包01-关于PN结的扩展]]</p>
 <h2 id="_8">扩展内容<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
