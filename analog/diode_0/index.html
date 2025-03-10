@@ -1197,7 +1197,7 @@ np=n_{i}^{2}
 <h2 id="_2">掺杂<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="n-p">N 型半导体,P 型半导体<a class="headerlink" href="#n-p" title="Permanent link">&para;</a></h3>
 <p>现在我们尝试为<span class="arithmatex">\(1\text{cm}^{3}\)</span>的<span class="arithmatex">\(\ce{Si(4)}\)</span>中掺入一定量的<span class="arithmatex">\(\ce{P(5)}\)</span>.此时<span class="arithmatex">\(\ce{P}\)</span>将一部分<span class="arithmatex">\(\ce{Si}\)</span>原子取代,并携带多余的自由电子,这些自由电子不参与共价键的形成,它们和导带的距离更近,也就是在外加能量的情况下更加容易跳到导带上形成自由-电子空穴对.</p>
-<p><img alt="1" src="/image/Pasted image 20250225092815.png" /></p>
+<p><img alt="1" src="../images/Thermal.png" /></p>
 <p>此时我们相当于引入了大量的自由电子,定量地分析,每一个掺杂的<span class="arithmatex">\(\ce{P}\)</span>都能供出一个自由电子,所以只要求出掺杂的总量就可以了.通过下面的习题我们大概可以定量地来认识掺杂对自由电子的影响.</p>
 <h3 id="_3">多子掺杂,少子本征<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>通过上面的计算,我们可以认识到对于掺杂半导体而言,本征激发贡献的自由电子数目近乎可以忽略不计,因此我们可以这样来写</p>
@@ -1234,8 +1234,7 @@ J_{n}=-qj_{n}=qD_{n} \frac{dn(x)}{dx}
 <div class="arithmatex">\[
 J_{p}=qj_{p}=-qD_{p} \frac{dp(x)}{dx}
 \]</div>
-<p>其中<span class="arithmatex">\(D_{n},D_{p}\)</span>分别是自由电子和电荷的<strong>扩散常数</strong>,注意<span class="arithmatex">\(D_{n}\neq D_p\)</span>
-关于扩散电流,后面是一个实例:[[习题0003-DnDp]]</p>
+<p>其中<span class="arithmatex">\(D_{n},D_{p}\)</span>分别是自由电子和电荷的<strong>扩散常数</strong>,注意<span class="arithmatex">\(D_{n}\neq D_p\)</span></p>
 <h3 id="_6">漂移电流<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>现考虑外加电场之情形,自然地在电场的作用下,空穴受到电场加速顺电场运动,电子受到电场加速逆电场运动.实验可得,漂移速率和电场强度成正比,比值称为<strong>迁移率<span class="arithmatex">\(\mu\)</span></strong>:</p>
 <div class="arithmatex">\[
@@ -1271,8 +1270,7 @@ J=J_{p}+J_{n}=qE(p\mu _{p}+n\mu_{n})
 J=\sigma E
 \]</div>
 <p>一般称为<strong>欧姆定律</strong>.
-导电率的倒数称为电阻<span class="arithmatex">\(R\)</span>.
-我们有两个实例:[[习题0004A-欧姆定律的应用(1)]],[[习题0004B-欧姆定律的应用(2)]]</p>
+导电率的倒数称为电阻<span class="arithmatex">\(R\)</span>.</p>
 <h2 id="einstein">扩散常数和迁移率的关系:Einstein 方程<a class="headerlink" href="#einstein" title="Permanent link">&para;</a></h2>
 <p>实验表明扩散常数和迁移率之间是有一定的关系的,具体来说:
 <span class="arithmatex">\(<span class="arithmatex">\(\frac{D_n}{u_n} = \frac{D_p}{u_p} = V_T\)</span>\)</span>
@@ -1287,9 +1285,9 @@ V_T=\frac{kT}{q}
 <p>如图所示,我们把贴<span class="arithmatex">\(P\)</span>型半导体的一侧叫 PN 结的<strong>阳极</strong>(Anode),贴<span class="arithmatex">\(N\)</span>型半导体的一侧叫 PN 结的<strong>阴极</strong>(Cathode).</p>
 <h3 id="pn_1">PN 结的开路性质<a class="headerlink" href="#pn_1" title="Permanent link">&para;</a></h3>
 <p>我们现在先不把它接入外加的电压,而研究其开路的特性.在开路的情况下,自然地,两半导体内部的载流子向对向移动,在两者的分界处相互抵消,与此同时形成一个阻碍两边载流子漂移的一个电场,使得半导体进入一个动态平衡的状态,如图所示.</p>
-<p><img alt="" src="image/Pasted image 20250226135256.png|550" /></p>
+<p><img alt="e3l3" src="../images/Depletion_area.png" /></p>
 <p>此时中间形成的区域常称为<strong>耗尽区</strong>.耗尽区的电场表明此时 PN 结两边的电势不同,如图所示:</p>
-<p><img alt="2" src="image/Pasted image 20250226135612.png" /></p>
+<p><img alt="2" src="../images/potential.png" /></p>
 <p>我们注意到,如果耗尽区是稳定的,不发生改变的,那么必然有:</p>
 <div class="arithmatex">\[
 I_{D}=I_{S}
@@ -1297,7 +1295,7 @@ I_{D}=I_{S}
 <p><span class="arithmatex">\(I_{D}\)</span>和我们势垒电压<span class="arithmatex">\(V_{0}\)</span>是有关的.所谓的动态平衡就是说:当因为某些情况而致使<span class="arithmatex">\(I_{S}&gt;I_{D}\)</span>时,此时会造成<span class="arithmatex">\(V_{0}\ce{^}\)</span>,进而使得耗尽区增大,<span class="arithmatex">\(I_{D}\ce{^},I_{S}\ce{v}\)</span>,进而实现<span class="arithmatex">\(I_{D}=I_{S}\)</span>之新的平衡.同理,<span class="arithmatex">\(I_{S}&lt;I_{D}\)</span>的情况也是易于理解的.</p>
 <h3 id="_7">加偏置的情况<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>下面的三张图很生动地描述了添加偏置的情况,正如我们上文所说的,<span class="arithmatex">\(I_D\)</span>和<span class="arithmatex">\(V_{0}\)</span>是不可分割的一对,所以我们可以看到外加偏置对<span class="arithmatex">\(V_{0}\)</span>的影响,进而影响耗尽区宽度和<span class="arithmatex">\(I_{D}\)</span>.</p>
-<p><img alt="" src="Pasted image 20250226140652.png" /></p>
+<p><img alt="bias" src="../images/bias.png" /></p>
 <h4 id="pn_2">PN 结+正偏<a class="headerlink" href="#pn_2" title="Permanent link">&para;</a></h4>
 <p>此时耗尽区缩小,载流子漂移增强,输出的电流为</p>
 <div class="arithmatex">\[
@@ -1314,11 +1312,11 @@ I=I_{s}(e^{ v/v_{T} }-1)
 \]</div>
 <p>其中 <span class="arithmatex">\(I_S = A q n_i^2 \left( \frac{D_p}{L_p N_D} + \frac{D_n}{L_n N_A} \right)\)</span> <span class="arithmatex">\(I_{S}\)</span>称为<strong>反向饱和电流</strong>.
 <span class="arithmatex">\(A\)</span> 表示截面积,<span class="arithmatex">\(q\)</span> 表示电子电荷,<span class="arithmatex">\(L_p\)</span> 和 <span class="arithmatex">\(L_n\)</span> 分别表示空穴和电子的扩散长度,<span class="arithmatex">\(N_D\)</span> 和 <span class="arithmatex">\(N_A\)</span> 分别表示施主和受主浓度.<span class="arithmatex">\(I_{S}\)</span>的取值范围从<span class="arithmatex">\(10^{-18}\sim 10^{-12} \text{A}\)</span>不等,<span class="arithmatex">\(I-V\)</span>曲线如图所示.</p>
-<p><img alt="3" src="../images/Pasted%20image%2020250226143454.png" /></p>
+<p><img alt="3" src="../images/IV_Curve.png" /></p>
 <h2 id="ast">结电容效应<span class="arithmatex">\(^{\ast}\)</span><a class="headerlink" href="#ast" title="Permanent link">&para;</a></h2>
-<p>我们不在这个章节中多阐释结电容效应的问题,有兴趣的同志可以阅读[[扩展包01-关于PN结的扩展]]</p>
+<p>我们不在这个章节中多阐释结电容效应的问题,有兴趣的同志可以阅读</p>
 <h2 id="_8">扩展内容<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>限于篇幅,我们不再多放更多的实例和内容,如果学有余力,请阅读[[扩展包01-关于PN结的扩展]]</p>
+<p>限于篇幅,我们不再多放更多的实例和内容,如果学有余力,请阅读</p>
 
 
 
