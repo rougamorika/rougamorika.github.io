@@ -72,10 +72,9 @@ nav:
     - 流体力学(01): 1.md
   - 模拟电子技术: 
     - 目录: Content.md
-    - 模电第一章: Analog-1.md
-      - 半导体物理性质: Semi.md
-      - 二极管(01): Diode-1.md
-      - 二极管(02): Diode-2.md
+    - 半导体物理性质: Semi.md
+    - 二极管(01): Diode-1.md
+    - 二极管(02): Diode-2.md
   - 数学题单:
     - IEQ-0001: IEQ-0001.md  
       
