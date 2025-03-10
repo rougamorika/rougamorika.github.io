@@ -9,7 +9,7 @@ theme:
   font: #谷歌字体，自行搜索
     text: Bitter  #文本字体
     code: Roboto Mono  #代码字体
-  logo: assets/favicon.png #左上角logo，可插入图片链接
+  logo: "assets/favicon.png" #左上角logo，可插入图片链接
 
   palette:
     - media: "(prefers-color-scheme)"
