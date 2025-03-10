@@ -95,6 +95,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -625,6 +630,20 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    二极管(02)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -636,6 +655,64 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际二极管的实现:PN结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际二极管的实现:PN结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结端子特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PN结端子特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pn_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结之回顾
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -764,6 +841,55 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际二极管的实现:PN结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际二极管的实现:PN结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结端子特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PN结端子特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pn_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结之回顾
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -795,9 +921,18 @@
   
 
 
-  <h1>二极管(02)</h1>
-
-
+<h1 id="2">二极管入门(2):实际二极管的实现和建模<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="pn">实际二极管的实现:PN结<a class="headerlink" href="#pn" title="Permanent link">&para;</a></h2>
+<h3 id="pn_1">PN结端子特性<a class="headerlink" href="#pn_1" title="Permanent link">&para;</a></h3>
+<p>我们这个部分来聊一聊二极管的实际实现.基本上,我是说基本上,连小孩子都知道二极管就是用PN结做的.<br />
+问题是,你了解PN结嘛?  </p>
+<h4 id="pn_2">PN结之回顾<a class="headerlink" href="#pn_2" title="Permanent link">&para;</a></h4>
+<p>我们现在来回顾一下PN结的特性</p>
+<ul>
+<li><span class="arithmatex">\(V&gt;0\)</span>,此时加的正向电压,导通,<span class="arithmatex">\(I-V\)</span>曲线为<span class="arithmatex">\(i=i_s(e^{v/V_{T}}-1)\)</span></li>
+<li><span class="arithmatex">\(-V_{ZK}&lt;V&lt;0\)</span>,此时加的反向电压,截止,电流为饱和电流<span class="arithmatex">\(i_s\)</span></li>
+<li><span class="arithmatex">\(v&lt;-V_{ZK}\)</span>,此时PN结被击穿.</li>
+</ul>
 
 
 
