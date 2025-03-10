@@ -1004,16 +1004,17 @@
 <em>那么古尔丹,代价是什么呢?</em><br />
 我们<strong>损失了一半的波形</strong>,即我们的脉动直流电的频率只有原来的一半,我们也损失了一半的能量.而且,<strong>脉动直流还是不能用</strong>,得做滤波才能变成我们常用的直流(并一个电容/串一个电感,之后会说.)</p>
 <h4 id="_5">二极管实现逻辑门*<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p><em>之所以打星号,是因为A:逻辑门基本是数电研究的内容,这里只是介绍电路结构.B:数字电路逻辑门一般现在都用通用门(一般是NAND门)</em>
+<p><em>之所以打星号,是因为A:逻辑门基本是数电研究的内容,这里只是介绍电路结构.B:数字电路逻辑门一般现在都用通用门(一般是NAND门)</em><br />
 现在我们来研究逻辑门,我们一般从布尔代数的角度来介绍逻辑门,这一点在数电的课程当中会更详细,我们目前只要知道,<strong>数字电路不在乎电压的大小,只区分电压的高低</strong>.</p>
 <h5 id="or">OR门<a class="headerlink" href="#or" title="Permanent link">&para;</a></h5>
 <p><img alt="or_gate" src="../images/orgate.png" /></p>
 <p>如图所示是一个<strong>三路或门</strong>的电路实现,我们假设三个二极管都是理想的二极管.注意到,我们输入的<span class="arithmatex">\(v_{a},v_{b},v_{c}\)</span>只要有一路是高电平<span class="arithmatex">\(v_{H}\)</span>,那么就一定能使低电平<span class="arithmatex">\(v_{L}\)</span>的支路上的理想二极管<strong>截止</strong>(因为此时加在这个管子上的电压<span class="arithmatex">\(v_{L}-v_{H}&lt;0\)</span>).进而使得<span class="arithmatex">\(v_{Y}\)</span>输出高电平.
 这个逻辑是<strong>有高则为高</strong>,所以这是<strong>或(OR)门</strong>.
-换个角度思考,只要有一路是通的</p>
+换个角度思考,只要有一路是通的,那么我们就输出通.</p>
 <h5 id="and">AND 门<a class="headerlink" href="#and" title="Permanent link">&para;</a></h5>
 <p><img alt="or_gate" src="../images/andgate.png" /></p>
-<p>我们现在考虑这个模型, 假如给定的三个二极管,只要有一个低电平,那么低电平对应的二极管就会导通.那么我们自然就会得到输出端是<strong>0V+管压降</strong>(因为电阻要分压).所以此时输出的<span class="arithmatex">\(v_{y}\)</span>是低电平.</p>
+<p>我们现在考虑这个模型, 假如给定的三个二极管,只要有一个低电平,那么低电平对应的二极管就会导通.那么我们自然就会得到输出端是<strong>0V+管压降</strong>(因为电阻要分压).所以此时输出的<span class="arithmatex">\(v_{y}\)</span>是低电平.
+因此,如果这个时候我们要输出通,则必须三个二极管都导通.</p>
 <p>二极管不能实现通用逻辑门,这是因为我们不能用二极管实现反相,进而不能实现非门.</p>
 
 
