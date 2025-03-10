@@ -68,8 +68,12 @@ repo_name: EEBlog # 右上角的名字
 nav:
   - 主页: index.md
   - 流体力学:
-      - 流体力学(00): Fluid_Mechanics.md
-      - 流体力学(01): 1.md
+    - 流体力学(00): Fluid_Mechanics.md
+    - 流体力学(01): 1.md
+  - 模拟电子技术: 
+    - 模拟电子技术(01): Analog-1.md
+  - 数学题单:
+    - IEQ-0001: IEQ-0001.md  
       
  
 
