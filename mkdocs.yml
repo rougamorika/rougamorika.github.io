@@ -20,15 +20,15 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default # 日间模式
       primary: blue # 上方的
-      accent: blue # 链接等可交互元件的高亮色
+      accent: purple # 链接等可交互元件的高亮色
       # teal
       toggle:
         icon: material/toggle-switch # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
     - media: "(prefers-color-scheme: dark)"
       scheme: slate # 夜间模式
-      primary: black
-      accent: indigo
+      primary: red
+      accent: orange
       # teal
       toggle:
         icon: material/toggle-switch-off-outline
