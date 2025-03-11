@@ -20,7 +20,7 @@
     
     
       
-        <title>流体力学(03):对平面的静力学,浮力和浮体稳定问题 - EESite by Rougamo</title>
+        <title>流体力学(03):面流体静力学,浮力和浮体稳定问题 - EESite by Rougamo</title>
       
     
     
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              流体力学(03):对平面的静力学,浮力和浮体稳定问题
+              流体力学(03):面流体静力学,浮力和浮体稳定问题
             
           </span>
         </div>
@@ -779,6 +779,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对平面之力
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对平面之力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      水平面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      并非水平
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="并非水平">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      压强公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      推导
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      为何不通过形状重心
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -809,7 +883,53 @@
   
 
 
-<h1 id="03">流体力学(03):对平面的静力学,浮力和浮体稳定问题<a class="headerlink" href="#03" title="Permanent link">&para;</a></h1>
+<h1 id="03">流体力学(03):面流体静力学,浮力和浮体稳定问题<a class="headerlink" href="#03" title="Permanent link">&para;</a></h1>
+<h2 id="_1">对平面之力<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>我们现在推导对平面之力,在现在的推导中,我们先认为我们的流体是密度分布均匀的.  </p>
+<h3 id="_2">水平面<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>水平面是最方便的,因为我们受到的压力就是垂直于受力面并指向受力面,所以我们的这个时候就可以直接上<span class="arithmatex">\(p=\gamma H\)</span>(<span class="arithmatex">\(H\)</span>是水深).假设平面的面积是<span class="arithmatex">\(A_b\)</span>,那么我们就可以求到此时的受力
+$$
+F=\gamma A_{b} H
+$$
+此时整个版面的每一个质点受到的压力都是完全相同的额,所以完全可以将其转化成对质点中心的力和力矩.</p>
+<h3 id="_3">并非水平<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">压强公式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>现在我们来研究并非水平浸在水中的面的压力,如下图所示:
+<img alt="leaned" src="../images/leaned_sfc.png" /></p>
+<p>假设平面和水平面/自由面成<span class="arithmatex">\(\theta\)</span>的角.那么此时我们就会有受力作用,我们将它们等效为作用在压力中心(CP)上的力<span class="arithmatex">\(F\)</span>,并且我们认为:
+$$
+F=p_{CG}A
+$$
+为什么是等价于施加在重心上的压强呢?我们来作如下的推导</p>
+<h4 id="_5">推导<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>对于此时的平面,取一小微元,其面积<span class="arithmatex">\(\xi=\frac{h}{\sin\theta}\)</span>(因为这时候真的和线没区别),于此同时,这个不规则平面的压强总是可以写成下面的积分形式</p>
+<div class="arithmatex">\[
+F_{CP}=\int p\ dA
+\]</div>
+<p>那么自然地我们就要求<span class="arithmatex">\(p\)</span>的表达式了,对于浸入水中的<span class="arithmatex">\(p\)</span>,由于我们假定流体是均质的,所以自然有:
+$$
+p=p_a+\gamma h
+$$
+那么我们就可以解出该积分:
+$$
+F=p_a A+ \gamma\int h dA=p_a A+\gamma\sin \theta\int \xi dA
+$$
+由我们已经学过的形心(均质条件下重心即形状重心)公式:
+$$
+\xi_{CG}=\frac{1}{A}\int \xi dA
+$$
+所以自然可得
+$$
+\color{green}{F=p_a A+\xi_{CG}A\gamma\sin \theta=A(p_a+h_{CG}\gamma)}
+$$
+因而
+$$
+\color{skyblue}
+{F=p_{CG}A}
+$$</p>
+<h4 id="_6">为何不通过形状重心<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>实验表明,我们的压强等效力并不是作用在形心(重心)上,而是要更加偏向深水的一侧.我们把它叫做<strong>压力中心</strong>(CP).</p>
+<p>我们现在来推导压力中心的位置:</p>
 
 
 
