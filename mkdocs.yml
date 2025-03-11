@@ -1,5 +1,5 @@
 #[Info]
-site_name: EEBlogs by  #your site name 显示在左上角
+site_name: EESite by Rougamo  #your site name 显示在左上角
 site_url: https://rougamorika.github.io/
 site_author: Rougamo # your name
 #[UI]
@@ -27,7 +27,7 @@ theme:
         name: 切换至夜间模式 # 鼠标悬浮提示
     - media: "(prefers-color-scheme: dark)"
       scheme: slate # 夜间模式
-      primary: red
+      primary: pink
       accent: orange
       # teal
       toggle:
@@ -62,23 +62,24 @@ theme:
     logo: logo
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
 repo_url: https://github.com/rougamorika/rougamorika.github.io # 右上角点击跳转的链接
-repo_name: EEBlog # 右上角的名字
+repo_name: EESite # 右上角的名字
 
 # [Navigtion]
 nav:
   - 主页: 
     - 介绍: "index.md"
   - 流体力学:
-    - 流体力学(00): "Fluid_Mechanics.md"
-    - 流体力学(01): "1.md"
+    - 流体力学(00): "fluid/intro.md"
+    - 流体力学(01): "fluid/basics_of_fluid.md"
+    - 流体力学(02): "fluid/static_mechanics.md"
   - 模拟电子技术: 
     - 目录: "analog/index.md"
-    - 半导体物理性质: "analog/diode_0.md"
+    - 二极管(00): "analog/diode_0.md"
     - 二极管(01): "analog/diode_1.md"
     - 二极管(02): "analog/diode_2.md"
     - 三极管(00): "analog/bjt_0.md"
   - 数学题单:
-    - IEQ-0001: "IEQ-0001.md"
+    - IEQ-0001: "math/IEQ-0001.md"
       
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
