@@ -11,17 +11,21 @@
 
 对于如图所示的单元,假定$P_{x},P_{z},P_{n}$不相同,那么自然我们考虑微元的平衡关系
 $$
-\begin{cases}
-\sum F_{x}=0 \\
-\sum F_{z}=0
-\end{cases}
+\begin{equation}
+    \begin{cases}
+    \sum F_{x}=0 \\
+    \sum F_{z}=0
+    \end{cases}
+\end{equation}
 $$
 从而得到:
 $$
-\begin{cases}
+\begin{equation}
+    \begin{cases}
 p_{x}b\Delta z-p_{n}b\Delta s \sin \theta=0 \\
 p_{z}b\Delta x-p_{n}b\Delta s \cos\theta-\frac{1}{2}\rho g b\Delta x\Delta z=0
 \end{cases}
+\end{equation}
 $$
 由几何关系$\Delta z=\Delta s \sin \theta,\Delta x=\Delta s \cos \theta$,将$\Delta s$替换掉,可以得到
 $$
