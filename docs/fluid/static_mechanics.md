@@ -27,6 +27,16 @@ p_{z}b\Delta x-p_{n}b\Delta s \cos\theta-\frac{1}{2}\rho g b\Delta x\Delta z=0
 \end{cases}
 \end{equation}
 $$
+$$
+\begin{equation}
+D(x) = \begin{cases}
+1, & \text{if } x \in \mathbb{Q}; \\
+0, & \text{if } x \in
+     \mathbb{R}\setminus\mathbb{Q}.
+\end{cases}
+\end{equation}
+$$
+
 由几何关系$\Delta z=\Delta s \sin \theta,\Delta x=\Delta s \cos \theta$,将$\Delta s$替换掉,可以得到
 $$
 \color{blue}
