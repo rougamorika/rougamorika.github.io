@@ -828,6 +828,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      小信号模型(重要)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1167,6 +1176,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      小信号模型(重要)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1268,6 +1286,11 @@ $$
 <p><img alt="v-drop" src="../images/v_drop_model.png" /></p>
 <h4 id="_8">理想二极管模型<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>如果我们的正向压降相较于我们的外加电压非常小,那么自然地我们就可以忽略正向压降的影响,此时压降模型可以直接转化为理想二极管模型.</p>
+<h4 id="_9">小信号模型(重要)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>现在我们还是回到这样的一个电路图.
+<img alt="forward" src="../images/expmodel.png" />
+上面的两个模型在处理二极管的时候,都把它当成了反向直流电源了.这在算工作点和算功率,还有算频率响应的时候都会出问题.
+所以我们提出一种新的模型,假设我们的直流正向电压源<span class="arithmatex">\(V_{DD}\)</span> 改变了,改变成了 <span class="arithmatex">\(V_{DD}+\Delta V\)</span>.        </p>
 
 
 
