@@ -225,4 +225,4 @@ $A$ 表示截面积,$q$ 表示电子电荷,$L_p$ 和 $L_n$ 分别表示空穴和
 
 ## 扩展内容
 
-限于篇幅,我们不再多放更多的实例和内容,请看网站上的[补充包](https://rougamorika.github.io/analog/diode_2/#_3)
+限于篇幅,我们不再多放更多的实例和内容,请看网站上的[补充包](https://rougamorika.github.io/analog_sup/sup_1)

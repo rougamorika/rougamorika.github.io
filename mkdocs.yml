@@ -84,6 +84,7 @@ nav:
   - 模拟电子技术习题册和实例补充包:
     - 有关PN结的知识补充包: "analog_sup/sup_1.md"
     - 电源纹波和交流小信号的实例: "analog_sup/ripple.md"
+    - 正向稳压器实现: "analog_sup/positive_regulator.md"
     - Zener管实现分流稳压电路: "analog_sup/shunt_zener.md"
       
 

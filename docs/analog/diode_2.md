@@ -162,7 +162,7 @@ $$
 r_{d}=\frac{1}{\frac{\partial i_{D}}{\partial v_{D}}} (i_{d}=I_{D})
 $$
 
-关于交流小信号的验证,有一个关于[电源纹波]的实例,放在补充包中.  
+关于交流小信号的验证,有一个关于[电源纹波](https://rougamorika.github.io/analog_sup/ripple)的实例,放在补充包中.  
 
 对于正向特性,我们有一个重要的实例:[正向稳压器]
 
@@ -184,7 +184,7 @@ $$
 V_{Z}=V_{Z0}+I_{Z}R_{Z}
 $$
 
-齐纳管的一个重要实例是用作[分流稳压管]().
+齐纳管的一个重要实例是用作[分流稳压管](https://rougamorika.github.io/analog_sup/shunt_zener).
 
 
 
