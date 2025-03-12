@@ -718,27 +718,27 @@
         <li class="md-nav__item">
   <a href="#pn" class="md-nav__link">
     <span class="md-ellipsis">
-      实际二极管的实现:PN结
+      实际二极管的实现:PN 结
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="实际二极管的实现:PN结">
+    <nav class="md-nav" aria-label="实际二极管的实现:PN 结">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pn_1" class="md-nav__link">
     <span class="md-ellipsis">
-      PN结端子特性
+      PN 结端子特性
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PN结端子特性">
+    <nav class="md-nav" aria-label="PN 结端子特性">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pn_2" class="md-nav__link">
     <span class="md-ellipsis">
-      PN结之回顾
+      PN 结之回顾
     </span>
   </a>
   
@@ -1066,27 +1066,27 @@
         <li class="md-nav__item">
   <a href="#pn" class="md-nav__link">
     <span class="md-ellipsis">
-      实际二极管的实现:PN结
+      实际二极管的实现:PN 结
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="实际二极管的实现:PN结">
+    <nav class="md-nav" aria-label="实际二极管的实现:PN 结">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pn_1" class="md-nav__link">
     <span class="md-ellipsis">
-      PN结端子特性
+      PN 结端子特性
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PN结端子特性">
+    <nav class="md-nav" aria-label="PN 结端子特性">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#pn_2" class="md-nav__link">
     <span class="md-ellipsis">
-      PN结之回顾
+      PN 结之回顾
     </span>
   </a>
   
@@ -1228,53 +1228,53 @@
 
 
 <h1 id="2">二极管入门(2):实际二极管的实现和建模<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
-<h2 id="pn">实际二极管的实现:PN结<a class="headerlink" href="#pn" title="Permanent link">&para;</a></h2>
-<h3 id="pn_1">PN结端子特性<a class="headerlink" href="#pn_1" title="Permanent link">&para;</a></h3>
-<p>我们这个部分来聊一聊二极管的实际实现.基本上,我是说基本上,连小孩子都知道二极管就是用PN结做的.<br />
-问题是,你了解PN结嘛?  </p>
-<h4 id="pn_2">PN结之回顾<a class="headerlink" href="#pn_2" title="Permanent link">&para;</a></h4>
-<p>我们现在来回顾一下PN结的特性</p>
+<h2 id="pn">实际二极管的实现:PN 结<a class="headerlink" href="#pn" title="Permanent link">&para;</a></h2>
+<h3 id="pn_1">PN 结端子特性<a class="headerlink" href="#pn_1" title="Permanent link">&para;</a></h3>
+<p>我们这个部分来聊一聊二极管的实际实现.基本上,我是说基本上,连小孩子都知道二极管就是用 PN 结做的.<br />
+问题是,你了解 PN 结嘛?</p>
+<h4 id="pn_2">PN 结之回顾<a class="headerlink" href="#pn_2" title="Permanent link">&para;</a></h4>
+<p>我们现在来回顾一下 PN 结的特性</p>
 <ul>
 <li><span class="arithmatex">\(V&gt;0\)</span>,此时加的正向电压,导通,<span class="arithmatex">\(I-V\)</span>曲线为<span class="arithmatex">\(i=i_s(e^{v/V_{T}}-1)\)</span></li>
 <li><span class="arithmatex">\(-V_{ZK}&lt;V&lt;0\)</span>,此时加的反向电压,截止,电流为饱和电流<span class="arithmatex">\(i_s\)</span></li>
-<li><span class="arithmatex">\(v&lt;-V_{ZK}\)</span>,此时PN结被击穿.</li>
+<li><span class="arithmatex">\(v&lt;-V_{ZK}\)</span>,此时 PN 结被击穿.</li>
 </ul>
-<p>对上面的一些量值,我们要有一定的认识:
-$$
+<p>对上面的一些量值,我们要有一定的认识:</p>
+<div class="arithmatex">\[
 V_T=\frac{kT}{q}
-$$</p>
+\]</div>
 <h4 id="_1">对偏置的研究<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>对于我们正向偏置的<span class="arithmatex">\(I-V\)</span>关系,随着我们的<span class="arithmatex">\(e\)</span>指数的不断扩大.后面的常数项<span class="arithmatex">\(-1\)</span>的影响不断减小,因而我们可以说下面的条件是成立的:
-$$
+<p>对于我们正向偏置的<span class="arithmatex">\(I-V\)</span>关系,随着我们的<span class="arithmatex">\(e\)</span>指数的不断扩大.后面的常数项<span class="arithmatex">\(-1\)</span>的影响不断减小,因而我们可以说下面的条件是成立的:</p>
+<div class="arithmatex">\[
 i\simeq i_s e^{v/v_{T}}
-$$
-那么我们自自然可以改写下上面的函数
-$$
+\]</div>
+<p>那么我们自自然可以改写下上面的函数</p>
+<div class="arithmatex">\[
 \log(i)=\log(i_s)+\frac{v}{v_{T}}
-$$
-因而
-$$
+\]</div>
+<p>因而</p>
+<div class="arithmatex">\[
 v=v_{T}\log(\frac{i}{i_s})
-$$
-那么我们可以发现,对于在正向偏置区的PN结来说:
-$$
+\]</div>
+<p>那么我们可以发现,对于在正向偏置区的 PN 结来说:</p>
+<div class="arithmatex">\[
 V_2-V_1=v_{T}\log(\frac{i_2}{i_1})
-$$</p>
+\]</div>
 <h3 id="_2">对正向特性的建模<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="_3">指数模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <h5 id="_4">方程组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
 <p>我们刚刚就对我们的<span class="arithmatex">\(-1\)</span>信号做了忽略,所以我们自然认为,对于实际的二极管,我们应当采取这种指数模型来建模.<br />
 我们先看到最简单的正偏二极管的电路图:
 <img alt="forward" src="../images/expmodel.png" />
-我们首先假设我们的外加正向电压大于我们的管压降.此时根据我们上面的分析,我们可以认识到:
-$$
+我们首先假设我们的外加正向电压大于我们的管压降.此时根据我们上面的分析,我们可以认识到:</p>
+<div class="arithmatex">\[
 i_{D}=i_{s}e^{V_{D}/V_{T}}
-$$
-并且根据我们的Kirchoff定律,我们还有:
-$$
+\]</div>
+<p>并且根据我们的 Kirchoff 定律,我们还有:</p>
+<div class="arithmatex">\[
 i_{D}=\frac{V_{DD}-V_{D}}{R}
-$$
-通过上面的两个方程,我们就可以在已知<span class="arithmatex">\(i_s\)</span>的情况下,反解出<span class="arithmatex">\(i_{D}\)</span>和<span class="arithmatex">\(V_{D}\)</span>.</p>
+\]</div>
+<p>通过上面的两个方程,我们就可以在已知<span class="arithmatex">\(i_s\)</span>的情况下,反解出<span class="arithmatex">\(i_{D}\)</span>和<span class="arithmatex">\(V_{D}\)</span>.</p>
 <h5 id="_5">图解法,工作点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
 <p>解答上面这个方程组可以通过将两张图像都绘制在我们的<span class="arithmatex">\(i-v\)</span>坐标系上面.
 <img alt="g-analysis" src="../images/g_analysis.png" />
@@ -1282,7 +1282,7 @@ $$
 <h5 id="_6">迭代法求工作点<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <h4 id="_7">压降模型<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>我们不喜欢非线性的元件(尤其是这种指数的),因为一旦联立起来就是<em>超越方程</em>.这个玩意超级难解!!!<br />
-我们参考我们之前的理想二极管莫模型,它的导通压降是0,那么我们引入<span class="arithmatex">\(0.7\text{V}\)</span>的导通压降就可以了嘛.下面的图像很好地阐释了这一点</p>
+我们参考我们之前的理想二极管莫模型,它的导通压降是 0,那么我们引入<span class="arithmatex">\(0.7\text{V}\)</span>的导通压降就可以了嘛.下面的图像很好地阐释了这一点</p>
 <p><img alt="v-drop" src="../images/v_drop_model.png" /></p>
 <h4 id="_8">理想二极管模型<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>如果我们的正向压降相较于我们的外加电压非常小,那么自然地我们就可以忽略正向压降的影响,此时压降模型可以直接转化为理想二极管模型.</p>
@@ -1290,48 +1290,48 @@ $$
 <p>现在我们还是回到这样的一个电路图.</p>
 <p><img alt="forward" src="../images/expmodel.png" /></p>
 <p>上面的两个模型在处理二极管的时候,都把它当成了反向直流电源了.这在算工作点和算功率,还有算频率响应的时候都会出问题.
-所以我们提出一种新的模型,假设我们的直流正向电压源<span class="arithmatex">\(V_{DD}\)</span> 改变了,改变成了 <span class="arithmatex">\(V_{DD}+\Delta V_{DD}\)</span>.这个时候它会造成我们<span class="arithmatex">\(I_{D}\)</span>和<span class="arithmatex">\(V_{D}\)</span>的变化,假设为<span class="arithmatex">\(\Delta I_{D}\)</span>和<span class="arithmatex">\(\Delta V_{D}\)</span>.<br />
-我们现在可以这么做,就是我们把二极管上的电压信号直接写成直流信号<span class="arithmatex">\(V_{D}\)</span>和一个交流小信号<span class="arithmatex">\(v_{d}(t)\)</span>的和.即:
-$$
+所以我们提出一种新的模型,假设我们的直流正向电压<span class="arithmatex">\(V_{DD}\)</span> 改变了,改变成了 <span class="arithmatex">\(V_{DD}+\Delta V_{DD}\)</span>.这个时候它会造成我们<span class="arithmatex">\(I_{D}\)</span>和<span class="arithmatex">\(V_{D}\)</span>的变化,假设为<span class="arithmatex">\(\Delta I_{D}\)</span>和<span class="arithmatex">\(\Delta V_{D}\)</span>.<br />
+我们现在可以这么做,就是我们把二极管上的电压信号直接写成直流信号<span class="arithmatex">\(V_{D}\)</span>和一个交流小信号<span class="arithmatex">\(v_{d}(t)\)</span>的和.即:</p>
+<div class="arithmatex">\[
 v_{D}(t)=V_{D}+v_{d}(t)
-$$
-有了<span class="arithmatex">\(v_{d}\)</span>之后,我们可以得到:</p>
+\]</div>
+<p>有了<span class="arithmatex">\(v_{d}\)</span>之后,我们可以得到:</p>
 <div class="arithmatex">\[
 i_{d}(t)=I_{s}e^{v_{D}/v_{T}}
 \]</div>
-<p>代入可以得到:
-$$
-i_{d}(t)=I_{s}e<sup v__d="v_{d">{v_{D}/v_{T}}e</sup>
-$$
-<!-- 由我们先前的定义得:
-$$
-i_{d}=I_{D}e^{\frac{v_{d}}{v_{T}}}
-$$
-我们现在只要保证<span class="arithmatex">\(v_{d}\)</span>很小,即 -->
-$$
+<p>代入可以得到:</p>
+<div class="arithmatex">\[
+i_{d}(t)=I_{s}e^{v_{D}/v_{T}}e^{v_{d}/v_{T}}
+\]</div>
+<p>由我们先前的定义得:</p>
+<div class="arithmatex">\[
+i_{d}=I_{D}e^{x}
+\]</div>
+<p>我们现在只要保证<span class="arithmatex">\(v_{d}\)</span>很小,即</p>
+<div class="arithmatex">\[
 \frac{v_{d}}{v_{T}}\ll 1
-$$
-就可以对}/v_{T}<span class="arithmatex">\(e^{v_{d}/v_{T}}\)</span>进行泰勒展开:
-$$
+\]</div>
+<p>就可以对<span class="arithmatex">\(e^{v_{d}/v_{T}}\)</span>进行泰勒展开:</p>
+<div class="arithmatex">\[
 e^{v_{d}/v_{T}}=1+\frac{v_{d}}{v_{T}}+o(\frac{v_{d}}{v_{T}})
-$$
-忽略高阶的无穷小,得到:
-$$
+\]</div>
+<p>忽略高阶的无穷小,得到:</p>
+<div class="arithmatex">\[
 i_{D}=I_{D}(1+\frac{v_{d}}{v_{T}})
-$$
-又由于:
-$$
+\]</div>
+<p>又由于:</p>
+<div class="arithmatex">\[
 i_{D}=I_{D}+i_{d}
-$$
-自然地,我们可以得到:
-$$
+\]</div>
+<p>自然地,我们可以得到:</p>
+<div class="arithmatex">\[
 i_{d}=\frac{I_{D}}{v_{T}}v_{d}
-$$
-所以我们发现<span class="arithmatex">\(\frac{I_{D}}{v_{T}}\)</span>的单位是西门子,所以我们取其倒数:
-$$
+\]</div>
+<p>所以我们发现<span class="arithmatex">\(\frac{I_{D}}{v_{T}}\)</span>的单位是西门子,所以我们取其倒数:</p>
+<div class="arithmatex">\[
 r_{d}=\frac{V_{T}}{I_{D}}
-$$
-称之为<strong>交流小信号电阻</strong>.</p>
+\]</div>
+<p>称之为<strong>交流小信号电阻</strong>.</p>
 
 
 
