@@ -82,6 +82,7 @@ nav:
     - IEQ-0001: "math/IEQ-0001.md"
   - 模拟电子技术补充包:
     - 有关PN结的知识补充包: "analog_sup/sup_1.md"
+    - 电源纹波和交流小信号的实例: "analog_sup/ripple.md"
       
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
