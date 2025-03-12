@@ -77,12 +77,14 @@ nav:
     - 二极管(00): "analog/diode_0.md"
     - 二极管(01): "analog/diode_1.md"
     - 二极管(02): "analog/diode_2.md"
+    - 整流电路(00): "analog/rectifier_circuit.md"
     - 三极管(00): "analog/bjt_0.md"
   - 数学题单:
     - IEQ-0001: "math/IEQ-0001.md"
-  - 模拟电子技术补充包:
+  - 模拟电子技术习题册和实例补充包:
     - 有关PN结的知识补充包: "analog_sup/sup_1.md"
     - 电源纹波和交流小信号的实例: "analog_sup/ripple.md"
+    - Zener管实现分流稳压电路: "analog_sup/shunt_zener.md"
       
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
