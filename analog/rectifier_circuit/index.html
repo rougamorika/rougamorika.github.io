@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
@@ -1265,12 +1265,19 @@
 <img alt="FBR" src="../images/full_bridge.png" /></p>
 <p>当我们正半周通过时,此时<span class="arithmatex">\(D_1\)</span>,<span class="arithmatex">\(D_2\)</span>导通,<span class="arithmatex">\(D_3\)</span>,<span class="arithmatex">\(D_4\)</span>截止.流过电阻<span class="arithmatex">\(R\)</span>上的电流自图右向图左,记此方向为正向.<br />
 当我们负半周通过时,此时<span class="arithmatex">\(D_3\)</span>,<span class="arithmatex">\(D_4\)</span>导通,<span class="arithmatex">\(D_1\)</span>,<span class="arithmatex">\(D_2\)</span>截止.流过电阻<span class="arithmatex">\(R\)</span>上的电流依然自图右向图左.从此,我们实现了整流的目标.<br />
-由于我们的现在一个半周要过两个管子,所以输出的电压其实是<span class="arithmatex">\(v_{s}-2v_{d}\)</span>.但是我们注意到,此时的截止管只要负责hold住自己旁边的管子了,此时PIV是:
-$$
+由于我们的现在一个半周要过两个管子,所以输出的电压其实是<span class="arithmatex">\(v_{s}-2v_{d}\)</span>.但是我们注意到,此时的截止管只要负责 hold 住自己旁边的管子了,此时 PIV 是:</p>
+<div class="arithmatex">\[
 \text{PIV}=v_{s}-v_{d}
-$$
-另一个好处在于,我们不再需要用两倍的绕组来实现相同的电压输出了.</p>
+\]</div>
+<p>另一个好处在于,我们不再需要用两倍的绕组来实现相同的电压输出了.</p>
 <h3 id="_4">峰值整流器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>虽然我们上面介绍了很多种整流器,但是不得不承认,这些整流器都只能将我们的交流电变成所谓的<strong>脉动直流电</strong>,这种直流电还是不能直接用于我们的电路元件,因为它们说到底都还不是我们想要的直流电.<br />
+我们的一个解决方案是在我们的负载上并联一个电容,一般称为<strong>滤波电容</strong>.<br />
+<img alt="f_cap" src="../images/filtering_cap.png" />
+在此时,假设我们的二极管是理想二极管,输入是一个正弦波.<br />
+当一开始我们将<span class="arithmatex">\(v_{I}\)</span>一直提高,此时我们的电容器电压也不断提高,因而我们可以一直对电容充电,直到<span class="arithmatex">\(v_{c}=v_{p}\)</span>.此时我们的电容器的电压(即二极管阴极电压)恒大于/等于我们二极管的阳极电压.此时二极管直接视为开路,在不接负载的条件下,电容将一直保持电压<span class="arithmatex">\(v_{p}\)</span>.图像如下所示:
+<img alt="waveform" src="../images/filter_waveform.png" />
+这看起来很适合作为直流电源,但是没有接负载,我们不妨考虑接上电阻为<span class="arithmatex">\(R\)</span>的负载的情况.</p>
 
 
 
