@@ -792,9 +792,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#half-wave" class="md-nav__link">
+  <a href="#half-wave-rectifier" class="md-nav__link">
     <span class="md-ellipsis">
-      半波整流电路(Half-Wave)的构成
+      半波整流电路(Half-Wave Rectifier)的构成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-wave-rectifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      全波整流电路(Full-Wave Rectifier)的构成
     </span>
   </a>
   
@@ -1122,9 +1131,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#half-wave" class="md-nav__link">
+  <a href="#half-wave-rectifier" class="md-nav__link">
     <span class="md-ellipsis">
-      半波整流电路(Half-Wave)的构成
+      半波整流电路(Half-Wave Rectifier)的构成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-wave-rectifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      全波整流电路(Full-Wave Rectifier)的构成
     </span>
   </a>
   
@@ -1182,7 +1200,7 @@
 <p>现在,我们通过变压器将我们的电压的幅值从 <span class="arithmatex">\(120\text{V}\)</span> 变为了 <span class="arithmatex">\(v_{s}\)</span>.但是此时我们的输入信号还是交流的,因而还是不能加在负载上面.此时我们就要把原来的信号通过二极管整流器进行<strong>整流</strong>(Rectifying),将有正有负的交流电信号整流为脉动直流电,并利用电容器/电感器进行滤波(Filtering),此时我们已经近乎得到直流电了,但是还是会有一些交流的"噪声",称为<strong>纹波</strong>(Ripple).这时候我们再加上一个稳压器,就可以输出直流电了.<br />
 变压器的部分我们在电工技术中已经说过很多了,它并不属于电子技术的范畴.剩下的部分我们就会在电子技术中一一介绍,即<strong>整流器</strong>,<strong>滤波器</strong>和<strong>稳压器</strong>,统统学习过后,结合我们之后会学习的 BJT 管,MOS 管和已学习的二极管,我们应当自己可以制作一个电源出来.</p>
 <h2 id="_3">整流电路<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="half-wave">半波整流电路(Half-Wave)的构成<a class="headerlink" href="#half-wave" title="Permanent link">&para;</a></h3>
+<h3 id="half-wave-rectifier">半波整流电路(Half-Wave Rectifier)的构成<a class="headerlink" href="#half-wave-rectifier" title="Permanent link">&para;</a></h3>
 <p>现在我们来介绍最方便实现的整流电路,大家已经在理想二极管的应用中见过它的一个简化形式(此时二极管是不考虑压降的).如下图所示:</p>
 <p><img alt="HW" src="../images/hw_rect_2.png" /></p>
 <p>那么大家基本都知道了这个电路会吃掉负半部分的波形.因为我们现在考虑的是实际二极管,所以还要考虑最小的<strong>导通电压</strong>,那么低于最小导通电压的正向电压也会被视作截止,输出的波形如图所示.
@@ -1191,7 +1209,11 @@
 <div class="arithmatex">\[
 \text{PIV}=v_{s}
 \]</div>
-<p><strong>出于安全的考量,我们至少要选一个击穿电压大于PIV<span class="arithmatex">\(50\%\)</span>的二极管作为我们的整流器件</strong>.</p>
+<p><strong>出于安全的考量,我们至少要选一个击穿电压大于PIV<span class="arithmatex">\(50\%\)</span>的二极管作为我们的整流器件</strong>.<br />
+更大的问题是,面对<span class="arithmatex">\(100\text{mV}\)</span>这样小的待整流信号,<strong>这个电路是不行的</strong>!</p>
+<h3 id="full-wave-rectifier">全波整流电路(Full-Wave Rectifier)的构成<a class="headerlink" href="#full-wave-rectifier" title="Permanent link">&para;</a></h3>
+<p>半波整流电路的一个大问题就是丢失了一半的波形,因而周期数发生了减半,进而丢失了一半的能量.<strong>这很浪费</strong>.为了能够让我们能够节约能源,我们做了一种新的电路,进而能够不切削负半区的波形.如下图所示:
+<img alt="fw" src="../images/full_wave.png" /></p>
 
 
 
