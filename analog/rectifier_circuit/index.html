@@ -725,6 +725,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    整流电路(00)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -735,6 +747,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      整流是什么?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何整流?请看 DC 电源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整流电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整流电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#half-wave" class="md-nav__link">
+    <span class="md-ellipsis">
+      半波整流电路(Half-Wave)的构成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1014,6 +1087,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      整流是什么?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何整流?请看 DC 电源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整流电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整流电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#half-wave" class="md-nav__link">
+    <span class="md-ellipsis">
+      半波整流电路(Half-Wave)的构成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1047,6 +1170,28 @@
 <h1 id="_1">对整流电路的初步介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>理论上,这部分应当作为二极管的一个重要的实例放在扩展包里.<br />
 但是如果一个模电的笔记都敢于将整流电路放在"扩展包"里,那么这个模电笔记的内容也太贫瘠了一点,现在我们先初步地利用我们现有的元件,实现一下<strong>整流</strong>的工作吧.</p>
+<h2 id="_2">整流是什么?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>众所周知,我们现在通过电网输进来的电都是交流电.然而,我们的负载却几乎都是直流负载,我们的交流电直接加在这些负载上有很大的可能损坏我们的负载,造成经济损失和安全隐患.<br />
+我们自然想到,<strong>把交流电变成直流电</strong>,再加到负载上,这事不就解决了嘛!我们把这个过程叫做<strong>整流</strong>.
+就这么简单?就这么简单.</p>
+<h2 id="dc">如何整流?请看 DC 电源<a class="headerlink" href="#dc" title="Permanent link">&para;</a></h2>
+<p>我们的负载一般而言都需要电源来供电(<em>用电池的给我除去</em>),电源给负载供电的流程图和输入的波形一般如下所示:
+<img alt="DC电源" src="../images/DC_Power.png" /></p>
+<p>我们的负载要求电压一般而言也不是<span class="arithmatex">\(220\text{V}/120\text{V}\)</span>,而是十几伏到几十伏.此时我们就要掏出:<br />
+<strong><em>变压器!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</em></strong>(Transformer)</p>
+<p>现在,我们通过变压器将我们的电压的幅值从 <span class="arithmatex">\(120\text{V}\)</span> 变为了 <span class="arithmatex">\(v_{s}\)</span>.但是此时我们的输入信号还是交流的,因而还是不能加在负载上面.此时我们就要把原来的信号通过二极管整流器进行<strong>整流</strong>(Rectifying),将有正有负的交流电信号整流为脉动直流电,并利用电容器/电感器进行滤波(Filtering),此时我们已经近乎得到直流电了,但是还是会有一些交流的"噪声",称为<strong>纹波</strong>(Ripple).这时候我们再加上一个稳压器,就可以输出直流电了.<br />
+变压器的部分我们在电工技术中已经说过很多了,它并不属于电子技术的范畴.剩下的部分我们就会在电子技术中一一介绍,即<strong>整流器</strong>,<strong>滤波器</strong>和<strong>稳压器</strong>,统统学习过后,结合我们之后会学习的 BJT 管,MOS 管和已学习的二极管,我们应当自己可以制作一个电源出来.</p>
+<h2 id="_3">整流电路<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="half-wave">半波整流电路(Half-Wave)的构成<a class="headerlink" href="#half-wave" title="Permanent link">&para;</a></h3>
+<p>现在我们来介绍最方便实现的整流电路,大家已经在理想二极管的应用中见过它的一个简化形式(此时二极管是不考虑压降的).如下图所示:</p>
+<p><img alt="HW" src="../images/hw_rect_2.png" /></p>
+<p>那么大家基本都知道了这个电路会吃掉负半部分的波形.因为我们现在考虑的是实际二极管,所以还要考虑最小的<strong>导通电压</strong>,那么低于最小导通电压的正向电压也会被视作截止,输出的波形如图所示.
+<img alt="Out" src="../images/hw_waveform.png" /></p>
+<p>由于我们在波形负半区的情况下,二极管是属于截止状态的,所以我们此时二极管受到的反向电压的绝对值就是波形的峰值电压 <span class="arithmatex">\(v_{s}\)</span> ,这很危险,一不小心就会击穿我们二极管,所以我们将它作为一个重要的参量,称为<strong>PIV</strong>(Peak Inverse Voltage,反向峰值电压).此时</p>
+<div class="arithmatex">\[
+\text{PIV}=v_{s}
+\]</div>
+<p><strong>出于安全的考量,我们至少要选一个击穿电压大于PIV<span class="arithmatex">\(50\%\)</span>的二极管作为我们的整流器件</strong>.</p>
 
 
 
