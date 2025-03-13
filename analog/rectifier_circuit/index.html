@@ -809,6 +809,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#full-bridge-rectifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      桥式整流电路(Full-Bridge Rectifier)的构成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      峰值整流器
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1148,6 +1166,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#full-bridge-rectifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      桥式整流电路(Full-Bridge Rectifier)的构成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      峰值整流器
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1209,11 +1245,32 @@
 <div class="arithmatex">\[
 \text{PIV}=v_{s}
 \]</div>
-<p><strong>出于安全的考量,我们至少要选一个击穿电压大于PIV<span class="arithmatex">\(50\%\)</span>的二极管作为我们的整流器件</strong>.<br />
+<p><strong>出于安全的考量,我们至少要选一个击穿电压大于 PIV<span class="arithmatex">\(50\%\)</span>的二极管作为我们的整流器件</strong>.<br />
 更大的问题是,面对<span class="arithmatex">\(100\text{mV}\)</span>这样小的待整流信号,<strong>这个电路是不行的</strong>!</p>
 <h3 id="full-wave-rectifier">全波整流电路(Full-Wave Rectifier)的构成<a class="headerlink" href="#full-wave-rectifier" title="Permanent link">&para;</a></h3>
-<p>半波整流电路的一个大问题就是丢失了一半的波形,因而周期数发生了减半,进而丢失了一半的能量.<strong>这很浪费</strong>.为了能够让我们能够节约能源,我们做了一种新的电路,进而能够不切削负半区的波形.如下图所示:
-<img alt="fw" src="../images/full_wave.png" /></p>
+<p>半波整流电路的一个大问题就是丢失了一半的波形,因而周期数发生了减半,进而丢失了一半的能量.<strong>这很浪费</strong>.为了能够让我们能够节约能源,我们做了一种新的电路,进而能够不切削负半区的波形.如下图所示:</p>
+<p><img alt="fw" src="../images/full_wave.png" /></p>
+<p>我们首先是在次级线圈绕组的中心点上做一个抽头出来,这个抽头可以将我们的输出信号变为两个完全相同的信号<span class="arithmatex">\(v_{s}\)</span>.<br />
+当 <span class="arithmatex">\(V_{s}\)</span> 通过正半区时,上半部分<span class="arithmatex">\(V_{s}\)</span>通过<span class="arithmatex">\(D_{1}\)</span>,此时<span class="arithmatex">\(D_{1}\)</span>是正向导通的,他会通过负载,给它正向的电压,而通过引线对<span class="arithmatex">\(D_{2}\)</span>截止.此时就回到中心零点.<br />
+当 <span class="arithmatex">\(V_{s}\)</span> 通过负半区时,上半部分的 <span class="arithmatex">\(D_{1}\)</span> 被截止,<span class="arithmatex">\(V_{s}\)</span>通过走八字通过负载,此时负载上的电压还是正的.这样我们就实现了两个半周整流的目的.输出信号如下所示:</p>
+<p><img alt="fwOut" src="../images/fw_waveform.png" /></p>
+<p>那么此时的 PIV 是多少呢??利用上面的分析,我们的截止管不仅要承受本侧 <span class="arithmatex">\(v_{s}\)</span>, 还要承受导通侧的<span class="arithmatex">\(v_{s}-v_{0}\)</span>,因此,此时的 PIV 自然为:</p>
+<div class="arithmatex">\[
+\text{PIV}=2v_{s}-v_{0}
+\]</div>
+<p>如果<span class="arithmatex">\(v_{s}\)</span>很大,PIV 也将大的离谱.这是全波整流电路的第一个缺点:<strong>对二极管的反向截止电压要求太高</strong>.这说明它只适用于小信号的整流.<br />
+全波整流电路的第二个缺点是:<strong>这个中心抽头不是很好做</strong>.如果匝数不相等,我们上面的大量分析就会出问题,这个时候可能该截止的玩意就导通了.如果中心头的焊接不牢,可能会容易漏电等等.</p>
+<h3 id="full-bridge-rectifier">桥式整流电路(Full-Bridge Rectifier)的构成<a class="headerlink" href="#full-bridge-rectifier" title="Permanent link">&para;</a></h3>
+<p>为了解决上面的问题,我们从 Wheatstone Bridge 的电路中得到灵感(Wheatstone Bridge 是电路分析的内容),构建起了<strong>桥式整流电路</strong>,如下图所示:
+<img alt="FBR" src="../images/full_bridge.png" /></p>
+<p>当我们正半周通过时,此时<span class="arithmatex">\(D_1\)</span>,<span class="arithmatex">\(D_2\)</span>导通,<span class="arithmatex">\(D_3\)</span>,<span class="arithmatex">\(D_4\)</span>截止.流过电阻<span class="arithmatex">\(R\)</span>上的电流自图右向图左,记此方向为正向.<br />
+当我们负半周通过时,此时<span class="arithmatex">\(D_3\)</span>,<span class="arithmatex">\(D_4\)</span>导通,<span class="arithmatex">\(D_1\)</span>,<span class="arithmatex">\(D_2\)</span>截止.流过电阻<span class="arithmatex">\(R\)</span>上的电流依然自图右向图左.从此,我们实现了整流的目标.<br />
+由于我们的现在一个半周要过两个管子,所以输出的电压其实是<span class="arithmatex">\(v_{s}-2v_{d}\)</span>.但是我们注意到,此时的截止管只要负责hold住自己旁边的管子了,此时PIV是:
+$$
+\text{PIV}=v_{s}-v_{d}
+$$
+另一个好处在于,我们不再需要用两倍的绕组来实现相同的电压输出了.</p>
+<h3 id="_4">峰值整流器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 
 
 
