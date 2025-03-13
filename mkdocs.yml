@@ -72,6 +72,7 @@ nav:
     - 流体力学(00): "fluid/intro.md"
     - 流体力学(01): "fluid/basics_of_fluid.md"
     - 流体力学(02): "fluid/static_mechanics.md"
+    - 流体力学(03): "fluid/static_mechanics_2.md"
   - 模拟电子技术: 
     - 目录: "analog/index.md"
     - 二极管(00): "analog/diode_0.md"
