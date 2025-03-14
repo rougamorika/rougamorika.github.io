@@ -87,7 +87,7 @@ nav:
     - 电源纹波和交流小信号的实例: "analog_sup/ripple.md"
     - 正向稳压器实现: "analog_sup/positive_regulator.md"
     - Zener管实现分流稳压电路: "analog_sup/shunt_zener.md"
-      
+    - 短基二极管: "analog_sup/short_based_dod.md"   
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
   
