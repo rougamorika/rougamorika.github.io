@@ -53,8 +53,8 @@ $$ 则:$d<1$时级数收敛,$d>1$时级数发散.
    \lim_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} - 1 \right) = r
    $$ 则:$r>1$时级数收敛,$r<1$时级数发散.
    3. (**Bertrand 判别法**)若$$
-   \lim_{n \to \infty} \ln n \left[ n \left( \frac{a_n}{a_{n+1}} - 1 \right) - 1 \right] = b.
-   $$则:$b>1$时级数收敛,$b<1$时级数发散.
+   \lim_{n \to \infty} \ln n \left[ n \left( \frac{a_n}{a_{n+1}} - 1 \right) - 1 \right] = b
+   $$ 则:$b>1$时级数收敛,$b<1$时级数发散.
    4. (**Gauss 判别法**)若$$
    \frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + O\left(\frac{1}{n^{1+\varepsilon}}\right), \varepsilon > 0
    $$ 则:$\mu>1$时级数收敛,$\mu\leq 1$时级数发散.
