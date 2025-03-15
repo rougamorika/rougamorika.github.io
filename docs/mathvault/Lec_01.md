@@ -41,20 +41,12 @@ $$
 
 如下是常见的关于比较判别法的变式,尝试证明一下吧!假定$a_{n}$是**正项级数**.
 
-1. (**Cauchy根值判别法**)若\[
-\lim_{n \to \infty} \sqrt[n]{a_n} = c\]
+1. (**Cauchy根值判别法**)若\[\lim_{n \to \infty} \sqrt[n]{a_n} = c\]
 则:$c<1$时级数收敛,$c>1$时级数发散.
 2. (**比值判别法**)
-   1. (**D'lambert 判别法**)若\[
-\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = d
+   1. (**D'lambert 判别法**)若\[\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = d
 \] 则:$d<1$时级数收敛,$d>1$时级数发散.
-   2. (**Raabe 判别法**)若\[
-\lim_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} - 1 \right) = r,
-\] 则:$r>1$时级数收敛,$r<1$时级数发散.
-   3. (**Bertrand 判别法**)若\[
-\lim_{n \to \infty} \ln n \left[ n \left( \frac{a_n}{a_{n+1}} - 1 \right) - 1 \right] = b.
-\]则:$b>1$时级数收敛,$b<1$时级数发散.
-   4. (**Gauss 判别法**)若\[
-\frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + O\left(\frac{1}{n^{1+\varepsilon}}\right), \varepsilon > 0
-\] 则:$\mu>1$时级数收敛,$\mu\leq 1$时级数发散.
+   2. (**Raabe 判别法**)若\[\lim_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} - 1 \right) = r\] 则:$r>1$时级数收敛,$r<1$时级数发散.
+   3. (**Bertrand 判别法**)若\[\lim_{n \to \infty} \ln n \left[ n \left( \frac{a_n}{a_{n+1}} - 1 \right) - 1 \right] = b.\]则:$b>1$时级数收敛,$b<1$时级数发散.
+   4. (**Gauss 判别法**)若\[\frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + O\left(\frac{1}{n^{1+\varepsilon}}\right), \varepsilon > 0\] 则:$\mu>1$时级数收敛,$\mu\leq 1$时级数发散.
 
