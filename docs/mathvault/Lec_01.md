@@ -58,4 +58,3 @@ $$ 则:$d<1$时级数收敛,$d>1$时级数发散.
    4. (**Gauss 判别法**)若$$
    \frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + O\left(\frac{1}{n^{1+\varepsilon}}\right), \varepsilon > 0
    $$ 则:$\mu>1$时级数收敛,$\mu\leq 1$时级数发散.
-
