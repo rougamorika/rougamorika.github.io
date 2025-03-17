@@ -1553,7 +1553,9 @@ $$
 <p><strong>p级数是一个很有用的比较级数.</strong></p>
 <h2 id="_4">关于题单上的习题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="a2-1">A2-1<a class="headerlink" href="#a2-1" title="Permanent link">&para;</a></h3>
-<p><span class="arithmatex">\(<span class="arithmatex">\(\sum_{n=1}^{\infty} \frac{1}{3^{\log(n)}}\)</span>\)</span></p>
+<div class="arithmatex">\[
+ \sum_{n=1}^{\infty} \frac{1}{3^{\log(n)}}
+\]</div>
 <p>这题不难,关键是它不长<span class="arithmatex">\(p\)</span>级数的样子,得把它化过去.
 注意到:
 $$
@@ -1574,11 +1576,11 @@ $$
 \sum_{n=2}^{\infty} \frac{1}{{n}^{\log(\log n)}}
 $$
 那实际上我们就是看<span class="arithmatex">\(\log(\log n)\)</span>的情况</p>
-<p>首先,我们注意到<span class="arithmatex">\(n\)</span>一定是比<span class="arithmatex">\(\log(\log n)\)</span>更高阶的无穷大,所以我们考虑其与<span class="arithmatex">\(n^{2}\)</span>的关系,注意到对于极限
-$$
+<p>首先,我们注意到<span class="arithmatex">\(n\)</span>一定是比<span class="arithmatex">\(\log(\log n)\)</span>更高阶的无穷大,所以我们考虑其与<span class="arithmatex">\(n^{2}\)</span>的关系,注意到对于极限做分析</p>
+<p>$$
 \lim_{n\to \infty}\frac{n<sup _log_log="\log\log" n="n">{2}}{n</sup>
 $$
-注意到上面的极限一定为0,如果你注意不到,我们可以这么玩一下:
+上面的极限一定为0,如果你注意不到,我们可以这么玩一下:
 $$
 \lim_{n\to \infty}n^{2-\log(n)}
 $$
