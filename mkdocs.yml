@@ -89,7 +89,8 @@ nav:
     - Zener管实现分流稳压电路: "analog_sup/shunt_zener.md"
     - 短基二极管: "analog_sup/short_based_dod.md"  
   - 数学讲义:
-    - 第一讲: "mathvault/Lec_01.md"
+    - 第一讲例题单: "mathvault/Lec_01.md"
+    - 第一讲解答: "mathvault/Tec.md"
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
   
