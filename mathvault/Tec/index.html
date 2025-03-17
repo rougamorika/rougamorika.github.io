@@ -1233,13 +1233,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#a" class="md-nav__link">
     <span class="md-ellipsis">
-      关于题单上的习题
+      关于题单上的习题A
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="关于题单上的习题">
+    <nav class="md-nav" aria-label="关于题单上的习题A">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1266,6 +1266,45 @@
       A2-3
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的等价量代换判别法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的等价量代换判别法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wallis" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个 Wallis 等价式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="两个 Wallis 等价式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wallis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallis 公式的第一种证明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1398,13 +1437,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#a" class="md-nav__link">
     <span class="md-ellipsis">
-      关于题单上的习题
+      关于题单上的习题A
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="关于题单上的习题">
+    <nav class="md-nav" aria-label="关于题单上的习题A">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1431,6 +1470,45 @@
       A2-3
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的等价量代换判别法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的等价量代换判别法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wallis" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个 Wallis 等价式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="两个 Wallis 等价式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wallis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallis 公式的第一种证明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1480,10 +1558,11 @@
 \sum_{n=1}^{\infty} \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \cdots + \frac{1}{n^s} + \cdots
 \]</div>
 <p>不过有一点我们<em>欺骗</em>了大家,其实它的完全体是:</p>
-<div class="arithmatex">\[
-\zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \cdots + \frac{1}{n^s} + \cdots
-\]</div>
-<p>称之为<strong>黎曼<span class="arithmatex">\(\zeta\)</span>函数</strong></p>
+<div class="admonition ad-note">
+<p class="admonition-title">Riemann-Zeta函数</p>
+<p>如下
+<span class="arithmatex">\(<span class="arithmatex">\(\zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \cdots + \frac{1}{n^s} + \cdots\)</span>\)</span></p>
+</div>
 <p>首先我们考虑调和级数:</p>
 <div class="arithmatex">\[
 \sum_{n=1}^{\infty} \frac{1}{n}
@@ -1507,8 +1586,8 @@ A'+\frac{A}{2}&gt;A
 <p>所以奇数项与偶数项的和的收敛值必然比<span class="arithmatex">\(A\)</span>来的大,这和我们假设<span class="arithmatex">\(A\)</span>是调和级数的收敛值是矛盾的,因此,<strong>调和级数不收敛</strong>.</p>
 <div class="admonition ad-note">
 <p class="admonition-title">关于调和级数的补充</p>
-</div>
 <p>事实上,<span class="arithmatex">\(\zeta(s)\)</span>是一个复值函数,由于我们上面的讨论,实质上不存在<span class="arithmatex">\(\zeta(1)\)</span></p>
+</div>
 <h4 id="2">2 幂次拆分法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>事实上,我们利用下面的关系</p>
 <div class="arithmatex">\[
@@ -1551,7 +1630,7 @@ L=1+\frac{1}{2^s}+\frac{\frac{1}{2^\sigma}}{1-\frac{1}{2^\sigma}}
 \]</div>
 <p>所以级数是收敛的.</p>
 <p><strong>p 级数是一个很有用的比较级数.</strong></p>
-<h2 id="_4">关于题单上的习题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="a">关于题单上的习题A<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
 <h3 id="a2-1">A2-1<a class="headerlink" href="#a2-1" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
  \sum_{n=1}^{\infty} \frac{1}{3^{\log(n)}}
@@ -1629,6 +1708,14 @@ n^{-\infty}
 \exp((\log\log(n))^2)&lt;\exp(\log(n))=n
 \]</div>
 <p>所以可以认为,<span class="arithmatex">\(\displaystyle\sum_{n=3}^{\infty}\frac{1}{\exp((\log\log(n))^2)}\)</span>是一个比<span class="arithmatex">\(\displaystyle\sum_{n=3}^{\infty}\frac{1}{n}\)</span>还要强的级数,后者已然发散,前者必然发散.</p>
+<h2 id="_4">级数的等价量代换判别法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>我们有的时候需要利用已知的等价代换来研究我们的级数敛散性,因而我们需要先介绍一下下列在高数中不太件的等价量</p>
+<h3 id="wallis">两个 Wallis 等价式<a class="headerlink" href="#wallis" title="Permanent link">&para;</a></h3>
+<p>首先我们从我们熟悉的 <strong>Wallis 公式</strong>出发,首先我们要证明 <strong>Wallis 公式</strong>:</p>
+<div class="arithmatex">\[
+\lim_{n \to \infty} \frac{1}{2n+1} \left[ \frac{2 \cdot 4 \cdot \cdots \cdot (2n)}{1 \cdot 3 \cdot \cdots \cdot (2n-1)} \right]^2 = \frac{\pi}{2}
+\]</div>
+<h4 id="wallis_1">Wallis 公式的第一种证明<a class="headerlink" href="#wallis_1" title="Permanent link">&para;</a></h4>
 
 
 
