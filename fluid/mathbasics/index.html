@@ -1339,18 +1339,36 @@
 <h2 id="_1">场论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">场是什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>场就是<strong>空间内函数</strong>.<br />
-场根据函数描述对象的不同有所分类:</p>
-<ul>
-<li>按照被映射集(自变数)的情况</li>
-<li>是标量:标量场</li>
-<li>是矢量:矢量场</li>
-<li>按照映射集(因变数)的情况</li>
-<li>各点函数值相同:均匀场</li>
-<li>~ 不相同:非均匀场</li>
-<li>按照是否时变</li>
-<li>时变:非定常场</li>
-<li>不随时变:定常场</li>
-</ul>
+场根据函数描述对象的不同有所分类,如下图所示
+<pre class="mermaid"><code>---
+title:场的分类
+---
+classDiagram
+class 场
+    场:+定义域是标量或矢量
+    场:+函数值是标量
+    场:+可以有时间变数
+
+    场 &lt;|-- 自变量
+    场 &lt;|-- 函数值
+    场 &lt;|-- 时变特性
+
+    自变量&lt;|-- 标量场
+    自变量&lt;|-- 矢量场
+    函数值&lt;|-- 均匀场
+    函数值&lt;|-- 非均匀场
+    时变特性&lt;|-- 定常场
+    时变特性&lt;|-- 非定常场
+
+    自变量:+矢量
+    自变量:+标量
+
+    函数值:+各点均匀的
+    函数值:+与点分布相关的
+
+    时变特性:+函数值随时间改变
+    时变特性:+函数值不随时间改变
+</code></pre></p>
 <h3 id="_3">标量场的几何描述:等势面<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>现在给定一个标量场<span class="arithmatex">\(\varphi(r,t)\)</span>,我们描述这个场的方式是:</p>
 <ul>
