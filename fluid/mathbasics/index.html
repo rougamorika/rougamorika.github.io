@@ -1367,8 +1367,7 @@ class 场
     函数值:+与点分布相关的
 
     时变特性:+函数值随时间改变
-    时变特性:+函数值不随时间改变
-</code></pre></p>
+    时变特性:+函数值不随时间改变</code></pre></p>
 <h3 id="_3">标量场的几何描述:等势面<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>现在给定一个标量场<span class="arithmatex">\(\varphi(r,t)\)</span>,我们描述这个场的方式是:</p>
 <ul>
@@ -1383,19 +1382,7 @@ class 场
 <li>电势的等势线</li>
 </ul>
 <h3 id="_4">矢量场的几何描述:矢量线<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>我们现在来描述矢量场的几何情况.由矢量的定义,我们有:</p>
-<ul>
-<li>矢量</li>
-<li>大小<ul>
-<li>利用等势面</li>
-</ul>
-</li>
-<li>方向<ul>
-<li>利用<strong>矢量线</strong></li>
-</ul>
-</li>
-</ul>
-<p>现在我们来理解下矢量线,它是经过场内各个点的<strong>曲线族</strong>,并且满足<strong>过场内所有点的矢量方向与矢量线处处相切</strong>.</p>
+<p>我们现在来描述矢量场的几何情况.这是通过矢量线,它是经过场内各个点的<strong>曲线族</strong>,并且满足<strong>过场内所有点的矢量方向与矢量线处处相切</strong>.</p>
 <p>怎么样去描述一个矢量线呢??取场内的某一个向量,任意取,自然我们可以取到<span class="arithmatex">\(\vec{a}\)</span>,它一定和此时矢量线通过该点的线微元平行(这是由于相切的定义).描述两个向量平行,最简明的方法是通过矢积:</p>
 <div class="arithmatex">\[
 \vec{a}\times\mathrm{d}\vec{r}=0
@@ -1409,9 +1396,10 @@ class 场
 \end{vmatrix}=0
 \]</div>
 <p>自然地,如果要使得上面的行列式每时每刻都为0,只能是非基向量的那两行处处对应成比例,即:</p>
-<div class="arithmatex">\[
-\frac{\mathrm{d}x}{a_{x}(x,y,z,t)}=\frac{\mathrm{d}y}{a_{y}(x,y,z,t)}=\frac{\mathrm{d}z}{a_{z0}(x,y,z,t)}
-\]</div>
+<p>$$
+\frac{\mathrm{d}x}{a_{x}(x,y,z,t)}=\frac{\mathrm{d}y}{a_{y}(x,y,z,t)}=\frac{\mathrm{d}z}{a_{z}(x,y,z,t)}
+$$
+这便是矢量线的微分方程,通过对微分方程的求解我们可以得到矢量线的函数.</p>
 
 
 
