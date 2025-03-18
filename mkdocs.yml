@@ -70,6 +70,7 @@ nav:
     - 介绍: "index.md"
   - 流体力学:
     - 流体力学(00): "fluid/intro.md"
+    - 流体力学(0.01): "fluid/mathbasics.md"
     - 流体力学(01): "fluid/basics_of_fluid.md"
     - 流体力学(02): "fluid/static_mechanics.md"
     - 流体力学(03): "fluid/static_mechanics_2.md"
