@@ -172,7 +172,7 @@ $$
 
 ![Zener管](images/Zener_Diode.png)
 
-使得我们的Zener管进入击穿模式的最小电流,称为**膝点电流**.Zener管反加的电压大于膝点电流对应的电压时,此时我们的电压变化不明显,而电流变化剧烈,如下图所示:
+使得我们的Zener管进入击穿模式的最小电流,称为**拐点电流**.Zener管反加的电压大于拐点电流对应的电压时,此时我们的电压变化不明显,而电流变化剧烈,如下图所示:
 ![Zener_IV](images/zener_iV.png)
 
 击穿部分的斜率称为齐纳二极管的**动态电阻**,他一般(在反向区)满足这样的表达式
@@ -183,8 +183,10 @@ $$
 $$
 V_{Z}=V_{Z0}+I_{Z}R_{Z}
 $$
+对于齐纳二极管的建模也是比较容易的,由于上面推导之线性性质,我们常常将齐纳二极管建模成如下所示的组合.
+![齐纳线性电路模型](images/zener_linear_image.png)
 
-齐纳管的一个重要实例是用作[分流稳压管](https://rougamorika.github.io/analog_sup/shunt_zener).
+齐纳管的一个重要实例是用作[并联稳压管](https://rougamorika.github.io/analog_sup/shunt_zener).
 
 
 
