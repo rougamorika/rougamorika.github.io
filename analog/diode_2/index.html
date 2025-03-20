@@ -1646,7 +1646,7 @@ $$</p>
 <h2 id="zener">Zener二极管<a class="headerlink" href="#zener" title="Permanent link">&para;</a></h2>
 <p>有些时候,我们需要能够承受反向电压的二极管,这是因为,我们的二极管的击穿区的<span class="arithmatex">\(i-v\)</span>曲线近似竖直,意味着哪怕我们的电流波动很大,此时的电压也很稳定.所以这种特性让我们可以用来<strong>稳压</strong>.能够承受反向电压的二极管,我们称之为<strong>稳压二极管</strong>,又称<strong>Zener管</strong>.Zener管的图示如下所示:</p>
 <p><img alt="Zener管" src="../images/Zener_Diode.png" /></p>
-<p>使得我们的Zener管进入击穿模式的最小电流,称为<strong>膝点电流</strong>.Zener管反加的电压大于膝点电流对应的电压时,此时我们的电压变化不明显,而电流变化剧烈,如下图所示:
+<p>使得我们的Zener管进入击穿模式的最小电流,称为<strong>拐点电流</strong>.Zener管反加的电压大于拐点电流对应的电压时,此时我们的电压变化不明显,而电流变化剧烈,如下图所示:
 <img alt="Zener_IV" src="../images/zener_iV.png" /></p>
 <p>击穿部分的斜率称为齐纳二极管的<strong>动态电阻</strong>,他一般(在反向区)满足这样的表达式
 $$
@@ -1655,8 +1655,10 @@ $$
 从<span class="arithmatex">\(i-v\)</span>曲线的角度来说,<span class="arithmatex">\(r_z\)</span>表现为其反向击穿曲线斜率的倒数.假设对于上面穿过某一定点<span class="arithmatex">\(Q\)</span>的斜率为<span class="arithmatex">\(\frac{1}{r_{z}}\)</span>的直线的横截距为<span class="arithmatex">\(-V_{Z0}\)</span>,那么我们就可以这样写我们的表达式(<strong>注意下面的式子中的量都是绝对值</strong>):
 $$
 V_{Z}=V_{Z0}+I_{Z}R_{Z}
-$$</p>
-<p>齐纳管的一个重要实例是用作<a href="https://rougamorika.github.io/analog_sup/shunt_zener">分流稳压管</a>.</p>
+$$
+对于齐纳二极管的建模也是比较容易的,由于上面推导之线性性质,我们常常将齐纳二极管建模成如下所示的组合.
+<img alt="齐纳线性电路模型" src="../images/zener_linear_image.png" /></p>
+<p>齐纳管的一个重要实例是用作<a href="https://rougamorika.github.io/analog_sup/shunt_zener">并联稳压管</a>.</p>
 
 
 

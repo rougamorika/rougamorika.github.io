@@ -1212,7 +1212,16 @@
   
 
 
-<h1 id="zener">利用Zener管实现分流稳压电路<a class="headerlink" href="#zener" title="Permanent link">&para;</a></h1>
+<h1 id="zener">利用Zener管实现并联稳压器<a class="headerlink" href="#zener" title="Permanent link">&para;</a></h1>
+<p>我们来看如下的一个电路:
+<img alt="并联稳压管" src="../images/zener_shunt_reg.png" />
+如图所示的<span class="arithmatex">\(\text{6.8V}\)</span>齐纳二极管,在<span class="arithmatex">\(I_Z = 5 \, \text{mA}\)</span>时<span class="arithmatex">\(V_Z = 6.8 \, \text{V}\)</span>，<span class="arithmatex">\(r_z = 20 \, \Omega\)</span>，和<span class="arithmatex">\(I_{ZK} = 0.2 \, \text{mA}\)</span>.电源电压<span class="arithmatex">\(V^+\)</span>有额定值为10 V,但可能有±1 V的范围的浮动</p>
+<p>(a) 求无负载且<span class="arithmatex">\(V^+\)</span>在其额定值时的<span class="arithmatex">\(V_o\)</span>。</p>
+<p>(b) 当<span class="arithmatex">\(V^+\)</span>有<span class="arithmatex">\(\pm \text{1V}\)</span>变化时<span class="arithmatex">\(V_o\)</span>的变化.补充:<span class="arithmatex">\((\Delta V_o / \Delta V^+)\)</span>,单位为<span class="arithmatex">\(\text{mV/V}\)</span>,称为<strong>线性稳压性</strong>。</p>
+<p>&copy; 接上负载电阻<span class="arithmatex">\(R_L\)</span>,其上电流<span class="arithmatex">\(I_L = 1 \, \text{mA}\)</span>.求此时<span class="arithmatex">\(V_o\)</span>的变化,并求<strong>负载稳压性</strong><span class="arithmatex">\((\Delta V_o / \Delta I_L)\)</span>,其单位为mV/mA.</p>
+<p>(d) 当<span class="arithmatex">\(R_L = 2 \, \text{k}\Omega\)</span>时,求<span class="arithmatex">\(V_o\)</span>的变化。</p>
+<p>(e) 当<span class="arithmatex">\(R_L = 0.5 \, \text{k}\Omega\)</span>时,求<span class="arithmatex">\(V_o\)</span>的值。</p>
+<p>(f) 齐纳二极管仍在击穿区工作时的<span class="arithmatex">\(R_L\)</span>的最小值是多少？</p>
 
 
 
