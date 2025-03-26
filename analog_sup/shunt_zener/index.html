@@ -1041,6 +1041,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Zener管实现分流稳压电路
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1051,6 +1063,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对上面性质的研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对上面性质的研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      (a):无负载条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      (b)含浮动的外加电压
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      &copy;含负载的条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1206,6 +1279,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对上面性质的研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对上面性质的研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      (a):无负载条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      (b)含浮动的外加电压
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      &copy;含负载的条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1237,15 +1360,62 @@
 
 
 <h1 id="zener">利用Zener管实现并联稳压器<a class="headerlink" href="#zener" title="Permanent link">&para;</a></h1>
-<p>我们来看如下的一个电路:
-<img alt="并联稳压管" src="../images/zener_shunt_reg.png" />
-如图所示的<span class="arithmatex">\(\text{6.8V}\)</span>齐纳二极管,在<span class="arithmatex">\(I_Z = 5 \, \text{mA}\)</span>时<span class="arithmatex">\(V_Z = 6.8 \, \text{V}\)</span>，<span class="arithmatex">\(r_z = 20 \, \Omega\)</span>，和<span class="arithmatex">\(I_{ZK} = 0.2 \, \text{mA}\)</span>.电源电压<span class="arithmatex">\(V^+\)</span>有额定值为10 V,但可能有±1 V的范围的浮动</p>
+<p>我们来看如下的一个电路:</p>
+<p><img alt="并联稳压管" src="../images/zener_shunt_reg.png" /></p>
+<p>如图所示的<span class="arithmatex">\(\text{6.8V}\)</span>齐纳二极管,在<span class="arithmatex">\(I_Z = 5 \, \text{mA}\)</span>时<span class="arithmatex">\(V_Z = 6.8 \, \text{V}\)</span>，<span class="arithmatex">\(r_z = 20 \, \Omega\)</span>，和<span class="arithmatex">\(I_{ZK} = 0.2 \, \text{mA}\)</span>.电源电压<span class="arithmatex">\(V^+\)</span>有额定值为10 V,但可能有±1 V的范围的浮动</p>
 <p>(a) 求无负载且<span class="arithmatex">\(V^+\)</span>在其额定值时的<span class="arithmatex">\(V_o\)</span>。</p>
 <p>(b) 当<span class="arithmatex">\(V^+\)</span>有<span class="arithmatex">\(\pm \text{1V}\)</span>变化时<span class="arithmatex">\(V_o\)</span>的变化.补充:<span class="arithmatex">\((\Delta V_o / \Delta V^+)\)</span>,单位为<span class="arithmatex">\(\text{mV/V}\)</span>,称为<strong>线性稳压性</strong>。</p>
 <p>&copy; 接上负载电阻<span class="arithmatex">\(R_L\)</span>,其上电流<span class="arithmatex">\(I_L = 1 \, \text{mA}\)</span>.求此时<span class="arithmatex">\(V_o\)</span>的变化,并求<strong>负载稳压性</strong><span class="arithmatex">\((\Delta V_o / \Delta I_L)\)</span>,其单位为mV/mA.</p>
 <p>(d) 当<span class="arithmatex">\(R_L = 2 \, \text{k}\Omega\)</span>时,求<span class="arithmatex">\(V_o\)</span>的变化。</p>
 <p>(e) 当<span class="arithmatex">\(R_L = 0.5 \, \text{k}\Omega\)</span>时,求<span class="arithmatex">\(V_o\)</span>的值。</p>
 <p>(f) 齐纳二极管仍在击穿区工作时的<span class="arithmatex">\(R_L\)</span>的最小值是多少？</p>
+<h2 id="_1">对上面性质的研究<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="a">(a):无负载条件<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
+<p>即使是无负载条件,我们也要考虑齐纳二极管的电阻阻值(齐纳二极管并不是理想二极管),所以我们先得计算出通过于齐纳二极管的电流是:
+$$
+\color{green}
+i_{zener}=\frac{V^{+}-V_{Zener}}{R+R_{zener}}
+$$
+注意,由于我们考虑的是通过Zener管的电流
+所以电流不是
+$$
+\color{#EE6363}
+i_{zener}=\frac{V^{+}}{R+R_{zener}}
+$$
+经过简单的计算,可得
+$$
+i=6.35\text{mA}
+$$
+因此我们利用上面的电流来计算电压:
+$$
+v_{o}=v_{z_{0}}+i_{z}r_{z}=6.83\text{V}
+$$</p>
+<h3 id="b">(b)含浮动的外加电压<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
+<p>因为我们测的电压本质是齐纳管电阻和外阻<span class="arithmatex">\(R\)</span>的分压,所以发生的浮动其实是由齐纳管内阻的分压变化造成的,因而只要将这部分分压拿出来就可以了.<br />
+$$
+\pm 1\text{V}\times \frac{20}{520}=\pm 38.5\text{mV}
+$$</p>
+<h3 id="_2">&copy;含负载的条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>我们认为,当<span class="arithmatex">\(I_{L}=1\text{mA}\)</span>时,<span class="arithmatex">\(I_{z}\)</span>就要少掉<span class="arithmatex">\(1\text{mA}\)</span>,因而实际上造成的变化是
+$$
+20\Omega\times (-1\text{mA})=-20\text{mV}
+$$
+所以线性稳压性:
+$$
+\frac{-20\text{mV}}{1\text{mA}}=-20\text{mV/mA}
+$$</p>
+<details class="ad-danger 我的异议">
+<summary>Ad-danger</summary>
+<p>如果上面的齐纳二极管完全不考虑其内部电阻,是理想齐纳二极管,那么我没问题.但是有内阻的情况,难道不应该重新计算总电流吗??此时的无负载总电流是:
+$$
+\frac{10-6.8\text{V}}{500+20\Omega}=6.15\text{mA}
+$$
+有负载的总电流是
+$$
+\frac{10-6.8\text{V}}{500+19.94\Omega}=6.16\text{mA}
+$$
+所以<span class="arithmatex">\(I_{z}\)</span>的减少量是<span class="arithmatex">\(0.99\text{mA}\)</span>,而不是<span class="arithmatex">\(1\text{mA}\)</span>,这一点会在齐纳管内阻更大的情况下更为显著.</p>
+</details>
 
 
 
