@@ -1116,6 +1116,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      (d) 接大负载的情况(即齐纳管工作在击穿区)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      (e) 接小负载的情况(齐纳管未被击穿)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      (f) 转变电压的求解
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1322,6 +1349,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      (d) 接大负载的情况(即齐纳管工作在击穿区)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      (e) 接小负载的情况(齐纳管未被击穿)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      (f) 转变电压的求解
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1398,13 +1452,13 @@ $$</p>
 <h3 id="_2">&copy;含负载的条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>我们认为,当<span class="arithmatex">\(I_{L}=1\text{mA}\)</span>时,<span class="arithmatex">\(I_{z}\)</span>就要少掉<span class="arithmatex">\(1\text{mA}\)</span>,因而实际上造成的变化是
 $$
-20\Omega\times (-1\text{mA})=-20\text{mV}
+\Delta_{z}=20\Omega\times (-1\text{mA})=-20\text{mV}
 $$
 所以线性稳压性:
 $$
-\frac{-20\text{mV}}{1\text{mA}}=-20\text{mV/mA}
+p=\frac{-20\text{mV}}{1\text{mA}}=-20\text{mV/mA}
 $$</p>
-<details class="danger 我的异议">
+<details class="danger 我的非近似异议">
 <summary>Danger</summary>
 <p>如果上面的齐纳二极管完全不考虑其内部电阻,是理想齐纳二极管,那么我没问题.但是有内阻的情况,难道不应该重新计算总电流吗??此时的无负载总电流是:
 $$
@@ -1416,6 +1470,37 @@ $$
 $$
 所以<span class="arithmatex">\(I_{z}\)</span>的减少量是<span class="arithmatex">\(0.99\text{mA}\)</span>,而不是<span class="arithmatex">\(1\text{mA}\)</span>,这一点会在齐纳管内阻更大的情况下更为显著.</p>
 </details>
+<h3 id="d">(d) 接大负载的情况(即齐纳管工作在击穿区)<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
+<p>虽然我上面提出这样的异议,但是我们还是以一种近似的态度来计算这题,即我们不考虑此时对总电流特别大的影响:
+$$
+i=\frac{6.8\text{V}}{2\text{k}\Omega}=3.4\text{mA}
+$$
+所以此时
+$$
+\Delta v_{z}=-3.4\text{mA}\times 20\Omega=-68\text{mV}
+$$
+实际上,如果考虑上面的提出的误差,实际的结果大概是<span class="arithmatex">\(-70\text{mV}\)</span>.</p>
+<h3 id="e">(e) 接小负载的情况(齐纳管未被击穿)<a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
+<p>此时我们接的是小负载,这个时候按照上面的算法,电阻就要拿去<span class="arithmatex">\(13.4\text{mA}\)</span>的电流.</p>
+<details class="warning">
+<summary>Warning</summary>
+<p>这河里吗??这肯定不河里啊kora,齐纳管都要被榨干了罢!!!(齐纳管:我还是是不是管啊我还是不是管?!!)</p>
+</details>
+<p>所以说明齐纳管绝对不工作在击穿区,只能工作在截止区,那么我们就把它看作断路,那么此时就是支路电阻和外阻<span class="arithmatex">\(R\)</span>分压,简单算出来
+$$
+v_{o}=\frac{500}{500+500}\times 10\text{V}=5\text{V}&lt; 6.8\text{V}
+$$
+所以确实人在截止区好好的.</p>
+<h3 id="f">(f) 转变电压的求解<a class="headerlink" href="#f" title="Permanent link">&para;</a></h3>
+<p>我们要求最小的能使齐纳管工作在击穿电压的情况,此时也就是说,只要电压最小,并且至少给齐纳管<span class="arithmatex">\(\text{mA}\)</span>的电流就成了呗.
+那么自然地我们就可以算出干路电流
+$$
+\frac{9-6.7}{0.5}=4.4\text{mA}
+$$
+那么我们分<span class="arithmatex">\(4.4-0.2\)</span>给支路电阻,它的电阻就是:
+$$
+\frac{6.7}{4.2}\approx 1.5\text{k}\Omega
+$$</p>
 
 
 
