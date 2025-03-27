@@ -272,6 +272,7 @@ $$
 \end{cases}
 $$
 解上面的微分方程,可以得到.
+
 $$
 p=\frac{1}{2}\rho r^{2}\Omega^{2}+f(z)
 $$
@@ -284,6 +285,7 @@ $$
 f(z)=-\gamma z
 $$
 所以组合得到:
+
 $$
 p=\frac{1}{2}\rho r^{2}\Omega^{2}-\gamma z
 $$
