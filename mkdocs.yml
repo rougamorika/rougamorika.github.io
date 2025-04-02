@@ -74,6 +74,7 @@ nav:
     - 流体力学(01): "fluid/basics_of_fluid.md"
     - 流体力学(02): "fluid/static_mechanics.md"
     - 流体力学(03): "fluid/static_mechanics_2.md"
+    - 流体力学(04): "fluid/integral.md"
   - 流体力学习题册和实例补充包: 
     - 流体力学习题册(00): "fluid_sup/ft_exercise.md"
   - 模拟电子技术: 
@@ -95,6 +96,9 @@ nav:
   - 数学讲义:
     - 第一讲例题单: "mathvault/Lec_01.md"
     - 第一讲解答: "mathvault/Tec.md"
+  - 信号与系统:
+    - 信号与系统(00): "signals/intro.md"
+    - 信号与系统(01): "signals/Lec_01.md"
 
 copyright: Copyright &copy; 2025 Rougamo. # 左下角的版权声明
   

@@ -120,6 +120,6 @@ $$
 
 ### PNP管
 
-
+![PNP管图](images/PNPmodel.png)
 [放大器的计算实例]
 

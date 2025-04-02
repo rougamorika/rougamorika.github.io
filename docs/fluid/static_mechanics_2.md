@@ -276,6 +276,7 @@ $$
 $$
 p=\frac{1}{2}\rho r^{2}\Omega^{2}+f(z)
 $$
+
 如何求出$f(z)$
 $$
 \frac{\partial p}{\partial z}=0+f^{\prime}(z)=-\gamma
@@ -290,5 +291,10 @@ $$
 p=\frac{1}{2}\rho r^{2}\Omega^{2}-\gamma z
 $$
 
+通过上面的公式我们可以有效地反向解出$z$:
+$$
+z=\frac{p_{0}-p_{1}}{\gamma}+\frac{r^{2}\Omega^{2}}{2g}
+$$
 
+关于实例我们将写在补充包当中
 
