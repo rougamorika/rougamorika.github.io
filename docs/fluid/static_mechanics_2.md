@@ -292,6 +292,7 @@ p=\frac{1}{2}\rho r^{2}\Omega^{2}-\gamma z
 $$
 
 通过上面的公式我们可以有效地反向解出$z$
+
 $$
 z=\frac{p_0-p_1}{\gamma}+\frac{r^2\Omega^2}{2g}
 $$
