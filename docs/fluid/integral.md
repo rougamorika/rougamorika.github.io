@@ -198,12 +198,15 @@ $$
 N_{CV}=\eta m_{CV} =\eta \rho V_{CV}=\eta \rho \iiint_{CV} dV
 $$
 而进出的变化量就是通过两截面广延量的净通量嘛,上面刚说过体积流率的事情
+
 $$
 \frac{\partial N_{net}}{\partial t}=\iint_{CS}\eta \rho (\vec{v}_{net\,CS}\cdot \vec{n})dA
 $$
+
 因此我们得到 **Reynolds 输运定理的一般形式**
+
 $$
-\boxed{
+\color{Red}{
 {\frac{dN}{dt}=\frac{\partial }{\partial t}\iiint_{CV} \eta \rho dV+\iint_{CS}\eta \rho (\vec{v}_{net\,CS}\cdot \vec{n})dA}}
 $$
 
