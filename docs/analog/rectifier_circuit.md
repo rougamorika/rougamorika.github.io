@@ -95,6 +95,3 @@ $$
 的样子,$v-t,i-t$如下图所示:
 ![wav](images/waveform.png)
 
-### 超二极管
-
-
