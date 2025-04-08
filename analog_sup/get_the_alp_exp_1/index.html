@@ -10,7 +10,7 @@
         <meta name="author" content="Rougamo">
       
       
-        <link rel="canonical" href="https://rougamorika.github.io/fluid/similarity/">
+        <link rel="canonical" href="https://rougamorika.github.io/analog_sup/get_the_alp_exp_1/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>流体力学(08): 相似原理和量纲分析 - EESite by Rougamo</title>
+        <title>求解三极管电路的参数(1):\(\alpha\)和\(\beta\) - EESite by Rougamo</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#08" class="md-skip">
+        <a href="#1alphabeta" class="md-skip">
           跳转至
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              流体力学(08): 相似原理和量纲分析
+              求解三极管电路的参数(1):\(\alpha\)和\(\beta\)
             
           </span>
         </div>
@@ -236,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../intro/" class="md-tabs__link">
+        <a href="../../fluid/intro/" class="md-tabs__link">
           
   
   
@@ -324,7 +324,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../analog_sup/sup_1/" class="md-tabs__link">
+        <a href="../sup_1/" class="md-tabs__link">
           
   
   
@@ -564,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../fluid/intro/" class="md-nav__link">
         
   
   
@@ -587,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mathbasics/" class="md-nav__link">
+      <a href="../../fluid/mathbasics/" class="md-nav__link">
         
   
   
@@ -610,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basics_of_fluid/" class="md-nav__link">
+      <a href="../../fluid/basics_of_fluid/" class="md-nav__link">
         
   
   
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../static_mechanics/" class="md-nav__link">
+      <a href="../../fluid/static_mechanics/" class="md-nav__link">
         
   
   
@@ -656,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../static_mechanics_2/" class="md-nav__link">
+      <a href="../../fluid/static_mechanics_2/" class="md-nav__link">
         
   
   
@@ -679,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integral/" class="md-nav__link">
+      <a href="../../fluid/integral/" class="md-nav__link">
         
   
   
@@ -702,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integral2/" class="md-nav__link">
+      <a href="../../fluid/integral2/" class="md-nav__link">
         
   
   
@@ -725,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integral3/" class="md-nav__link">
+      <a href="../../fluid/integral3/" class="md-nav__link">
         
   
   
@@ -1187,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog_sup/sup_1/" class="md-nav__link">
+      <a href="../sup_1/" class="md-nav__link">
         
   
   
@@ -1210,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog_sup/ripple/" class="md-nav__link">
+      <a href="../ripple/" class="md-nav__link">
         
   
   
@@ -1233,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog_sup/positive_regulator/" class="md-nav__link">
+      <a href="../positive_regulator/" class="md-nav__link">
         
   
   
@@ -1256,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog_sup/shunt_zener/" class="md-nav__link">
+      <a href="../shunt_zener/" class="md-nav__link">
         
   
   
@@ -1279,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog_sup/short_based_dod/" class="md-nav__link">
+      <a href="../short_based_dod/" class="md-nav__link">
         
   
   
@@ -1537,122 +1537,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#buckingham-pi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Buckingham Pi 定理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      流体力学常见的无量纲数
+      题干
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="流体力学常见的无量纲数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reynolds" class="md-nav__link">
-    <span class="md-ellipsis">
-      黏性力和惯性的比值的倒数: Reynolds 数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#euler" class="md-nav__link">
-    <span class="md-ellipsis">
-      压力与惯性的比值: Euler 数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#froude" class="md-nav__link">
-    <span class="md-ellipsis">
-      重力和惯性的比值的倒数方根: Froude 数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#weber" class="md-nav__link">
-    <span class="md-ellipsis">
-      表面张力和惯性比值的倒数:Weber 数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mach" class="md-nav__link">
-    <span class="md-ellipsis">
-      可压缩性贡献和惯性比值的倒数方根:Mach 数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#newton" class="md-nav__link">
-    <span class="md-ellipsis">
-      力学无量纲数的框架: Newton 数
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      相似原理
+      解答
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="相似原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      几何相似
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      运动相似
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      比例尺
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1672,7 +1570,7 @@
 
 
   
-    <a href="https://github.com/rougamorika/rougamorika.github.io/edit/main/docs/fluid/similarity.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/rougamorika/rougamorika.github.io/edit/main/docs/analog_sup/get_the_alp_exp_1.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1681,189 +1579,34 @@
     
       
     
-    <a href="https://github.com/rougamorika/rougamorika.github.io/raw/main/docs/fluid/similarity.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/rougamorika/rougamorika.github.io/raw/main/docs/analog_sup/get_the_alp_exp_1.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="08">流体力学(08): 相似原理和量纲分析<a class="headerlink" href="#08" title="Permanent link">&para;</a></h1>
-<h2 id="buckingham-pi">Buckingham Pi 定理<a class="headerlink" href="#buckingham-pi" title="Permanent link">&para;</a></h2>
-<p>球面上所受到的流体拖拽力<span class="arithmatex">\(\vec{F}\)</span>和什么有关呢?</p>
-<ul>
-<li>球面直径<span class="arithmatex">\(D\)</span></li>
-<li>流体密度<span class="arithmatex">\(\rho\)</span></li>
-<li>粘度<span class="arithmatex">\(\mu\)</span></li>
-<li>流体流速<span class="arithmatex">\(\vec{v}\)</span></li>
-</ul>
-<p>所以我们可以这么描述上面的这个定理</p>
-<div class="arithmatex">\[
-\vec{F}=F(D,\rho,\mu,\vec{v})
-\]</div>
-<p>这是显函数的形式,有些时候定理不一定能写成一个显函数.为了更好更全面地描述,我们一般进行一下移项,用隐函数的形式加以表达</p>
-<div class="arithmatex">\[
-\bold{0}=G(D,\rho,\mu,\vec{v},\vec{F})
-\]</div>
-<p><em>这很好,这有什么问题呢??</em>
-问题是,这个隐函数当中的物理量未免多了一点.假如我们真的数学很菜(没错<strong>大部分工程师的数学都很 JB 菜</strong>),那推导定理就只能靠实验呗.你这么一堆物理量用组合书算一下两两之间影响,然后控制其他的......工程师早昏厥了.更恶心一点的事情是,控制变量是有误差的,控制的越多误差就越大,到时候忙活半天测出个没啥大用误差很大的公式,火箭一升天,咔,爆炸了,哭都来不及.</p>
-<p>那么,我该如何解决呢?
-<img alt="alt text" src="../images/how.png" /></p>
-<p><strong>我们可以分析单位啊!</strong> 不过,单位有个更加洋气点的名字,叫做<strong>量纲</strong>.比如前面的密度,受力,他们的单位都是<strong>导出</strong>的,是可以化成基本的物理量的.<strong>只要我能把等号两边的单位化成一样的,两者的差距就是比例系数了</strong>.测比例系数不仅少,而且方便.
-现在我们就可以端上<strong>Buckingham Pi 定理</strong>了.</p>
-<div class="admonition note buckingham pi theorem">
-<p class="admonition-title">Note</p>
-<p>如果给定的定理由<span class="arithmatex">\(n\)</span>个物理量和<span class="arithmatex">\(m\)</span>个独立的基本量纲组成,那么研究该定理就和研究其对应的<span class="arithmatex">\(n-m\)</span>个无量纲比例系数的定理完全等价.</p>
-</div>
-<p>用上面的求解拖拽力的实例来研究看看</p>
-<ul>
-<li>球面直径<span class="arithmatex">\(D\)</span>,单位是<span class="arithmatex">\(m\)</span>,所以量纲是<span class="arithmatex">\([\text{L}]\)</span></li>
-<li>流体密度<span class="arithmatex">\(\rho\)</span>,单位是<span class="arithmatex">\(kg/m^{3}\)</span>,所以量纲<span class="arithmatex">\([\text{ML}^{-3}]\)</span></li>
-<li>粘度<span class="arithmatex">\(\mu\)</span>,单位是<span class="arithmatex">\(Pa\cdot s\)</span>,所以量纲<span class="arithmatex">\([\text{ML}^{-1}\text{T}^{-1}]\)</span></li>
-<li>流体流速<span class="arithmatex">\(\vec{v}\)</span>,单位为<span class="arithmatex">\(m/s\)</span>,所以量纲是<span class="arithmatex">\([\text{LT}^{-1}]\)</span></li>
-</ul>
-<p>可见,基本量纲就是<span class="arithmatex">\(\text{M,L,T}\)</span>.
-<strong>Buckingham 定理的应用方法</strong>是这样的</p>
-<ul>
-<li>求出独立的量纲和独立量纲数<span class="arithmatex">\(n\)</span></li>
-<li>选中给定物理量组<span class="arithmatex">\(A\)</span>中的<span class="arithmatex">\(n\)</span>个,,要求它们包含要求的所有的独立量纲</li>
-<li>轮转选择剩下<span class="arithmatex">\(n-m\)</span>个物理量<span class="arithmatex">\(p_{i}\)</span>,每次选一个,则这
-  个物理量对应的比例系数<span class="arithmatex">\(\Pi_{i}\)</span>就满足<span class="arithmatex">\(\Pi_{i}=\displaystyle A_{1}^{\alpha_{1}}A_{2}^{\alpha_{2}}...A_{n}^{\alpha_{n}}p_{i}\)</span></li>
-<li>无量纲数的每一个量纲的指数都是<span class="arithmatex">\(0\)</span>,因此你可以得到一个齐次线性方程.解方程.</li>
-<li>写出<span class="arithmatex">\(\Pi\)</span>定理的形式,求解完毕</li>
-</ul>
-<p>现在我们来写.由于有<span class="arithmatex">\(4\)</span>个物理量,<span class="arithmatex">\(3\)</span>个基本量纲,因此只会有一个无量纲数<span class="arithmatex">\(\pi\)</span>,假设我们取<span class="arithmatex">\(\rho,\mu,\vec{v}\)</span>作为我们的参考物理量,因此</p>
-<div class="arithmatex">\[
-\Pi=\rho^{a}\mu^{b}{v}^{c}D
-\]</div>
-<p>我们把上面的单位写成量纲形式</p>
-<div class="arithmatex">\[
-\Pi=[\text{ML}^{-3}]^{a}[\text{ML}^{-1}\text{T}^{-1}]^{b}[\text{LT}^{-1}]^{c}L
-\]</div>
-<p>因此列出方程</p>
-<div class="arithmatex">\[
-\begin{cases}
-    a+b=0 \\
-    -3a-b+c+1=0 \\
-    -b-c=0
-\end{cases}
-\]</div>
-<p>容易解得</p>
-<div class="arithmatex">\[
-\begin{cases}
-    a=1\\
-    b=-1\\
-    c=1
-\end{cases}
-\]</div>
-<p>因此我们的无量纲数就会写成</p>
-<div class="arithmatex">\[
-\Pi_{Re}=\frac{\rho v D}{\mu}
-\]</div>
-<p>这个下标已经泄露了一点"天机"了,我们马上来介绍.</p>
-<h2 id="_1">流体力学常见的无量纲数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>流体力学中常见的无量纲数非常好记忆,首先我们得介绍一种名曰"惯性"的力,所有流体力学的无量纲数都是某个流体收到的力和"惯性"的比值.由牛顿第二定律,我们可以知道惯性一定是<span class="arithmatex">\(\rho v^{2} L^{2}\)</span>成比例的(近似).接下来只要将不同的力写成比例系数的形式,然后和<span class="arithmatex">\(\rho v^{2} L^{2}\)</span>作比就行了</p>
-<h3 id="reynolds">黏性力和惯性的比值的倒数: Reynolds 数<a class="headerlink" href="#reynolds" title="Permanent link">&para;</a></h3>
-<p>我们现在利用牛顿内摩擦定律来和惯性作比</p>
-<div class="arithmatex">\[
-F=\mu \frac{du}{dy}A\sim \mu \frac{v}{L}L^{2}=\mu v L
-\]</div>
-<p>所以与惯性的比值就是一个无量纲数</p>
-<div class="arithmatex">\[
-\frac{1}{\text{Re}}= \frac{\mu v L}{\rho v^{2} L^{2}}=\frac{\mu}{\rho v L}
-\]</div>
-<p>历史原因,我们一般取倒数来命名,称为 <strong>Reynolds 数</strong></p>
-<h3 id="euler">压力与惯性的比值: Euler 数<a class="headerlink" href="#euler" title="Permanent link">&para;</a></h3>
-<p>现在我们利用压力的定义式和惯性作比,因此可以得到</p>
-<div class="arithmatex">\[
-F_{P}=\Delta p A=\Delta p L^{2}
-\]</div>
-<p>因此便于得到</p>
-<div class="arithmatex">\[
-\text{Eu}=\frac{\Delta p L^{2}}{\rho v^{2} L^{2}}=\frac{\Delta p}{\rho v^{2}}
-\]</div>
-<p>上面的数字一般称为 <strong>Euler 数</strong></p>
-<h3 id="froude">重力和惯性的比值的倒数方根: Froude 数<a class="headerlink" href="#froude" title="Permanent link">&para;</a></h3>
-<p>现在我们利用重力的定义式和惯性作比,因此可以得到</p>
-<div class="arithmatex">\[
-W=mg\sim g\rho L^{3}
-\]</div>
-<p>因此可以得到</p>
-<div class="arithmatex">\[
-\frac{1}{\text{Fr}^{2}}=\frac{g\rho L^{3}}{\rho v^{2} L^{2}}=\frac{gL}{v^{2}}
-\]</div>
-<p>一般而言用上面的式子来定义 <strong>Froude 数</strong>.</p>
-<div class="arithmatex">\[
-\text{Fr}=\frac{v}{\sqrt{gL}}
-\]</div>
-<h3 id="weber">表面张力和惯性比值的倒数:Weber 数<a class="headerlink" href="#weber" title="Permanent link">&para;</a></h3>
-<p>写出表面张力的式子:</p>
-<div class="arithmatex">\[
-\sigma L
-\]</div>
-<p>所以直接写就可以了</p>
-<div class="arithmatex">\[
-\frac{1}{\text{We}}=\frac{\sigma L}{\rho v^{2} L^{2}}=\frac{\sigma}{\rho v^{2}L}
-\]</div>
-<h3 id="mach">可压缩性贡献和惯性比值的倒数方根:Mach 数<a class="headerlink" href="#mach" title="Permanent link">&para;</a></h3>
-<p>写出可压缩性贡献的情况
+<h1 id="1alphabeta">求解三极管电路的参数(1):<span class="arithmatex">\(\alpha\)</span>和<span class="arithmatex">\(\beta\)</span><a class="headerlink" href="#1alphabeta" title="Permanent link">&para;</a></h1>
+<h2 id="_1">题干<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="image.png" /></p>
+<p>给定上述的电路图,已测的<span class="arithmatex">\(V_{B}=+1.0\text{V}\)</span>,<span class="arithmatex">\(V_{E}=+1.7\text{V}\)</span>,求三极管的放大倍数<span class="arithmatex">\(\beta\)</span>和共基电流传输系数<span class="arithmatex">\(\alpha\)</span>,并求此时的集电极电压<span class="arithmatex">\(V_{C}\)</span></p>
+<h2 id="_2">解答<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>给定的管制是一个PNP管,这其实和NPN管分析起来完全没区别.  </p>
+<p>因为已经给定<span class="arithmatex">\(V_{B}=+1.0\text{V}\)</span>,自然可以得到
 $$
-E_{v}A\sim E_{v}L^{2}
-$$
-其中 <span class="arithmatex">\(E_{v}\)</span> 是流体的体积模量,已经是个常数.因此我们可得
-$$
-\frac{1}{\text{Ma}<sup 2="2">{2}}=\frac{E_{v}L</sup>
-$$
-推出
-$$
- \text{Ma}=\frac{v}{\sqrt{\frac{E_{v}}{\rho}}}
-$$
-下面的式子其实就是当地声速 }}{\rho v^{2} L^{2}<span class="arithmatex">\(c\)</span> 的表达式,因此得到
-$$
-\text{Ma}=\frac{v}{c}
+i_{b}=\frac{V_{B}}{R}=\frac{1 \text{V}}{100\text{k}\Omega}=0.01\text{mA}
 $$</p>
-<h3 id="newton">力学无量纲数的框架: Newton 数<a class="headerlink" href="#newton" title="Permanent link">&para;</a></h3>
-<p>假如我们不只是研究上面的无量纲数,而是把任何的外力都去和惯性比比,会发生什么呢?</p>
-<p>恭喜你,不会发生特别大的问题,你获得了这个力对应的<strong>Newton 数</strong>.除了我们后面可能要讲的某些和外力无关的无量纲数和上面的马赫数(它是由可压缩性而不是由外力贡献的,只是长得和 Newton 数很像),其他的力学无量纲数都是以牛顿数为框架的.
+<p>由于我们知道<span class="arithmatex">\(V_{E}\)</span>,因此便可以得到</p>
+<div class="arithmatex">\[
+i_{E}=\frac{V_{+cc}-V_{E}}{R_{e}}=\frac{10-1.7}{5\text{k}\Omega}=1.66\text{mA}
 $$
-\text{Ne}=\frac{F_{ext}}{\rho v^{2} L^{2}}
-$$</p>
-<h2 id="_2">相似原理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>有的时候,比如说,我们需要知道一架大飞机(C919这种的)的空气动力学参数,进而了解打飞机的设计是否安全,合理,高效.但是你这么大个原型机,一是很难搬来搬去做实验,而是要是出了点什么问题原型机就毁了.这显然是得不偿失的.
-因此,假如我们可以用相似的,可能经过一点比例放缩的飞机模型来替代我们的原型机,那么我们的损失就会相对的少一点.下面我们就来介绍一些基础的相似原理.
-相似原理的还有一个好处是,对应相似的模型他们的一些流体力学数相同.</p>
-<h3 id="_3">几何相似<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>我们认为,如果我们的相似模型</p>
-<ul>
-<li>在三个维度的长度与原型长度三维的对应比率都相等</li>
-<li>朝向和原模型完全相同</li>
-<li>模型与原型机所处在环境完全相同</li>
-</ul>
-<p>那么这个模型就和原型<strong>几何相似</strong>,这一点和数学中的几何相似没有任何区别.</p>
-<p>对于几何相似,假定给您相似比(线比)<span class="arithmatex">\(k\)</span>,那么根据我们中学所学习的数学知识,你可以得到对应的面积比和体积比</p>
-<h3 id="_4">运动相似<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>假如我们模型所在的流场和原型所在的流场方向相同而大小成一固定比例<span class="arithmatex">\(k\)</span>.那么我们称模型和原型之间满足<strong>运动相似</strong>条件.假设我们的原型的流速为<span class="arithmatex">\(v_{p}\)</span>,模型的流速为<span class="arithmatex">\(v_{m}\)</span>,我们就可以得出
+因此可得到$\beta,\alpha$
 $$
-\frac{v_{m}}{v_{p}}=C
+\beta=\frac{i_{E}}{i_{B}}=166
 $$
-而我们由中学所学的物理知识可得
 $$
-\frac{v_{m}}{v_{p}}=\frac{l_{m}t_{p}}{t_{m}l_{p}}
-$$
-所以
-$$
-\frac{l_{m}}{l_{p}}\frac{t_{p}}{t_{m}}=C
-$$
-因此无论如何,你总是能够找到一个数组<span class="arithmatex">\((x,y)\)</span>,满足
-$$
-\begin{cases}
-    \frac{l_{m}}{l_{p}}=x\
-    \frac{t_{p}}{t_{m}}=y
-\end{cases}
-$$
-因此几何相似和时间相似都得以保持.</p>
-<h3 id="_5">比例尺<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>如下的表格是由运动比例尺和长度比例尺得出的其他相关物理量的表格</p>
+\alpha=\frac{\beta+1}{\beta}=\frac{167}{166}
+\]</div>
 
 
 
