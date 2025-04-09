@@ -194,7 +194,6 @@ $$
 因此,假如我们可以用相似的,可能经过一点比例放缩的飞机模型来替代我们的原型机,那么我们的损失就会相对的少一点.下面我们就来介绍一些基础的相似原理.
 相似原理的还有一个好处是,对应相似的模型他们的一些流体力学数相同.
 
-
 ### 几何相似
 
 我们认为,如果我们的相似模型
@@ -230,10 +229,57 @@ $$
 $$
 因此几何相似和时间相似都得以保持.
 
-### 比例尺
+#### 运动比例尺
 
 如下的表格是由运动比例尺和长度比例尺得出的其他相关物理量的表格
 
+| 名字 (Name)        | 公式 (Formula)                                                                             | 对应的物理学意义 (Corresponding Physical Meaning) |
+|--------------------|--------------------------------------------------------------------------------------------|---------------------------------------------------|
+| 时间比例尺         | $$k_t = \frac{t'}{t} = \frac{l'/v'}{l/v} = \frac{k_l}{k_v}$$                               | 模型与原型对应时间之比                            |
+| 加速度比例尺       | $$k_a = \frac{a'}{a} = \frac{v'/t'}{v/t} = \frac{k_v}{k_t} = \frac{k_v^2}{k_l}$$             | 模型与原型对应加速度之比                          |
+| 体积流量比例尺     | $$k_{qV} = \frac{q'_V}{q_V} = \frac{l'^3/t'}{l^3/t} = \frac{k_l^3}{k_t} = k_l^2 k_v$$         | 模型与原型对应体积流量之比                        |
+| 运动黏度比例尺     | $$k_ν = \frac{ν'}{ν} = \frac{l'^2/t'}{l^2/t} = \frac{k_l^2}{k_t} = k_l k_v$$               | 模型与原型对应运动黏度之比                        |
+| 角速度比例尺       | $$k_ω = \frac{ω'}{ω} = \frac{v'/l'}{v/l} = \frac{k_v}{k_l}$$                               | 模型与原型对应角速度之比                          |
 
+上面的比例尺告诉我们,重点是搞清楚长度比例尺$k_{l}$和速度比例尺$k_{v}$.记忆比例尺的最简单方法是写出想要求得的物理量的量纲,然后把它写成由长度和速度(长度除时间)的量纲形式,然后将这些统统改成对应的比例系数就可以了
 
+| 物理量 (Quantity)             | 标准量纲 (Standard Dimension) | 用 L, V 表示的量纲 (Dimension in L, V)                                  | 比例尺推导 (Scale Factor Derivation) | 最终比例尺公式 (Final Scale Factor Formula)           |
+| :---------------------------- | :---------------------------- | :---------------------------------------------------------------------- | :----------------------------------- | :------------------------------------------------ |
+| **时间 (Time, t)**            | $$[T]$$                       | $$T \sim \frac{L}{V} \implies [L V^{-1}]$$                             | $$L \to k_l, V \to k_v$$             | $$k_t = k_l k_v^{-1} = \frac{k_l}{k_v}$$            |
+| **加速度 (Acceleration, a)**  | $$[L T^{-2}]$$                | $$T^{-2} \sim (\frac{L}{V})^{-2} = L^{-2}V^2 \implies [L L^{-2}V^2] = [L^{-1}V^2]$$ | $$L \to k_l, V \to k_v$$             | $$k_a = k_l^{-1} k_v^2 = \frac{k_v^2}{k_l}$$        |
+| **体积流量 (Volumetric Flow Rate, qV)** | $$[L^3 T^{-1}]$$              | $$T^{-1} \sim (\frac{L}{V})^{-1} = L^{-1}V \implies [L^3 L^{-1}V] = [L^2 V]$$ | $$L \to k_l, V \to k_v$$             | $$k_{qV} = k_l^2 k_v$$                            |
+| **运动黏度 (Kinematic Viscosity, ν)** | $$[L^2 T^{-1}]$$              | $$T^{-1} \sim L^{-1}V \implies [L^2 L^{-1}V] = [L V]$$                   | $$L \to k_l, V \to k_v$$             | $$k_ν = k_l k_v$$                                 |
+| **角速度 (Angular Velocity, ω)** | $$[T^{-1}]$$                  | $$T^{-1} \sim (\frac{L}{V})^{-1} = [L^{-1} V]$$                          | $$L \to k_l, V \to k_v$$             | $$k_ω = k_l^{-1} k_v = \frac{k_v}{k_l}$$            |
 
+### 动力相似准则
+
+除了上面的运动学带来的相似,我们还要研究由动力学带来的相似.  
+我们认为:假如模型的受力方向和原型相同,受力大小和原型成比例$k_{f}$,那么我们就认为原型和模型之间是动力相似的.
+
+#### 动力比例尺
+
+由于动力比例尺还和质量有关，一般我们为了便利取密度比例尺$k_{\rho}$,我们还是可以用上面的方法来推导和记忆我们的比例尺
+
+| 物理量 (Quantity)                     | 标准量纲 (Standard Dimension) | 用 $\rho$, L, V 表示的量纲 (Dimension in $\rho$, L, V)                                      | 比例尺推导 (Scale Factor Derivation)           | 最终比例尺公式 (Final Scale Factor Formula)           |
+| :------------------------------------ | :---------------------------- | :------------------------------------------------------------------------------------------ | :--------------------------------------------- | :------------------------------------------------ |
+| **力 (Force, F)**                     | $$[M L T^{-2}]$$              | $$M \sim \rho L^3, T^{-2} \sim L^{-2}V^2 \implies [\rho L^3 L L^{-2}V^2] = [\rho L^2 V^2]$$     | $$\rho \to k_\rho, L \to k_l, V \to k_v$$      | $$k_F = k_\rho k_l^2 k_v^2$$                      |
+| **力矩 (Torque, M) / 功 (Work) / 能 (Energy)** | $$[M L^2 T^{-2}]$$             | $$M \sim \rho L^3, T^{-2} \sim L^{-2}V^2 \implies [\rho L^3 L^2 L^{-2}V^2] = [\rho L^3 V^2]$$    | $$\rho \to k_\rho, L \to k_l, V \to k_v$$      | $$k_M = k_\rho k_l^3 k_v^2$$                      |
+| **压强 (Pressure, p) / 应力 (Stress)** | $$[M L^{-1} T^{-2}]$$           | $$M \sim \rho L^3, T^{-2} \sim L^{-2}V^2 \implies [\rho L^3 L^{-1} L^{-2}V^2] = [\rho V^2]$$      | $$\rho \to k_\rho, L \to k_l, V \to k_v$$      | $$k_p = k_\rho k_v^2$$                            |
+| **功率 (Power, P)**                   | $$[M L^2 T^{-3}]$$             | $$M \sim \rho L^3, T^{-3} \sim L^{-3}V^3 \implies [\rho L^3 L^2 L^{-3}V^3] = [\rho L^2 V^3]$$    | $$\rho \to k_\rho, L \to k_l, V \to k_v$$      | $$k_P = k_\rho k_l^2 k_v^3$$                      |
+| **动力黏度 (Dynamic Viscosity, $\mu$)** | $$[M L^{-1} T^{-1}]$$           | $$M \sim \rho L^3, T^{-1} \sim L^{-1}V \implies [\rho L^3 L^{-1} L^{-1}V] = [\rho L V]$$         | $$\rho \to k_\rho, L \to k_l, V \to k_v$$      | $$k_\mu = k_\rho k_l k_v$$                        |
+
+## 相似准则对应的流体力学数守恒
+
+之所以我们要研究上面的流体力学准则数,就是因为在相似准则满足的条件下,对应的流体力学准则数相等.
+
+### 动力相似的礼物:力学准则数的守恒
+
+动力相似其实是重要的,因为只要我们能够使模型和原型之间满足动力相似,那么居于牛顿数框架下的**一切力学准则数都对应相等**.这取决于你关注对应模型的哪个力.下面的表格解释了不同对应力场对应的不同准则数的守恒和用途
+
+| 主导力 (Dominant Force) | 对应相似的力场/性质 (Corresponding Force Field/Nature) | 对应相等的力学准则数 (Dimensionless Number to be Equated) | 速度比例尺与长度比例尺的约束关系 ($k_v$ vs $k_l$ Constraint) |
+| :---------------------- | :----------------------------------------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------- |
+| **粘性力 (Viscous Force)** | 流体内部摩擦 (Internal Fluid Friction)                 | **雷诺数 (Reynolds Number, Re)** <br> $$Re = \frac{\rho V L}{\mu} = \frac{V L}{\nu}$$ | $$Re_m = Re_p \implies k_v k_l = k_\nu$$ <br> (要求运动粘度比例尺 $k_\nu = \frac{\nu_m}{\nu_p}$ 已知或选定) <br> 或 $$k_v = \frac{k_\nu}{k_l}$$ |
+| **重力 (Gravity Force)**    | 重力场作用 (Gravitational Field)                       | **弗劳德数 (Froude Number, Fr)** <br> $$Fr = \frac{V}{\sqrt{g L}}$$ | $$Fr_m = Fr_p \implies k_v = \sqrt{k_g k_l}$$ <br> (通常 $g_m = g_p$, 即 $k_g=1$) <br> **因此：** $$k_v = \sqrt{k_l} = k_l^{1/2}$$ |
+| **压力 (Pressure Force)**   | 压力梯度驱动 (Pressure Gradient)                       | **欧拉数 (Euler Number, Eu)** <br> $$Eu = \frac{\Delta p}{\rho V^2}$$ | $$Eu_m = Eu_p \implies k_p = k_\rho k_v^2$$ <br> (此为压力比例尺 $k_p$ 的结果，通常不由 Eu 直接设定 $k_v$ 与 $k_l$ 的关系，而是作为相似性的结果) |
+| **弹性力 (Elastic Force)**  | 流体可压缩性 (Fluid Compressibility)                   | **马赫数 (Mach Number, Ma)** <br> $$Ma = \frac{V}{c}$$ (c 为声速) | $$Ma_m = Ma_p \implies k_v = k_c$$ <br> (要求速度比例尺等于声速比例尺 $k_c = \frac{c_m}{c_p}$，与 $k_l$ 无直接普适关系) |
+| **表面张力 (Surface Tension Force)** | 界面效应 (Interfacial Effects)                         | **韦伯数 (Weber Number, We)** <br> $$We = \frac{\rho L V^2}{\sigma}$$ ($\sigma$ 为表面张力系数) | $$We_m = We_p \implies k_\rho k_l k_v^2 = k_\sigma$$ <br> $$k_v = \sqrt{\frac{k_\sigma}{k_\rho k_l}}$$ <br> (要求表面张力系数比例尺 $k_\sigma = \frac{\sigma_m}{\sigma_p}$ 已知或选定) |
