@@ -820,6 +820,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      流体力学流动类型、特性及雷诺输运定理应用综合表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      由雷诺输运定理 (RTT) 导出的主要守恒方程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1703,6 +1736,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      流体力学流动类型、特性及雷诺输运定理应用综合表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtt" class="md-nav__link">
+    <span class="md-ellipsis">
+      由雷诺输运定理 (RTT) 导出的主要守恒方程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1792,6 +1858,163 @@ $$
 <div class="arithmatex">\[
 \dot{W}=\dot{W_{norm}}+\dot{W_{shaft}}+\dot{W_{shear}}+\dot{W_{other}}
 \]</div>
+<h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>有一些很装逼的名词给他们祛祛魅:</p>
+<h3 id="_5">流体力学流动类型、特性及雷诺输运定理应用综合表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>流动类型/条件 (Flow Type/Condition)</th>
+<th>简明描述 (Brief Description)</th>
+<th>关键物理特性/影响 (Key Physical Characteristics/Influence)</th>
+<th>雷诺数 (<span class="arithmatex">\(\displaystyle Re = \frac{\rho VL}{\mu}\)</span>) 解读 (Reynolds Number Interpretation)</th>
+<th>关键准则数 (Key Dimensionless Numbers)</th>
+<th>雷诺输运定理 (RTT) 变体/应用侧重 (RTT Variant/Application Focus)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>通用流动 (General Flow)</strong></td>
+<td>无特殊简化，最普遍情况。</td>
+<td>密度(<span class="arithmatex">\(\displaystyle \rho\)</span>), 速度(<span class="arithmatex">\(\displaystyle \mathbf{V}\)</span>), 强度性质(<span class="arithmatex">\(\displaystyle b\)</span>) 均可变；控制体(CV)可移动/变形。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 用于表征惯性力/粘性力比值，但需考虑参数变化。</td>
+<td><span class="arithmatex">\(\displaystyle Re, Ma, Fr, We, St\)</span> 等，取决于具体问题。</td>
+<td><strong>完整形式</strong>: <span class="arithmatex">\(\displaystyle \frac{d(B_{sys})}{dt} = \frac{\partial}{\partial t} \int_{CV} (\rho b \, dV) + \int_{CS} (\rho b \mathbf{V}_r \cdot \mathbf{n}) \, dA\)</span> <br> (适用于推导所有守恒律的基础)</td>
+</tr>
+<tr>
+<td><strong>固定控制体 (Fixed Control Volume)</strong></td>
+<td>控制体在空间中位置和形状不变。</td>
+<td>CV 几何固定。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 计算基于固定几何尺寸 <span class="arithmatex">\(\displaystyle L\)</span>。</td>
+<td>取决于具体流动类型。</td>
+<td><strong>简化 <span class="arithmatex">\(\displaystyle \mathbf{V}_r\)</span></strong>: <span class="arithmatex">\(\displaystyle \mathbf{V}_r = \mathbf{V}\)</span> (流体绝对速度)。<br> <span class="arithmatex">\(\displaystyle \frac{d(B_{sys})}{dt} = \frac{\partial}{\partial t} \int_{CV} (\rho b \, dV) + \int_{CS} (\rho b \mathbf{V} \cdot \mathbf{n}) \, dA\)</span> <br> (大多数工程分析的基础形式)</td>
+</tr>
+<tr>
+<td><strong>不可压缩流 (Incompressible Flow)</strong></td>
+<td>流体密度 <span class="arithmatex">\(\displaystyle \rho\)</span> 基本不变。</td>
+<td><span class="arithmatex">\(\displaystyle \rho = \text{常数}\)</span>。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 公式中 <span class="arithmatex">\(\displaystyle \rho\)</span> 为常数。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> (主导动力相似), <span class="arithmatex">\(\displaystyle Ma \ll 1\)</span> (通常 <span class="arithmatex">\(\displaystyle Ma &lt; 0.3\)</span>)。</td>
+<td><strong>提出常数 <span class="arithmatex">\(\displaystyle \rho\)</span></strong>: <span class="arithmatex">\(\displaystyle \frac{d(B_{sys})}{dt} = \rho \frac{\partial}{\partial t} \int_{CV} (b \, dV) + \rho \int_{CS} (b \mathbf{V}_r \cdot \mathbf{n}) \, dA\)</span> <br> (应用: 导出体积守恒 <span class="arithmatex">\(\displaystyle \int_{CS} (\mathbf{V} \cdot \mathbf{n}) \, dA = 0\)</span> [若定常+固定CV])</td>
+</tr>
+<tr>
+<td><strong>可压缩流 (Compressible Flow)</strong></td>
+<td>流体密度 <span class="arithmatex">\(\displaystyle \rho\)</span> 发生显著变化。</td>
+<td><span class="arithmatex">\(\displaystyle \rho = \text{变量}\)</span>, <span class="arithmatex">\(\displaystyle T, p\)</span> 重要。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 公式中 <span class="arithmatex">\(\displaystyle \rho\)</span> 是变量 (局部或参考值)。</td>
+<td><span class="arithmatex">\(\displaystyle Ma\)</span> (关键), <span class="arithmatex">\(\displaystyle Re, Pr, \gamma\)</span>。</td>
+<td><strong>无密度简化</strong>: RTT 形式不变，但积分内 <span class="arithmatex">\(\displaystyle \rho\)</span> 需作为变量处理。<br> (应用: 高速气体动力学，需结合能量方程)</td>
+</tr>
+<tr>
+<td><strong>定常流 (Steady Flow)</strong></td>
+<td>流场参数不随时间变化。</td>
+<td><span class="arithmatex">\(\displaystyle \frac{\partial}{\partial t} = 0\)</span> 对所有流体属性。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 公式中 <span class="arithmatex">\(\displaystyle V\)</span> 为恒定速度。</td>
+<td><span class="arithmatex">\(\displaystyle Re, Ma, Fr, We\)</span> (取决于问题), <span class="arithmatex">\(\displaystyle St = 0\)</span>。</td>
+<td><strong>时间导数项为零</strong>: <span class="arithmatex">\(\displaystyle \frac{\partial}{\partial t} \int_{CV} (\rho b \, dV) = 0\)</span>。<br> <span class="arithmatex">\(\displaystyle \frac{d(B_{sys})}{dt} = \int_{CS} (\rho b \mathbf{V}_r \cdot \mathbf{n}) \, dA\)</span> <br> (应用: 稳态质量、动量、能量平衡)</td>
+</tr>
+<tr>
+<td><strong>非定常流 (Unsteady Flow)</strong></td>
+<td>流场参数随时间变化。</td>
+<td><span class="arithmatex">\(\displaystyle \frac{\partial}{\partial t} \neq 0\)</span>。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 可为瞬时值 <span class="arithmatex">\(\displaystyle Re(t)\)</span> 或基于平均速度 <span class="arithmatex">\(\displaystyle \bar{V}\)</span>。</td>
+<td><span class="arithmatex">\(\displaystyle St\)</span> (关键), <span class="arithmatex">\(\displaystyle Re, Ma, Fr, We\)</span>。</td>
+<td><strong>保留时间导数项</strong>: <span class="arithmatex">\(\displaystyle \frac{\partial}{\partial t} \int_{CV} (\rho b \, dV) \neq 0\)</span>。<br> 完整 RTT 或固定 CV 形式适用。<br> (应用: 启动/停止过程、涡街脱落、波动)</td>
+</tr>
+<tr>
+<td><strong>层流 (Laminar Flow)</strong></td>
+<td>流体分层流动，混合弱。</td>
+<td>粘性力主导，流动有序。</td>
+<td><span class="arithmatex">\(\displaystyle Re &lt; Re_{crit}\)</span> (临界雷诺数)，用于判断流态。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> (关键判据), <span class="arithmatex">\(\displaystyle f = \frac{64}{Re}\)</span> (圆管)。</td>
+<td>RTT 本身形式不变，但 <span class="arithmatex">\(\displaystyle \mathbf{V}\)</span> 场平滑规则。常结合稳态、不可压缩假设推导精确解（如Hagen-Poiseuille）。</td>
+</tr>
+<tr>
+<td><strong>湍流 (Turbulent Flow)</strong></td>
+<td>流体运动混乱，混合强。</td>
+<td>惯性力主导，流动随机脉动。</td>
+<td><span class="arithmatex">\(\displaystyle Re &gt; Re_{crit}\)</span>，用于判断流态 (常基于平均速度 <span class="arithmatex">\(\displaystyle \bar{V}\)</span>)。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> (关键判据), 相对粗糙度 <span class="arithmatex">\(\displaystyle \frac{\epsilon}{D}\)</span> (影响摩擦)。</td>
+<td>RTT 应用于瞬时量复杂。常对 RTT 进行<strong>时间平均</strong> (RANS)，导出含雷诺应力项的平均流方程。</td>
+</tr>
+<tr>
+<td><strong>粘性流 (Viscous Flow)</strong></td>
+<td>考虑流体粘度 <span class="arithmatex">\(\displaystyle \mu\)</span>。</td>
+<td><span class="arithmatex">\(\displaystyle \mu \neq 0\)</span>, 存在内摩擦和边界层。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 公式直接体现粘性影响 (<span class="arithmatex">\(\displaystyle \mu\)</span> 在分母)。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> (核心), <span class="arithmatex">\(\displaystyle Pr\)</span> (若有传热)。</td>
+<td>通用 RTT 适用。是推导 Navier-Stokes 方程 (微分形式) 或积分动量方程的基础。</td>
+</tr>
+<tr>
+<td><strong>无粘流 (Inviscid Flow)</strong></td>
+<td>忽略流体粘度 <span class="arithmatex">\(\displaystyle \mu\)</span>。</td>
+<td><span class="arithmatex">\(\displaystyle \mu \approx 0\)</span>, 无内摩擦，允许滑移。</td>
+<td><span class="arithmatex">\(\displaystyle Re \to \infty\)</span>，公式不用于量化粘性。</td>
+<td><span class="arithmatex">\(\displaystyle Eu\)</span> (或 <span class="arithmatex">\(\displaystyle C_p\)</span>), <span class="arithmatex">\(\displaystyle Ma\)</span>。</td>
+<td>RTT 中可设粘性力为零。应用 RTT (动量) 可导出 Euler 方程。常结合伯努利方程分析。</td>
+</tr>
+<tr>
+<td><strong>入口/出口均匀流 (Uniform Flow at Inlets/Outlets)</strong></td>
+<td>在控制表面入口/出口处性质和速度均匀。</td>
+<td><span class="arithmatex">\(\displaystyle \rho, b, V_n\)</span> 在界面上为常数。</td>
+<td><span class="arithmatex">\(\displaystyle Re\)</span> 计算常使用该均匀速度 <span class="arithmatex">\(\displaystyle V\)</span>。</td>
+<td>取决于具体流动类型。</td>
+<td><strong>简化通量积分</strong>: <span class="arithmatex">\(\displaystyle \int_{CS} (\rho b \mathbf{V}_r \cdot \mathbf{n}) \, dA = \sum (\rho b V_n A)_{out} - \sum (\rho b V_n A)_{in}\)</span> <br> (极大简化工程计算，常与其他假设联用)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rtt">由雷诺输运定理 (RTT) 导出的主要守恒方程<a class="headerlink" href="#rtt" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>替换的广延变量 (<span class="arithmatex">\(\displaystyle B_{sys}\)</span>)</th>
+<th>对应的强度量 (<span class="arithmatex">\(\displaystyle b = B/m\)</span>)</th>
+<th>系统变化率 (<span class="arithmatex">\(\displaystyle d(B_{sys})/dt\)</span>) / 守恒性</th>
+<th>导出公式名称</th>
+<th>特殊公式/形式?</th>
+<th>适用范围</th>
+<th>考试一般怎么使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>质量 (Mass)</strong> <br> <span class="arithmatex">\(\displaystyle m\)</span></td>
+<td><span class="arithmatex">\(\displaystyle 1\)</span></td>
+<td><span class="arithmatex">\(\displaystyle \frac{d(m_{sys})}{dt} = 0\)</span> <br> (系统质量守恒)</td>
+<td><strong>连续性方程 (积分形式)</strong> <br> (Continuity Equation - Integral Form) <br> <span class="arithmatex">\(\displaystyle \frac{\partial}{\partial t} \int_{CV} \rho \, dV + \int_{CS} (\rho \mathbf{V} \cdot \mathbf{n}) \, dA = 0\)</span></td>
+<td><strong>基础方程</strong> <br> 常见简化: <br> - 定常: <span class="arithmatex">\(\displaystyle \int_{CS} (\rho \mathbf{V} \cdot \mathbf{n}) \, dA = 0\)</span> <br> - 定常+不可压: <span class="arithmatex">\(\displaystyle \int_{CS} (\mathbf{V} \cdot \mathbf{n}) \, dA = 0\)</span> <br> - 定常+不可压+均匀出入口: <span class="arithmatex">\(\displaystyle \sum Q_{out} = \sum Q_{in}\)</span></td>
+<td><strong>通用</strong>，适用于所有流体流动。</td>
+<td><strong>非常频繁</strong>。建立流量/速度关系，求解未知速度或截面积，作为动量/能量分析的基础。检查质量是否平衡。</td>
+</tr>
+<tr>
+<td><strong>线性动量 (Linear Momentum)</strong> <br> <span class="arithmatex">\(\displaystyle m\mathbf{V}\)</span></td>
+<td><strong>速度矢量</strong> <br> <span class="arithmatex">\(\displaystyle \mathbf{V}\)</span></td>
+<td><span class="arithmatex">\(\displaystyle \frac{d(m\mathbf{V})_{sys}}{dt} = \sum \mathbf{F}_{sys}\)</span> <br> (牛顿第二定律)</td>
+<td><strong>线性动量方程 (积分形式)</strong> <br> (Linear Momentum Equation - Integral Form) <br> <span class="arithmatex">\(\displaystyle \sum \mathbf{F}_{on CV} = \frac{\partial}{\partial t} \int_{CV} (\rho \mathbf{V} \, dV) + \int_{CS} (\rho \mathbf{V} (\mathbf{V} \cdot \mathbf{n})) \, dA\)</span></td>
+<td><strong>基础方程</strong> <br> 常见简化 (定常+均匀出入口): <br> <span class="arithmatex">\(\displaystyle \sum \mathbf{F}_{on CV} = \sum (\dot{m} \mathbf{V})_{out} - \sum (\dot{m} \mathbf{V})_{in}\)</span></td>
+<td><strong>通用</strong>。用于计算流体对固体边界的作用力（或反作用力）。</td>
+<td><strong>非常频繁</strong>。计算管道弯头、异径管、喷嘴、导流叶片等受力；计算射流冲击力；分析飞行器推力。需仔细定义CV并分析所有力（压力、重力、粘性力、支撑反力）。</td>
+</tr>
+<tr>
+<td><strong>角动量 / 动量矩 (Angular Momentum / Moment of Momentum)</strong> <br> <span class="arithmatex">\(\displaystyle \mathbf{r} \times m\mathbf{V}\)</span></td>
+<td><strong>速度的矩</strong> <br> <span class="arithmatex">\(\displaystyle \mathbf{r} \times \mathbf{V}\)</span></td>
+<td><span class="arithmatex">\(\displaystyle \frac{d(\mathbf{r} \times m\mathbf{V})_{sys}}{dt} = \sum \mathbf{M}_{sys}\)</span> <br> (角动量定理)</td>
+<td><strong>角动量方程 (积分形式)</strong> <br> (Angular Momentum Equation - Integral Form) <br> <span class="arithmatex">\(\displaystyle \sum \mathbf{M}_{on CV} = \frac{\partial}{\partial t} \int_{CV} \rho (\mathbf{r} \times \mathbf{V}) \, dV + \int_{CS} \rho (\mathbf{r} \times \mathbf{V}) (\mathbf{V} \cdot \mathbf{n}) \, dA\)</span></td>
+<td><strong>基础方程</strong> <br> 常见简化 (定常+均匀出入口): <br> <span class="arithmatex">\(\displaystyle \sum \mathbf{M}_{on CV} = \sum (\dot{m} (\mathbf{r} \times \mathbf{V}))_{out} - \sum (\dot{m} (\mathbf{r} \times \mathbf{V}))_{in}\)</span></td>
+<td><strong>通用</strong>。特别适用于分析旋转机械或有转矩作用的流动。</td>
+<td><strong>较常见</strong>，尤其在涉及泵、涡轮、风机、搅拌器、旋转喷头等问题时。计算所需的扭矩、轴功率 (<span class="arithmatex">\(\displaystyle P = T\omega\)</span>)。</td>
+</tr>
+<tr>
+<td><strong>能量 (Energy)</strong> <br> <span class="arithmatex">\(\displaystyle E = m(\hat{u} + \frac{V^2}{2} + gz)\)</span></td>
+<td><strong>单位质量能量</strong> <br> <span class="arithmatex">\(\displaystyle e = \hat{u} + \frac{V^2}{2} + gz\)</span></td>
+<td><span class="arithmatex">\(\displaystyle \frac{dE_{sys}}{dt} = \dot{Q}_{net,in} - \dot{W}_{net,out}\)</span> <br> (热力学第一定律)</td>
+<td><strong>能量方程 (积分形式)</strong> <br> (Energy Equation - Integral Form) <br> (常用焓形式: <span class="arithmatex">\(\displaystyle \hat{h} = \hat{u} + p/\rho\)</span>) <br> <span class="arithmatex">\(\displaystyle \dot{Q}_{CV} - \dot{W}_{shaft} = \frac{\partial}{\partial t} \int_{CV} \rho e \, dV + \int_{CS} \rho (\hat{h} + \frac{V^2}{2} + gz) (\mathbf{V} \cdot \mathbf{n}) \, dA\)</span></td>
+<td><strong>基础方程</strong> <br> <strong>相关特殊形式</strong>: <br> 1. <strong>含损失能量方程</strong> (定常, 不可压, <span class="arithmatex">\(\displaystyle \alpha\)</span>为动能修正系数): <br> <span class="arithmatex">\(\displaystyle (\frac{p}{\rho g} + \frac{\alpha V^2}{2g} + z)_{1} + h_{P} = (\frac{p}{\rho g} + \frac{\alpha V^2}{2g} + z)_{2} + h_{T} + h_{L}\)</span> <br> 2. <strong>伯努利方程 (Bernoulli Eq.)</strong>: 能量方程在<strong>定常、不可压、无粘、无轴功、无热传递</strong>条件下的<strong>沿流线</strong>简化形式 (或由动量方程导出): <br> <span class="arithmatex">\(\displaystyle \frac{p}{\rho} + \frac{V^2}{2} + gz = \text{常数 (沿流线)}\)</span></td>
+<td><strong>通用</strong> (能量方程本身)。 <br> 含损失能量方程广泛用于<strong>管流</strong>分析。 <br> 伯努利方程适用范围<strong>严格受限</strong>于其假设条件。</td>
+<td><strong>频繁</strong>。 <br> - <strong>能量方程</strong>: 计算热传递、轴功、温变、考虑压缩性的流动。 <br> - <strong>含损失能量方程</strong>: 计算管路系统中的压力损失、所需泵扬程、水轮机输出功率。 <br> - <strong>伯努利方程</strong>: 用于理想流（无粘、不可压）区域的快速估算，如流线不同点间的压力-速度关系，测速管原理，翼型升力估算。<strong>注意严格判断适用条件</strong>。</td>
+</tr>
+</tbody>
+</table>
 
 
 
