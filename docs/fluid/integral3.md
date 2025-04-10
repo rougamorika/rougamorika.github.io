@@ -63,7 +63,75 @@ $$
 \dot{W}=\dot{W_{norm}}+\dot{W_{shaft}}+\dot{W_{shear}}+\dot{W_{other}}
 $$
 
+现在我们来逐一分析它们的物理意义和数学表达。
 
+#### 1. 法向应力功 ($\displaystyle \dot{W}_{norm}$) 与 流功 (Flow Work)
+
+法向应力功是由作用在控制表面 (CS) 上的压力 (法向应力) 所做的功。考虑控制表面的一个微元面积 $\displaystyle dA$，其外法线向量为 $\displaystyle \vec{n}$。流体内部的压力 $\displaystyle p$ 对这个微元面积施加的作用力是 $\displaystyle -p\vec{n}dA$ (负号表示压力作用方向与外法线相反，指向控制体内)。
+
+当流体以速度 $\displaystyle \vec{v}$ 穿过这个微元面积时，压力对流体做的功的功率（即 $\displaystyle d\dot{W}_{norm}$）是力与速度的点积：
+$$
+\displaystyle d\dot{W}_{norm} = (-p\vec{n}dA) \cdot \vec{v} = -p(\vec{v} \cdot \vec{n})dA
+$$
+对整个控制表面积分，得到法向应力对控制体积内流体做功的总功率：
+$$
+\displaystyle \dot{W}_{norm} = \iint_{CS} -p(\vec{v} \cdot \vec{n})dA
+$$
+**然而**，在推导最终的能量方程时，我们通常不直接将 $\displaystyle \dot{W}_{norm}$ 放在 $\displaystyle \dot{W}$ 项中。这是因为这部分功与流体进出控制体积的行为密切相关，它更自然地与能量的对流项结合在一起。
+
+让我们回顾一下能量方程的右侧，特别是通过控制表面的能量通量项：
+$$
+\displaystyle \iint_{CS}e\rho (\vec{v}\cdot \vec{n})dA = \iint_{CS}(\hat{u} + \frac{1}{2}v^{2} + gz)\rho (\vec{v}\cdot \vec{n})dA
+$$
+这一项代表了随流体质量流动而进出控制体积的内能、动能和势能。但是，流体要进入或离开控制体积，必须克服边界上的压力做功。这部分功被称为 **流功 (Flow Work)**。单位质量流体进出控制体积所伴随的流功是 $\displaystyle p/\rho$。
+
+因此，通过控制表面的总能量输运率，不仅包括流体本身携带的能量 $\displaystyle e$，还包括了将其推入或推出控制体积所需的流功 $\displaystyle p/\rho$。我们将这两部分合并：
+$$
+\displaystyle \text{能量通量} + \text{流功通量} = \iint_{CS}(e + \frac{p}{\rho})\rho (\vec{v}\cdot \vec{n})dA
+$$
+注意到 $\displaystyle e + p/\rho = (\hat{u} + \frac{1}{2}v^2 + gz) + p/\rho = (\hat{u} + p/\rho) + \frac{1}{2}v^2 + gz$。我们定义 **焓 (Enthalpy)** $\displaystyle \hat{h} = \hat{u} + p/\rho$。于是，能量通量项可以优雅地写成：
+$$
+\displaystyle \iint_{CS}(\hat{h} + \frac{1}{2}v^{2} + gz)\rho (\vec{v}\cdot \vec{n})dA
+$$
+这样，法向应力做的功（流功）就被巧妙地包含在了使用焓计算的能量对流项中。
+
+#### 2. 轴功 ($\displaystyle \dot{W}_{shaft}$)
+
+**轴功** 是指通过旋转轴传递的机械功。当控制体积包围一个流体机械（如泵的叶轮、涡轮的转子）时，轴功代表了流体与外界通过该机械传递的功率。
+*   对于泵或风机，外界对流体做功，$\displaystyle \dot{W}_{shaft}$ 为负值（能量输入控制体）。
+*   对于涡轮，流体对外界做功，$\displaystyle \dot{W}_{shaft}$ 为正值（能量输出控制体）。
+
+轴功是能量方程左侧 $\displaystyle \dot{W}$ 项中最主要的部分，通常也是唯一明确保留的部分。
+
+#### 3. 剪切功 ($\displaystyle \dot{W}_{shear}$)
+
+剪切功是由作用在控制表面上的切向应力（粘性剪切应力）所做的功。如果控制表面是固定的（例如管道壁），流体速度为零（无滑移条件），则剪切力不做功。如果控制表面本身在切向运动（例如，一个移动的带子穿过控制体积），或者在某些特殊情况下（例如，考虑流体微团变形），剪切功可能需要考虑。
+
+在大多数宏观控制体分析中，尤其是在固定边界问题中，$\displaystyle \dot{W}_{shear}$ 通常为零或可以忽略。粘性效应的影响主要体现在将机械能转化为内能（耗散），这会反映在内能 $\displaystyle \hat{u}$ 或焓 $\displaystyle \hat{h}$ 的变化上，或者在简化方程中表示为“损失”项。
+
+#### 4. 其他功 ($\displaystyle \dot{W}_{other}$)
+
+这是一个概括性术语，包括所有其他形式的功传递，例如电磁力做功等。在典型的流体力学问题中，除非特别指出，$\displaystyle \dot{W}_{other}$ 通常为零。
+
+### 整合能量方程
+
+将上述对功的分析代入热力学第一定律应用于控制体的形式：
+$$
+\displaystyle \frac{dQ}{dt}-\dot{W}=\frac{\partial }{\partial t}\iiint_{CV} e \rho dV+\iint_{CS}e\rho (\vec{v}\cdot \vec{n})dA
+$$
+我们将 $\displaystyle \dot{W}$ 分解，并将流功部分移到右侧与能量通量合并：
+$$
+\displaystyle \dot{Q}_{CV} - (\dot{W}_{shaft} + \dot{W}_{shear} + \dot{W}_{other}) = \frac{\partial }{\partial t}\iiint_{CV} \rho e \, dV + \iint_{CS} \rho (e + \frac{p}{\rho}) (\vec{v} \cdot \vec{n}) dA
+$$
+使用焓 $\displaystyle \hat{h} = \hat{u} + p/\rho$ 和 $\displaystyle e = \hat{u} + \frac{1}{2}v^2 + gz$，最终得到常用的 **控制体积能量方程** 形式：
+$$
+\displaystyle \boxed{ \dot{Q}_{CV} - \dot{W}_{shaft} - \dot{W}_{shear} - \dot{W}_{other} = \frac{\partial }{\partial t}\iiint_{CV} \rho (\hat{u} + \frac{1}{2}v^2 + gz) dV + \iint_{CS} \rho (\hat{h} + \frac{1}{2}v^2 + gz) (\vec{v} \cdot \vec{n}) dA }
+$$
+在许多应用中，我们会忽略 $\displaystyle \dot{W}_{shear}$ 和 $\displaystyle \dot{W}_{other}$，方程简化为：
+$$
+\displaystyle \dot{Q}_{CV} - \dot{W}_{shaft} = \frac{\partial }{\partial t}\iiint_{CV} \rho (\hat{u} + \frac{1}{2}v^2 + gz) dV + \iint_{CS} \rho (\hat{h} + \frac{1}{2}v^2 + gz) (\vec{v} \cdot \vec{n}) dA
+$$
+这个形式是进行热流体分析的强大工具，可以进一步根据具体问题（如定常流动、不可压缩流动、绝热流动等）进行简化。
 
 
 
