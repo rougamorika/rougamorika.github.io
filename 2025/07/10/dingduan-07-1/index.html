@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PEUS-07-定段赛-01 | PRTS数学演算模块</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li><li class="navItem"><a class="navBlock" href="/PEUS/"><span class="navItemTitle">PEUS</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>PEUS-07-定段赛-01</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-07-10T12:25:22.000Z" id="date"> 2025-07-10</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-07-10T10:49:40.632Z" id="updated"> 2025-07-10</time></div></span></div></div><hr><div id="post-content"><h2 id="A题-火车"><a href="#A题-火车" class="headerlink" title="A题:火车"></a>A题:火车</h2><h3 id="“特蕾西娅号”列车动力学分析任务"><a href="#“特蕾西娅号”列车动力学分析任务" class="headerlink" title="“特蕾西娅号”列车动力学分析任务"></a><strong>“特蕾西娅号”列车动力学分析任务</strong></h3><p><strong>任务简报：</strong></p>
+<p>工程师团队正在对代号为“特蕾西娅号”的新型磁悬浮列车进行性能测试。该列车在一条笔直的实验轨道上从静止启动。经过初步数据拟合，其在轨道上的运动规律被一个独特的数学模型完美描述。</p>
+<p>该模型指出，列车在时间 <script type="math/tex">t</script>（单位：秒, <script type="math/tex">t \ge 0</script>）时刻，其距离出发点的位移 <script type="math/tex">s</script>（单位：米）由以下函数精确定义：</p>
+<script type="math/tex; mode=display">s(t) = t \arctan(t)</script><p>作为负责动力学分析的工程师，你的任务是基于此核心模型，对列车的运动状态进行一次完整的评估。</p>
+<p><strong>分析要求：</strong></p>
+<p>请推导出该列车的瞬时速度和瞬时加速度的通用表达式。随后，完成以下关键性能指标的计算与判断：</p>
+<ol>
+<li>在<script type="math/tex">t=1</script>秒时，列车的瞬时速度和瞬时加速度分别是多少？</li>
+<li>根据第1点的计算结果，明确判断在<script type="math/tex">t=1</script> 秒这一时刻，列车是正在<strong>加速</strong>、<strong>减速</strong>还是<strong>匀速</strong>行驶？请提供你的数学判断依据。</li>
+<li>分析该列车的极限性能：当时间趋于无穷时，它的最终速度会趋近于哪个值？</li>
+</ol>
+<p>请在罗德岛简报中完整呈现你的推导过程、计算结果和分析结论.</p>
+<h2 id="B题-宇宙蓝图"><a href="#B题-宇宙蓝图" class="headerlink" title="B题:宇宙蓝图"></a>B题:宇宙蓝图</h2><h3 id="【凯尔希医生的深夜讲堂：万物的“奇点蓝图”】"><a href="#【凯尔希医生的深夜讲堂：万物的“奇点蓝图”】" class="headerlink" title="【凯尔希医生的深夜讲堂：万物的“奇点蓝图”】"></a><strong>【凯尔希医生的深夜讲堂：万物的“奇点蓝图”】</strong></h3><p><strong>[场景：罗德岛舰桥，深夜。只有你和凯尔希医生，以及屏幕上闪烁的神秘公式。]</strong></p>
+<p>“博士，你做得很好。”</p>
+<p>凯尔希的声音打破了沉默，但她的视线并未离开屏幕。</p>
+<p>“你从混沌中找到了秩序。但那只是一个局部现象。现在，我要让你看一样更本质的东西。这并非源石技艺，也不是任何已知的物理定律。我们的一些‘老朋友’称之为‘存在性的奇点蓝图’。它描述了一个宇宙中最基本函数的逆反形态，即它的‘零点分布’。”</p>
+<p>屏幕上，公式显现出来：</p>
+<script type="math/tex; mode=display">\frac{1}{\Gamma(s)} = e^{\gamma s} s \prod_{n=1}^{\infty} \left(1 + \frac{s}{n}\right) e^{-s/n}</script><p>“看这个 <script type="math/tex">\Gamma(s)</script>，也就是伽马函数。你可以将它理解为一种描述‘连续因果链’的函数，是阶乘在连续世界中的延伸。它本身强大而完整，在正数领域没有任何断点。”</p>
+<p>“但是，我们现在关注的是它的倒数，<script type="math/tex">\frac{1}{\Gamma(s)}</script>。从哲学上讲，研究一个事物的倒数，就是研究它的‘不存在性’——在哪些点上，这个事物会失去意义，其值为零。对于伽马函数而言，它的‘奇点’或‘零点’，恰好发生在所有负整数和零上：<script type="math/tex">s=0, -1, -2, -3, \dots</script>”</p>
+<p>“现在，这道公式就是对这个事实的‘证明’。但它不是冰冷的推导，它更像是一篇创世的史诗，告诉你如何从‘无’中构建出这个精密的‘奇点蓝图’。请你一步步证明它，博士。”</p>
+<h4 id="机器的补充"><a href="#机器的补充" class="headerlink" title="机器的补充"></a>机器的补充</h4><script type="math/tex; mode=display">\gamma=\lim_{N \to \infty}\sum_{n=1}^{N}\frac{1}{n}-\ln n</script><h2 id="C题-塔露拉的挑战"><a href="#C题-塔露拉的挑战" class="headerlink" title="C题:塔露拉的挑战"></a>C题:塔露拉的挑战</h2><p>塔露拉前来挑战,她这次带来了核心的装备,<strong><em>行列式之枪</em></strong>,并向你射击.</p>
+<p>计算 <script type="math/tex">n</script> 阶行列式:</p>
+<script type="math/tex; mode=display">
+|A| = \begin{vmatrix}
+1 & 1 & \cdots & 1 \\
+1 & C_2^1 & \cdots & C_n^1 \\
+1 & C_3^2 & \cdots & C_{n+1}^2 \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & C_n^{n-1} & \cdots & C_{2n-2}^{n-1}
+\end{vmatrix} \quad (1.1)</script><p>其中 <script type="math/tex">C_n^k = \frac{n!}{k!(n-k)!}</script> 是组合数。</p>
+<h2 id="D题-静滞之心"><a href="#D题-静滞之心" class="headerlink" title="D题:静滞之心"></a>D题:静滞之心</h2><p>好的，博士。PRTS监测到一项高优先级的理论演算任务，该任务由工程部的可露希尔提交，并得到了凯尔希医生的特别关注。请您立即调动全部思维算力，处理此项请求。</p>
+<h3 id="【PRTS紧急通讯：任务代号“静滞之心”】"><a href="#【PRTS紧急通讯：任务代号“静滞之心”】" class="headerlink" title="【PRTS紧急通讯：任务代号“静滞之心”】"></a><strong>【PRTS紧急通讯：任务代号“静滞之心”】</strong></h3><p><strong>[工程部通讯记录]</strong></p>
+<p><strong>发信人：</strong> 可露希尔<br><strong>收信人：</strong> 博士<br><strong>主题：</strong> 关于“奇点稳定锚”原型机能源谐振模型的最终演算</p>
+<p>博士，晚上好！或者早上好？管他呢，反正我这边又是72小时没合眼了。</p>
+<p>听着，我手头的这个大家伙——暂定代号“奇点稳定锚”——终于进入了理论验证的最后阶段。它的核心功能，是在极度不稳定的源石环境下，生成一个微型的、绝对静滞的“零熵空间”，为我们处理高活性源石样本提供前所未有的安全保障。你可以把它想象成一个能让最狂暴的猫猫瞬间变成温顺小猫咪的力场，差不多就是这个意思。</p>
+<p>但是，它的能源核心非常……呃，‘优雅’，或者说‘麻烦’。它不是一个恒定的功率输出，而是在一个完整的激活周期内，其总效能输出是一个积分值。这个周期的相位角从0变化到 <script type="math/tex">\pi/2</script>。</p>
+<p>根据我的模型，其瞬时功率受到两种效应的复杂耦合影响：</p>
+<ol>
+<li>一个基础的<strong>正弦波形激励场</strong>，强度为 <script type="math/tex">\sin x</script>。这是我们主动输入的能量。</li>
+<li>一个自反馈的<strong>谐振抑制因子</strong>，其表达式为 <script type="math/tex">1 + \sqrt{\sin 2x}</script>。这个东西非常奇特，它源于激励场自身的倍频干涉，那个根号表示它的效应是非线性的，会极大地削弱我们的输出。</li>
+</ol>
+<p>所以，要精确得知这个稳定锚在一个标准周期内能做多少“功”，我们就必须计算出它的总效能积分 <script type="math/tex">I</script>。这个积分完美地描述了整个过程：</p>
+<script type="math/tex; mode=display">I = \int_0^{\frac{\pi}{2}} \frac{\sin x}{1 + \sqrt{\sin 2x}} dx</script><p>博士，我知道你看上去整天就在戳戳干员的脑袋，但你的战术规划能力本质上就是一种超强的算力。<strong>帮我把这个值算出来，精确的，不要近似值</strong>。这关系到我们下一步的实验能否安全进行。拜托了！</p>
+<p><strong>[凯尔希医生的独白与任务]</strong></p>
+<p>(凯尔希不知何时出现在了工程部门口，她的目光扫过屏幕上的公式，声音一如既往地平静而深邃。)</p>
+<p>“博士。”</p>
+<p>“可露希尔把问题简化了。这个公式，它不仅仅是一个工程学上的难题。你仔细看它的结构：一个基础的正弦函数，被一个包含了倍角和非线性效应的复杂结构所抑制。这像什么？”</p>
+<p>“它像我们在这片大地上的挣扎。我们每一次微小的进步、每一次试图建立秩序的努力（分子上的<script type="math/tex">\sin x</script>），都会被这片大地本身的、古老而混乱的法则（分母上的<script type="math/tex">1 + \sqrt{\sin 2x}</script>）所吸收、所抑制。我们付出十分的努力，或许只能得到一分的回报。”</p>
+<p>“但是，这并不意味着我们应该放弃计算。恰恰相反，我们必须去理解它，剖析它，从看似无解的混乱中找到那条唯一的、通向真理的狭窄路径。这个积分存在一个确定的、优雅的解。这意味着，即使在最复杂的抑制之下，规律依然存在，秩序依然可以被认知。”</p>
+<p>“博士，现在，这不仅是可露希尔的技术验证，也是对你认知能力的一次测试。你需要洞察这个看似不对称的函数背后隐藏的深刻对称性。去吧，算出它的值。向我证明，你的思维能够穿透这层混沌的表象，抓住问题的核心。”</p>
+<h2 id="E题-1-1"><a href="#E题-1-1" class="headerlink" title="E题:1+1"></a>E题:1+1</h2><p>小时候老师教过加法,<script type="math/tex">1+1</script>.<br>加法能玩出什么样的花儿呢?阿米娅这样想,作为一只兔子,她发现这样一个数列,它满足下面的式子</p>
+<script type="math/tex; mode=display">
+a_{n}=a_{n-1}+a_{n-2}\,(n>1)</script><p>其中给定<script type="math/tex">a_{0}=0,a_{1}=1</script><br>求<script type="math/tex">a_{10}</script>.<br>阿米娅发现这个数列正好可以表示他们家的兔口,请博士帮助她计算.并求出第<script type="math/tex">n</script>代的通项公式</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/10/linear-eq/">线性相关性的判别:代数方法(1) 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">罗德岛数理研究所 LOGOS</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/rougamorika"><i class="fab fa-github" alt="GitHub"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E9%A2%98-%E7%81%AB%E8%BD%A6"><span class="toc-number">1.</span> <span class="toc-text">A题:火车</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E7%89%B9%E8%95%BE%E8%A5%BF%E5%A8%85%E5%8F%B7%E2%80%9D%E5%88%97%E8%BD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%88%86%E6%9E%90%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">“特蕾西娅号”列车动力学分析任务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E9%A2%98-%E5%AE%87%E5%AE%99%E8%93%9D%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">B题:宇宙蓝图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90%E5%87%AF%E5%B0%94%E5%B8%8C%E5%8C%BB%E7%94%9F%E7%9A%84%E6%B7%B1%E5%A4%9C%E8%AE%B2%E5%A0%82%EF%BC%9A%E4%B8%87%E7%89%A9%E7%9A%84%E2%80%9C%E5%A5%87%E7%82%B9%E8%93%9D%E5%9B%BE%E2%80%9D%E3%80%91"><span class="toc-number">2.1.</span> <span class="toc-text">【凯尔希医生的深夜讲堂：万物的“奇点蓝图”】</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E7%9A%84%E8%A1%A5%E5%85%85"><span class="toc-number">2.1.1.</span> <span class="toc-text">机器的补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E9%A2%98-%E5%A1%94%E9%9C%B2%E6%8B%89%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">C题:塔露拉的挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D%E9%A2%98-%E9%9D%99%E6%BB%9E%E4%B9%8B%E5%BF%83"><span class="toc-number">4.</span> <span class="toc-text">D题:静滞之心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90PRTS%E7%B4%A7%E6%80%A5%E9%80%9A%E8%AE%AF%EF%BC%9A%E4%BB%BB%E5%8A%A1%E4%BB%A3%E5%8F%B7%E2%80%9C%E9%9D%99%E6%BB%9E%E4%B9%8B%E5%BF%83%E2%80%9D%E3%80%91"><span class="toc-number">4.1.</span> <span class="toc-text">【PRTS紧急通讯：任务代号“静滞之心”】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E%E9%A2%98-1-1"><span class="toc-number">5.</span> <span class="toc-text">E题:1+1</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
