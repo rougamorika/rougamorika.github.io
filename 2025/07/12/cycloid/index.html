@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>如何让樱花最快下落?当然是开摆啦! (一) - 摆线的概念和性质 | PRTS数学演算模块</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li><li class="navItem"><a class="navBlock" href="/PEUS/"><span class="navItemTitle">PEUS</span></a></li><li class="navItem"><a class="navBlock" href="/Thesaurus/"><span class="navItemTitle">Thesaurus</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>如何让樱花最快下落?当然是开摆啦! (一) - 摆线的概念和性质</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-07-12T00:00:00.000Z" id="date"> 2025-07-12</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-07-12T16:44:33.616Z" id="updated"> 2025-07-13</time></div></span></div></div><hr><div id="post-content"><p><strong>档案编号:</strong> R.I.-HR-E-JOINT-2401<br><strong>主题:</strong> 关于研究员“肉夹馍”提交的“最速降线”课题的初步评估与技术溯源报告<br><strong>联合签发:</strong> 人事部，工程部，LOGOS 文献分析组<br><strong>安全等级:</strong> 机密</p>
+<hr>
+<h3 id="一、事件概述"><a href="#一、事件概述" class="headerlink" title="一、事件概述"></a><strong>一、事件概述</strong></h3><p>近期，人事部收到一份来自基层动力学研究员“肉夹馍”的非标准研究申请。该申请旨在探寻一朵樱花（在实验中被理想化为一个质点）在标准重力场中沿特定轨道滑落的最速路径。</p>
+<p>该申请的核心目标，是在可控的实验环境中，以最高效率复现并研究特定物体在引力作用下的“速降美学”，从而为其后续的“运动美学”研究提供数据支持。</p>
+<h3 id="二、相关人员档案节选"><a href="#二、相关人员档案节选" class="headerlink" title="二、相关人员档案节选"></a><strong>二、相关人员档案节选</strong></h3><p><strong>代号:</strong> 肉夹馍<br><strong>职位:</strong> 动力学研究员<br><strong>专长:</strong> 理论动力学、轨迹观测<br><strong>档案摘要:</strong><br>观察员“肉夹馍”，一位对“运动”与“美”有独特追求的研究者。根据其自述，她着迷于观测物体在引力作用下的运动轨迹，尤其偏爱那些转瞬即逝、带有“凄美感”的下落过程，如樱花的飘落。其近期研究动机是为了避免因自然飘落耗时过长，而耽误她欣赏一部名为<strong>《秒速五厘米》</strong>的前文明影像作品。</p>
+<p><strong>课题约束条件（由申请人提交）：</strong></p>
+<ul>
+<li><p><strong>起始点：</strong> 坐标原点 (0, 0)。</p>
+</li>
+<li><p><strong>运动对象：</strong> 视为无初始速度的质点。</p>
+</li>
+<li><p><strong>作用力场：</strong> 仅考虑标准重力，忽略空气阻力与轨道摩擦力。</p>
+</li>
+</ul>
+<p><strong>人事部记录员附注：</strong><br>“肉夹馍”将此课题称为“凄美的速降”，并强调其重要性不亚于准时下班。虽然她大部分时间似乎都在为观看影像资料而“忙碌”，但其对动力学的执着不容小觑。为评估该课题的理论价值，我们向 LOGOS 文献分析组请求了技术溯源支持。</p>
+<h3 id="三、技术溯源与理论核心分析"><a href="#三、技术溯源与理论核心分析" class="headerlink" title="三、技术溯源与理论核心分析"></a><strong>三、技术溯源与理论核心分析</strong></h3><p>为评估该课题的可行性，LOGOS 历史数据文献库被授权进行关键词“最速”、“降落”、“轨道”的交叉检索。检索结果指向了一份尘封的前文明纪元档案，其内容与该问题高度相关，并揭示了解决该问题的理论核心。</p>
+<hr>
+<h4 id="档案编号-LGS-DAT-CYC-771"><a href="#档案编号-LGS-DAT-CYC-771" class="headerlink" title="[档案编号]: LGS-DAT-CYC-771"></a><strong>[档案编号]: LGS-DAT-CYC-771</strong></h4><h4 id="项目名称-关于特定几何轨迹的历史性问题回溯分析"><a href="#项目名称-关于特定几何轨迹的历史性问题回溯分析" class="headerlink" title="[项目名称]: 关于特定几何轨迹的历史性问题回溯分析"></a><strong>[项目名称]: 关于特定几何轨迹的历史性问题回溯分析</strong></h4><h4 id="安全等级-内部资料"><a href="#安全等级-内部资料" class="headerlink" title="[安全等级]: 内部资料"></a><strong>[安全等级]:</strong> 内部资料</h4><h4 id="数据来源-LOGOS-历史数据文献库，前文明纪元归档资料"><a href="#数据来源-LOGOS-历史数据文献库，前文明纪元归档资料" class="headerlink" title="[数据来源]: LOGOS 历史数据文献库，前文明纪元归档资料"></a><strong>[数据来源]:</strong> LOGOS 历史数据文献库，前文明纪元归档资料</h4><p>根据对 LOGOS 历史数据文献库的深度检索与交叉验证，确认该课题为前文明纪元时期的一项已完成的数学构建。资料显示，关键理论贡献者被识别为代号‘莱布尼茨’、‘牛顿’、‘雅各布·伯努利’及‘约翰·伯努利’等数个早期科学奠基人。</p>
+<p>经过数据模型还原，最终指向的理论核心为——<strong>‘摆线’（Cycloid）</strong>。</p>
+<h4 id="‘摆线’的概念"><a href="#‘摆线’的概念" class="headerlink" title="‘摆线’的概念"></a>‘摆线’的概念</h4><p>对‘摆线’的定义进行标准化解析如下：在特定约束条件下，当一个圆形单元体沿另一圆形单元体或一条直线进行无滑动的匀速滚动时，其圆周上任意固定参考点在二维平面上所形成的运动轨迹。</p>
+<p>具体轨迹形态参照以下可视化数据模型：</p>
+<p class='item-img' data-src='/images/cycloid1.png'><img src="/images/cycloid1.png" alt="alt text"></p>
+<p class='item-img' data-src='/images/epicycloid.png'><img src="/images/epicycloid.png" alt="alt text"></p>
+<h4 id="摆线的分类"><a href="#摆线的分类" class="headerlink" title="摆线的分类"></a>摆线的分类</h4><p>根据滚动基准的不同，该轨迹存在三种主要衍生构型：</p>
+<ul>
+<li><p><strong>标准摆线 (Cycloid):</strong> 圆形单元沿<strong>直线</strong>进行无滑动匀速滚动时，其圆周参考点形成的轨迹。</p>
+</li>
+<li><p><strong>外摆线 (Epicycloid):</strong> 一个圆形单元沿另一圆形单元<strong>外壁</strong>进行无滑动匀速滚动时，其圆周参考点形成的轨迹。</p>
+</li>
+<li><p><strong>内摆线 (Hypocycloid):</strong> 一个圆形单元沿另一圆形单元<strong>内壁</strong>进行无滑动匀速滚动时，其圆周参考点形成的轨迹。</p>
+</li>
+</ul>
+<hr>
+<h3 id="四、联合评估结论"><a href="#四、联合评估结论" class="headerlink" title="四、联合评估结论"></a><strong>四、联合评估结论</strong></h3><p>经过对[档案 LGS-DAT-CYC-771]的解析，联合分析组确认，前文明时期的‘摆线’研究，正是解决研究员“肉夹馍”提出的“凄美的速降”问题的理论关键。</p>
+<p>该问题在学术上被称为<strong>最速降线问题（Brachistochrone Problem）</strong>，其最优解路径——即能让樱花以最短时间从原点滑落至目标点的轨道——<strong>正是一段倒置的“标准摆线”</strong>。</p>
+<p>因此，该研究申请并非异想天开，而是对一个经典动力学问题的重现与探索，具有相当的理论与工程价值。建议批准该项目，并移交工程部进行轨道建模与实验设计。至于其研究动机… 人事部将予以进一步观察。</p>
+<h3 id="工程部技术分析报告-一"><a href="#工程部技术分析报告-一" class="headerlink" title="工程部技术分析报告 (一)"></a><strong>工程部技术分析报告 (一)</strong></h3><p><strong>档案编号:</strong> E-TECH-2401-TRJ-CYC<br><strong>主题:</strong> “最速降线”课题的轨道模型的几何解析<br><strong>提交人:</strong> 可露希尔<br><strong>项目关联:</strong> R.I.-HR-E-JOINT-2401 (关于研究员“肉夹馍”课题的联合评估)</p>
+<p><strong>摘要:</strong><br>本报告旨在为“凄美的速降”研究项目（即“最速降线问题”）提供核心的轨道几何模型。根据 LOGOS 的历史数据回溯，我们确认该问题的最优解路径为“摆线”轨迹。为确保实验设计的精确性，本报告将对标准摆线及其衍生构型的参数化模型进行详细推导。</p>
+<h3 id="一、标准摆线轨道解析"><a href="#一、标准摆线轨道解析" class="headerlink" title="一、标准摆线轨道解析"></a><strong>一、标准摆线轨道解析</strong></h3><h4 id="1-1-基础运动学建模"><a href="#1-1-基础运动学建模" class="headerlink" title="1.1 基础运动学建模"></a><strong>1.1 基础运动学建模</strong></h4><p>首先，我们对构成“摆线”的基本单元——一个理想化的“驱动轮”——在平直轨道上的运动进行解析。我们将驱动轮上一个固定的“示踪点”的复合运动 <script type="math/tex">v_{p}</script> 分解为两部分：驱动轮轴心的<strong>线性推进矢量 <script type="math/tex">v_{c}</script></strong> 和示踪点围绕轴心的<strong>自旋矢量 <script type="math/tex">v_{r}</script></strong>。</p>
+<p class='item-img' data-src='/images/cycloid2-1.png'><img src="/images/cycloid2-1.png" alt="图1：标准滚动模型运动矢量分解"></p>
+<p>如图 1 所示，我们以驱动轮的转动角 <script type="math/tex">\theta</script> 作为核心参数。根据战场观测数据进行矢量分解，可得示踪点在水平与垂直方向上的速度分量：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+v_{px}=v_{c}+v_{r}\cos(\pi-\theta) \\
+v_{py}=v_{r}\sin \theta
+\end{cases}</script><p>基于基础源石技艺理论中的三角学关系，我们知道 <script type="math/tex">\cos(\pi-\theta)=-\cos\theta</script>。模型可修正为：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+v_{px}=v_{c}-v_{r}\cos\theta \\
+v_{py}=v_{r}\sin \theta
+\end{cases}</script><p>对两个速度分量进行矢量场积分，以求得示踪点的位移方程。其中 <script type="math/tex">C_{x}</script> 和 <script type="math/tex">C_{y}</script> 为初始状态修正项。</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=v_{c}\theta+v_{r}\sin\theta +C_{x}\\
+y_{p}=-v_{r}\cos \theta+C_{y}
+\end{cases}</script><p>根据“肉夹馍”研究员设定的初始条件进行校准：当转角 <script type="math/tex">\theta=0</script> 时，示踪点位于接触地面的原点 <script type="math/tex">(x_{p},y_{p})=(0,0)</script>。代入可解得修正项：</p>
+<script type="math/tex; mode=display">
+\begin{cases} 
+C_{x}= 0\\
+C_{y}=v_{r}
+\end{cases}</script><p>由此，我们得到轨迹的一般参数化模型：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=v_{c}\theta+v_{r}\sin\theta \\
+y_{p}=v_{r}(1-\cos \theta)
+\end{cases}</script><h4 id="1-2-纯滚动约束"><a href="#1-2-纯滚动约束" class="headerlink" title="1.2 纯滚动约束"></a><strong>1.2 纯滚动约束</strong></h4><p>上述模型中尚有一个关键战场条件未应用：<strong>“纯滚动约束”</strong>，即驱动轮与地面接触点无相对滑动。这意味着在接触点 <script type="math/tex">M</script> 处，其合成速度矢量为零。对此接触点进行分析，其速度由线性推进矢量与自旋矢量叠加而成：</p>
+<script type="math/tex; mode=display">
+v_{M}=\vec{v_{r}}-\vec{v_{c}}=\vec{0}</script><p>由于在该点，推进与自旋两个矢量大小相等、方向相反，可立即得到：</p>
+<script type="math/tex; mode=display">
+|\vec{v_{c}}|=|\vec{v_{r}}|</script><p>将此约束关系代入通用模型，并设推进速率 <script type="math/tex">v_{c}=a</script> 作为该无人机的基础机动性参数，我们最终得到<strong>标准摆线的参数方程</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=a(\theta+\sin\theta) \\
+y_{p}=a(1-\cos \theta)
+\end{cases}</script><p><em>注：通过一系列复杂的代数运算（大嘘）可推导出其笛卡尔坐标方程，过程已在此省略，其形式为 <script type="math/tex">x=a \arccos \frac{a-y}{a} \mp \sqrt{ y(2a-y) }</script>。对于建造实验轨道而言，参数化模型已足够高效。</em></p>
+<hr>
+<h3 id="二、圆形障碍滚动轨迹分析"><a href="#二、圆形障碍滚动轨迹分析" class="headerlink" title="二、圆形障碍滚动轨迹分析"></a><strong>二、圆形障碍滚动轨迹分析</strong></h3><p>虽然“最速降线”问题本身仅需标准摆线，但为了课题的完整性与未来可能的扩展（例如在曲面重力场中的应用），我们一并对驱动轮沿圆形障碍物滚动的轨迹进行建模。</p>
+<h4 id="2-1-外摆线轨道"><a href="#2-1-外摆线轨道" class="headerlink" title="2.1 外摆线轨道"></a><strong>2.1 外摆线轨道</strong></h4><p>此模式下，驱动轮沿一大型圆形“约束轨道环”（例如大型储罐或防御工事外壁）的外部滚动。我们采用几何学策略进行建模。</p>
+<p class='item-img' data-src='/images/cycloid3.png'><img src="/images/cycloid3.png" alt="epi3"></p>
+<p>如图 2 所示，设约束环半径为 <script type="math/tex">R</script>，驱动轮半径为 <script type="math/tex">r</script>。根据纯滚动约束，两圆接触滚过的弧长 <script type="math/tex">l_{R}</script> 和 <script type="math/tex">l_{r}</script> 必须相等。由此可建立两圆心角的对应关系：</p>
+<script type="math/tex; mode=display">
+a=\frac{R}{r}\theta</script><p>以约束环圆心为坐标原点，可轻易定位驱动轮的轴心 <script type="math/tex">C</script> 的坐标为 <script type="math/tex">((R+r)\cos\theta,(R+r)\sin\theta)</script>。示踪点 <script type="math/tex">P</script> 相对于轴心 <script type="math/tex">C</script> 的坐标偏移为 <script type="math/tex">-r\cos(\theta+a), -r\sin(\theta+a)</script>。综合可得示踪点 <script type="math/tex">P</script> 的轨迹方程：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=(R+r)\cos\theta-r\cos(\theta+a) \\
+y_{p}=(R+r)\sin\theta-r\sin(\theta+a)
+\end{cases}</script><p>将角度关系 <script type="math/tex">a</script> 代入，我们便完成了<strong>外摆线轨道模型</strong>的构建：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=(R+r)\cos\theta-r\cos(\frac{R+r}{r}\theta) \\
+y_{p}=(R+r)\sin\theta-r\sin(\frac{R+r}{r}\theta)
+\end{cases}</script><p><strong>特殊观测案例：</strong> 当 <script type="math/tex">\displaystyle \frac{R}{r}=1</script> 时，即驱动轮与约束环半径相等，轨迹呈现出一种特殊的“心脏形”曲线。</p>
+<p class='item-img' data-src='/images/epicycloid4.png'><img src="/images/epicycloid4.png" alt="图3：心脏线轨迹"></p>
+<blockquote>
+<p>// <em>档案附注：此轨迹因形似心脏而得名。工程部记录显示，曾有干员尝试将此函数图像用于非工程目的并导致了…意料之中的后果（笑）。</em></p>
+</blockquote>
+<h4 id="2-2-内摆线轨道"><a href="#2-2-内摆线轨道" class="headerlink" title="2.2 内摆线轨道"></a><strong>2.2 内摆线轨道</strong></h4><p>此模式对应驱动轮在大型圆形工事（如陨石坑）内部边缘的机动。其分析思路与外部耦合完全一致，仅需将驱动轮轴心与约束环圆心的距离更改为 <script type="math/tex">R-r</script>。其轨迹模型如下：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{p}=(R-r)\cos\theta-r\cos(\frac{R-r}{r}\theta) \\
+y_{p}=(R-r)\sin\theta-r\sin(\frac{R-r}{r}\theta)
+\end{cases}</script><p>在实战记录中，我们观测到两种极具规律性的高威胁形态：</p>
+<ul>
+<li><p><strong>『三尖』形态：</strong> 当 <script type="math/tex">\frac{R}{r}=3</script> 时，轨迹呈现三个尖点，无人机在此轨迹下具有极高的转向效率和不可预测性。</p>
+<p class='item-img' data-src='/images/tricloid.png'><img src="/images/tricloid.png" alt="图4：三尖瓣线轨迹"></p>
+</li>
+<li><p><strong>『星芒』形态：</strong> 当 <script type="math/tex">\frac{R}{r}=4</script> 时，轨迹呈现四个尖点，形态酷似卡西米尔骑士纹章，常用于对据点的多角度饱和冲击。</p>
+<p class='item-img' data-src='/images/quadcloid.png'><img src="/images/quadcloid.png" alt="图5：星形线轨迹"></p>
+</li>
+</ul>
+<p><strong>规律总结：</strong> 普遍地，若半径比 <script type="math/tex">\frac{R}{r}=n</script>（<script type="math/tex">n</script> 为整数），轨迹将呈现 <script type="math/tex">n</script> 个尖点。每个尖点对应示踪点回归初始接触位置的周期性节点，其转角间隔为 <script type="math/tex">\frac{2\pi}{n}</script> 的整数倍。此规律可用于预判敌方单位高威胁动作的发生时机。</p>
+<h3 id="三、外伸-内收点位滚动轨迹分析"><a href="#三、外伸-内收点位滚动轨迹分析" class="headerlink" title="### 三、外伸/内收点位滚动轨迹分析"></a>### <strong>三、外伸/内收点位滚动轨迹分析</strong></h3><h4 id="3-1-内收点位的运动情况"><a href="#3-1-内收点位的运动情况" class="headerlink" title="3.1 内收点位的运动情况"></a>3.1 内收点位的运动情况</h4><p>现在我们研究滚动圆不再圆周上的点的运动轨迹, 比如我们选取标准摆线滚动生成圆内距离圆心 <script type="math/tex">\frac{R}{2}</script> 的点进行分析, 那么生成的轨迹如下图</p>
+<p class='item-img' data-src='/images/trochoid.png'><img src="/images/trochoid.png" alt="tro"></p>
+<p>这样的曲线, 我们也可以认为它是一种广义的摆线, 一般称为<strong>次摆线</strong>. 而由于我们研究的是位于圆内的点, 它又可以进一步归属于短辐圆内次摆线.</p>
+<h4 id="3-2-外伸点位的运动情况"><a href="#3-2-外伸点位的运动情况" class="headerlink" title="3.2 外伸点位的运动情况"></a>3.2 外伸点位的运动情况</h4><p class='item-img' data-src='/images/l-trochoid.png'><img src="/images/l-trochoid.png" alt="l-tro"></p>
+<p>如图所示是外伸点位的运动情况, 此时称为<strong>长辐圆外次摆线</strong>, 注意到其本身是自交的. 所以他不是简单曲线.</p>
+<h3 id="四-沿曲线的下滑"><a href="#四-沿曲线的下滑" class="headerlink" title="四. 沿曲线的下滑"></a>四. 沿曲线的下滑</h3><p>在仅受到重力作用, 并且轨迹约束在某一曲线的模型下, 函数是满足下面的微分方程的 </p>
+<script type="math/tex; mode=display">
+\ddot{s}=-g \frac{dy}{ds}</script><p>两边同时乘上 <script type="math/tex">\dot{s}</script>, 观察左边, 逆用导数的链式法则</p>
+<script type="math/tex; mode=display">
+\dot{s}\ddot{s}=d\left( \frac{1}{2}\dot{s}^2 \right)</script><p>右边则是</p>
+<script type="math/tex; mode=display">
+-g \frac{dy}{ds} \frac{ds}{dt}=-g \dot{y}</script><p>因此我们可以得出原方程就等价于</p>
+<script type="math/tex; mode=display">
+d\left( \frac{1}{2}\dot{s}^2 \right)=-g \dot{y}</script><p>两边同时积分, 得</p>
+<script type="math/tex; mode=display">
+\frac{1}{2} \dot{s}^2=-gy+C</script><p><em>其实不知道你看不看的出这就是动能定理</em><br>假设初始点位于 <script type="math/tex">(x_{0},y_{0})</script>, 初始时间, 速度为 <script type="math/tex">0</script>, 那么自然有</p>
+<script type="math/tex; mode=display">
+C=gy_{0}</script><p>所以很自然有</p>
+<script type="math/tex; mode=display">
+\frac{1}{2} \dot{s}^2=g(y_{0}-y)</script><p>对于周期运动, 不妨考虑反函数 <script type="math/tex">t(s)</script>, </p>
+<script type="math/tex; mode=display">
+\frac{dt}{ds}=\pm\frac{1}{\sqrt{ 2g(y_{0}-y) }}</script><p>前面的正负号是由 <script type="math/tex">\dot{s}</script> 决定的, 可以这么想, 速度必须要达到 <script type="math/tex">0</script>, 路程才会走到最远的位置.<br>如果我们引入参数 <script type="math/tex">\theta</script>, 那么将可以以另一方式表述这个微分方程, 是故</p>
+<script type="math/tex; mode=display">
+t=c_{1}\pm \int \frac{ds}{\sqrt{ 2g(y_{0}-y) }}</script><p>假如我么进一步化简积分</p>
+<script type="math/tex; mode=display">
+t=c_{1} \pm \int \frac{d\theta}{ds} \frac{ds}{\sqrt{ 2g(y_{0}-y) }}</script><p>得到</p>
+<script type="math/tex; mode=display">
+t=c_{1} \pm \int\frac{\sqrt{ x'^2+y'^2 }}{2g(y_{0}-y)}d\theta</script><p>假设 <script type="math/tex">t=0</script>, <script type="math/tex">\theta=\theta_{0}</script>, 则</p>
+<script type="math/tex; mode=display">
+t= \int_{\theta_{0}}^{\theta} \frac{\sqrt{ x'^2+y'^2 }}{2g(y_{0}-y)}d\theta</script><p>注意到, 肉夹馍的报告就是要最小化这个积分.</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/10/dingduan-07-1/">PEUS-07-定段赛-01 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">数理研究 LOGOS</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/rougamorika"><i class="fab fa-github" alt="GitHub"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%8B%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、事件概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%9B%B8%E5%85%B3%E4%BA%BA%E5%91%98%E6%A1%A3%E6%A1%88%E8%8A%82%E9%80%89"><span class="toc-number">2.</span> <span class="toc-text">二、相关人员档案节选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8A%80%E6%9C%AF%E6%BA%AF%E6%BA%90%E4%B8%8E%E7%90%86%E8%AE%BA%E6%A0%B8%E5%BF%83%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">三、技术溯源与理论核心分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%A3%E6%A1%88%E7%BC%96%E5%8F%B7-LGS-DAT-CYC-771"><span class="toc-number">3.1.</span> <span class="toc-text">[档案编号]: LGS-DAT-CYC-771</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0-%E5%85%B3%E4%BA%8E%E7%89%B9%E5%AE%9A%E5%87%A0%E4%BD%95%E8%BD%A8%E8%BF%B9%E7%9A%84%E5%8E%86%E5%8F%B2%E6%80%A7%E9%97%AE%E9%A2%98%E5%9B%9E%E6%BA%AF%E5%88%86%E6%9E%90"><span class="toc-number">3.2.</span> <span class="toc-text">[项目名称]: 关于特定几何轨迹的历史性问题回溯分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7-%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99"><span class="toc-number">3.3.</span> <span class="toc-text">[安全等级]: 内部资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90-LOGOS-%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE%E6%96%87%E7%8C%AE%E5%BA%93%EF%BC%8C%E5%89%8D%E6%96%87%E6%98%8E%E7%BA%AA%E5%85%83%E5%BD%92%E6%A1%A3%E8%B5%84%E6%96%99"><span class="toc-number">3.4.</span> <span class="toc-text">[数据来源]: LOGOS 历史数据文献库，前文明纪元归档资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%98%E6%91%86%E7%BA%BF%E2%80%99%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">3.5.</span> <span class="toc-text">‘摆线’的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%86%E7%BA%BF%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">3.6.</span> <span class="toc-text">摆线的分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%81%94%E5%90%88%E8%AF%84%E4%BC%B0%E7%BB%93%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">四、联合评估结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E9%83%A8%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A-%E4%B8%80"><span class="toc-number">5.</span> <span class="toc-text">工程部技术分析报告 (一)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%87%E5%87%86%E6%91%86%E7%BA%BF%E8%BD%A8%E9%81%93%E8%A7%A3%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">一、标准摆线轨道解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%9F%BA%E7%A1%80%E8%BF%90%E5%8A%A8%E5%AD%A6%E5%BB%BA%E6%A8%A1"><span class="toc-number">6.1.</span> <span class="toc-text">1.1 基础运动学建模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E7%BA%AF%E6%BB%9A%E5%8A%A8%E7%BA%A6%E6%9D%9F"><span class="toc-number">6.2.</span> <span class="toc-text">1.2 纯滚动约束</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9C%86%E5%BD%A2%E9%9A%9C%E7%A2%8D%E6%BB%9A%E5%8A%A8%E8%BD%A8%E8%BF%B9%E5%88%86%E6%9E%90"><span class="toc-number">7.</span> <span class="toc-text">二、圆形障碍滚动轨迹分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%A4%96%E6%91%86%E7%BA%BF%E8%BD%A8%E9%81%93"><span class="toc-number">7.1.</span> <span class="toc-text">2.1 外摆线轨道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%86%85%E6%91%86%E7%BA%BF%E8%BD%A8%E9%81%93"><span class="toc-number">7.2.</span> <span class="toc-text">2.2 内摆线轨道</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%96%E4%BC%B8-%E5%86%85%E6%94%B6%E7%82%B9%E4%BD%8D%E6%BB%9A%E5%8A%A8%E8%BD%A8%E8%BF%B9%E5%88%86%E6%9E%90"><span class="toc-number">8.</span> <span class="toc-text">### 三、外伸&#x2F;内收点位滚动轨迹分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%86%85%E6%94%B6%E7%82%B9%E4%BD%8D%E7%9A%84%E8%BF%90%E5%8A%A8%E6%83%85%E5%86%B5"><span class="toc-number">8.1.</span> <span class="toc-text">3.1 内收点位的运动情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%A4%96%E4%BC%B8%E7%82%B9%E4%BD%8D%E7%9A%84%E8%BF%90%E5%8A%A8%E6%83%85%E5%86%B5"><span class="toc-number">8.2.</span> <span class="toc-text">3.2 外伸点位的运动情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E6%B2%BF%E6%9B%B2%E7%BA%BF%E7%9A%84%E4%B8%8B%E6%BB%91"><span class="toc-number">9.</span> <span class="toc-text">四. 沿曲线的下滑</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
