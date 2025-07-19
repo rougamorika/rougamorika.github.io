@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>拉普拉斯爱变换,但是拉普兰德不爱(悲) | PRTS数学演算模块</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li><li class="navItem"><a class="navBlock" href="/PEUS/"><span class="navItemTitle">PEUS</span></a></li><li class="navItem"><a class="navBlock" href="/Thesaurus/"><span class="navItemTitle">Thesaurus</span></a></li><li class="navItem"><a class="navBlock" href="/RSC/"><span class="navItemTitle">RSC</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>拉普拉斯爱变换,但是拉普兰德不爱(悲)</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-07-13T08:26:27.000Z" id="date"> 2025-07-13</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-07-13T10:55:37.145Z" id="updated"> 2025-07-13</time></div></span></div></div><hr><div id="post-content"><h2 id="积分-变换"><a href="#积分-变换" class="headerlink" title="(积分)变换"></a>(积分)变换</h2><p>本页内容所谓的变换其实指<strong>积分变换</strong>, 积分变换就是一个把一个函数通过积分变成另一个函数的方法/技巧, 这种变换有助于我们将原来很难处理甚至无法处理的函数变成性质良好便于处理的函数.</p>
+<p>形式化地说, 就是定义一个新的 $F(\beta)$, 使得它和原函数 $f(t)$ 满足下面的关系</p>
+<script type="math/tex; mode=display">
+F(\beta)=\int_{a}^{b}f(t)K(t,\beta)</script><p>$K(t,\beta)$ 是一个已知的二元函数, 一般称为<strong>核 (Kernel) 函数</strong>. 所以我们可以看出, 不同的区域 $[a,b]$ 和不同核函数 $K$ 分开了不同的积分变换. 今天的主要内容是介绍其中的 <strong>Laplace 变换</strong>, 虽然我们可以直接引入 Laplace 变换的式子 (许多自动化的教材都是这么干的), 但是我们 LOGOS 很反对不追本溯源的行为 (除非在赶时间), 所以我们学习了顾樵老师在”数学物理方法”一书中的讲法, 即先讲 <strong>Fourier 变换</strong>. 而想要讲解 Fourier 变换, 不讲 Fourier 积分和 Fourier 级数又是不合理的, 故不妨先从 Taylor 级数开始 (悲)</p>
+<h2 id="级数展开"><a href="#级数展开" class="headerlink" title="级数展开"></a>级数展开</h2><h3 id="Taylor-展开和-Fourier-展开的区别"><a href="#Taylor-展开和-Fourier-展开的区别" class="headerlink" title="Taylor 展开和 Fourier 展开的区别"></a>Taylor 展开和 Fourier 展开的区别</h3><p>我们首先来看泰勒展开</p>
+<script type="math/tex; mode=display">
+f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}</script><p>假如考虑 $x<em>{0}=0$ 的情况, 那么我们发现, 对于不同的 $f,x</em>{0}$, 其前面的系数 $\frac{f^{(n)}(x<em>{0})}{n!}=a</em>{n}$ 会发生一定程度的变化, 但是总是拿这个系数去乘上 $x^{n}$ 这个幂函数的. 我们就把 $x^n$ 叫做级数展开的<strong>基底函数</strong>.</p>
+<p>傅里叶展开和泰勒展开本质没有什么区别, 只是把基底函数换成 $\cos(nx)$ , $\sin(nx)$ , $n&gt;0$ 和  $1$ 而已. 在傅里叶级数中, 一切函数都是一堆正余弦的和, 再加上一个基础的偏移量 $a_{0}$, 即</p>
+<script type="math/tex; mode=display">
+f(x)=a_{0}+\sum_{n=1}^{\infty}(a_{n}\cos(nx)+b_{n}\sin(nx))</script><h3 id="函数的正交性"><a href="#函数的正交性" class="headerlink" title="函数的正交性"></a>函数的正交性</h3><p>为什么要换成 $\sin(nx)$ 和 $\cos(nx)$, 这是因为这两个函数是基本初等函数中唯一在 $[0,2\pi]$ 互相<strong>正交</strong>的函数.<br>函数的正交性是由函数的内积定义的, 在 Hilbert 空间中, 函数的内积被定义成:</p>
+<script type="math/tex; mode=display">
+\langle f(x),g(x)\rangle=\int f(x)g(x)dx</script><p>而正交就意味着内积为 $0$, 因此实际上就是在说, 任意取上面的那些函数两两乘积,在 $[0,2\pi]$ 上的积分是 $0$, 利用这个性质, 我们可以推导三个傅里叶系数, 而不用在高数课上死记硬背.</p>
+<p>对上面的级数定义式两边求积分</p>
+<script type="math/tex; mode=display">
+\int_{0}^{2\pi} f(x)dx=\int_{0}^{2\pi}\left[ a_{0}+\sum_{n=1}^{\infty}(a_{n}\cos(nx)+b_{n}\sin(nx)) \right]dx</script><p>注意到在和式内的函数都是 $1\cdot \text{sinosoid}(x)$ 的形式, 进而说明和式的积分值总是 $0$, 是故</p>
+<script type="math/tex; mode=display">
+\int_{0}^{2\pi}f(x)dx=2\pi a_{0}</script><script type="math/tex; mode=display">
+a_{0}=\frac{1}{2\pi}\int_{0}^{2\pi}f(x)dx</script><p>那么现在怎么求 $a<em>{n},b</em>{n}$? 首先我们得消除 $a_{0}$ 的影响, 由于我们是在 $[0,2\pi]$ 积分, 一个典型的做法是直接乘上一个在区间上具有正交性的函数, 比如 $\cos (mx),\sin(mx)$</p>
+<script type="math/tex; mode=display">
+\int_{0}^{2\pi} f(x)\cos(mx)dx=\int_{0}^{2\pi}\left[ a_{0}\cos(mx)+\sum_{n=1}^{\infty}(a_{n}\cos(nx)+b_{n}\sin(nx)) \right]dx</script><p>拆开 $a<em>{n},b</em>{n}$, 得到</p>
+<script type="math/tex; mode=display">
+\int_{0}^{2\pi} f(x)\cos(mx)dx=\sum_{n=1}^{\infty}a_{n}\int_{0}^{2\pi}\cos(nx)\cos(mx)</script><p>当 $m=n$ 时间内积才不为 $0$, 而为 $\pi$.</p>
+<script type="math/tex; mode=display">
+\pi a_{m}=\int_{0}^{2\pi}f(x)\cos(mx)dx</script><p>所以可得</p>
+<script type="math/tex; mode=display">
+a_{m}=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos (mx)dx</script><p>命名为 $m$ 还是 $n$ 是无伤大雅的, 出于统一</p>
+<script type="math/tex; mode=display">
+a_{n}=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos(nx)dx</script><p>同时乘以 $\sin(mx)$ 就可以得到 $b_{n}$</p>
+<script type="math/tex; mode=display">
+b_{n}=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\sin(nx)</script><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/07/13/%E6%9C%AA%E5%91%BD%E5%90%8D/">← 下一篇 </a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/13/novel-solve-of-fibonacci/">关于斐波那契数列的研究 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">数理研究 LOGOS</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/rougamorika"><i class="fab fa-github" alt="GitHub"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%AF%E5%88%86-%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">(积分)变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0%E5%B1%95%E5%BC%80"><span class="toc-number">2.</span> <span class="toc-text">级数展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Taylor-%E5%B1%95%E5%BC%80%E5%92%8C-Fourier-%E5%B1%95%E5%BC%80%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.</span> <span class="toc-text">Taylor 展开和 Fourier 展开的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">函数的正交性</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
