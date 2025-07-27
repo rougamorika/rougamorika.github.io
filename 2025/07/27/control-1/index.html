@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>自动控制原理-系统与系统的框图建模法 | PRTS数学演算模块</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li><li class="navItem"><a class="navBlock" href="/PEUS/"><span class="navItemTitle">PEUS</span></a></li><li class="navItem"><a class="navBlock" href="/Thesaurus/"><span class="navItemTitle">Thesaurus</span></a></li><li class="navItem"><a class="navBlock" href="/RSC/"><span class="navItemTitle">RSC</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>自动控制原理-系统与系统的框图建模法</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-07-27T03:34:09.000Z" id="date"> 2025-07-27</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-07-27T07:38:19.481Z" id="updated"> 2025-07-27</time></div></span><br><span id="busuanzi_container_page_pv">Page View: <span class="control" id="busuanzi_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h2 id="传统控制原理-Laplace-微分方程-时域分析-频率响应-根轨迹-的研究对象"><a href="#传统控制原理-Laplace-微分方程-时域分析-频率响应-根轨迹-的研究对象" class="headerlink" title="传统控制原理 (Laplace, 微分方程, 时域分析, 频率响应,根轨迹) 的研究对象"></a>传统控制原理 (Laplace, 微分方程, 时域分析, 频率响应,根轨迹) 的研究对象</h2><p>自动控制原理研究的是 1960 年之前的控制科学, 经典的控制理论一开始是机械工程师控制机械的一门<em>艺术</em>, 比如 Drebbel 温控系统, Watt 的飞球机械. 可以说, 拥有这门艺术意味着更加精妙的机械, 更加精确/有益的实现我们想要达成的目的. 但是, 无论怎么说, 那时它还只是机械工程学的一个分支, 直到 <strong>J.C.Maxwell</strong> 开始将上面的系统视作一个个微分方程, 并且借助微分方程来分析机械的不稳定性开始 (见 J.C.Maxwell 的论文 <em>On Governors</em>), 控制科学正式登上了历史舞台.</p>
+<p>微分方程是一种很不好解的方程, 因为方程中不仅有函数本身, 还有函数的 (偏/全) 高阶导数. 传统的控制原理借助了积分变换解决了求解困难的问题, 代价是它只能解决<strong>单输入单输出</strong>的系统.</p>
+<p>自动控制原理阶段我们所研究的, 就是单输入单输出系统的建模方法, 模型求解方法, 和单输入单输出系统的工程应用.</p>
+<h2 id="工程模型抽象为单输入单输出系统"><a href="#工程模型抽象为单输入单输出系统" class="headerlink" title="工程模型抽象为单输入单输出系统"></a>工程模型抽象为单输入单输出系统</h2><h3 id="反馈系统和框图的基本概念"><a href="#反馈系统和框图的基本概念" class="headerlink" title="反馈系统和框图的基本概念"></a>反馈系统和框图的基本概念</h3><p>系统就是一系列确定的研究对象构成的一个组. 我们以一个机电系统为例教大家如何进行建模.<br>假定大家现在有一台定时洗碗机, 它的结构很简单, 对洗碗机定时, 洗碗机在定时开始时满功率运作清洗内部的碗筷, 直到定时结束, 你就得到了洗好的碗. 在控制科学的研究中, 我们在意的是系统的工作流程, 自然我们就会考虑采用<strong>方框图</strong>(一种简化过的流程图) 来描述我们工作情况, 如下所示.</p>
+<p class='item-img' data-src='/images/kaihuan1.svg'><img src="/images/kaihuan1.svg" alt="方框"></p>
+<p>只要我们<strong>输入</strong>时间,系统就会自动帮我们洗碗啦, 我们就得到了洗好的碗筷, 从控制论的语言来说, 我们控制了<strong>碗筷的清洁程度</strong>.<br>所以一个<strong>控制系统</strong>, 就是通过改变一个/一组量来使得另一个/一组量按照我们预设的方式变动的系统.<br>上面的洗碗机当然可以清洁碗筷, 前提条件是我们<strong>精确地调试计时器</strong>. 今天洗一个碗, 明天洗三个碗, 他们的洗涤时间肯定不一样, 这样我们的洗碗机就很依赖我们的经验和计时器的精度, 而一切的测量模块和人类经验都是有<strong>误差</strong>的. 于此同时, 洗碗装置在计时器设置完全相同的情况下, 也很有可能受到别的因素的影响(比如今天喷洗洁精的管子里有垃圾堵住了一部分管子), 控制论的行话称它为系统受到<strong>扰动</strong>. 扰动也会影响洗好碗筷的清洁程度, 因此我们要将这些误差和扰动考虑进去, 此时洗碗机工作的系统框图如下.</p>
+<p class='item-img' data-src='/images/kaihuanwithdis.svg'><img src="/images/kaihuanwithdis.svg" alt="kaihuan2"></p>
+<p>!有那么笨, 我们洗碗的时候总是<strong>一边洗碗, 一边观察碗筷是不是洗干净</strong>了. 抽象一下,我们其实是通过<strong>观察输出</strong> (碗筷干净程度) 和比较预期(我们期待的干净程度), 来调整我们的<strong>输入</strong>(洗碗的时间). 我们当然也可以教会洗碗机做这件事. 这时候它的工作框图如下所示</p>
+<p class='item-img' data-src='images/bihuan.svg'><img src="images/bihuan.svg" alt="Untitled Diagram 3"></p>
+<p>很多人就很喜欢在这里开始扯一些控制理论的概念了 (没错说的就是过去的我). 其实我们应该从生物的角度去思考, 因为控制论的正式提出其实是来自 Norbert Wiener 先生写作的 <em>Cybernetics</em>. 而那本书当中研究的很多的就是生物的自我控制和稳态调节. 所以我们把上面的这个传感器的部分叫做<strong>负反馈</strong>也是沿用了老先生的做法, 从我这个高中当过生物课代表的人来看, 还真是有点”相似”.</p>
+<p>有了负反馈部分, 系统框图就<strong>成环</strong>了, 所以也叫这个系统是<strong>闭环控制系统</strong>. 没有反馈部分的系统称为<strong>开环控制系统</strong>.</p>
+<ul>
+<li>闭环系统相较于开环系统更加抗干扰</li>
+<li>闭环系统相较于开环系统更复杂</li>
+</ul>
+<h3 id="一些常见模型及它们的框图"><a href="#一些常见模型及它们的框图" class="headerlink" title="一些常见模型及它们的框图"></a>一些常见模型及它们的框图</h3><h4 id="常见的三种控制系统"><a href="#常见的三种控制系统" class="headerlink" title="常见的三种控制系统"></a>常见的三种控制系统</h4><p>工程上常见三种不同控制系统 (这是按照卢京潮先生的分法)</p>
+<ul>
+<li>恒值控制系统: 保持输出值稳定在不变的常量值的系统 (比如抽水马桶的水箱)</li>
+<li>随动控制系统 (伺服控制): 保持输出值随着输入变化规律完全相同地变化的系统 (比如函数记录仪)</li>
+<li>程序控制系统: 按照输入程序运动的系统 (比如数控机床)</li>
+</ul>
+<p>下面介绍一些常见的框图和结构</p>
+<h4 id="恒值控制系统的案例"><a href="#恒值控制系统的案例" class="headerlink" title="恒值控制系统的案例"></a>恒值控制系统的案例</h4><h5 id="抽水马桶"><a href="#抽水马桶" class="headerlink" title="抽水马桶"></a>抽水马桶</h5><p>抽水马桶的主要结构时马桶本体, 蓄水箱和下水管. 我们主要观察的部分是蓄水箱的部分, 如下所示<br class='item-img' data-src='/images/shuixiang.png'><img src="/images/shuixiang.png" alt="抽水马桶蓄水箱"></p>
+<p>分析一下上面的机构, 浮子的水位变化通过连杆转化为电位器的运动, 之后再转化成微弱的电信号, 通过放大后驱动电动机, 再通过减速器驱动阀门, 进而实现开闸放水/关闸节水调整水位的目的. 它是一个很经典的恒值控制系统, 框图如下</p>
+<p class='item-img' data-src='/images/matongd.svg'><img src="/images/matongd.svg" alt="matong"></p>
+<h5 id="飞机-自动驾驶仪"><a href="#飞机-自动驾驶仪" class="headerlink" title="飞机-自动驾驶仪"></a>飞机-自动驾驶仪</h5><p class='item-img' data-src='images/feiji.png'><img src="images/feiji.png" alt="飞机-自动驾驶仪"></p>
+<p>分析一下上面的原理图, 当我们的俯仰角 $\theta$ 与预期俯仰角 $\theta_{0}$ 不相同时, 垂直陀螺仪的电极不处在电位器的中央, 形成一个反应电流输入放大器, 经放大后作为舵机控制电流控制舵机改变飞机的舵面角, 进而改变飞机的俯仰角. 于此同时, 舵机后方的小电位器是为了防止放大器本身出现偏差而所加的一个<strong>反馈补偿机制</strong>, 它可以影响放大器, 使得舵机电流是正常的, 这被叫做<strong>局部反馈</strong>. 上面系统的框图如下所示</p>
+<p class='item-img' data-src='images/feiji.svg'><img src="images/feiji.svg" alt="Untitled Diagram 6"></p>
+<h4 id="伺服系统的案例"><a href="#伺服系统的案例" class="headerlink" title="伺服系统的案例"></a>伺服系统的案例</h4><h5 id="高射炮"><a href="#高射炮" class="headerlink" title="高射炮"></a>高射炮</h5><p class='item-img' data-src='/images/gaoshepao.png'><img src="/images/gaoshepao.png" alt="gaoshepao"></p>
+<p>我们来看高射炮的示意图. 手轮转动的其实是左侧的电位器, 使得输入电压 $u<em>i$ 发生变化, 它和未发生变化得输出轴电压一起进入运算放大器, 输出的差模电压 $u</em>{a}$ 驱动电动机, 进而调整高射炮的仰角, 然后再带动输出轴旋转发射架端的电压 $u<em>{o}$, 进而实现最终 $u</em>{a}$ 归零, 实现伺服过程. 框图如下</p>
+<p class='item-img' data-src='images/gaoshepao.svg'><img src="images/gaoshepao.svg" alt="高射炮示意图"></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/07/27/Excalidraw/Drawing%202025-07-27%2012.25.38.excalidraw/">← Next </a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/23/second-order-inverse-pendelum/">second-order-inverse-pendelum Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">数理研究 LOGOS</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/rougamorika"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/434174411"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86-Laplace-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B-%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90-%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94-%E6%A0%B9%E8%BD%A8%E8%BF%B9-%E7%9A%84%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">传统控制原理 (Laplace, 微分方程, 时域分析, 频率响应,根轨迹) 的研究对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E6%A8%A1%E5%9E%8B%E6%8A%BD%E8%B1%A1%E4%B8%BA%E5%8D%95%E8%BE%93%E5%85%A5%E5%8D%95%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">工程模型抽象为单输入单输出系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%A6%88%E7%B3%BB%E7%BB%9F%E5%92%8C%E6%A1%86%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">反馈系统和框图的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9E%8B%E5%8F%8A%E5%AE%83%E4%BB%AC%E7%9A%84%E6%A1%86%E5%9B%BE"><span class="toc-number">2.2.</span> <span class="toc-text">一些常见模型及它们的框图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.1.</span> <span class="toc-text">常见的三种控制系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%92%E5%80%BC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A1%88%E4%BE%8B"><span class="toc-number">2.2.2.</span> <span class="toc-text">恒值控制系统的案例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%BD%E6%B0%B4%E9%A9%AC%E6%A1%B6"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">抽水马桶</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A3%9E%E6%9C%BA-%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%AA"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">飞机-自动驾驶仪</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%BA%E6%9C%8D%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A1%88%E4%BE%8B"><span class="toc-number">2.2.3.</span> <span class="toc-text">伺服系统的案例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E5%B0%84%E7%82%AE"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">高射炮</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
