@@ -1,0 +1,128 @@
+---
+title: "Linear Algebra Basics"
+slug: "linear-algebra-basics"
+category: "algebra"
+tags: ["linear-algebra", "vectors", "matrices", "vector-spaces"]
+date: "2025-12-14"
+banner: "banner/wallhaven-1p9o39.jpg"
+related: ["group-theory", "calculus-derivatives"]
+difficulty: "beginner"
+author: "Anime Math Blog"
+---
+
+# Linear Algebra Basics
+
+Linear algebra is the branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces. It's fundamental to many areas of mathematics and has numerous applications in physics, engineering, computer science, and data science.
+
+## Vectors
+
+A **vector** is a mathematical object that has both magnitude and direction. In $\mathbb{R}^n$, a vector can be represented as:
+
+$$
+\vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}
+$$
+
+### Vector Operations
+
+**Addition**: Two vectors can be added component-wise:
+
+$$
+\vec{u} + \vec{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
+$$
+
+**Scalar Multiplication**: A vector can be multiplied by a scalar $c$:
+
+$$
+c\vec{v} = \begin{bmatrix} cv_1 \\ cv_2 \\ \vdots \\ cv_n \end{bmatrix}
+$$
+
+**Dot Product**: The dot product of two vectors is:
+
+$$
+\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \cdots + u_nv_n = \sum_{i=1}^{n} u_iv_i
+$$
+
+## Matrices
+
+A **matrix** is a rectangular array of numbers arranged in rows and columns. An $m \times n$ matrix has $m$ rows and $n$ columns:
+
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+$$
+
+### Matrix Operations
+
+**Matrix Addition**: Matrices of the same size can be added element-wise.
+
+**Matrix Multiplication**: For matrices $A$ (size $m \times n$) and $B$ (size $n \times p$), the product $AB$ is an $m \times p$ matrix where:
+
+$$
+(AB)_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj}
+$$
+
+## Vector Spaces
+
+A **vector space** $V$ over a field $F$ is a set equipped with two operations (addition and scalar multiplication) that satisfy the following axioms:
+
+1. **Closure under addition**: $\vec{u} + \vec{v} \in V$ for all $\vec{u}, \vec{v} \in V$
+2. **Commutativity**: $\vec{u} + \vec{v} = \vec{v} + \vec{u}$
+3. **Associativity**: $(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})$
+4. **Identity element**: There exists $\vec{0} \in V$ such that $\vec{v} + \vec{0} = \vec{v}$
+5. **Inverse elements**: For each $\vec{v} \in V$, there exists $-\vec{v}$ such that $\vec{v} + (-\vec{v}) = \vec{0}$
+6. **Closure under scalar multiplication**: $c\vec{v} \in V$ for all $c \in F$ and $\vec{v} \in V$
+7. **Distributivity**: $c(\vec{u} + \vec{v}) = c\vec{u} + c\vec{v}$
+8. **Distributivity**: $(c + d)\vec{v} = c\vec{v} + d\vec{v}$
+9. **Associativity**: $(cd)\vec{v} = c(d\vec{v})$
+10. **Identity**: $1\vec{v} = \vec{v}$
+
+## Linear Transformations
+
+A **linear transformation** $T: V \to W$ between vector spaces satisfies:
+
+1. $T(\vec{u} + \vec{v}) = T(\vec{u}) + T(\vec{v})$ (additivity)
+2. $T(c\vec{v}) = cT(\vec{v})$ (homogeneity)
+
+Every linear transformation from $\mathbb{R}^n$ to $\mathbb{R}^m$ can be represented by an $m \times n$ matrix.
+
+## Example: Rotation Matrix
+
+A rotation by angle $\theta$ in $\mathbb{R}^2$ is given by:
+
+$$
+R(\theta) = \begin{bmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}
+$$
+
+This rotates any vector $\vec{v}$ counterclockwise by angle $\theta$:
+
+$$
+\vec{v}' = R(\theta)\vec{v}
+$$
+
+## Applications
+
+Linear algebra has countless applications:
+
+- **Computer Graphics**: Transformations, projections, and rendering
+- **Machine Learning**: Neural networks, dimensionality reduction (PCA)
+- **Physics**: Quantum mechanics, classical mechanics
+- **Engineering**: Control systems, signal processing
+- **Economics**: Input-output models, optimization
+
+## Summary
+
+Linear algebra provides the foundation for understanding:
+- Vector spaces and their properties
+- Linear transformations and matrices
+- Systems of linear equations
+- Eigenvalues and eigenvectors
+- Inner product spaces
+
+Mastering these concepts opens doors to advanced mathematics and numerous practical applications! ✨

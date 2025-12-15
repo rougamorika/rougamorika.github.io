@@ -1,0 +1,156 @@
+/**
+ * Anime Custom Code Theme
+ * Based on the blog's anime color palette
+ */
+
+:root {
+  --anime-pink: #FF6B9D;
+  --anime-purple: #C6A7FF;
+  --anime-blue: #89CFF0;
+  --anime-yellow: #FFD700;
+  --anime-pastel-pink: #FFB3D9;
+  --anime-pastel-purple: #E0D4FF;
+  --anime-pastel-blue: #B4E4FF;
+}
+
+/* Base code block styling */
+.hljs {
+  background: linear-gradient(135deg, #FFF5F7 0%, #F0E6FF 100%);
+  color: #2D2D2D;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--anime-pink);
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+  overflow-x: auto;
+  line-height: 1.6;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Hover effect for code blocks */
+.hljs:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 157, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Keywords, control flow, and language constructs */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link,
+.hljs-type,
+.hljs-built_in {
+  color: var(--anime-purple);
+  font-weight: 600;
+}
+
+/* Strings and character literals */
+.hljs-string,
+.hljs-attr,
+.hljs-attribute,
+.hljs-template-variable {
+  color: var(--anime-pink);
+}
+
+/* Functions, methods, and class names */
+.hljs-function,
+.hljs-title,
+.hljs-class .hljs-title,
+.hljs-title.class_,
+.hljs-title.function_ {
+  color: var(--anime-blue);
+  font-weight: 600;
+}
+
+/* Comments and documentation */
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag {
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+/* Numbers, booleans, and constants */
+.hljs-number,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-params {
+  color: #9B7FD9;
+}
+
+/* Operators and punctuation */
+.hljs-operator,
+.hljs-punctuation {
+  color: #6B7280;
+}
+
+/* Meta, preprocessor directives */
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+  color: var(--anime-yellow);
+}
+
+/* Tags (HTML/XML) */
+.hljs-tag,
+.hljs-name {
+  color: var(--anime-purple);
+}
+
+/* Symbols and special characters */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-code,
+.hljs-emphasis {
+  color: var(--anime-blue);
+}
+
+/* Additions (diff) */
+.hljs-addition {
+  color: #10B981;
+  background-color: #D1FAE5;
+}
+
+/* Deletions (diff) */
+.hljs-deletion {
+  color: #EF4444;
+  background-color: #FEE2E2;
+}
+
+/* Strong emphasis */
+.hljs-strong {
+  font-weight: 700;
+}
+
+/* Emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* Selection styling */
+.hljs::selection,
+.hljs *::selection {
+  background-color: var(--anime-pastel-purple);
+}
+
+/* Line numbers (if enabled) */
+.hljs-ln-numbers {
+  color: #9CA3AF;
+  border-right: 1px solid var(--anime-pastel-pink);
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: right;
+  user-select: none;
+}
+
+/* Inline code styling */
+code:not(.hljs) {
+  background: linear-gradient(135deg, #FFF5F7 0%, #F0E6FF 100%);
+  color: var(--anime-purple);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--anime-pastel-pink);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}

@@ -1,0 +1,22 @@
+{
+  "tracks": [
+    {
+      "id": "sample-track-1",
+      "title": "Sample Track 1",
+      "artist": "Sample Artist",
+      "url": "/music/sample1.mp3"
+    },
+    {
+      "id": "sample-track-2",
+      "title": "Sample Track 2",
+      "artist": "Sample Artist",
+      "url": "/music/sample2.mp3"
+    },
+    {
+      "id": "sample-track-3",
+      "title": "Sample Track 3",
+      "artist": "Sample Artist",
+      "url": "/music/sample3.mp3"
+    }
+  ]
+}

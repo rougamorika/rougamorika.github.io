@@ -1,0 +1,23 @@
+{
+  "articles": [],
+  "categories": {
+    "algebra": {
+      "name": "Algebra",
+      "icon": "📐",
+      "color": "#FF6B9D",
+      "articles": []
+    },
+    "calculus": {
+      "name": "Calculus",
+      "icon": "∫",
+      "color": "#C6A7FF",
+      "articles": []
+    },
+    "geometry": {
+      "name": "Geometry",
+      "icon": "△",
+      "color": "#89CFF0",
+      "articles": []
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-gray-800 font-sans;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-anime-pink rounded-full;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-anime-purple;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-anime-pink;
+  }
+
+  h1 {
+    @apply text-4xl font-bold mb-4;
+    text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.3);
+  }
+
+  h2 {
+    @apply text-3xl font-bold mb-3;
+    text-shadow: 1px 1px 3px rgba(255, 107, 157, 0.2);
+  }
+
+  h3 {
+    @apply text-2xl font-semibold mb-2;
+  }
+
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  a {
+    @apply text-anime-purple hover:text-anime-pink transition-colors duration-200;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Code blocks */
+  code {
+    @apply bg-anime-pastel-purple px-2 py-1 rounded text-sm font-mono;
+  }
+
+  pre {
+    @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply mb-4 pl-6;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  /* Images */
+  img {
+    @apply max-w-full h-auto rounded-lg;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4 border-anime-pink pl-4 italic my-4 text-gray-600;
+  }
+
+  /* Tables */
+  table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  th, td {
+    @apply border border-anime-pastel-pink p-2;
+  }
+
+  th {
+    @apply bg-anime-pastel-pink font-semibold;
+  }
+}
+
+@layer components {
+  /* Anime-style card */
+  .anime-card {
+    @apply bg-bg-card backdrop-blur-md rounded-2xl border-2 border-anime-pink shadow-anime-glow;
+    transition: all 0.3s ease;
+  }
+
+  .anime-card:hover {
+    @apply shadow-anime-hover transform -translate-y-1;
+  }
+
+  /* Anime button */
+  .anime-button {
+    @apply px-4 py-2 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white font-semibold;
+    @apply hover:from-anime-purple hover:to-anime-blue transition-all duration-300;
+    @apply shadow-anime-glow hover:shadow-anime-hover;
+  }
+
+  /* Sidebar styles */
+  .sidebar {
+    @apply h-screen sticky top-0 overflow-y-auto;
+  }
+
+  /* Main content area */
+  .main-content {
+    @apply min-h-screen p-6;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-anime-pink via-anime-purple to-anime-blue bg-clip-text text-transparent;
+  }
+
+  /* Sparkle animation */
+  .sparkle::after {
+    content: '✨';
+    @apply animate-sparkle ml-2;
+  }
+
+  /* 3D Flip Animation for Cover Page */
+  .cover-container {
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    transform-origin: top center;
+  }
+
+  .cover-flipped-down {
+    transform: rotateX(-90deg);
+    pointer-events: none;
+  }
+
+  .cover-flipped-up {
+    transform: rotateX(0deg);
+  }
+}

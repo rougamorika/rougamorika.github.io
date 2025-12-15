@@ -1,0 +1,159 @@
+---
+title: "Introduction to Derivatives"
+slug: "calculus-derivatives"
+category: "calculus"
+tags: ["calculus", "derivatives", "differentiation", "limits"]
+date: "2025-12-14"
+banner: "banner/wallhaven-3k3omy.jpg"
+related: ["linear-algebra-basics", "calculus-integrals"]
+difficulty: "beginner"
+author: "Anime Math Blog"
+---
+
+# Introduction to Derivatives
+
+The derivative is one of the most fundamental concepts in calculus. It measures how a function changes as its input changes, representing the instantaneous rate of change.
+
+## The Limit Definition
+
+The derivative of a function $f(x)$ at a point $x$ is defined as:
+
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+
+This limit, if it exists, gives us the slope of the tangent line to the curve $y = f(x)$ at the point $(x, f(x))$.
+
+## Notation
+
+There are several common notations for derivatives:
+
+- **Leibniz notation**: $\frac{df}{dx}$ or $\frac{dy}{dx}$
+- **Lagrange notation**: $f'(x)$ or $y'$
+- **Newton notation**: $\dot{f}$ or $\dot{y}$
+
+## Basic Derivative Rules
+
+### Power Rule
+
+For any real number $n$:
+
+$$
+\frac{d}{dx}(x^n) = nx^{n-1}
+$$
+
+**Example**: $\frac{d}{dx}(x^3) = 3x^2$
+
+### Constant Rule
+
+The derivative of a constant is zero:
+
+$$
+\frac{d}{dx}(c) = 0
+$$
+
+### Sum Rule
+
+The derivative of a sum is the sum of derivatives:
+
+$$
+\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)
+$$
+
+### Product Rule
+
+For the product of two functions:
+
+$$
+\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)
+$$
+
+### Quotient Rule
+
+For the quotient of two functions:
+
+$$
+\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}
+$$
+
+### Chain Rule
+
+For composite functions:
+
+$$
+\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)
+$$
+
+## Common Derivatives
+
+Here are derivatives of common functions:
+
+| Function | Derivative |
+|----------|------------|
+| $\sin(x)$ | $\cos(x)$ |
+| $\cos(x)$ | $-\sin(x)$ |
+| $e^x$ | $e^x$ |
+| $\ln(x)$ | $\frac{1}{x}$ |
+| $\tan(x)$ | $\sec^2(x)$ |
+
+## Higher-Order Derivatives
+
+We can take derivatives of derivatives:
+
+- **Second derivative**: $f''(x) = \frac{d^2f}{dx^2}$
+- **Third derivative**: $f'''(x) = \frac{d^3f}{dx^3}$
+- **$n$-th derivative**: $f^{(n)}(x) = \frac{d^nf}{dx^n}$
+
+## Example: Finding a Derivative
+
+Let's find the derivative of $f(x) = 3x^4 - 2x^2 + 5x - 7$:
+
+$$
+\begin{align}
+f'(x) &= \frac{d}{dx}(3x^4 - 2x^2 + 5x - 7) \\
+&= 3 \cdot 4x^3 - 2 \cdot 2x + 5 - 0 \\
+&= 12x^3 - 4x + 5
+\end{align}
+$$
+
+## Applications of Derivatives
+
+### 1. Finding Tangent Lines
+
+The equation of the tangent line to $y = f(x)$ at $x = a$ is:
+
+$$
+y - f(a) = f'(a)(x - a)
+$$
+
+### 2. Optimization
+
+To find maximum or minimum values:
+1. Find critical points where $f'(x) = 0$ or $f'(x)$ doesn't exist
+2. Use the second derivative test: $f''(x) > 0$ indicates a minimum, $f''(x) < 0$ indicates a maximum
+
+### 3. Related Rates
+
+Derivatives help us understand how different quantities change with respect to each other over time.
+
+### 4. Physics Applications
+
+- **Velocity**: $v(t) = \frac{ds}{dt}$ (derivative of position)
+- **Acceleration**: $a(t) = \frac{dv}{dt} = \frac{d^2s}{dt^2}$ (derivative of velocity)
+
+## Geometric Interpretation
+
+The derivative $f'(a)$ represents:
+- The slope of the tangent line at $x = a$
+- The instantaneous rate of change at $x = a$
+- How fast $f(x)$ is changing at $x = a$
+
+## Summary
+
+Derivatives are essential for:
+- Understanding rates of change
+- Optimization problems
+- Modeling physical phenomena
+- Analyzing function behavior
+
+Master these concepts and you'll unlock the power of calculus! 🌟
