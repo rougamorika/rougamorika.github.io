@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" --names \"前端,后端\" --prefix-colors \"cyan,magenta\"",
     "dev:frontend": "vite",
     "dev:backend": "cd server && node index.js",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "generate-index": "node scripts/generateArticleIndex.js",
     "compile-tikz": "node scripts/compileTikZ.js"
