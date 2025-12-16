@@ -23,6 +23,14 @@
       "category": "roast",
       "tags": [],
       "date": "2025-12-16"
+    },
+    {
+      "id": "Slew",
+      "title": "压摆率还是说法的,我们应该玩LTspice",
+      "path": "content/articles/blog/Slew.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-16"
     }
   ],
   "categories": {
@@ -39,7 +47,9 @@
       "name": "博客",
       "icon": "📁",
       "color": "#FF6B9D",
-      "articles": []
+      "articles": [
+        "Slew"
+      ]
     },
     "roast": {
       "name": "吐槽",
