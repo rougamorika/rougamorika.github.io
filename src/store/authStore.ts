@@ -22,7 +22,7 @@ interface AuthStore {
 }
 
 export const useAuthStore = create<AuthStore>((set, get) => ({
-  isAuthenticated: false,
+  isAuthenticated: import.meta.env.DEV ? false : true,
   user: null,
   token: null,
   isLoading: false,

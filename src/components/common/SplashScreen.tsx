@@ -37,7 +37,7 @@ export function SplashScreen() {
         {/* Animated Title */}
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-4 drop-shadow-2xl">
-            ✨ Anime Math Blog ✨
+            ✨ 肉夹馍旗舰店 ✨
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-lg">
             数学与二次元的美妙邂逅
@@ -59,8 +59,8 @@ export function SplashScreen() {
           )}
         </div>
 
-        {/* Login Form - Show only when not authenticated */}
-        {!isAuthenticated && (
+        {/* Login Form - Show only when not authenticated AND in development */}
+        {!isAuthenticated && import.meta.env.DEV && (
           <div className="mt-8 w-full max-w-md animate-fade-in-up">
             <LoginForm />
           </div>

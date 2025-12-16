@@ -21,9 +21,11 @@ function App() {
   const { setTracks } = useMusicStore();
   const { verifyToken } = useAuthStore();
 
-  // Verify authentication token on mount
+  // Verify authentication token on mount (only in development)
   useEffect(() => {
-    verifyToken();
+    if (import.meta.env.DEV) {
+      verifyToken();
+    }
   }, [verifyToken]);
 
   // Load code theme on mount and when theme changes

@@ -33,7 +33,7 @@ export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
     return (
       <div className="text-center py-12">
         <h2 className="text-3xl font-bold mb-4 gradient-text">
-          欢迎来到 Anime Math Blog! ✨
+          欢迎来到 肉夹馍旗舰店! ✨
         </h2>
         <p className="text-gray-600 mb-6">
           点击左侧边栏的文章开始阅读

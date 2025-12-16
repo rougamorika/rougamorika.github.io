@@ -43,14 +43,14 @@ export function Header() {
           {/* Logo/Title */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-3xl md:text-4xl font-heading font-bold text-white glow-text drop-shadow-2xl">
-              ✨ Anime Math Blog ✨
+              ✨ 肉夹馍旗舰店 ✨
             </h1>
           </div>
 
           {/* Action Buttons */}
           <div className="flex gap-2">
-            {/* Edit Button - Only show when authenticated */}
-            {isAuthenticated && (
+            {/* Edit Button - Only show when authenticated AND in development */}
+            {isAuthenticated && import.meta.env.DEV && (
               <button
                 onClick={toggleEditMode}
                 className={`anime-button text-sm ${isEditMode ? 'bg-anime-purple' : ''}`}
@@ -73,8 +73,8 @@ export function Header() {
             >
               🗺️
             </button>
-            {/* Logout Button - Only show when authenticated */}
-            {isAuthenticated && (
+            {/* Logout Button - Only show when authenticated AND in development */}
+            {isAuthenticated && import.meta.env.DEV && (
               <button
                 onClick={handleLogout}
                 className="anime-button text-sm bg-gradient-to-r from-anime-pink to-anime-purple"
@@ -108,7 +108,7 @@ export function Header() {
           ) : (
             <div>
               <h2 className="text-2xl font-bold text-white mb-2">
-                Welcome to Anime Math Blog
+                Welcome to 肉夹馍旗舰店
               </h2>
               <p className="text-white text-sm opacity-90">
                 Explore mathematical concepts with an anime twist ✨
