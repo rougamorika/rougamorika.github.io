@@ -22,7 +22,15 @@
       "Bash(git push:*)",
       "Bash(gh:*)",
       "Bash(npx vite build)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git pull:*)",
+      "Bash(git config:*)",
+      "Bash(cd:*)",
+      "Bash(git -C \"D:\\Blog\" log --oneline -10)",
+      "Bash(git -C \"D:\\Blog\" remote -v)",
+      "Bash(git -C \"D:\\Blog\" status)",
+      "Bash(git -C \"D:\\Blog\" config user.name)",
+      "Bash(git -C \"D:\\Blog\" config user.email)"
     ]
   }
 }

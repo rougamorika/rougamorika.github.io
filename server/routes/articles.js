@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken } from './auth.js';
+import { triggerGitCommit } from '../services/gitService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -67,6 +68,9 @@ router.post('/:slug/save', verifyToken, async (req, res) => {
 
     // Update metadata file (optional - for now we'll skip this to keep it simple)
     // In a production system, you'd want to update articles.json here
+
+    // 触发异步 git commit
+    triggerGitCommit('update', 'article', slug, { category });
 
     res.json({
       success: true,
@@ -168,6 +172,9 @@ Start writing your article here...
 
     console.log(`   ✅ Article created successfully`);
 
+    // 触发异步 git commit
+    triggerGitCommit('create', 'article', title, { category, slug });
+
     res.json({
       success: true,
       message: `Article "${title}" created successfully`,
@@ -237,6 +244,9 @@ router.post('/category/create', verifyToken, async (req, res) => {
     await fs.writeJson(METADATA_FILE, metadata, { spaces: 2 });
 
     console.log(`   ✅ Category created successfully`);
+
+    // 触发异步 git commit
+    triggerGitCommit('create', 'category', name, { id });
 
     res.json({
       success: true,
@@ -309,6 +319,9 @@ router.delete('/category/:id', verifyToken, async (req, res) => {
 
     console.log(`   ✅ Category deleted successfully`);
 
+    // 触发异步 git commit
+    triggerGitCommit('delete', 'category', id);
+
     res.json({
       success: true,
       message: `Category "${id}" deleted successfully`
@@ -371,6 +384,9 @@ router.delete('/:category/:slug', verifyToken, async (req, res) => {
     await fs.writeJson(METADATA_FILE, metadata, { spaces: 2 });
 
     console.log(`   ✅ Article deleted successfully`);
+
+    // 触发异步 git commit
+    triggerGitCommit('delete', 'article', slug, { category });
 
     res.json({
       success: true,
@@ -466,6 +482,9 @@ router.post('/:slug/move', verifyToken, async (req, res) => {
     await fs.writeJson(METADATA_FILE, metadata, { spaces: 2 });
 
     console.log(`   ✅ Article moved successfully`);
+
+    // 触发异步 git commit
+    triggerGitCommit('move', 'article', slug, { fromCategory, toCategory });
 
     res.json({
       success: true,

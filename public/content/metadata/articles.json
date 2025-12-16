@@ -1,5 +1,14 @@
 {
-  "articles": [],
+  "articles": [
+    {
+      "id": "first-blog",
+      "title": "第一篇博客",
+      "path": "content/articles/blog/first-blog.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-16"
+    }
+  ],
   "categories": {
     "algebra": {
       "name": "Algebra",
@@ -18,6 +27,14 @@
       "icon": "△",
       "color": "#89CFF0",
       "articles": []
+    },
+    "blog": {
+      "name": "博客",
+      "icon": "📁",
+      "color": "#FF6B9D",
+      "articles": [
+        "first-blog"
+      ]
     }
   }
 }
