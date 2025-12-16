@@ -19,8 +19,8 @@
     {
       "id": "No-Dirty-Knowledge",
       "title": "如果你不会查论文那就不应该污染知识库",
-      "path": "content/articles/blog/No-Dirty-Knowledge.md",
-      "category": "blog",
+      "path": "content/articles/roast/No-Dirty-Knowledge.md",
+      "category": "roast",
       "tags": [],
       "date": "2025-12-16"
     }
@@ -39,15 +39,15 @@
       "name": "博客",
       "icon": "📁",
       "color": "#FF6B9D",
-      "articles": [
-        "No-Dirty-Knowledge"
-      ]
+      "articles": []
     },
     "roast": {
       "name": "吐槽",
       "icon": "666",
       "color": "#FF6B9D",
-      "articles": []
+      "articles": [
+        "No-Dirty-Knowledge"
+      ]
     }
   }
 }
