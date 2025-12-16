@@ -42,6 +42,12 @@
       "articles": [
         "No-Dirty-Knowledge"
       ]
+    },
+    "roast": {
+      "name": "吐槽",
+      "icon": "666",
+      "color": "#FF6B9D",
+      "articles": []
     }
   }
 }
