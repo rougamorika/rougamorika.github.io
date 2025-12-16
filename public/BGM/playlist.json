@@ -7,6 +7,18 @@
       "title": "背景音乐",
       "artist": "Bilibili",
       "url": "/BGM/bilibili_BV1CMyrBPEC6_9FE991.mp3"
+    },
+    {
+      "id": "bgm-2",
+      "title": "Komm, susser Tod (甘き死よ、来たれ)",
+      "artist": "ARIANNE",
+      "url": "/BGM/ARIANNE - Komm, susser Tod_甘き死よ、来たれ_H.mp3"
+    },
+    {
+      "id": "bgm-3",
+      "title": "BACKGROUND MUSIC Ⅲ",
+      "artist": "鹭巣诗郎",
+      "url": "/BGM/鹭巣诗郎 - BACKGROUND MUSIC Ⅲ_H.mp3"
     }
   ]
 }

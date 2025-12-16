@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "id": "about-me",
+      "title": "关于我",
+      "path": "content/articles/about/about-me.md",
+      "category": "about",
+      "tags": [],
+      "date": "2025-12-16"
+    },
+    {
       "id": "first-blog",
       "title": "第一篇博客",
       "path": "content/articles/blog/first-blog.md",
@@ -10,31 +18,17 @@
     }
   ],
   "categories": {
-    "algebra": {
-      "name": "Algebra",
-      "icon": "📐",
+    "about": {
+      "name": "关于",
+      "icon": "👤",
       "color": "#FF6B9D",
-      "articles": []
-    },
-    "calculus": {
-      "name": "Calculus",
-      "icon": "∫",
-      "color": "#C6A7FF",
-      "articles": []
-    },
-    "geometry": {
-      "name": "Geometry",
-      "icon": "△",
-      "color": "#89CFF0",
-      "articles": []
+      "articles": ["about-me"]
     },
     "blog": {
       "name": "博客",
       "icon": "📁",
       "color": "#FF6B9D",
-      "articles": [
-        "first-blog"
-      ]
+      "articles": ["first-blog"]
     }
   }
 }

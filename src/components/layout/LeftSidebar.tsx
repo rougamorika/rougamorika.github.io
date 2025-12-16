@@ -13,7 +13,7 @@ export function LeftSidebar() {
   const { setCurrentArticle, setLoading } = useArticleStore();
   const { isAuthenticated, token } = useAuthStore();
   const [tree, setTree] = useState<TreeNode[]>([]);
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set(['algebra', 'calculus', 'geometry']));
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set(['about']));
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);
   const [showCreateArticleDialog, setShowCreateArticleDialog] = useState(false);
   const [showCreateCategoryDialog, setShowCreateCategoryDialog] = useState(false);
@@ -43,8 +43,13 @@ export function LeftSidebar() {
         const fileTree = buildFileTree(data);
         setTree(fileTree);
 
-        // Auto-load the first article on initial page load
-        if (fileTree.length > 0 && fileTree[0].children && fileTree[0].children.length > 0) {
+        // Auto-load the "about" article on initial page load
+        const aboutCategory = fileTree.find(cat => cat.id === 'about');
+        if (aboutCategory?.children && aboutCategory.children.length > 0) {
+          const aboutArticle = aboutCategory.children[0];
+          handleArticleClick(aboutArticle);
+        } else if (fileTree.length > 0 && fileTree[0].children && fileTree[0].children.length > 0) {
+          // Fallback to first article if about doesn't exist
           const firstArticle = fileTree[0].children[0];
           handleArticleClick(firstArticle);
         }

@@ -38,40 +38,6 @@ export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
         <p className="text-gray-600 mb-6">
           点击左侧边栏的文章开始阅读
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div className="anime-card p-6 anime-hover">
-            <div className="text-4xl mb-3">📐</div>
-            <h3 className="text-xl font-bold mb-2">代数</h3>
-            <p className="text-sm text-gray-600">
-              线性代数、群论、抽象结构
-            </p>
-          </div>
-
-          <div className="anime-card p-6 anime-hover">
-            <div className="text-4xl mb-3">∫</div>
-            <h3 className="text-xl font-bold mb-2">微积分</h3>
-            <p className="text-sm text-gray-600">
-              导数、积分、无穷级数
-            </p>
-          </div>
-
-          <div className="anime-card p-6 anime-hover">
-            <div className="text-4xl mb-3">△</div>
-            <h3 className="text-xl font-bold mb-2">几何</h3>
-            <p className="text-sm text-gray-600">
-              形状、空间、几何变换
-            </p>
-          </div>
-
-          <div className="anime-card p-6 anime-hover">
-            <div className="text-4xl mb-3">📊</div>
-            <h3 className="text-xl font-bold mb-2">统计</h3>
-            <p className="text-sm text-gray-600">
-              数据分析、概率、统计推断
-            </p>
-          </div>
-        </div>
       </div>
     );
   }

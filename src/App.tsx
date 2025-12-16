@@ -37,33 +37,47 @@ function App() {
   useEffect(() => {
     const loadMusic = async () => {
       try {
+        // Sync BGM playlist from server first
+        try {
+          const syncResponse = await fetch('http://localhost:3001/api/bgm/sync', {
+            method: 'POST'
+          });
+          if (syncResponse.ok) {
+            console.log('BGM playlist synced from server');
+          }
+        } catch (syncError) {
+          console.warn('Failed to sync BGM from server:', syncError);
+          // Continue with local playlist.json
+        }
+
         // Try to load BGM playlist first (auto-play background music)
         const bgmResponse = await fetch('/BGM/playlist.json');
         if (bgmResponse.ok) {
           const bgmPlaylist: Playlist = await bgmResponse.json();
           setTracks(bgmPlaylist.tracks);
 
-          // Try to auto-play BGM with loop enabled
+          // Set up BGM with loop enabled, but don't start playing yet
           useMusicStore.setState({
             currentTrackIndex: 0,
-            isPlaying: true,
+            isPlaying: false,
             loop: true
           });
 
-          console.log('BGM loaded and attempting auto-play');
+          console.log('BGM loaded, will auto-play on first user interaction');
 
-          // Handle browser autoplay restrictions
-          // If autoplay is blocked, play on first user interaction
+          // Auto-play on first user interaction
+          let hasStarted = false;
           const handleFirstInteraction = () => {
-            const { isPlaying, tracks } = useMusicStore.getState();
-            if (!isPlaying && tracks.length > 0) {
+            if (!hasStarted) {
+              hasStarted = true;
               useMusicStore.setState({ isPlaying: true });
               console.log('BGM started playing after user interaction');
+
+              // Remove listeners after first interaction
+              document.removeEventListener('click', handleFirstInteraction);
+              document.removeEventListener('keydown', handleFirstInteraction);
+              document.removeEventListener('touchstart', handleFirstInteraction);
             }
-            // Remove listeners after first interaction
-            document.removeEventListener('click', handleFirstInteraction);
-            document.removeEventListener('keydown', handleFirstInteraction);
-            document.removeEventListener('touchstart', handleFirstInteraction);
           };
 
           // Add event listeners for first user interaction
