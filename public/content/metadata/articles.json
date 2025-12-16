@@ -15,6 +15,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-16"
+    },
+    {
+      "id": "No-Dirty-Knowledge",
+      "title": "如果你不会查论文那就不应该污染知识库",
+      "path": "content/articles/blog/No-Dirty-Knowledge.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-16"
     }
   ],
   "categories": {
@@ -22,13 +30,18 @@
       "name": "关于",
       "icon": "👤",
       "color": "#FF6B9D",
-      "articles": ["about-me"]
+      "articles": [
+        "about-me"
+      ]
     },
     "blog": {
       "name": "博客",
       "icon": "📁",
       "color": "#FF6B9D",
-      "articles": ["first-blog"]
+      "articles": [
+        "first-blog",
+        "No-Dirty-Knowledge"
+      ]
     }
   }
 }
