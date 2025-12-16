@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useArticleStore } from '@store/articleStore';
 import type { Article } from '@types/article';
 import 'katex/dist/katex.min.css';
@@ -12,6 +13,21 @@ interface ArticleViewerProps {
 export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
   const { currentArticle, isLoading } = useArticleStore();
   const article = propArticle || currentArticle;
+
+  // Add IDs to headings after content is rendered
+  useEffect(() => {
+    if (!article?.content) return;
+
+    // Find all headings in the rendered content
+    const headings = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6');
+
+    headings.forEach((heading, index) => {
+      // Only add ID if it doesn't already have one
+      if (!heading.id) {
+        heading.id = `heading-${index}`;
+      }
+    });
+  }, [article?.content]);
 
   console.log('ArticleViewer 渲染:', {
     hasArticle: !!article,

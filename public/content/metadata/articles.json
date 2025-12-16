@@ -11,8 +11,8 @@
     {
       "id": "first-blog",
       "title": "第一篇博客",
-      "path": "content/articles/blog/first-blog.md",
-      "category": "blog",
+      "path": "content/articles/about/first-blog.md",
+      "category": "about",
       "tags": [],
       "date": "2025-12-16"
     },
@@ -31,7 +31,8 @@
       "icon": "👤",
       "color": "#FF6B9D",
       "articles": [
-        "about-me"
+        "about-me",
+        "first-blog"
       ]
     },
     "blog": {
@@ -39,7 +40,6 @@
       "icon": "📁",
       "color": "#FF6B9D",
       "articles": [
-        "first-blog",
         "No-Dirty-Knowledge"
       ]
     }

@@ -90,7 +90,7 @@ export function LeftSidebar() {
       console.log('响应状态:', response.status, response.statusText);
       console.log('响应类型:', response.headers.get('content-type'));
 
-      if (!response.ok) throw new Error('Failed to load article');
+      if (!response.ok) throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : 'Failed to load article');
 
       const markdownContent = await response.text();
       console.log('获取的内容长度:', markdownContent.length);
@@ -104,6 +104,9 @@ export function LeftSidebar() {
       setCurrentArticle(article);
     } catch (error) {
       console.error('Error loading article:', error);
+      if (import.meta.env.PROD) {
+        alert('丫的你没有权限别乱摸');
+      }
     } finally {
       setLoading(false);
     }
@@ -142,14 +145,14 @@ export function LeftSidebar() {
       if (!contentType || !contentType.includes('application/json')) {
         const text = await response.text();
         console.error('Non-JSON response:', text.substring(0, 200));
-        throw new Error('服务器返回了非JSON响应，请检查后端服务器');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : '服务器返回了非JSON响应，请检查后端服务器');
       }
 
       const data = await response.json();
       console.log('Response data:', data);
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || '创建文章失败');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : (data.message || '创建文章失败'));
       }
 
       // Reset form and close dialog
@@ -164,7 +167,7 @@ export function LeftSidebar() {
       alert('文章创建成功！');
     } catch (error) {
       console.error('Error creating article:', error);
-      setCreateError(error instanceof Error ? error.message : '创建文章失败');
+      setCreateError(error instanceof Error ? error.message : (import.meta.env.PROD ? '丫的你没有权限别乱摸' : '创建文章失败'));
     } finally {
       setIsCreating(false);
     }
@@ -204,14 +207,14 @@ export function LeftSidebar() {
       if (!contentType || !contentType.includes('application/json')) {
         const text = await response.text();
         console.error('Non-JSON response:', text.substring(0, 200));
-        throw new Error('服务器返回了非JSON响应，请检查后端服务器');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : '服务器返回了非JSON响应，请检查后端服务器');
       }
 
       const data = await response.json();
       console.log('Response data:', data);
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || '创建分类失败');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : (data.message || '创建分类失败'));
       }
 
       // Reset form and close dialog
@@ -226,7 +229,7 @@ export function LeftSidebar() {
       alert('分类创建成功！');
     } catch (error) {
       console.error('Error creating category:', error);
-      setCreateError(error instanceof Error ? error.message : '创建分类失败');
+      setCreateError(error instanceof Error ? error.message : (import.meta.env.PROD ? '丫的你没有权限别乱摸' : '创建分类失败'));
     } finally {
       setIsCreating(false);
     }
@@ -262,7 +265,7 @@ export function LeftSidebar() {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || '删除失败');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : (data.message || '删除失败'));
       }
 
       // Close dialog and reload
@@ -273,7 +276,7 @@ export function LeftSidebar() {
       alert(`${deleteTarget.type === 'article' ? '文章' : '分类'}删除成功！`);
     } catch (error) {
       console.error('Error deleting:', error);
-      setDeleteError(error instanceof Error ? error.message : '删除失败');
+      setDeleteError(error instanceof Error ? error.message : (import.meta.env.PROD ? '丫的你没有权限别乱摸' : '删除失败'));
     } finally {
       setIsDeleting(false);
     }
@@ -319,7 +322,7 @@ export function LeftSidebar() {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.message || '移动失败');
+        throw new Error(import.meta.env.PROD ? '丫的你没有权限别乱摸' : (data.message || '移动失败'));
       }
 
       // Reload article index
@@ -328,7 +331,7 @@ export function LeftSidebar() {
       alert(`文章"${draggedArticle.name}"已移动到新分类！`);
     } catch (error) {
       console.error('Error moving article:', error);
-      alert(error instanceof Error ? error.message : '移动文章失败');
+      alert(error instanceof Error ? error.message : (import.meta.env.PROD ? '丫的你没有权限别乱摸' : '移动文章失败'));
     } finally {
       setDraggedArticle(null);
     }
