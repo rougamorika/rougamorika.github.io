@@ -9,4 +9,4 @@ tags: []
 
 我认为第一篇博客应该是一个占位符
 
-Fuck it.
+Fuck it.Let's all stand up

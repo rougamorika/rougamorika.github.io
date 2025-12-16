@@ -1,0 +1,12 @@
+{
+  "name": "博客背景音乐",
+  "description": "博客自动播放的背景音乐",
+  "tracks": [
+    {
+      "id": "bgm-1",
+      "title": "背景音乐",
+      "artist": "Bilibili",
+      "url": "/BGM/bilibili_BV1CMyrBPEC6_9FE991.mp3"
+    }
+  ]
+}

@@ -37,7 +37,44 @@ function App() {
   useEffect(() => {
     const loadMusic = async () => {
       try {
-        // Try to load from IndexedDB first
+        // Try to load BGM playlist first (auto-play background music)
+        const bgmResponse = await fetch('/BGM/playlist.json');
+        if (bgmResponse.ok) {
+          const bgmPlaylist: Playlist = await bgmResponse.json();
+          setTracks(bgmPlaylist.tracks);
+
+          // Try to auto-play BGM with loop enabled
+          useMusicStore.setState({
+            currentTrackIndex: 0,
+            isPlaying: true,
+            loop: true
+          });
+
+          console.log('BGM loaded and attempting auto-play');
+
+          // Handle browser autoplay restrictions
+          // If autoplay is blocked, play on first user interaction
+          const handleFirstInteraction = () => {
+            const { isPlaying, tracks } = useMusicStore.getState();
+            if (!isPlaying && tracks.length > 0) {
+              useMusicStore.setState({ isPlaying: true });
+              console.log('BGM started playing after user interaction');
+            }
+            // Remove listeners after first interaction
+            document.removeEventListener('click', handleFirstInteraction);
+            document.removeEventListener('keydown', handleFirstInteraction);
+            document.removeEventListener('touchstart', handleFirstInteraction);
+          };
+
+          // Add event listeners for first user interaction
+          document.addEventListener('click', handleFirstInteraction);
+          document.addEventListener('keydown', handleFirstInteraction);
+          document.addEventListener('touchstart', handleFirstInteraction);
+
+          return;
+        }
+
+        // Fallback: Try to load from IndexedDB
         await useMusicStore.getState().loadTracksFromDB();
 
         // Also load folders
