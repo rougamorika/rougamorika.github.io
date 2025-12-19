@@ -31,6 +31,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-16"
+    },
+    {
+      "id": "New-Know-Repo",
+      "title": "关于新的知识库",
+      "path": "content/articles/blog/New-Know-Repo.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-19"
     }
   ],
   "categories": {
@@ -48,7 +56,8 @@
       "icon": "📁",
       "color": "#FF6B9D",
       "articles": [
-        "Slew"
+        "Slew",
+        "New-Know-Repo"
       ]
     },
     "roast": {
