@@ -2,10 +2,10 @@ import type { CodeTheme } from '@store/codeThemeStore';
 
 const THEME_CSS_MAP: Record<CodeTheme, string> = {
   'anime-custom': '/styles/code-themes/anime-custom.css',
-  'github-light': 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css',
-  'atom-one-light': 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css',
-  'dracula': 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dracula.min.css',
-  'monokai': 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/monokai.min.css',
+  'github-light': '/styles/code-themes/github.min.css',
+  'atom-one-light': '/styles/code-themes/atom-one-light.min.css',
+  'dracula': '/styles/code-themes/dracula.min.css',
+  'monokai': '/styles/code-themes/monokai.min.css',
 };
 
 /**
