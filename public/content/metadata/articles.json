@@ -31,6 +31,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-19"
+    },
+    {
+      "id": "Fuck_Humblot",
+      "title": "洪堡制度的光荣伟大",
+      "path": "content/articles/roast/Fuck_Humblot.md",
+      "category": "roast",
+      "tags": [],
+      "date": "2025-12-27"
     }
   ],
   "categories": {
@@ -56,7 +64,8 @@
       "icon": "666",
       "color": "#FF6B9D",
       "articles": [
-        "No-Dirty-Knowledge"
+        "No-Dirty-Knowledge",
+        "Fuck_Humblot"
       ]
     }
   }
