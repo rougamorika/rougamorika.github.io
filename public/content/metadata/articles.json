@@ -39,14 +39,6 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-27"
-    },
-    {
-      "id": "ceshi",
-      "title": "测试",
-      "path": "content/articles/blog/ceshi.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2025-12-27"
     }
   ],
   "categories": {
@@ -65,8 +57,7 @@
       "color": "#FF6B9D",
       "articles": [
         "New-Know-Repo",
-        "i-love-daoxiao",
-        "ceshi"
+        "i-love-daoxiao"
       ]
     },
     "roast": {
