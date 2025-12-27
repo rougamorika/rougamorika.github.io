@@ -31,6 +31,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-19"
+    },
+    {
+      "id": "Everything-can-be solved-by-daoxiao",
+      "title": "没有什么不是一碗刀削面不能解决的",
+      "path": "content/articles/blog/Everything-can-be solved-by-daoxiao.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-27"
     }
   ],
   "categories": {
@@ -48,7 +56,8 @@
       "icon": "📁",
       "color": "#FF6B9D",
       "articles": [
-        "New-Know-Repo"
+        "New-Know-Repo",
+        "Everything-can-be solved-by-daoxiao"
       ]
     },
     "roast": {
