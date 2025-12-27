@@ -25,14 +25,6 @@
       "date": "2025-12-16"
     },
     {
-      "id": "Slew",
-      "title": "压摆率还是说法的,我们应该玩LTspice",
-      "path": "content/articles/blog/Slew.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2025-12-16"
-    },
-    {
       "id": "New-Know-Repo",
       "title": "关于新的知识库",
       "path": "content/articles/blog/New-Know-Repo.md",
@@ -56,7 +48,6 @@
       "icon": "📁",
       "color": "#FF6B9D",
       "articles": [
-        "Slew",
         "New-Know-Repo"
       ]
     },

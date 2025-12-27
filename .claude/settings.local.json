@@ -31,7 +31,11 @@
       "Bash(git -C \"D:\\Blog\" status)",
       "Bash(git -C \"D:\\Blog\" config user.name)",
       "Bash(git -C \"D:\\Blog\" config user.email)",
-      "Bash(cmd //c \"taskkill /F /PID 14116\")"
+      "Bash(cmd //c \"taskkill /F /PID 14116\")",
+      "Bash(test:*)",
+      "Bash(du:*)",
+      "Bash(find:*)",
+      "Bash(node scripts/compressImages.js:*)"
     ]
   }
 }
