@@ -35,7 +35,10 @@
       "Bash(test:*)",
       "Bash(du:*)",
       "Bash(find:*)",
-      "Bash(node scripts/compressImages.js:*)"
+      "Bash(node scripts/compressImages.js:*)",
+      "Bash(move:*)",
+      "Bash(cmd //c:*)",
+      "Bash(tasklist:*)"
     ]
   }
 }
