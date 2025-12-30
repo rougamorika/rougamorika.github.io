@@ -39,6 +39,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-27"
+    },
+    {
+      "id": "ILUVDAOXIAO2",
+      "title": "刀削面也有不同的",
+      "path": "content/articles/blog/ILUVDAOXIAO2.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-30"
     }
   ],
   "categories": {
@@ -57,7 +65,8 @@
       "color": "#FF6B9D",
       "articles": [
         "New-Know-Repo",
-        "i-love-daoxiao"
+        "i-love-daoxiao",
+        "ILUVDAOXIAO2"
       ]
     },
     "roast": {
