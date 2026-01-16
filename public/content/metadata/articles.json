@@ -47,6 +47,14 @@
       "category": "blog",
       "tags": [],
       "date": "2025-12-30"
+    },
+    {
+      "id": "phlio-hahah",
+      "title": "其实我发现大家不是很喜欢哲学",
+      "path": "content/articles/blog/phlio-hahah.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2026-01-16"
     }
   ],
   "categories": {
@@ -66,7 +74,8 @@
       "articles": [
         "New-Know-Repo",
         "i-love-daoxiao",
-        "ILUVDAOXIAO2"
+        "ILUVDAOXIAO2",
+        "phlio-hahah"
       ]
     },
     "roast": {
