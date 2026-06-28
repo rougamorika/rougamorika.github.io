@@ -187,8 +187,8 @@
   height: 14px;
   border-radius: 9999px;
   border: 2px solid rgba(255, 255, 255, 0.94);
-  background: linear-gradient(135deg, #8d6977 0%, #b993a1 100%);
-  box-shadow: 0 1px 4px rgba(93, 72, 80, 0.22);
+   background: linear-gradient(135deg, #ff7fb7 0%, #7cb8ff 100%);
+   box-shadow: 0 2px 8px rgba(123, 181, 255, 0.26);
 }
 
 .music-slider::-moz-range-thumb {
@@ -196,8 +196,8 @@
   height: 14px;
   border-radius: 9999px;
   border: 2px solid rgba(255, 255, 255, 0.94);
-  background: linear-gradient(135deg, #8d6977 0%, #b993a1 100%);
-  box-shadow: 0 1px 4px rgba(93, 72, 80, 0.22);
+   background: linear-gradient(135deg, #ff7fb7 0%, #7cb8ff 100%);
+   box-shadow: 0 2px 8px rgba(123, 181, 255, 0.26);
 }
 
 @media (prefers-reduced-motion: reduce) {
