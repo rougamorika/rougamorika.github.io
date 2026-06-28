@@ -28,20 +28,7 @@ function App() {
   useEffect(() => {
     const loadMusic = async () => {
       try {
-        // Sync BGM playlist from server first
-        try {
-          const syncResponse = await fetch('http://localhost:3001/api/bgm/sync', {
-            method: 'POST'
-          });
-          if (syncResponse.ok) {
-            console.log('BGM playlist synced from server');
-          }
-        } catch (syncError) {
-          console.warn('Failed to sync BGM from server:', syncError);
-          // Continue with local playlist.json
-        }
-
-        // Try to load BGM playlist first (auto-play background music)
+        // Load committed static playlist first for production-safe deploys.
         const bgmResponse = await fetch('/BGM/playlist.json');
         if (bgmResponse.ok) {
           const bgmPlaylist: Playlist = await bgmResponse.json();
