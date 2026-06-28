@@ -520,7 +520,7 @@ export function MusicPlayer() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-3 px-4 py-3 sm:px-5">
+            <div className="grid grid-cols-[auto,minmax(0,1fr),auto] items-center gap-3 px-4 py-3 sm:px-5 md:grid-cols-[auto,minmax(0,1.35fr),minmax(120px,0.65fr),auto] md:gap-4">
               <button
                 onClick={togglePlay}
                 disabled={tracks.length === 0}
@@ -530,12 +530,16 @@ export function MusicPlayer() {
                 {isPlaying ? '⏸' : '▶'}
               </button>
 
-              <div className="min-w-0 flex-1">
-                <div className="truncate text-sm font-semibold text-[#5d4752]">{currentTrack?.title || '没有播放的音乐'}</div>
-                <div className="truncate text-xs text-[#9f7987]">{currentTrack?.artist || '等待选择音乐'}</div>
+              <div className="min-w-0 overflow-hidden pr-1">
+                <div className="truncate text-sm font-semibold leading-tight text-[#5d4752] sm:text-[15px]">
+                  {currentTrack?.title || '没有播放的音乐'}
+                </div>
+                <div className="truncate pt-0.5 text-xs leading-tight text-[#9f7987] sm:text-[13px]">
+                  {currentTrack?.artist || '等待选择音乐'}
+                </div>
               </div>
 
-              <div className="hidden min-w-[160px] flex-1 sm:block">
+              <div className="hidden min-w-[120px] max-w-[180px] md:block md:w-full">
                 <div className="h-1.5 rounded-full bg-[#f7d9e5]">
                   <div
                     className="h-full rounded-full bg-[linear-gradient(90deg,#dd7b9c_0%,#f1adc7_100%)]"
@@ -546,7 +550,7 @@ export function MusicPlayer() {
 
               <button
                 onClick={() => setIsMinimized(false)}
-                className="rounded-full border border-[#efd0db] bg-white/80 px-3 py-2 text-sm text-[#9b6e7e] transition-colors hover:border-[#d98da8] hover:text-[#ba6581]"
+                className="flex-shrink-0 whitespace-nowrap rounded-full border border-[#efd0db] bg-white/80 px-2.5 py-2 text-xs text-[#9b6e7e] transition-colors hover:border-[#d98da8] hover:text-[#ba6581] sm:px-3 sm:text-sm"
               >
                 展开
               </button>
