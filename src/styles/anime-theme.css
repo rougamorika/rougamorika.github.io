@@ -179,3 +179,31 @@
 .anime-bg-pattern {
   background: #FFF5F7;
 }
+
+/* Music player slider hit area with themed thumb */
+.music-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #dc7f9f 0%, #c56f91 100%);
+  box-shadow: 0 2px 8px rgba(199, 124, 154, 0.25);
+}
+
+.music-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #dc7f9f 0%, #c56f91 100%);
+  box-shadow: 0 2px 8px rgba(199, 124, 154, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-slider,
+  .music-slider::-webkit-slider-thumb,
+  .music-slider::-moz-range-thumb {
+    scroll-behavior: auto;
+  }
+}

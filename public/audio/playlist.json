@@ -1,20 +1,20 @@
 {
   "name": "博客背景音乐",
-  "description": "博客自动播放的背景音乐",
+  "description": "统一静态音乐入口，音频文件集中存放在 /audio/bgm/ 目录",
   "tracks": [
     {
       "id": "bgm-1",
       "title": "Komm, susser Tod_甘き死よ、来たれ_H",
       "artist": "ARIANNE",
-      "url": "/BGM/ARIANNE - Komm, susser Tod_甘き死よ、来たれ_H.mp3"
+      "url": "/audio/bgm/ARIANNE - Komm, susser Tod_甘き死よ、来たれ_H.mp3"
     },
     {
       "id": "bgm-2",
       "title": "BACKGROUND MUSIC Ⅲ_H",
       "artist": "鹭巣诗郎",
-      "url": "/BGM/鹭巣诗郎 - BACKGROUND MUSIC Ⅲ_H.mp3"
+      "url": "/audio/bgm/鹭巣诗郎 - BACKGROUND MUSIC Ⅲ_H.mp3"
     }
   ],
-  "lastUpdated": "2026-01-16T11:58:13.992Z",
+  "lastUpdated": "2026-06-29T00:00:00.000Z",
   "totalTracks": 2
 }

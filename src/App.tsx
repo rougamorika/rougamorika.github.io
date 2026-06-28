@@ -29,10 +29,10 @@ function App() {
     const loadMusic = async () => {
       try {
         // Load committed static playlist first for production-safe deploys.
-        const bgmResponse = await fetch('/BGM/playlist.json');
-        if (bgmResponse.ok) {
-          const bgmPlaylist: Playlist = await bgmResponse.json();
-          setTracks(bgmPlaylist.tracks);
+        const staticPlaylistResponse = await fetch('/audio/playlist.json');
+        if (staticPlaylistResponse.ok) {
+          const staticPlaylist: Playlist = await staticPlaylistResponse.json();
+          setTracks(staticPlaylist.tracks);
 
           // Set up BGM with loop enabled, but don't start playing yet
           useMusicStore.setState({
@@ -76,7 +76,7 @@ function App() {
         // Fallback: load from playlist.json if no tracks in DB
         const tracks = useMusicStore.getState().tracks;
         if (tracks.length === 0) {
-          const response = await fetch('/music/playlist.json');
+          const response = await fetch('/audio/playlist.json');
           if (response.ok) {
             const playlist: Playlist = await response.json();
             setTracks(playlist.tracks);

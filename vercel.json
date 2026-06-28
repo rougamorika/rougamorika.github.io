@@ -49,7 +49,7 @@
       ]
     },
     {
-      "source": "/BGM/(.*)",
+      "source": "/audio/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

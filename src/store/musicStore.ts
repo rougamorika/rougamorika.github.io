@@ -114,9 +114,17 @@ export const useMusicStore = create<MusicStore>()(
 
       toggleMute: () => set((state) => ({ isMuted: !state.isMuted })),
 
-      togglePlaylist: () => set((state) => ({ isPlaylistOpen: !state.isPlaylistOpen })),
+      togglePlaylist: () =>
+        set((state) => ({
+          isPlaylistOpen: !state.isPlaylistOpen,
+          isManagementOpen: !state.isPlaylistOpen ? false : state.isManagementOpen,
+        })),
 
-      toggleManagement: () => set((state) => ({ isManagementOpen: !state.isManagementOpen })),
+      toggleManagement: () =>
+        set((state) => ({
+          isManagementOpen: !state.isManagementOpen,
+          isPlaylistOpen: !state.isManagementOpen ? false : state.isPlaylistOpen,
+        })),
 
       toggleLoop: () => set((state) => ({ loop: !state.loop })),
 
