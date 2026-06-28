@@ -349,11 +349,11 @@ export function MusicPlayer() {
                     </span>
                     <span className="text-[11px] text-[#81a3d4]">{trackCountLabel}</span>
                   </div>
-                  <div className="mt-1 truncate text-sm font-semibold text-[#38548a] sm:text-[15px]">
+                  <div className="mt-1 truncate font-sans text-[15px] font-semibold tracking-[0.01em] text-[#38548a] sm:text-[16px]">
                     {currentTrack?.title || '没有播放的音乐'}
                   </div>
-                  <div className="truncate text-xs text-[#88a5cf] sm:text-[13px]">
-                    {currentTrack?.artist || '等待选择音乐'}
+                  <div className="truncate font-sans text-[11px] font-medium tracking-[0.04em] text-[#88a5cf] sm:text-[12px]">
+                    {currentTrack?.artist || 'Liebe ist Tod und Neubeginn'}
                   </div>
                 </div>
 
