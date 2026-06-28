@@ -1,12 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRandomBanner } from '@hooks/useBannerImage';
-import { useAuthStore } from '@store/authStore';
-import { LoginForm } from '@components/auth/LoginForm';
 
 export function SplashScreen() {
   const { banner } = useRandomBanner();
-  const [isVisible, setIsVisible] = useState(true);
-  const { isAuthenticated } = useAuthStore();
 
   useEffect(() => {
     // Add smooth scroll behavior
@@ -36,37 +32,28 @@ export function SplashScreen() {
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
         {/* Animated Title */}
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-4 drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-4">
             ✨ 肉夹馍旗舰店 ✨
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-lg">
+          <p className="text-xl md:text-2xl text-white/90 mb-8">
             数学与二次元的美妙邂逅
           </p>
 
-          {/* Show category badges only when not authenticated */}
-          {!isAuthenticated && (
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <span className="px-6 py-2 bg-anime-pink/80 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg">
-                📐 代数
-              </span>
-              <span className="px-6 py-2 bg-anime-purple/80 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg">
-                ∫ 微积分
-              </span>
-              <span className="px-6 py-2 bg-anime-blue/80 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg">
-                △ 几何
-              </span>
-            </div>
-          )}
+          {/* Category badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <span className="px-6 py-2 bg-anime-pink text-white font-semibold">
+              📐 代数
+            </span>
+            <span className="px-6 py-2 bg-anime-purple text-white font-semibold">
+              ∫ 微积分
+            </span>
+            <span className="px-6 py-2 bg-anime-blue text-white font-semibold">
+              △ 几何
+            </span>
+          </div>
         </div>
 
-        {/* Login Form - Show only when not authenticated AND in development */}
-        {!isAuthenticated && import.meta.env.DEV && (
-          <div className="mt-8 w-full max-w-md animate-fade-in-up">
-            <LoginForm />
-          </div>
-        )}
-
-        {/* Scroll Indicator - Always show */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center text-white/80">
             <span className="text-sm mb-2">向下滑动探索</span>

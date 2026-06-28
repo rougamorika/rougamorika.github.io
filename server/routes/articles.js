@@ -2,7 +2,6 @@ import express from 'express';
 import fs from 'fs-extra';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { verifyToken } from './auth.js';
 import { triggerGitCommit } from '../services/gitService.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,7 +19,7 @@ const METADATA_FILE = join(PROJECT_ROOT, 'public', 'content', 'metadata', 'artic
  * Save article content to markdown file
  * Protected route - requires authentication
  */
-router.post('/:slug/save', verifyToken, async (req, res) => {
+router.post('/:slug/save', async (req, res) => {
   try {
     const { slug } = req.params;
     const { content, category } = req.body;
@@ -92,7 +91,7 @@ router.post('/:slug/save', verifyToken, async (req, res) => {
  * Create a new article
  * Protected route - requires authentication
  */
-router.post('/create', verifyToken, async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const { title, slug, category } = req.body;
 
@@ -195,7 +194,7 @@ Start writing your article here...
  * Create a new category
  * Protected route - requires authentication
  */
-router.post('/category/create', verifyToken, async (req, res) => {
+router.post('/category/create', async (req, res) => {
   try {
     const { id, name, icon, color } = req.body;
 
@@ -269,7 +268,7 @@ router.post('/category/create', verifyToken, async (req, res) => {
  * Protected route - requires authentication
  * NOTE: This route must come BEFORE /:category/:slug to avoid route conflicts
  */
-router.delete('/category/:id', verifyToken, async (req, res) => {
+router.delete('/category/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -341,7 +340,7 @@ router.delete('/category/:id', verifyToken, async (req, res) => {
  * Delete an article
  * Protected route - requires authentication
  */
-router.delete('/:category/:slug', verifyToken, async (req, res) => {
+router.delete('/:category/:slug', async (req, res) => {
   try {
     const { category, slug } = req.params;
 
@@ -407,7 +406,7 @@ router.delete('/:category/:slug', verifyToken, async (req, res) => {
  * Move an article to a different category
  * Protected route - requires authentication
  */
-router.post('/:slug/move', verifyToken, async (req, res) => {
+router.post('/:slug/move', async (req, res) => {
   try {
     const { slug } = req.params;
     const { fromCategory, toCategory } = req.body;

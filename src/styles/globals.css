@@ -25,8 +25,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-anime-pink rounded-full;
-    transition: background 0.3s;
+    @apply bg-anime-pink;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -40,12 +39,10 @@
 
   h1 {
     @apply text-4xl font-bold mb-4;
-    text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.3);
   }
 
   h2 {
     @apply text-3xl font-bold mb-3;
-    text-shadow: 1px 1px 3px rgba(255, 107, 157, 0.2);
   }
 
   h3 {
@@ -112,21 +109,20 @@
 }
 
 @layer components {
-  /* Anime-style card */
+  /* Flat card */
   .anime-card {
-    @apply bg-bg-card backdrop-blur-md rounded-2xl border-2 border-anime-pink shadow-anime-glow;
-    transition: all 0.3s ease;
+    @apply bg-white border-2 border-anime-pastel-pink;
+    transition: all 0.2s ease;
   }
 
   .anime-card:hover {
-    @apply shadow-anime-hover transform -translate-y-1;
+    @apply border-anime-pink;
   }
 
-  /* Anime button */
+  /* Flat button */
   .anime-button {
-    @apply px-4 py-2 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white font-semibold;
-    @apply hover:from-anime-purple hover:to-anime-blue transition-all duration-300;
-    @apply shadow-anime-glow hover:shadow-anime-hover;
+    @apply px-4 py-2 bg-anime-pink text-white font-semibold;
+    @apply hover:bg-anime-purple transition-colors duration-200;
   }
 
   /* Sidebar styles */
@@ -141,37 +137,8 @@
 }
 
 @layer utilities {
-  /* Glass morphism effect */
-  .glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  /* Gradient text */
+  /* Gradient text - kept for visual interest */
   .gradient-text {
     @apply bg-gradient-to-r from-anime-pink via-anime-purple to-anime-blue bg-clip-text text-transparent;
-  }
-
-  /* Sparkle animation */
-  .sparkle::after {
-    content: '✨';
-    @apply animate-sparkle ml-2;
-  }
-
-  /* 3D Flip Animation for Cover Page */
-  .cover-container {
-    transform-style: preserve-3d;
-    transition: transform 1s ease-in-out;
-    transform-origin: top center;
-  }
-
-  .cover-flipped-down {
-    transform: rotateX(-90deg);
-    pointer-events: none;
-  }
-
-  .cover-flipped-up {
-    transform: rotateX(0deg);
   }
 }

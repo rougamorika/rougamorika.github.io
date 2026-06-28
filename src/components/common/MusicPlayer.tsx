@@ -48,7 +48,6 @@ export function MusicPlayer() {
         const currentSeek = playerRef.current.seek();
         setSeek(typeof currentSeek === 'number' ? currentSeek : 0);
 
-        // Update duration if not set
         const currentDuration = playerRef.current.duration();
         if (currentDuration && currentDuration !== duration) {
           setDuration(currentDuration);
@@ -66,7 +65,6 @@ export function MusicPlayer() {
   }, [currentTrackIndex]);
 
   const handleLoad = () => {
-    // Get duration when track loads
     if (playerRef.current) {
       const trackDuration = playerRef.current.duration();
       if (trackDuration) {
@@ -88,7 +86,6 @@ export function MusicPlayer() {
     const newSeek = parseFloat(e.target.value);
     setSeek(newSeek);
 
-    // Seek the actual player
     if (playerRef.current) {
       playerRef.current.seek(newSeek);
     }
@@ -117,11 +114,11 @@ export function MusicPlayer() {
         />
       )}
 
-      {/* 80s Cassette Player UI */}
+      {/* Music Player UI */}
       <div className="fixed bottom-0 left-0 right-0 z-40">
         {/* Management Panel */}
         {isManagementOpen && (
-          <div className="bg-white border-t-2 border-anime-pink shadow-anime-glow max-h-96 overflow-y-auto">
+          <div className="bg-white border-t-2 border-anime-pink max-h-96 overflow-y-auto">
             <div className="p-4">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-anime-purple">音乐管理</h3>
@@ -174,7 +171,7 @@ export function MusicPlayer() {
                     {folders.map((folder) => (
                       <div
                         key={folder.id}
-                        className="flex items-center justify-between p-2 bg-gray-50 rounded border border-gray-200"
+                        className="flex items-center justify-between p-2 bg-gray-50 border border-gray-200"
                       >
                         <div className="flex items-center gap-2">
                           <span>📁</span>
@@ -206,7 +203,7 @@ export function MusicPlayer() {
                     {tracks.map((track, index) => (
                       <div
                         key={track.id}
-                        className={`flex items-center justify-between p-2 rounded text-sm ${
+                        className={`flex items-center justify-between p-2 text-sm ${
                           index === currentTrackIndex
                             ? 'bg-anime-pastel-pink'
                             : 'bg-gray-50 hover:bg-gray-100'
@@ -245,7 +242,7 @@ export function MusicPlayer() {
 
         {/* Playlist Panel */}
         {isPlaylistOpen && !isManagementOpen && (
-          <div className="bg-white border-t-2 border-anime-pink shadow-anime-glow max-h-64 overflow-y-auto">
+          <div className="bg-white border-t-2 border-anime-pink max-h-64 overflow-y-auto">
             <div className="p-4">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-lg font-bold text-anime-purple">当前播放</h3>
@@ -267,10 +264,10 @@ export function MusicPlayer() {
                       key={track.id}
                       onClick={() => playTrack(index)}
                       className={`
-                        w-full text-left p-3 rounded-lg transition-all
+                        w-full text-left p-3 transition-colors
                         ${
                           index === currentTrackIndex
-                            ? 'bg-gradient-to-r from-anime-pastel-pink to-anime-pastel-purple border-2 border-anime-pink'
+                            ? 'bg-anime-pastel-pink border-2 border-anime-pink'
                             : 'bg-gray-50 hover:bg-anime-pastel-blue border-2 border-transparent'
                         }
                       `}
@@ -287,17 +284,16 @@ export function MusicPlayer() {
           </div>
         )}
 
-        {/* Compact Pink Music Player */}
-        <div className="bg-white/95 backdrop-blur-md border-t-2 border-anime-pink shadow-lg">
+        {/* Compact Music Player */}
+        <div className="bg-white border-t-2 border-anime-pink">
           {!isMinimized ? (
             /* Expanded View */
             <div className="container mx-auto px-4 py-3">
-              {/* Mini Cassette Tape */}
+              {/* Track Info */}
               <div className="flex items-center gap-4 mb-3">
-                {/* Cassette Visual */}
-                <div className="flex items-center gap-3 bg-gradient-to-br from-anime-pastel-pink to-anime-pastel-purple rounded-lg p-3 border-2 border-anime-pink/30">
-                  <div className={`w-8 h-8 rounded-full border-2 border-anime-pink flex items-center justify-center ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '2s' }}>
-                    <div className="w-2 h-2 rounded-full bg-anime-pink"></div>
+                <div className="flex items-center gap-3 bg-anime-pastel-pink p-3 border-2 border-anime-pink">
+                  <div className={`w-8 h-8 border-2 border-anime-pink flex items-center justify-center ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '2s' }}>
+                    <div className="w-2 h-2 bg-anime-pink"></div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-semibold text-gray-800 truncate">
@@ -307,15 +303,15 @@ export function MusicPlayer() {
                       <div className="text-xs text-gray-600 truncate">{currentTrack.artist}</div>
                     )}
                   </div>
-                  <div className={`w-8 h-8 rounded-full border-2 border-anime-pink flex items-center justify-center ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '2s' }}>
-                    <div className="w-2 h-2 rounded-full bg-anime-pink"></div>
+                  <div className={`w-8 h-8 border-2 border-anime-pink flex items-center justify-center ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '2s' }}>
+                    <div className="w-2 h-2 bg-anime-pink"></div>
                   </div>
                 </div>
 
                 {/* Minimize Button */}
                 <button
                   onClick={() => setIsMinimized(true)}
-                  className="px-3 py-2 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white hover:scale-105 transition-transform"
+                  className="px-3 py-2 bg-anime-pink text-white hover:bg-anime-purple transition-colors"
                   title="最小化"
                 >
                   ▼
@@ -325,9 +321,9 @@ export function MusicPlayer() {
               {/* Progress Bar */}
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs text-gray-600 font-mono min-w-[35px]">{formatTime(seek)}</span>
-                <div className="flex-1 h-2 bg-anime-pastel-pink rounded-full overflow-hidden">
+                <div className="flex-1 h-2 bg-anime-pastel-pink overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-anime-pink via-anime-purple to-anime-blue transition-all"
+                    className="h-full bg-anime-pink transition-all"
                     style={{ width: `${duration > 0 ? (seek / duration) * 100 : 0}%` }}
                   ></div>
                 </div>
@@ -340,21 +336,21 @@ export function MusicPlayer() {
                   <button
                     onClick={previousTrack}
                     disabled={tracks.length <= 1}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-anime-pastel-pink to-anime-pastel-purple hover:scale-110 transition-transform disabled:opacity-30 flex items-center justify-center"
+                    className="w-8 h-8 bg-anime-pastel-pink hover:bg-anime-pink hover:text-white transition-colors disabled:opacity-30 flex items-center justify-center"
                   >
                     ⏮
                   </button>
                   <button
                     onClick={togglePlay}
                     disabled={tracks.length === 0}
-                    className="w-12 h-12 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white hover:scale-110 transition-transform disabled:opacity-30 flex items-center justify-center text-xl shadow-lg"
+                    className="w-12 h-12 bg-anime-pink text-white hover:bg-anime-purple transition-colors disabled:opacity-30 flex items-center justify-center text-xl"
                   >
                     {isPlaying ? '⏸' : '▶'}
                   </button>
                   <button
                     onClick={nextTrack}
                     disabled={tracks.length <= 1}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-anime-pastel-pink to-anime-pastel-purple hover:scale-110 transition-transform disabled:opacity-30 flex items-center justify-center"
+                    className="w-8 h-8 bg-anime-pastel-pink hover:bg-anime-pink hover:text-white transition-colors disabled:opacity-30 flex items-center justify-center"
                   >
                     ⏭
                   </button>
@@ -363,25 +359,25 @@ export function MusicPlayer() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={toggleLoop}
-                    className={`w-8 h-8 rounded-full ${loop ? 'bg-gradient-to-r from-anime-pink to-anime-purple text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:scale-110 transition-all flex items-center justify-center`}
+                    className={`w-8 h-8 ${loop ? 'bg-anime-pink text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:bg-anime-purple hover:text-white transition-colors flex items-center justify-center`}
                   >
                     🔁
                   </button>
                   <button
                     onClick={toggleShuffle}
-                    className={`w-8 h-8 rounded-full ${shuffle ? 'bg-gradient-to-r from-anime-pink to-anime-purple text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:scale-110 transition-all flex items-center justify-center`}
+                    className={`w-8 h-8 ${shuffle ? 'bg-anime-pink text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:bg-anime-purple hover:text-white transition-colors flex items-center justify-center`}
                   >
                     🔀
                   </button>
                   <button
                     onClick={togglePlaylist}
-                    className={`w-8 h-8 rounded-full ${isPlaylistOpen ? 'bg-gradient-to-r from-anime-pink to-anime-purple text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:scale-110 transition-all flex items-center justify-center`}
+                    className={`w-8 h-8 ${isPlaylistOpen ? 'bg-anime-pink text-white' : 'bg-anime-pastel-pink text-gray-600'} hover:bg-anime-purple hover:text-white transition-colors flex items-center justify-center`}
                   >
                     📜
                   </button>
                   <button
                     onClick={toggleManagement}
-                    className="w-8 h-8 rounded-full bg-gradient-to-r from-anime-purple to-anime-blue text-white hover:scale-110 transition-transform flex items-center justify-center"
+                    className="w-8 h-8 bg-anime-purple text-white hover:bg-anime-blue transition-colors flex items-center justify-center"
                   >
                     ⚙️
                   </button>
@@ -398,25 +394,17 @@ export function MusicPlayer() {
                     step="0.01"
                     value={volume}
                     onChange={(e) => setVolume(parseFloat(e.target.value))}
-                    className="w-20 h-2 bg-anime-pastel-pink rounded-full appearance-none cursor-pointer
+                    className="w-20 h-2 bg-anime-pastel-pink appearance-none cursor-pointer
                       [&::-webkit-slider-thumb]:appearance-none
                       [&::-webkit-slider-thumb]:w-4
                       [&::-webkit-slider-thumb]:h-4
-                      [&::-webkit-slider-thumb]:rounded-full
-                      [&::-webkit-slider-thumb]:bg-gradient-to-r
-                      [&::-webkit-slider-thumb]:from-anime-pink
-                      [&::-webkit-slider-thumb]:to-anime-purple
+                      [&::-webkit-slider-thumb]:bg-anime-pink
                       [&::-webkit-slider-thumb]:cursor-pointer
-                      [&::-webkit-slider-thumb]:shadow-md
                       [&::-moz-range-thumb]:w-4
                       [&::-moz-range-thumb]:h-4
-                      [&::-moz-range-thumb]:rounded-full
-                      [&::-moz-range-thumb]:bg-gradient-to-r
-                      [&::-moz-range-thumb]:from-anime-pink
-                      [&::-moz-range-thumb]:to-anime-purple
+                      [&::-moz-range-thumb]:bg-anime-pink
                       [&::-moz-range-thumb]:cursor-pointer
-                      [&::-moz-range-thumb]:border-0
-                      [&::-moz-range-thumb]:shadow-md"
+                      [&::-moz-range-thumb]:border-0"
                   />
                 </div>
               </div>
@@ -428,7 +416,7 @@ export function MusicPlayer() {
                 <button
                   onClick={togglePlay}
                   disabled={tracks.length === 0}
-                  className="w-10 h-10 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white hover:scale-110 transition-transform disabled:opacity-30 flex items-center justify-center shadow-md"
+                  className="w-10 h-10 bg-anime-pink text-white hover:bg-anime-purple transition-colors disabled:opacity-30 flex items-center justify-center"
                 >
                   {isPlaying ? '⏸' : '▶'}
                 </button>
@@ -441,15 +429,15 @@ export function MusicPlayer() {
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-24 h-1 bg-anime-pastel-pink rounded-full overflow-hidden">
+                  <div className="w-24 h-1 bg-anime-pastel-pink overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-anime-pink to-anime-purple transition-all"
+                      className="h-full bg-anime-pink transition-all"
                       style={{ width: `${duration > 0 ? (seek / duration) * 100 : 0}%` }}
                     ></div>
                   </div>
                   <button
                     onClick={() => setIsMinimized(false)}
-                    className="px-3 py-1 rounded-full bg-gradient-to-r from-anime-pink to-anime-purple text-white hover:scale-105 transition-transform text-sm"
+                    className="px-3 py-1 bg-anime-pink text-white hover:bg-anime-purple transition-colors text-sm"
                   >
                     ▲
                   </button>

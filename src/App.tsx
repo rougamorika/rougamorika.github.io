@@ -9,7 +9,6 @@ import { MusicPlayer } from '@components/common/MusicPlayer';
 import { useUIStore } from '@store/uiStore';
 import { useCodeThemeStore } from '@store/codeThemeStore';
 import { useMusicStore } from '@store/musicStore';
-import { useAuthStore } from '@store/authStore';
 import { loadCodeTheme } from '@utils/codeThemeLoader';
 import type { Playlist } from '@types/music';
 import '@styles/globals.css';
@@ -19,14 +18,6 @@ function App() {
   const { isLeftSidebarOpen, isRightSidebarOpen } = useUIStore();
   const { currentTheme } = useCodeThemeStore();
   const { setTracks } = useMusicStore();
-  const { verifyToken } = useAuthStore();
-
-  // Verify authentication token on mount (only in development)
-  useEffect(() => {
-    if (import.meta.env.DEV) {
-      verifyToken();
-    }
-  }, [verifyToken]);
 
   // Load code theme on mount and when theme changes
   useEffect(() => {
@@ -163,7 +154,7 @@ function App() {
             <MainContent />
           </div>
 
-          {/* Right Sidebar - Mind Map */}
+          {/* Right Sidebar - Table of Contents */}
           <div
             className={`
               transition-all duration-300 ease-in-out

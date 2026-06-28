@@ -24,14 +24,14 @@ export function SettingsPanel() {
       <div
         className={`
           fixed right-4 top-20 z-50 w-96 max-h-[80vh] overflow-y-auto
-          anime-card glass p-6
+          bg-white border-2 border-anime-pastel-pink p-6
           transform transition-all duration-300 ease-out
           ${isSettingsPanelOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
         `}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold gradient-text">设置</h2>
+          <h2 className="text-2xl font-bold text-anime-pink">设置</h2>
           <button
             onClick={toggleSettingsPanel}
             className="text-2xl text-gray-500 hover:text-anime-pink transition-colors"
@@ -115,10 +115,10 @@ function ThemeCard({ theme, isActive, onClick }: ThemeCardProps) {
     <button
       onClick={onClick}
       className={`
-        w-full p-3 rounded-lg text-left transition-all duration-200
+        w-full p-3 text-left transition-all duration-200
         ${
           isActive
-            ? 'border-2 border-anime-pink shadow-anime-glow bg-gradient-to-r from-anime-pastel-pink to-anime-pastel-purple'
+            ? 'border-2 border-anime-pink bg-anime-pastel-pink'
             : 'border-2 border-gray-200 hover:border-anime-pastel-purple bg-white'
         }
       `}
@@ -156,7 +156,7 @@ function CodePreview({ theme }: CodePreviewProps) {
   const colors = previewColors[theme];
 
   return (
-    <div className="font-mono text-xs mt-2 p-2 bg-gray-50 rounded border border-gray-200">
+    <div className="font-mono text-xs mt-2 p-2 bg-gray-50 border border-gray-200">
       <span style={{ color: colors.keyword }}>const</span>{' '}
       <span style={{ color: colors.function }}>hello</span> ={' '}
       <span style={{ color: colors.string }}>"world"</span>

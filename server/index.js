@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import articleRoutes from './routes/articles.js';
-import authRoutes from './routes/auth.js';
 import bgmRoutes from './routes/bgm.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -38,7 +37,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/auth', authRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/bgm', bgmRoutes);
 
