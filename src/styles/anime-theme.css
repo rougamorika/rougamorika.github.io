@@ -183,21 +183,21 @@
 /* Music player slider hit area with themed thumb */
 .music-slider::-webkit-slider-thumb {
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 9999px;
-  border: 2px solid rgba(255, 255, 255, 0.92);
-  background: linear-gradient(135deg, #dc7f9f 0%, #c56f91 100%);
-  box-shadow: 0 2px 8px rgba(199, 124, 154, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  background: linear-gradient(135deg, #8d6977 0%, #b993a1 100%);
+  box-shadow: 0 1px 4px rgba(93, 72, 80, 0.22);
 }
 
 .music-slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 9999px;
-  border: 2px solid rgba(255, 255, 255, 0.92);
-  background: linear-gradient(135deg, #dc7f9f 0%, #c56f91 100%);
-  box-shadow: 0 2px 8px rgba(199, 124, 154, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  background: linear-gradient(135deg, #8d6977 0%, #b993a1 100%);
+  box-shadow: 0 1px 4px rgba(93, 72, 80, 0.22);
 }
 
 @media (prefers-reduced-motion: reduce) {
