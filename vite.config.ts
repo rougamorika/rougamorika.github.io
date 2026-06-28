@@ -35,17 +35,15 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    minify: 'esbuild',
+    // Remove console/debugger in production without terser dependency
+    esbuild: {
+      drop: ['console', 'debugger'],
     },
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'react-vendor': ['react', 'react-dom'],
           'markdown-vendor': ['remark', 'rehype-katex', 'rehype-highlight', 'unified'],
           'ui-vendor': ['zustand', 'clsx'],
         },
@@ -60,6 +58,6 @@ export default defineConfig({
 
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom'],
   },
 })
