@@ -13,8 +13,14 @@
       "title": "BACKGROUND MUSIC Ⅲ_H",
       "artist": "鹭巣诗郎",
       "url": "/audio/bgm/鹭巣诗郎 - BACKGROUND MUSIC Ⅲ_H.mp3"
+    },
+    {
+      "id": "bgm-3",
+      "title": "Beautiful World -Da Capo Version-",
+      "artist": "Hikaru Utada",
+      "url": "/audio/bgm/Beautiful_World_Da_Capo.mp4"
     }
   ],
   "lastUpdated": "2026-06-29T00:00:00.000Z",
-  "totalTracks": 2
+  "totalTracks": 3
 }
