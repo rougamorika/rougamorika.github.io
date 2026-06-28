@@ -96,7 +96,7 @@ function App() {
       <SplashScreen />
 
       {/* Main Blog Content - Appears below splash screen */}
-      <div className="min-h-screen anime-bg-pattern">
+      <div className="min-h-screen pb-28 sm:pb-32 anime-bg-pattern">
         {/* Header */}
         <Header />
 
