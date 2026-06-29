@@ -4,9 +4,11 @@ import { execFileSync } from 'node:child_process';
 
 const playlistPath = 'public/audio/playlist.json';
 const playerPath = 'src/components/common/MusicPlayer.tsx';
+const appPath = 'src/App.tsx';
 
 const playlist = JSON.parse(fs.readFileSync(playlistPath, 'utf8'));
 const player = fs.readFileSync(playerPath, 'utf8');
+const app = fs.readFileSync(appPath, 'utf8');
 
 const formatMatch = player.match(/format=\{\[([^\]]+)\]\}/);
 const supportedFormats =
@@ -15,6 +17,22 @@ const supportedFormats =
     ?.map((value) => value.slice(1, -1).toLowerCase()) ?? [];
 
 let hasError = false;
+
+const defaultTrack = playlist.tracks?.[0];
+const isDaCapoDefault =
+  playlist.tracks?.length === 1 &&
+  defaultTrack?.title === 'Beautiful World -Da Capo Version-' &&
+  defaultTrack?.artist === 'Hikaru Utada' &&
+  defaultTrack?.url === '/audio/bgm/Beautiful_World_Da_Capo.mp4';
+const appEnablesLoop = /loop:\s*true/.test(app);
+
+console.log(
+  `default-bgm: daCapoSingleTrack=${isDaCapoDefault} appLoopEnabled=${appEnablesLoop}`,
+);
+
+if (!isDaCapoDefault || !appEnablesLoop) {
+  hasError = true;
+}
 
 for (const track of playlist.tracks ?? []) {
   const localPath = track.url.replace(/^\//, 'public/');

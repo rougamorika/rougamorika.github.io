@@ -35,22 +35,6 @@ export function SplashScreen() {
           <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-4">
             ✨ 肉夹馍旗舰店 ✨
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
-            数学与二次元的美妙邂逅
-          </p>
-
-          {/* Category badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className="px-6 py-2 bg-anime-pink text-white font-semibold">
-              📐 代数
-            </span>
-            <span className="px-6 py-2 bg-anime-purple text-white font-semibold">
-              ∫ 微积分
-            </span>
-            <span className="px-6 py-2 bg-anime-blue text-white font-semibold">
-              △ 几何
-            </span>
-          </div>
         </div>
 
         {/* Scroll Indicator */}

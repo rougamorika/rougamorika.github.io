@@ -1,26 +1,14 @@
 {
-  "name": "博客背景音乐",
-  "description": "统一静态音乐入口，音频文件集中存放在 /audio/bgm/ 目录",
+  "name": "博客默认背景音乐",
+  "description": "默认播放 Beautiful World -Da Capo Version-，保持单曲列表以配合现有播放器单曲循环",
   "tracks": [
     {
-      "id": "bgm-1",
-      "title": "Komm, susser Tod_甘き死よ、来たれ_H",
-      "artist": "ARIANNE",
-      "url": "/audio/bgm/ARIANNE - Komm, susser Tod_甘き死よ、来たれ_H.mp3"
-    },
-    {
-      "id": "bgm-2",
-      "title": "BACKGROUND MUSIC Ⅲ_H",
-      "artist": "鹭巣诗郎",
-      "url": "/audio/bgm/鹭巣诗郎 - BACKGROUND MUSIC Ⅲ_H.mp3"
-    },
-    {
-      "id": "bgm-3",
+      "id": "bgm-beautiful-world-da-capo",
       "title": "Beautiful World -Da Capo Version-",
       "artist": "Hikaru Utada",
       "url": "/audio/bgm/Beautiful_World_Da_Capo.mp4"
     }
   ],
   "lastUpdated": "2026-06-29T00:00:00.000Z",
-  "totalTracks": 3
+  "totalTracks": 1
 }
