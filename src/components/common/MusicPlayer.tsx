@@ -119,7 +119,7 @@ export function MusicPlayer() {
           onEnd={handleEnd}
           onLoad={handleLoad}
           html5={true}
-          format={['mp3', 'ogg', 'wav']}
+          format={['mp3', 'ogg', 'wav', 'mp4', 'm4a', 'aac']}
         />
       )}
 
