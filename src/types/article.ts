@@ -35,6 +35,7 @@ export interface Category {
 export interface ArticleIndex {
   articles: ArticleMetadata[];
   categories: Record<string, Category>;
+  topPosts?: string[];
 }
 
 export interface Tag {

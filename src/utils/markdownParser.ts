@@ -69,6 +69,33 @@ export async function parseMarkdown(markdownContent: string): Promise<{
   }
 }
 
+function normalizeHeadingText(value: string): string {
+  return value
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function stripDuplicateLeadingH1(html: string, title: string): string {
+  const match = html.match(/^(\s*)<h1(?:\s[^>]*)?>([\s\S]*?)<\/h1>\s*/i);
+
+  if (!match) {
+    return html;
+  }
+
+  const [, leadingWhitespace, headingContent] = match;
+  if (normalizeHeadingText(headingContent) !== normalizeHeadingText(title)) {
+    return html;
+  }
+
+  return `${leadingWhitespace}${html.slice(match[0].length)}`;
+}
 /**
  * Parse markdown file and create Article object
  */
@@ -77,12 +104,13 @@ export async function parseArticleFromMarkdown(
   slug: string
 ): Promise<any> {
   const { html, metadata } = await parseMarkdown(markdownContent);
+  const title = metadata.title || 'Untitled';
 
   return {
     id: slug,
     slug,
-    title: metadata.title || 'Untitled',
-    content: html,
+    title,
+    content: stripDuplicateLeadingH1(html, title),
     rawMarkdown: markdownContent,
     category: metadata.category || 'uncategorized',
     tags: metadata.tags ? JSON.parse(metadata.tags) : [],
@@ -158,3 +186,4 @@ export function validateArticleMetadata(metadata: any): boolean {
     Array.isArray(metadata.tags)
   );
 }
+

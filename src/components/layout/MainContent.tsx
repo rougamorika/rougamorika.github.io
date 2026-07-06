@@ -1,5 +1,6 @@
 import { useArticleStore } from '@store/articleStore';
 import { ArticleViewer } from '@components/viewer/ArticleViewer';
+import { HomeArticleList } from '@components/layout/HomeArticleList';
 
 export function MainContent() {
   const { currentArticle, isLoading } = useArticleStore();
@@ -15,7 +16,11 @@ export function MainContent() {
   return (
     <main className="main-content">
       <div className="anime-content-card max-w-4xl mx-auto">
-        <ArticleViewer article={currentArticle} />
+        {currentArticle ? (
+          <ArticleViewer article={currentArticle} />
+        ) : (
+          <HomeArticleList />
+        )}
       </div>
     </main>
   );

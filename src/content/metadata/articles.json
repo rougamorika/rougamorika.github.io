@@ -2,19 +2,19 @@
   "articles": [],
   "categories": {
     "algebra": {
-      "name": "Algebra",
+      "name": "代数",
       "icon": "📐",
       "color": "#FF6B9D",
       "articles": []
     },
     "calculus": {
-      "name": "Calculus",
+      "name": "数学",
       "icon": "∫",
       "color": "#C6A7FF",
       "articles": []
     },
     "geometry": {
-      "name": "Geometry",
+      "name": "几何",
       "icon": "△",
       "color": "#89CFF0",
       "articles": []

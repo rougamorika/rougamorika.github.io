@@ -75,16 +75,16 @@ export function RightSidebar() {
   if (!isRightSidebarOpen) return null;
 
   return (
-    <aside className="sidebar bg-bg-card border-l-2 border-anime-pastel-purple p-4 w-80">
+    <aside className="sidebar bg-bg-card p-4 w-80">
       <div className="mb-4">
         <h3 className="text-xl font-heading font-bold mb-2 gradient-text">
-          📑 文章目录
+          文章目录
         </h3>
         <p className="text-xs text-gray-600">点击跳转到对应章节</p>
       </div>
 
       {/* Table of Contents */}
-      <div className="h-[calc(100vh-12rem)] overflow-y-auto">
+      <div className="tao-toc-list">
         {toc.length === 0 ? (
           <div className="flex items-center justify-center h-32 text-gray-500 text-sm">
             暂无目录
@@ -114,9 +114,10 @@ export function RightSidebar() {
       {/* Quick Info */}
       <div className="mt-4 p-3 anime-card bg-anime-pastel-pink">
         <p className="text-xs text-gray-700">
-          💡 <strong>提示：</strong> 目录会自动高亮当前阅读位置
+          <strong>提示：</strong> 目录会自动高亮当前阅读位置
         </p>
       </div>
     </aside>
   );
 }
+

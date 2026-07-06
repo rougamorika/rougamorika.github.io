@@ -1,88 +1,57 @@
-import { useRandomBanner } from '@hooks/useBannerImage';
-import { useArticleStore } from '@store/articleStore';
+import { useBannerImage } from '@hooks/useBannerImage';
 import { useUIStore } from '@store/uiStore';
 
 export function Header() {
-  const { banner } = useRandomBanner();
-  const { currentArticle } = useArticleStore();
+  const { banner } = useBannerImage({ refreshInterval: 9000 });
   const { toggleLeftSidebar, toggleRightSidebar, toggleSettingsPanel } = useUIStore();
 
   return (
-    <header className="relative h-64 overflow-hidden">
-      {/* Solid Pink Background */}
-      <div className="absolute inset-0 bg-anime-pink" />
+    <header className="tao-site-header">
+      {/* Rotating banner image retained as the header visual anchor */}
+      <div className="tao-header-image" aria-label="滚动头图">
+        <img
+          src={`/${banner}`}
+          alt=""
+          className="tao-header-image-img"
+          aria-hidden="true"
+        />
+        <div className="tao-header-image-scrim" />
+      </div>
 
-      {/* Content */}
-      <div className="relative h-full flex flex-col justify-between p-6">
-        {/* Top Bar */}
-        <div className="flex justify-between items-center">
-          {/* Mobile Menu Buttons */}
-          <div className="flex gap-2 md:hidden">
-            <button
-              onClick={toggleLeftSidebar}
-              className="px-3 py-2 bg-white/20 text-white text-sm hover:bg-white/30 transition-colors"
-              aria-label="Toggle navigation"
-            >
-              ☰
-            </button>
-          </div>
-
-          {/* Logo/Title */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-heading font-bold text-white">
-              ✨ 肉夹馍旗舰店 ✨
-            </h1>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex gap-2">
-            <button
-              onClick={toggleSettingsPanel}
-              className="px-3 py-2 bg-white/20 text-white text-sm hover:bg-white/30 transition-colors"
-              aria-label="Settings"
-            >
-              ⚙️
-            </button>
-            <button
-              onClick={toggleRightSidebar}
-              className="px-3 py-2 bg-white/20 text-white text-sm hover:bg-white/30 transition-colors hidden md:block"
-              aria-label="Toggle table of contents"
-            >
-              📑
-            </button>
-          </div>
+      <div className="tao-header-title-row">
+        <div className="flex gap-2 md:hidden">
+          <button
+            onClick={toggleLeftSidebar}
+            className="tao-header-link-button"
+            aria-label="Toggle navigation"
+          >
+            ☰ 目录
+          </button>
         </div>
 
-        {/* Article Info */}
-        <div className="bg-white p-4">
-          {currentArticle ? (
-            <div>
-              <h2 className="text-2xl font-bold text-anime-pink mb-2">
-                {currentArticle.title}
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {currentArticle.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="tag-item text-xs"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div>
-              <h2 className="text-2xl font-bold text-anime-pink mb-2">
-                Welcome to 肉夹馍旗舰店
-              </h2>
-              <p className="text-gray-600 text-sm">
-                Explore mathematical concepts with an anime twist ✨
-              </p>
-            </div>
-          )}
+        <div className="tao-title-block">
+          <h1 className="tao-blog-title">肉夹馍旗舰店</h1>
+          <p className="tao-tagline">Notes, problems, and mathematical side paths.</p>
         </div>
+
+        <nav className="tao-header-actions" aria-label="站点操作">
+          <button
+            onClick={toggleSettingsPanel}
+            className="tao-header-link-button"
+            aria-label="Settings"
+          >
+            设置
+          </button>
+          <button
+            onClick={toggleRightSidebar}
+            className="tao-header-link-button hidden md:inline"
+            aria-label="Toggle table of contents"
+          >
+            本文目录
+          </button>
+        </nav>
       </div>
     </header>
   );
 }
+

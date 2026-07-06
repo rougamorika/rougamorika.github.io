@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useArticleStore } from '@store/articleStore';
+import { CommentsSection } from '@components/common/CommentsSection';
+import { resolveCategoryName } from '@utils/articleList';
 import type { Article } from '@types/article';
 import 'katex/dist/katex.min.css';
 
@@ -11,8 +13,9 @@ interface ArticleViewerProps {
  * Component to display rendered article content
  */
 export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
-  const { currentArticle, isLoading } = useArticleStore();
+  const { currentArticle, articleIndex, isLoading } = useArticleStore();
   const article = propArticle || currentArticle;
+  const categoryName = article ? resolveCategoryName(articleIndex, article.category) : '';
 
   // Add IDs to headings after content is rendered
   useEffect(() => {
@@ -42,7 +45,7 @@ export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
     return (
       <div className="text-center py-12">
         <h2 className="text-3xl font-bold mb-4 gradient-text">
-          欢迎来到 肉夹馍旗舰店! ✨
+          欢迎来到 肉夹馍旗舰店
         </h2>
         <p className="text-gray-600 mb-6">
           点击左侧边栏的文章开始阅读
@@ -58,8 +61,8 @@ export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
         <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
-          <span>📅 {new Date(article.date).toLocaleDateString('zh-CN')}</span>
-          <span>📂 {article.category}</span>
+          <span>{new Date(article.date).toLocaleDateString('zh-CN')}</span>
+          <span>{categoryName}</span>
           {article.difficulty && (
             <span className="tag-item text-xs">
               {article.difficulty}
@@ -105,6 +108,8 @@ export function ArticleViewer({ article: propArticle }: ArticleViewerProps) {
           </div>
         </div>
       )}
+
+      <CommentsSection article={article} />
     </article>
   );
 }

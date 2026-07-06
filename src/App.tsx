@@ -3,7 +3,6 @@ import { Header } from '@components/layout/Header';
 import { LeftSidebar } from '@components/layout/LeftSidebar';
 import { RightSidebar } from '@components/layout/RightSidebar';
 import { MainContent } from '@components/layout/MainContent';
-import { SplashScreen } from '@components/common/SplashScreen';
 import { SettingsPanel } from '@components/common/SettingsPanel';
 import { MusicPlayer } from '@components/common/MusicPlayer';
 import { useUIStore } from '@store/uiStore';
@@ -92,16 +91,13 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      {/* Splash Screen - Full screen opening animation */}
-      <SplashScreen />
-
-      {/* Main Blog Content - Appears below splash screen */}
-      <div className="min-h-screen pb-[88px] sm:pb-[104px] anime-bg-pattern">
+      {/* Main Blog Content */}
+      <div className="min-h-screen pb-[88px] sm:pb-[104px] anime-bg-pattern tao-page-shell">
         {/* Header */}
         <Header />
 
         {/* Main Layout - 3 Column Grid */}
-        <div className="flex">
+        <div className="tao-layout flex">
           {/* Left Sidebar - Navigation Tree */}
           <div
             className={`
@@ -187,3 +183,4 @@ function App() {
 }
 
 export default App;
+

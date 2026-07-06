@@ -1,7 +1,7 @@
 ---
 title: 第一篇博客
 date: 2025-12-16
-category: blog
+category: about
 tags: []
 ---
 

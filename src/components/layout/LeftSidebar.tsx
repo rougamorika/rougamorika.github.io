@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useUIStore } from '@store/uiStore';
 import { useArticleStore } from '@store/articleStore';
+import { TopPostsWidget } from '@components/common/TopPostsWidget';
+import { SidebarWidgets } from '@components/common/SidebarWidgets';
 import type { ArticleIndex } from '@types/article';
 import { buildFileTree, type TreeNode } from '@utils/fileTreeBuilder';
 
 export function LeftSidebar() {
   const { isLeftSidebarOpen } = useUIStore();
-  const { setCurrentArticle, setLoading } = useArticleStore();
+  const { articleIndex, setArticleIndex, setCurrentArticle, loadArticle } = useArticleStore();
   const [tree, setTree] = useState<TreeNode[]>([]);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set(['about']));
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);
@@ -15,19 +17,9 @@ export function LeftSidebar() {
     fetch('/content/metadata/articles.json')
       .then((res) => res.json())
       .then((data: ArticleIndex) => {
+        setArticleIndex(data);
         const fileTree = buildFileTree(data);
         setTree(fileTree);
-
-        // Auto-load the "about" article on initial page load
-        const aboutCategory = fileTree.find(cat => cat.id === 'about');
-        if (aboutCategory?.children && aboutCategory.children.length > 0) {
-          const aboutArticle = aboutCategory.children[0];
-          handleArticleClick(aboutArticle);
-        } else if (fileTree.length > 0 && fileTree[0].children && fileTree[0].children.length > 0) {
-          // Fallback to first article if about doesn't exist
-          const firstArticle = fileTree[0].children[0];
-          handleArticleClick(firstArticle);
-        }
       })
       .catch((error) => {
         console.error('Failed to load article index:', error);
@@ -50,43 +42,41 @@ export function LeftSidebar() {
     });
   };
 
+  const handleHomeClick = () => {
+    setSelectedArticle(null);
+    setCurrentArticle(null);
+  };
+
   const handleArticleClick = async (node: TreeNode) => {
-    if (node.type !== 'article' || !node.path) return;
+    if (node.type !== 'article' || !node.articleId) return;
 
-    setSelectedArticle(node.articleId || null);
-    setLoading(true);
+    setSelectedArticle(node.articleId);
+    await loadArticle(node.articleId);
+  };
 
-    try {
-      const response = await fetch(`/${node.path}`);
-
-      if (!response.ok) throw new Error('Failed to load article');
-
-      const markdownContent = await response.text();
-
-      // Parse the article using the markdown parser
-      const { parseArticleFromMarkdown } = await import('@utils/markdownParser');
-      const article = await parseArticleFromMarkdown(markdownContent, node.articleId || '');
-
-      setCurrentArticle(article);
-    } catch (error) {
-      console.error('Error loading article:', error);
-    } finally {
-      setLoading(false);
-    }
+  const handleTopPostClick = async (articleId: string) => {
+    setSelectedArticle(articleId);
+    await loadArticle(articleId);
   };
 
   if (!isLeftSidebarOpen) return null;
 
   return (
-    <aside className="sidebar bg-bg-card border-r-2 border-anime-pastel-pink p-4 w-64">
+    <aside className="sidebar bg-bg-card p-4 w-64">
       <div className="mb-6">
         <h3 className="text-xl font-heading font-bold mb-4 gradient-text">
-          📚 文章目录
+          文章目录
         </h3>
       </div>
 
-      {/* Navigation Tree */}
-      <nav className="space-y-2">
+      <nav className="space-y-2" aria-label="文章导航">
+        <div
+          className={`nav-item cursor-pointer ${selectedArticle === null ? 'active' : ''}`}
+          onClick={handleHomeClick}
+        >
+          Home / 文章流
+        </div>
+
         {tree.length === 0 ? (
           <div className="text-center text-gray-500 text-sm">
             加载中...
@@ -94,7 +84,6 @@ export function LeftSidebar() {
         ) : (
           tree.map((category) => (
             <div key={category.id}>
-              {/* Category Header */}
               <div
                 className="nav-item cursor-pointer"
                 onClick={() => toggleCategory(category.id)}
@@ -110,7 +99,6 @@ export function LeftSidebar() {
                 </div>
               </div>
 
-              {/* Articles in Category */}
               {expandedCategories.has(category.id) && category.children && (
                 <div className="ml-6 mt-2 space-y-1">
                   {category.children.map((article) => (
@@ -131,12 +119,16 @@ export function LeftSidebar() {
         )}
       </nav>
 
-      {/* Decorative element */}
+      <TopPostsWidget articleIndex={articleIndex} onSelectArticle={handleTopPostClick} />
+      <SidebarWidgets articleIndex={articleIndex} onSelectArticle={handleTopPostClick} />
+
       <div className="mt-8 p-4 anime-card">
         <p className="text-sm text-center text-gray-600">
-          ✨ 选择一个主题开始你的阅读之旅!
+          选择一个主题开始阅读。
         </p>
       </div>
     </aside>
   );
 }
+
+

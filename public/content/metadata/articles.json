@@ -41,6 +41,14 @@
       "date": "2025-12-27"
     },
     {
+      "id": "ceshi",
+      "title": "测试",
+      "path": "content/articles/blog/ceshi.md",
+      "category": "blog",
+      "tags": [],
+      "date": "2025-12-27"
+    },
+    {
       "id": "ILUVDAOXIAO2",
       "title": "刀削面也有不同的",
       "path": "content/articles/blog/ILUVDAOXIAO2.md",
@@ -55,6 +63,14 @@
       "category": "blog",
       "tags": [],
       "date": "2026-01-16"
+    },
+    {
+      "id": "calculus-draft-2026-06-29",
+      "title": "新的微积分博客",
+      "path": "content/articles/calculus/calculus-draft-2026-06-29.md",
+      "category": "calculus",
+      "tags": [],
+      "date": "2026-06-29"
     }
   ],
   "categories": {
@@ -74,6 +90,7 @@
       "articles": [
         "New-Know-Repo",
         "i-love-daoxiao",
+        "ceshi",
         "ILUVDAOXIAO2",
         "phlio-hahah"
       ]
@@ -85,6 +102,21 @@
       "articles": [
         "No-Dirty-Knowledge"
       ]
+    },
+    "calculus": {
+      "name": "数学",
+      "icon": "∫",
+      "color": "#8FBF60",
+      "articles": [
+        "calculus-draft-2026-06-29"
+      ]
     }
-  }
+  },
+  "topPosts": [
+    "No-Dirty-Knowledge",
+    "New-Know-Repo",
+    "i-love-daoxiao",
+    "phlio-hahah",
+    "ILUVDAOXIAO2"
+  ]
 }
