@@ -34,3 +34,9 @@ dist/
 
 # Temporary files
 nul
+
+# Local unpublished drafts
+drafts/
+
+# Local duplicate media kept outside the deployed public assets
+/Beautiful_World_Da_Capo.mp4

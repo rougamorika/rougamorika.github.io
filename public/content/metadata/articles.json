@@ -63,14 +63,6 @@
       "category": "blog",
       "tags": [],
       "date": "2026-01-16"
-    },
-    {
-      "id": "calculus-draft-2026-06-29",
-      "title": "新的微积分博客",
-      "path": "content/articles/calculus/calculus-draft-2026-06-29.md",
-      "category": "calculus",
-      "tags": [],
-      "date": "2026-06-29"
     }
   ],
   "categories": {
@@ -107,9 +99,7 @@
       "name": "数学",
       "icon": "∫",
       "color": "#8FBF60",
-      "articles": [
-        "calculus-draft-2026-06-29"
-      ]
+      "articles": []
     }
   },
   "topPosts": [
