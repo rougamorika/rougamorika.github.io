@@ -7,7 +7,7 @@ const articlesRoot = path.join(root, 'public', 'content', 'articles');
 
 const expectedCategoryNames = new Map([
   ['about', '关于'],
-  ['blog', '博客'],
+  ['blog', '生活'],
   ['roast', '吐槽'],
   ['calculus', '数学'],
 ]);
@@ -98,3 +98,4 @@ if (failures.length > 0) {
 }
 
 console.log('Article category validation passed.');
+

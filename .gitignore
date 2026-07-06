@@ -40,3 +40,9 @@ drafts/
 
 # Local duplicate media kept outside the deployed public assets
 /Beautiful_World_Da_Capo.mp4
+# Obsidian local state
+Drafts/
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/plugins/
+.trash/

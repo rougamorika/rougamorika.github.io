@@ -1,14 +1,6 @@
 {
   "articles": [
     {
-      "id": "about-me",
-      "title": "关于我",
-      "path": "content/articles/about/about-me.md",
-      "category": "about",
-      "tags": [],
-      "date": "2025-12-16"
-    },
-    {
       "id": "first-blog",
       "title": "第一篇博客",
       "path": "content/articles/about/first-blog.md",
@@ -17,10 +9,10 @@
       "date": "2025-12-16"
     },
     {
-      "id": "No-Dirty-Knowledge",
-      "title": "如果你不会查论文那就不应该污染知识库",
-      "path": "content/articles/roast/No-Dirty-Knowledge.md",
-      "category": "roast",
+      "id": "about-me",
+      "title": "关于我",
+      "path": "content/articles/about/about-me.md",
+      "category": "about",
       "tags": [],
       "date": "2025-12-16"
     },
@@ -55,6 +47,14 @@
       "category": "blog",
       "tags": [],
       "date": "2026-01-16"
+    },
+    {
+      "id": "No-Dirty-Knowledge",
+      "title": "如果你不会查论文那就不应该污染知识库",
+      "path": "content/articles/roast/No-Dirty-Knowledge.md",
+      "category": "roast",
+      "tags": [],
+      "date": "2025-12-16"
     }
   ],
   "categories": {
@@ -63,12 +63,12 @@
       "icon": "👤",
       "color": "#FF6B9D",
       "articles": [
-        "about-me",
-        "first-blog"
+        "first-blog",
+        "about-me"
       ]
     },
     "blog": {
-      "name": "博客",
+      "name": "生活",
       "icon": "📁",
       "color": "#FF6B9D",
       "articles": [

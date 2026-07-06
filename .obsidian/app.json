@@ -1,0 +1,26 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "Attachments",
+  "newFileLocation": "current",
+  "promptDelete": false,
+  "spellcheck": true,
+  "userIgnoreFilters": [
+    "node_modules/",
+    "dist/",
+    "public/",
+    "src/",
+    "server/",
+    "scripts/",
+    ".github/",
+    ".git/",
+    ".codex/",
+    ".claude/",
+    "banner/",
+    "docs/superpowers/",
+    "package-lock.json",
+    "package.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    "vercel.json"
+  ]
+}

@@ -10,7 +10,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate-index": "node scripts/generateArticleIndex.js",
-    "compile-tikz": "node scripts/compileTikZ.js"
+    "compile-tikz": "node scripts/compileTikZ.js",
+    "sync:obsidian": "node scripts/syncObsidianVault.mjs",
+    "predev": "npm run sync:obsidian",
+    "prebuild": "npm run sync:obsidian"
   },
   "dependencies": {
     "buffer": "^6.0.3",
