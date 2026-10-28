@@ -1,11 +1,22 @@
 {
-  "articles": [],
+  "articles": [
+    {
+      "id": "about-me",
+      "title": "关于我",
+      "path": "content/articles/about/about-me.md",
+      "category": "about",
+      "tags": [],
+      "date": "2026-10-28"
+    }
+  ],
   "categories": {
     "about": {
       "name": "关于",
       "icon": "👤",
       "color": "#FF6B9D",
-      "articles": []
+      "articles": [
+        "about-me"
+      ]
     },
     "blog": {
       "name": "生活",
