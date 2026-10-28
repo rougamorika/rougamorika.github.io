@@ -221,6 +221,20 @@
   color: #6b6b6b;
 }
 
+.article-content a.interest-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-content a.interest-card:hover {
+  text-decoration: none;
+}
+
+.article-content a.interest-card:hover h3 {
+  color: #006a80;
+}
+
 @media (max-width: 640px) {
   .article-content .interest-cards {
     grid-template-columns: 1fr;
