@@ -1,90 +1,23 @@
 {
-  "articles": [
-    {
-      "id": "first-blog",
-      "title": "第一篇博客",
-      "path": "content/articles/about/first-blog.md",
-      "category": "about",
-      "tags": [],
-      "date": "2025-12-16"
-    },
-    {
-      "id": "about-me",
-      "title": "关于我",
-      "path": "content/articles/about/about-me.md",
-      "category": "about",
-      "tags": [],
-      "date": "2025-12-16"
-    },
-    {
-      "id": "New-Know-Repo",
-      "title": "关于新的知识库",
-      "path": "content/articles/blog/New-Know-Repo.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2025-12-19"
-    },
-    {
-      "id": "i-love-daoxiao",
-      "title": "我爱刀削面",
-      "path": "content/articles/blog/i-love-daoxiao.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2025-12-27"
-    },
-    {
-      "id": "ILUVDAOXIAO2",
-      "title": "刀削面也有不同的",
-      "path": "content/articles/blog/ILUVDAOXIAO2.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2025-12-30"
-    },
-    {
-      "id": "phlio-hahah",
-      "title": "其实我发现大家不是很喜欢哲学",
-      "path": "content/articles/blog/phlio-hahah.md",
-      "category": "blog",
-      "tags": [],
-      "date": "2026-01-16"
-    },
-    {
-      "id": "No-Dirty-Knowledge",
-      "title": "如果你不会查论文那就不应该污染知识库",
-      "path": "content/articles/roast/No-Dirty-Knowledge.md",
-      "category": "roast",
-      "tags": [],
-      "date": "2025-12-16"
-    }
-  ],
+  "articles": [],
   "categories": {
     "about": {
       "name": "关于",
       "icon": "👤",
       "color": "#FF6B9D",
-      "articles": [
-        "first-blog",
-        "about-me"
-      ]
+      "articles": []
     },
     "blog": {
       "name": "生活",
       "icon": "📁",
       "color": "#FF6B9D",
-      "articles": [
-        "New-Know-Repo",
-        "i-love-daoxiao",
-        "ILUVDAOXIAO2",
-        "phlio-hahah"
-      ]
+      "articles": []
     },
     "roast": {
       "name": "吐槽",
       "icon": "666",
       "color": "#FF6B9D",
-      "articles": [
-        "No-Dirty-Knowledge"
-      ]
+      "articles": []
     },
     "calculus": {
       "name": "数学",
@@ -93,11 +26,5 @@
       "articles": []
     }
   },
-  "topPosts": [
-    "No-Dirty-Knowledge",
-    "New-Know-Repo",
-    "i-love-daoxiao",
-    "phlio-hahah",
-    "ILUVDAOXIAO2"
-  ]
+  "topPosts": []
 }
