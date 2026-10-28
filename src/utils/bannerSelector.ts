@@ -41,11 +41,33 @@ const BANNER_IMAGES = [
 ];
 
 /**
+ * Default banner shown on first load and before the first rotation tick.
+ */
+export const DEFAULT_BANNER =
+  'banner/moe-avatar/caaaaarrot-936825-ling-arknights-order-landscape.webp';
+
+/**
  * Get a random banner image from the collection
  */
 export function getRandomBanner(): string {
   const randomIndex = Math.floor(Math.random() * BANNER_IMAGES.length);
   return BANNER_IMAGES[randomIndex];
+}
+
+/**
+ * Get a banner that differs from the currently displayed one (if possible).
+ */
+export function getNextBanner(current?: string | null): string {
+  if (BANNER_IMAGES.length <= 1) {
+    return BANNER_IMAGES[0] ?? DEFAULT_BANNER;
+  }
+
+  let nextIndex = Math.floor(Math.random() * BANNER_IMAGES.length);
+  if (current && BANNER_IMAGES[nextIndex] === current) {
+    nextIndex = (nextIndex + 1) % BANNER_IMAGES.length;
+  }
+
+  return BANNER_IMAGES[nextIndex];
 }
 
 /**

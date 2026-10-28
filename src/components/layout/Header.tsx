@@ -1,8 +1,14 @@
 import { useBannerImage } from '@hooks/useBannerImage';
+import { DEFAULT_BANNER } from '@utils/bannerSelector';
 import { useUIStore } from '@store/uiStore';
 
+const BANNER_ROTATE_INTERVAL = 3 * 60 * 1000; // 3 minutes
+
 export function Header() {
-  const { banner } = useBannerImage({ refreshInterval: 9000 });
+  const { banner, isPinned, togglePin } = useBannerImage({
+    refreshInterval: BANNER_ROTATE_INTERVAL,
+    defaultBanner: DEFAULT_BANNER,
+  });
   const { toggleLeftSidebar, toggleRightSidebar, toggleSettingsPanel } = useUIStore();
 
   return (
@@ -35,6 +41,15 @@ export function Header() {
         </div>
 
         <nav className="tao-header-actions" aria-label="站点操作">
+          <button
+            onClick={togglePin}
+            className="tao-header-link-button"
+            aria-pressed={isPinned}
+            aria-label={isPinned ? '取消固定头图' : '固定当前头图'}
+            title={isPinned ? '已固定当前头图，点击恢复轮换' : '固定当前头图，不再自动轮换'}
+          >
+            {isPinned ? '📌 已固定' : '📌 固定'}
+          </button>
           <button
             onClick={toggleSettingsPanel}
             className="tao-header-link-button"
