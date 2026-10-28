@@ -17,17 +17,17 @@ tags: []
 <a class="interest-card" href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" target="_blank" rel="noopener noreferrer"><div class="interest-card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M8 7l8 4M8 17l8-4"/></svg></div><h3>机器学习</h3><p>把学习算法用在信号、机械臂和风电上：建模、预测与控制。</p></a>
 </div>
 
-## 主要科研
-
-目前的工作集中在垂直轴风力机的气动与气动噪声数值研究上。
-
-- **Numerical study of the aerodynamic and acoustic benefits of novel arc-shaped trailing-edge serrations for vertical axis wind turbine** — Yujun Li, Li Xu, **Zhenyue Zhou**, Jingjing Cai, Bo Tang, Xiaojing Zhu. *International Journal of Green Energy*, 2026. [Paper](https://www.tandfonline.com/eprint/XANSDUZHVAJ7GN8DPPIT/full?target=10.1080/15435075.2026.2737959)
-
 ## 主要竞赛
 
 - 睿抗机器人大赛 2025 协作机械臂虚实结合挑战赛，上海市（省赛）赛区三等奖
 - 睿抗机器人大赛 2026 智能配送与分拣赛项，上海市（省赛）赛区二等奖
 - 2025 全国大学生数学建模竞赛（CUMCM），上海赛区三等奖
+
+## 主要科研
+
+目前的工作集中在垂直轴风力机的气动与气动噪声数值研究上。
+
+- **Numerical study of the aerodynamic and acoustic benefits of novel arc-shaped trailing-edge serrations for vertical axis wind turbine** — Yujun Li, Li Xu, **Zhenyue Zhou**, Jingjing Cai, Bo Tang, Xiaojing Zhu. *International Journal of Green Energy*, 2026. [Paper](https://www.tandfonline.com/eprint/XANSDUZHVAJ7GN8DPPIT/full?target=10.1080/15435075.2026.2737959)
 
 这个博客叫「肉夹馍旗舰店」，地址是 [rougamorika.github.io](https://rougamorika.github.io/)。它是我写东西的地方：数学上的推导和笔记、电子与信号相关的小实验，以及一些跟这些都没什么关系的日常。文章基本用中文写，公式用 KaTeX 排版。
 
