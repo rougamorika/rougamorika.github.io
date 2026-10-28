@@ -17,6 +17,12 @@ tags: []
 <div class="interest-card"><div class="interest-card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M8 7l8 4M8 17l8-4"/></svg></div><h3>机器学习</h3><p>把学习算法用在信号、机械臂和风电上：建模、预测与控制。</p></div>
 </div>
 
+## 主要科研
+
+目前的工作集中在垂直轴风力机的气动与气动噪声数值研究上。
+
+- **Numerical study of the aerodynamic and acoustic benefits of novel arc-shaped trailing-edge serrations for vertical axis wind turbine** — Yujun Li, Li Xu, **Zhenyue Zhou**, Jingjing Cai, Bo Tang, Xiaojing Zhu. *International Journal of Green Energy*, 2026. [Paper](https://www.tandfonline.com/eprint/XANSDUZHVAJ7GN8DPPIT/full?target=10.1080/15435075.2026.2737959)
+
 这个博客叫「肉夹馍旗舰店」，地址是 [rougamorika.github.io](https://rougamorika.github.io/)。它是我写东西的地方：数学上的推导和笔记、电子与信号相关的小实验，以及一些跟这些都没什么关系的日常。文章基本用中文写，公式用 KaTeX 排版。
 
 技术方面我主要用 Python，也写一点 C/C++ 和 TypeScript，排版靠 LaTeX，版本管理用 Git。技术之外，我弹贝斯，听 disco 和摇滚，也看动画。语言方面，中文和英语精通，日语大约 N4、德语大约 B1，法语和西班牙语只是起了个头——算是个语言学爱好者。
